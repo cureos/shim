@@ -107,6 +107,12 @@
     <Compile Include="..\Net\IWebProxy.cs">
       <Link>Net\IWebProxy.cs</Link>
     </Compile>
+    <Compile Include="..\Net\Security\SslPolicyErrors.cs">
+      <Link>Net\Security\SslPolicyErrors.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\Sockets\NetworkStream.cs">
+      <Link>Net\Sockets\NetworkStream.cs</Link>
+    </Compile>
     <Compile Include="..\NonSerializedAttribute.cs">
       <Link>NonSerializedAttribute.cs</Link>
     </Compile>
@@ -127,6 +133,30 @@
     </Compile>
     <Compile Include="..\Runtime\Serialization\SerializationInfo.cs">
       <Link>Runtime\Serialization\SerializationInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Authentication\SslProtocols.cs">
+      <Link>Security\Authentication\SslProtocols.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\OpenFlags.cs">
+      <Link>Security\Cryptography\X509Certificates\OpenFlags.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\StoreLocation.cs">
+      <Link>Security\Cryptography\X509Certificates\StoreLocation.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\StoreName.cs">
+      <Link>Security\Cryptography\X509Certificates\StoreName.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\X509Certificate2Collection.cs">
+      <Link>Security\Cryptography\X509Certificates\X509Certificate2Collection.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\X509Chain.cs">
+      <Link>Security\Cryptography\X509Certificates\X509Chain.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\X509FindType.cs">
+      <Link>Security\Cryptography\X509Certificates\X509FindType.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\X509Store.cs">
+      <Link>Security\Cryptography\X509Certificates\X509Store.cs</Link>
     </Compile>
     <Compile Include="..\SerializableAttribute.cs">
       <Link>SerializableAttribute.cs</Link>
@@ -149,6 +179,15 @@
     <Compile Include="..\Timers\Timer.cs">
       <Link>Timers\Timer.cs</Link>
     </Compile>
+    <Compile Include="..\_Store\Net\Security\SslStream.Store.cs">
+      <Link>Net\Security\SslStream.Store.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\Net\Sockets\TcpClient.Store.cs">
+      <Link>Net\Sockets\TcpClient.Store.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\Net\Sockets\TcpListener.Store.cs">
+      <Link>Net\Sockets\TcpListener.Store.cs</Link>
+    </Compile>
     <Compile Include="TypeForwarding.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +196,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>

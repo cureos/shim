@@ -21,8 +21,11 @@
 
 using System;
 using System.IO;
+using System.Net;
+using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 
 // System
@@ -34,6 +37,13 @@ using System.Threading;
 [assembly: TypeForwardedTo(typeof(FileMode))]
 [assembly: TypeForwardedTo(typeof(FileShare))]
 
+// System.Net
+[assembly: TypeForwardedTo(typeof(IPAddress))]
+
+// System.Net.Sockets
+[assembly: TypeForwardedTo(typeof(SocketError))]
+[assembly: TypeForwardedTo(typeof(SocketException))]
+
 // System.Runtime.InteropServices
 [assembly: TypeForwardedTo(typeof(GCHandle))]
 [assembly: TypeForwardedTo(typeof(GCHandleType))]
@@ -42,7 +52,14 @@ using System.Threading;
 [assembly: TypeForwardedTo(typeof(MarshalAsAttribute))]
 [assembly: TypeForwardedTo(typeof(UnmanagedType))]
 
+// System.Security.Cryptography.X509Certificates
+[assembly: TypeForwardedTo(typeof(X509Certificate))]
+
 // System.Threading
 [assembly: TypeForwardedTo(typeof(Thread))]
 [assembly: TypeForwardedTo(typeof(ThreadAbortException))]
+[assembly: TypeForwardedTo(typeof(ThreadPool))]
 [assembly: TypeForwardedTo(typeof(ThreadStart))]
+[assembly: TypeForwardedTo(typeof(Timer))]
+[assembly: TypeForwardedTo(typeof(TimerCallback))]
+[assembly: TypeForwardedTo(typeof(WaitCallback))]

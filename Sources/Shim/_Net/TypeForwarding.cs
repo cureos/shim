@@ -26,17 +26,19 @@ using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Net.Security;
+using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Authentication;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 
 // System
-using System.Timers;
-using Timer = System.Timers.Timer;
-
 [assembly: TypeForwardedTo(typeof(ApplicationException))]
 [assembly: TypeForwardedTo(typeof(Converter<,>))]
 [assembly: TypeForwardedTo(typeof(DBNull))]
@@ -76,7 +78,20 @@ using Timer = System.Timers.Timer;
 [assembly: TypeForwardedTo(typeof(FileStream))]
 
 // System.Net
+[assembly: TypeForwardedTo(typeof(IPAddress))]
 [assembly: TypeForwardedTo(typeof(IWebProxy))]
+
+// System.Net.Security
+[assembly: TypeForwardedTo(typeof(RemoteCertificateValidationCallback))]
+[assembly: TypeForwardedTo(typeof(SslPolicyErrors))]
+[assembly: TypeForwardedTo(typeof(SslStream))]
+
+// System.Net.Sockets
+[assembly: TypeForwardedTo(typeof(NetworkStream))]
+[assembly: TypeForwardedTo(typeof(SocketError))]
+[assembly: TypeForwardedTo(typeof(SocketException))]
+[assembly: TypeForwardedTo(typeof(TcpClient))]
+[assembly: TypeForwardedTo(typeof(TcpListener))]
 
 // System.Runtime.InteropServices
 [assembly: TypeForwardedTo(typeof(GCHandle))]
@@ -94,10 +109,27 @@ using Timer = System.Timers.Timer;
 // System.Runtime.Serialization.Formatters.Binary
 [assembly: TypeForwardedTo(typeof(BinaryFormatter))]
 
+// System.Security.Authentication
+[assembly: TypeForwardedTo(typeof(SslProtocols))]
+
+// System.Security.Cryptography.X509Certificates
+[assembly: TypeForwardedTo(typeof(OpenFlags))]
+[assembly: TypeForwardedTo(typeof(StoreLocation))]
+[assembly: TypeForwardedTo(typeof(StoreName))]
+[assembly: TypeForwardedTo(typeof(X509Certificate))]
+[assembly: TypeForwardedTo(typeof(X509Certificate2Collection))]
+[assembly: TypeForwardedTo(typeof(X509Chain))]
+[assembly: TypeForwardedTo(typeof(X509FindType))]
+[assembly: TypeForwardedTo(typeof(X509Store))]
+
 // System.Threading
 [assembly: TypeForwardedTo(typeof(Thread))]
 [assembly: TypeForwardedTo(typeof(ThreadAbortException))]
+[assembly: TypeForwardedTo(typeof(ThreadPool))]
 [assembly: TypeForwardedTo(typeof(ThreadStart))]
+[assembly: TypeForwardedTo(typeof(System.Threading.Timer))]
+[assembly: TypeForwardedTo(typeof(TimerCallback))]
+[assembly: TypeForwardedTo(typeof(WaitCallback))]
 
 // System.Threading.Tasks
 [assembly: TypeForwardedTo(typeof(Parallel))]
@@ -108,4 +140,4 @@ using Timer = System.Timers.Timer;
 // System.Timers
 [assembly: TypeForwardedTo(typeof(ElapsedEventArgs))]
 [assembly: TypeForwardedTo(typeof(ElapsedEventHandler))]
-[assembly: TypeForwardedTo(typeof(Timer))]
+[assembly: TypeForwardedTo(typeof(System.Timers.Timer))]
