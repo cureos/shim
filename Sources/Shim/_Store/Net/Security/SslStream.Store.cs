@@ -33,8 +33,7 @@ namespace System.Net.Security
 	{
 		#region FIELDS
 
-        // TODO Consider replacing TcpClient.Stream with NetworkStream...
-		private readonly TcpClient.Stream _innerStream;
+		private readonly NetworkStream _innerStream;
 		private readonly bool _leaveInnerStreamOpen;
 		private readonly RemoteCertificateValidationCallback _validateServerCertificate;
 		
@@ -44,7 +43,7 @@ namespace System.Net.Security
 
 		public SslStream(Stream innerStream, bool leaveInnerStreamOpen, RemoteCertificateValidationCallback validateServerCertificate)
 		{
-			var tcpClientStream = innerStream as TcpClient.Stream;
+			var tcpClientStream = innerStream as NetworkStream;
 			if (tcpClientStream == null)
 				throw new ArgumentException("Stream type not associated with TCP client", "innerStream");
 

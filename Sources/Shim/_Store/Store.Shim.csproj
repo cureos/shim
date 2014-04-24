@@ -111,9 +111,6 @@
     <Compile Include="..\Net\Security\SslPolicyErrors.cs">
       <Link>Net\Security\SslPolicyErrors.cs</Link>
     </Compile>
-    <Compile Include="..\Net\Sockets\NetworkStream.cs">
-      <Link>Net\Sockets\NetworkStream.cs</Link>
-    </Compile>
     <Compile Include="..\Net\Sockets\SocketError.cs">
       <Link>Net\Sockets\SocketError.cs</Link>
     </Compile>
@@ -185,6 +182,7 @@
     </Compile>
     <Compile Include="IO\FileStream.Store.cs" />
     <Compile Include="Net\Security\SslStream.Store.cs" />
+    <Compile Include="Net\Sockets\NetworkStream.Store.cs" />
     <Compile Include="Net\Sockets\TcpClient.Store.cs" />
     <Compile Include="Net\Sockets\TcpListener.Store.cs" />
     <Compile Include="Threading\ThreadPool.Store.cs" />

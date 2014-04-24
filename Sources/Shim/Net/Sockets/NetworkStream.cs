@@ -23,7 +23,7 @@ namespace System.Net.Sockets
 {
     using System.IO;
 
-    public class NetworkStream : Stream
+    public sealed class NetworkStream : Stream
     {
         #region METHODS
 

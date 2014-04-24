@@ -110,9 +110,6 @@
     <Compile Include="..\Net\Security\SslPolicyErrors.cs">
       <Link>Net\Security\SslPolicyErrors.cs</Link>
     </Compile>
-    <Compile Include="..\Net\Sockets\NetworkStream.cs">
-      <Link>Net\Sockets\NetworkStream.cs</Link>
-    </Compile>
     <Compile Include="..\NonSerializedAttribute.cs">
       <Link>NonSerializedAttribute.cs</Link>
     </Compile>
@@ -181,6 +178,9 @@
     </Compile>
     <Compile Include="..\_Store\Net\Security\SslStream.Store.cs">
       <Link>Net\Security\SslStream.Store.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\Net\Sockets\NetworkStream.Store.cs">
+      <Link>Net\Sockets\NetworkStream.Store.cs</Link>
     </Compile>
     <Compile Include="..\_Store\Net\Sockets\TcpClient.Store.cs">
       <Link>Net\Sockets\TcpClient.Store.cs</Link>
