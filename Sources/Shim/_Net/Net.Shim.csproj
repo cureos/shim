@@ -48,12 +48,25 @@
     <Compile Include="..\Data\DataColumnExtensions.cs">
       <Link>Data\DataColumnExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\IO\BinaryReaderExtensions.cs">
+      <Link>IO\BinaryReaderExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\BinaryWriterExtensions.cs">
+      <Link>IO\BinaryWriterExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\TextReaderExtensions.cs">
+      <Link>IO\TextReaderExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\TextWriterExtensions.cs">
+      <Link>IO\TextWriterExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Net\HttpWebRequestExtensions.cs">
       <Link>Net\HttpWebRequestExtensions.cs</Link>
     </Compile>
     <Compile Include="..\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="IO\StreamExtensions.Net.cs" />
     <Compile Include="TypeForwarding.cs" />
   </ItemGroup>
   <ItemGroup>

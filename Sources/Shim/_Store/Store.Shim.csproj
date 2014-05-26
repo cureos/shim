@@ -90,17 +90,38 @@
     <Compile Include="..\ICloneable.cs">
       <Link>ICloneable.cs</Link>
     </Compile>
-    <Compile Include="..\IO\File.cs">
-      <Link>IO\File.cs</Link>
+    <Compile Include="..\IO\BinaryReaderExtensions.cs">
+      <Link>IO\BinaryReaderExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\BinaryWriterExtensions.cs">
+      <Link>IO\BinaryWriterExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\DirectoryInfo.cs">
+      <Link>IO\DirectoryInfo.cs</Link>
     </Compile>
     <Compile Include="..\IO\FileAccess.cs">
       <Link>IO\FileAccess.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\FileAttributes.cs">
+      <Link>IO\FileAttributes.cs</Link>
     </Compile>
     <Compile Include="..\IO\FileMode.cs">
       <Link>IO\FileMode.cs</Link>
     </Compile>
     <Compile Include="..\IO\FileShare.cs">
       <Link>IO\FileShare.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\SearchOption.cs">
+      <Link>IO\SearchOption.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\StreamExtensions.cs">
+      <Link>IO\StreamExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\TextReaderExtensions.cs">
+      <Link>IO\TextReaderExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\TextWriterExtensions.cs">
+      <Link>IO\TextWriterExtensions.cs</Link>
     </Compile>
     <Compile Include="..\Net\HttpWebRequestExtensions.cs">
       <Link>Net\HttpWebRequestExtensions.cs</Link>
@@ -180,6 +201,10 @@
     <Compile Include="..\Timers\Timer.cs">
       <Link>Timers\Timer.cs</Link>
     </Compile>
+    <Compile Include="IO\Directory.Store.cs" />
+    <Compile Include="IO\File.Store.cs" />
+    <Compile Include="IO\FileHelper.cs" />
+    <Compile Include="IO\FileInfo.Store.cs" />
     <Compile Include="IO\FileStream.Store.cs" />
     <Compile Include="Net\Security\SslStream.Store.cs" />
     <Compile Include="Net\Sockets\NetworkStream.Store.cs" />

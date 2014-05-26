@@ -98,8 +98,23 @@
     <Compile Include="..\ICloneable.cs">
       <Link>ICloneable.cs</Link>
     </Compile>
+    <Compile Include="..\IO\BinaryReaderExtensions.cs">
+      <Link>IO\BinaryReaderExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\BinaryWriterExtensions.cs">
+      <Link>IO\BinaryWriterExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\IO\FileStream.cs">
       <Link>IO\FileStream.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\SearchOption.cs">
+      <Link>IO\SearchOption.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\TextReaderExtensions.cs">
+      <Link>IO\TextReaderExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\TextWriterExtensions.cs">
+      <Link>IO\TextWriterExtensions.cs</Link>
     </Compile>
     <Compile Include="..\Net\HttpWebRequestExtensions.cs">
       <Link>Net\HttpWebRequestExtensions.cs</Link>
@@ -175,6 +190,9 @@
     </Compile>
     <Compile Include="..\Timers\Timer.cs">
       <Link>Timers\Timer.cs</Link>
+    </Compile>
+    <Compile Include="..\_Net\IO\StreamExtensions.Net.cs">
+      <Link>IO\StreamExtensions.Net.cs</Link>
     </Compile>
     <Compile Include="..\_Store\Net\Security\SslStream.Store.cs">
       <Link>Net\Security\SslStream.Store.cs</Link>

@@ -21,59 +21,97 @@
 
 namespace System.IO
 {
+    using System.Threading.Tasks;
+
     public static class File
 	{
 		#region METHODS
 
         public static bool Exists(string path)
         {
-            throw new PlatformNotSupportedException("PCL");
+            try
+            {
+                return Task.Run(async () => await FileHelper.GetStorageFileAsync(path)).Result != null;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public static void Delete(string path)
         {
-            throw new PlatformNotSupportedException("PCL");
+            try
+            {
+                Task.Run(async () =>
+                {
+                    var file = await FileHelper.GetStorageFileAsync(path);
+                    await file.DeleteAsync();
+                }).Wait();
+            }
+            catch
+            {
+            }
         }
 
         public static FileStream Create(string path)
         {
-            throw new PlatformNotSupportedException("PCL");
+            return new FileStream(path, FileMode.Create);
         }
 
         public static void Move(string sourceFileName, string destFileName)
         {
-            throw new PlatformNotSupportedException("PCL");
+            try
+            {
+                Task.Run(async () =>
+                {
+                    var src = await FileHelper.GetStorageFileAsync(sourceFileName);
+                    var dest = await FileHelper.CreateStorageFileAsync(destFileName);
+                    await src.MoveAndReplaceAsync(dest);
+                }).Wait();
+
+            }
+            catch
+            {
+            }
         }
 
         public static byte[] ReadAllBytes(string path)
         {
-            throw new PlatformNotSupportedException("PCL");
+            using (var stream = new FileStream(path, FileMode.Open))
+            {
+                var bytes = new byte[stream.Length];
+                stream.Read(bytes, 0, (int)stream.Length);
+                return bytes;
+            }
         }
 
         public static void WriteAllBytes(string path, byte[] bytes)
         {
-            throw new PlatformNotSupportedException("PCL");
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                stream.Write(bytes, 0, bytes.Length);
+            }
         }
 
         public static FileAttributes GetAttributes(string path)
         {
-            throw new PlatformNotSupportedException("PCL");
+            return FileAttributes.Normal;
         }
 
         public static void SetAttributes(string path, FileAttributes attributes)
         {
-            throw new PlatformNotSupportedException("PCL");
         }
 
         public static FileStream OpenRead(string path)
 		{
-            throw new PlatformNotSupportedException("PCL");
-        }
+			return new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
+		}
 
 		public static FileStream OpenWrite(string path)
 		{
-            throw new PlatformNotSupportedException("PCL");
-        }
+			return new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Read);
+		}
 
 		#endregion
 	}

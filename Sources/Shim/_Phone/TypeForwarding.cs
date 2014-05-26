@@ -32,8 +32,12 @@ using System.Threading;
 [assembly: TypeForwardedTo(typeof(DBNull))]
 
 // System.IO
+[assembly: TypeForwardedTo(typeof(Directory))]
+[assembly: TypeForwardedTo(typeof(DirectoryInfo))]
 [assembly: TypeForwardedTo(typeof(File))]
 [assembly: TypeForwardedTo(typeof(FileAccess))]
+[assembly: TypeForwardedTo(typeof(FileAttributes))]
+[assembly: TypeForwardedTo(typeof(FileInfo))]
 [assembly: TypeForwardedTo(typeof(FileMode))]
 [assembly: TypeForwardedTo(typeof(FileShare))]
 

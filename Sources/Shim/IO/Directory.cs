@@ -19,57 +19,23 @@
  *  along with Shim.NET.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.ComponentModel;
-
-namespace System.Timers
+namespace System.IO
 {
-    public delegate void ElapsedEventHandler(object sender, ElapsedEventArgs e);
-
-    public sealed class Timer : IDisposable
+    public static class Directory
     {
-        #region EVENTS
-
-        public event ElapsedEventHandler Elapsed
-        {
-            add
-            {
-                throw new PlatformNotSupportedException("PCL");
-            }
-            remove
-            {
-                throw new PlatformNotSupportedException("PCL");
-            }
-        }
-
-        #endregion
-
-        #region PROPERTIES
-
-        public bool Enabled { get; set; }
-        
-        public double Interval { get; set; }
-
-        public ISynchronizeInvoke SynchronizingObject { get; set; }
-
-        #endregion
-
-        #region METHODS
-
-        public void Dispose()
+        public static bool Exists(string path)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
-        public void Start()
-        {
+	    public static DirectoryInfo CreateDirectory(string path)
+	    {
             throw new PlatformNotSupportedException("PCL");
         }
 
-        public void Stop()
+	    public static string[] GetDirectories(string path)
         {
             throw new PlatformNotSupportedException("PCL");
         }
-
-        #endregion
     }
 }

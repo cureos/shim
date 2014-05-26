@@ -19,57 +19,86 @@
  *  along with Shim.NET.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.ComponentModel;
-
-namespace System.Timers
+namespace System.IO
 {
-    public delegate void ElapsedEventHandler(object sender, ElapsedEventArgs e);
-
-    public sealed class Timer : IDisposable
+    // TODO Real implementation!!!
+    public sealed class FileInfo
     {
-        #region EVENTS
+        #region CONSTRUCTORS
 
-        public event ElapsedEventHandler Elapsed
+        public FileInfo(string fileName)
         {
-            add
-            {
-                throw new PlatformNotSupportedException("PCL");
-            }
-            remove
+            throw new PlatformNotSupportedException("PCL");
+        }
+        
+        #endregion
+
+        #region PROPERTIES
+
+        public string FullName
+        {
+            get
             {
                 throw new PlatformNotSupportedException("PCL");
             }
         }
 
-        #endregion
 
-        #region PROPERTIES
+        public string Name
+        {
+            get
+            {
+                throw new PlatformNotSupportedException("PCL");
+            }
+        }
 
-        public bool Enabled { get; set; }
-        
-        public double Interval { get; set; }
 
-        public ISynchronizeInvoke SynchronizingObject { get; set; }
+        public string DirectoryName
+        {
+            get
+            {
+                throw new PlatformNotSupportedException("PCL");
+            }
+        }
+
+
+        public bool Exists
+        {
+            get
+            {
+                throw new PlatformNotSupportedException("PCL");
+            }
+        }
 
         #endregion
 
         #region METHODS
 
-        public void Dispose()
+        public void Delete()
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
-        public void Start()
+        public FileStream Create()
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
-        public void Stop()
+        public FileStream OpenRead()
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        public FileStream OpenWrite()
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        public void MoveTo(string destFileName)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+        
         #endregion
     }
 }

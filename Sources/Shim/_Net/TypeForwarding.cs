@@ -71,11 +71,16 @@ using System.Timers;
 [assembly: TypeForwardedTo(typeof(Trace))]
 
 // System.IO
+[assembly: TypeForwardedTo(typeof(Directory))]
+[assembly: TypeForwardedTo(typeof(DirectoryInfo))]
 [assembly: TypeForwardedTo(typeof(File))]
 [assembly: TypeForwardedTo(typeof(FileAccess))]
+[assembly: TypeForwardedTo(typeof(FileAttributes))]
+[assembly: TypeForwardedTo(typeof(FileInfo))]
 [assembly: TypeForwardedTo(typeof(FileMode))]
 [assembly: TypeForwardedTo(typeof(FileShare))]
 [assembly: TypeForwardedTo(typeof(FileStream))]
+[assembly: TypeForwardedTo(typeof(SearchOption))]
 
 // System.Net
 [assembly: TypeForwardedTo(typeof(IPAddress))]
