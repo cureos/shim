@@ -30,6 +30,11 @@ namespace System.IO
 			throw new NotImplementedException();
 		}
 
+        public FileStream(string path, FileMode mode, FileAccess access)
+        {
+            throw new NotImplementedException();
+        }
+
 		public FileStream(string path, FileMode mode, FileAccess access, FileShare share)
 		{
 			throw new NotImplementedException();

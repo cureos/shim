@@ -47,6 +47,9 @@
     <None Include="Shim.snk" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Console.cs" />
+    <Compile Include="ComponentModel\DataAnnotations\RangeAttribute.cs" />
+    <Compile Include="UriFormatException.cs" />
     <Compile Include="ApplicationException.cs" />
     <Compile Include="Collections\Concurrent\ConcurrentBag.cs" />
     <Compile Include="Collections\Concurrent\ConcurrentDictionary.cs" />
@@ -93,6 +96,7 @@
     <Compile Include="NonSerializedAttribute.cs" />
     <Compile Include="ICloneable.cs" />
     <Compile Include="NotFiniteNumberException.cs" />
+    <Compile Include="Reflection\TargetException.cs" />
     <Compile Include="Runtime\InteropServices\GCHandle.cs" />
     <Compile Include="Runtime\InteropServices\GCHandleType.cs" />
     <Compile Include="Runtime\InteropServices\MarshalAsAttribute.cs" />
@@ -126,6 +130,7 @@
     <Compile Include="Threading\Thread.cs" />
     <Compile Include="Timers\Timer.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

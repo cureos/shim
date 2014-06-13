@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Diagnostics;
 using System.IO;
@@ -58,6 +59,9 @@ using System.Timers;
 [assembly: TypeForwardedTo(typeof(DescriptionAttribute))]
 [assembly: TypeForwardedTo(typeof(DisplayNameAttribute))]
 [assembly: TypeForwardedTo(typeof(ISynchronizeInvoke))]
+
+// System.ComponentModel.DataAnnotations
+[assembly: TypeForwardedTo(typeof(RangeAttribute))]
 
 // System.Data
 [assembly: TypeForwardedTo(typeof(DataColumn))]
