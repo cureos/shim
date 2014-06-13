@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Collections\Generic\ListExtensions.cs">
+      <Link>Collections\Generic\ListExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Data\DataColumnExtensions.cs">
       <Link>Data\DataColumnExtensions.cs</Link>
     </Compile>
@@ -67,7 +70,11 @@
     <Compile Include="..\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="..\Reflection\ShimAssembly.cs">
+      <Link>Reflection\ShimAssembly.cs</Link>
+    </Compile>
     <Compile Include="IO\StreamExtensions.Net.cs" />
+    <Compile Include="ShimEnvironment.Net.cs" />
     <Compile Include="TypeForwarding.cs" />
   </ItemGroup>
   <ItemGroup>

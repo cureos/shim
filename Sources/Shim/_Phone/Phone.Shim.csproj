@@ -53,6 +53,9 @@
     <Compile Include="..\Collections\Concurrent\ConcurrentStack.cs">
       <Link>Collections\Concurrent\ConcurrentStack.cs</Link>
     </Compile>
+    <Compile Include="..\Collections\Generic\ListExtensions.cs">
+      <Link>Collections\Generic\ListExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\ComponentModel\BrowsableAttribute.cs">
       <Link>ComponentModel\BrowsableAttribute.cs</Link>
     </Compile>
@@ -137,6 +140,9 @@
     <Compile Include="..\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="..\Reflection\ShimAssembly.cs">
+      <Link>Reflection\ShimAssembly.cs</Link>
+    </Compile>
     <Compile Include="..\Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs">
       <Link>Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs</Link>
     </Compile>
@@ -208,6 +214,9 @@
     </Compile>
     <Compile Include="..\_Store\Net\Sockets\TcpListener.Store.cs">
       <Link>Net\Sockets\TcpListener.Store.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\ShimEnvironment.Store.cs">
+      <Link>ShimEnvironment.Store.cs</Link>
     </Compile>
     <Compile Include="TypeForwarding.cs" />
   </ItemGroup>

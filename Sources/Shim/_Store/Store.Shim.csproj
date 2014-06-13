@@ -42,6 +42,9 @@
     <Compile Include="..\ApplicationException.cs">
       <Link>ApplicationException.cs</Link>
     </Compile>
+    <Compile Include="..\Collections\Generic\ListExtensions.cs">
+      <Link>Collections\Generic\ListExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\ComponentModel\BrowsableAttribute.cs">
       <Link>ComponentModel\BrowsableAttribute.cs</Link>
     </Compile>
@@ -147,6 +150,9 @@
     <Compile Include="..\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="..\Reflection\ShimAssembly.cs">
+      <Link>Reflection\ShimAssembly.cs</Link>
+    </Compile>
     <Compile Include="..\Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs">
       <Link>Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs</Link>
     </Compile>
@@ -210,6 +216,7 @@
     <Compile Include="Net\Sockets\NetworkStream.Store.cs" />
     <Compile Include="Net\Sockets\TcpClient.Store.cs" />
     <Compile Include="Net\Sockets\TcpListener.Store.cs" />
+    <Compile Include="ShimEnvironment.Store.cs" />
     <Compile Include="Threading\ThreadPool.Store.cs" />
     <Compile Include="Threading\Timer.Store.cs" />
     <Compile Include="TypeForwarding.cs" />

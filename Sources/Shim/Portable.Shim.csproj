@@ -47,8 +47,11 @@
     <None Include="Shim.snk" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\Generic\ListExtensions.cs" />
     <Compile Include="Console.cs" />
     <Compile Include="ComponentModel\DataAnnotations\RangeAttribute.cs" />
+    <Compile Include="ShimEnvironment.cs" />
+    <Compile Include="Reflection\ShimAssembly.cs" />
     <Compile Include="UriFormatException.cs" />
     <Compile Include="ApplicationException.cs" />
     <Compile Include="Collections\Concurrent\ConcurrentBag.cs" />
