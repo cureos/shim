@@ -69,6 +69,14 @@ namespace System.IO
             }
         }
 
+        public DirectoryInfo Directory
+        {
+            get
+            {
+                throw new PlatformNotSupportedException("PCL");
+            }
+        }
+
         #endregion
 
         #region METHODS

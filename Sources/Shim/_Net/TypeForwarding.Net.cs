@@ -29,6 +29,7 @@ using System.IO;
 using System.Net;
 using System.Net.Security;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
@@ -101,6 +102,10 @@ using System.Timers;
 [assembly: TypeForwardedTo(typeof(SocketException))]
 [assembly: TypeForwardedTo(typeof(TcpClient))]
 [assembly: TypeForwardedTo(typeof(TcpListener))]
+
+// System.Reflection
+[assembly: TypeForwardedTo(typeof(BindingFlags))]
+[assembly: TypeForwardedTo(typeof(TargetException))]
 
 // System.Runtime.InteropServices
 [assembly: TypeForwardedTo(typeof(GCHandle))]

@@ -117,6 +117,9 @@
     <Compile Include="..\IO\SearchOption.cs">
       <Link>IO\SearchOption.cs</Link>
     </Compile>
+    <Compile Include="..\IO\ShimPath.cs">
+      <Link>IO\ShimPath.cs</Link>
+    </Compile>
     <Compile Include="..\IO\StreamExtensions.cs">
       <Link>IO\StreamExtensions.cs</Link>
     </Compile>
@@ -149,6 +152,9 @@
     </Compile>
     <Compile Include="..\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Reflection\BindingFlags.cs">
+      <Link>Reflection\BindingFlags.cs</Link>
     </Compile>
     <Compile Include="..\Reflection\ShimAssembly.cs">
       <Link>Reflection\ShimAssembly.cs</Link>
@@ -207,6 +213,9 @@
     <Compile Include="..\Timers\Timer.cs">
       <Link>Timers\Timer.cs</Link>
     </Compile>
+    <Compile Include="..\TypeExtensions.cs">
+      <Link>TypeExtensions.cs</Link>
+    </Compile>
     <Compile Include="IO\Directory.Store.cs" />
     <Compile Include="IO\File.Store.cs" />
     <Compile Include="IO\FileHelper.cs" />
@@ -219,7 +228,7 @@
     <Compile Include="ShimEnvironment.Store.cs" />
     <Compile Include="Threading\ThreadPool.Store.cs" />
     <Compile Include="Threading\Timer.Store.cs" />
-    <Compile Include="TypeForwarding.cs" />
+    <Compile Include="TypeForwarding.Store.cs" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>

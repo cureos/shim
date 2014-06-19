@@ -27,46 +27,58 @@ namespace System.IO
 
 		public FileStream(string path, FileMode mode)
 		{
-			throw new NotImplementedException();
+            throw new PlatformNotSupportedException("PCL");
 		}
 
         public FileStream(string path, FileMode mode, FileAccess access)
         {
-            throw new NotImplementedException();
+            throw new PlatformNotSupportedException("PCL");
         }
 
 		public FileStream(string path, FileMode mode, FileAccess access, FileShare share)
 		{
-			throw new NotImplementedException();
+            throw new PlatformNotSupportedException("PCL");
 		}
 
 	    #endregion
 
 		#region PROPERTIES
 
-        public override bool CanRead { get { throw new NotImplementedException(); } }
+        public override bool CanRead { get { throw new PlatformNotSupportedException("PCL"); } }
 
-        public override bool CanSeek { get { throw new NotImplementedException(); } }
+        public override bool CanSeek { get { throw new PlatformNotSupportedException("PCL"); } }
 
-        public override bool CanWrite { get { throw new NotImplementedException(); } }
-        
-        public override long Length { get { throw new NotImplementedException(); } }
+        public override bool CanWrite { get { throw new PlatformNotSupportedException("PCL"); } }
 
-        public override long Position { get { throw new NotImplementedException(); } set { throw new NotImplementedException(); } }
+        public override long Length { get { throw new PlatformNotSupportedException("PCL"); } }
+
+	    public override long Position
+	    {
+	        get
+	        {
+	            throw new PlatformNotSupportedException("PCL");
+	        }
+	        set
+	        {
+	            throw new PlatformNotSupportedException("PCL");
+	        }
+	    }
+
+        public string Name { get { throw new PlatformNotSupportedException("PCL"); } }
         
         #endregion
 
 		#region METHODS
 
-        public override void Flush() { throw new NotImplementedException(); }
-        
-        public override int Read(byte[] buffer, int offset, int count) { throw new NotImplementedException(); }
-        
-        public override long Seek(long offset, SeekOrigin origin) { throw new NotImplementedException(); }
-        
-        public override void SetLength(long value) { throw new NotImplementedException(); }
-        
-        public override void Write(byte[] buffer, int offset, int count) { throw new NotImplementedException(); }
+        public override void Flush() { throw new PlatformNotSupportedException("PCL"); }
+
+        public override int Read(byte[] buffer, int offset, int count) { throw new PlatformNotSupportedException("PCL"); }
+
+        public override long Seek(long offset, SeekOrigin origin) { throw new PlatformNotSupportedException("PCL"); }
+
+        public override void SetLength(long value) { throw new PlatformNotSupportedException("PCL"); }
+
+        public override void Write(byte[] buffer, int offset, int count) { throw new PlatformNotSupportedException("PCL"); }
 
 		#endregion
 	}

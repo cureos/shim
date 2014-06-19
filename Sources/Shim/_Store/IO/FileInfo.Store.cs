@@ -21,14 +21,21 @@
 
 namespace System.IO
 {
-    // TODO Real implementation!!!
     public sealed class FileInfo
     {
+        #region FIELDS
+
+        private static readonly object locker = new object();
+
+        private string fileName;
+
+        #endregion
+
         #region CONSTRUCTORS
 
         public FileInfo(string fileName)
         {
-            throw new PlatformNotSupportedException("PCL");
+            this.fileName = fileName;
         }
         
         #endregion
@@ -39,7 +46,7 @@ namespace System.IO
         {
             get
             {
-                throw new PlatformNotSupportedException("PCL");
+                return this.fileName;
             }
         }
 
@@ -48,7 +55,7 @@ namespace System.IO
         {
             get
             {
-                throw new PlatformNotSupportedException("PCL");
+                return Path.GetFileName(this.fileName);
             }
         }
 
@@ -57,7 +64,7 @@ namespace System.IO
         {
             get
             {
-                throw new PlatformNotSupportedException("PCL");
+                return Path.GetDirectoryName(this.fileName);
             }
         }
 
@@ -66,8 +73,13 @@ namespace System.IO
         {
             get
             {
-                throw new PlatformNotSupportedException("PCL");
+                return File.Exists(this.fileName);
             }
+        }
+
+        public DirectoryInfo Directory
+        {
+            get { return new DirectoryInfo(this.DirectoryName); }
         }
 
         #endregion
@@ -76,29 +88,33 @@ namespace System.IO
 
         public void Delete()
         {
-            throw new PlatformNotSupportedException("PCL");
+            File.Delete(this.fileName);
         }
 
         public FileStream Create()
         {
-            throw new PlatformNotSupportedException("PCL");
+            return new FileStream(this.fileName, FileMode.Create, FileAccess.ReadWrite, FileShare.None);
         }
 
         public FileStream OpenRead()
         {
-            throw new PlatformNotSupportedException("PCL");
+            return File.OpenRead(this.fileName);
         }
 
         public FileStream OpenWrite()
         {
-            throw new PlatformNotSupportedException("PCL");
+            return File.OpenWrite(this.fileName);
         }
 
         public void MoveTo(string destFileName)
         {
-            throw new PlatformNotSupportedException("PCL");
+            lock (locker)
+            {
+                File.Move(this.fileName, destFileName);
+                this.fileName = destFileName;
+            }
         }
-        
+
         #endregion
     }
 }

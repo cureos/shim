@@ -50,8 +50,11 @@
     <Compile Include="Collections\Generic\ListExtensions.cs" />
     <Compile Include="Console.cs" />
     <Compile Include="ComponentModel\DataAnnotations\RangeAttribute.cs" />
+    <Compile Include="IO\ShimPath.cs" />
+    <Compile Include="Reflection\BindingFlags.cs" />
     <Compile Include="ShimEnvironment.cs" />
     <Compile Include="Reflection\ShimAssembly.cs" />
+    <Compile Include="TypeExtensions.cs" />
     <Compile Include="UriFormatException.cs" />
     <Compile Include="ApplicationException.cs" />
     <Compile Include="Collections\Concurrent\ConcurrentBag.cs" />

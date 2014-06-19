@@ -24,115 +24,193 @@ using Windows.Storage;
 
 namespace System.IO
 {
-	public sealed class FileStream : Stream
-	{
-		#region FIELDS
+    public sealed class FileStream : Stream
+    {
+        #region FIELDS
 
-		private Stream _internalStream;
-		private bool _disposed = false;
+        private Stream _internalStream;
+        private bool _disposed = false;
 
-		#endregion
-		
-		#region CONSTRUCTORS
+        #endregion
+        
+        #region CONSTRUCTORS
 
-		public FileStream(string path, FileMode mode) : this(path, mode, FileAccess.ReadWrite, FileShare.Read)
-		{
-		}
+        public FileStream(string path, FileMode mode) : this(path, mode, FileAccess.ReadWrite, FileShare.Read)
+        {
+        }
 
-		public FileStream(string path, FileMode mode, FileAccess access, FileShare share) 
-		{
-			switch (access)
-			{
-				case FileAccess.ReadWrite:
-				case FileAccess.Write:
-					_internalStream = Task.Run(async () =>
-					{
-						var storageFile = await StorageFile.GetFileFromPathAsync(path);
-						return await storageFile.OpenStreamForWriteAsync();
-					}).Result;
-					break;
-				case FileAccess.Read:
-					_internalStream = Task.Run(async () =>
-					{
-						var storageFile = await StorageFile.GetFileFromPathAsync(path);
-						return await storageFile.OpenStreamForReadAsync();
-					}).Result;
-					break;
-				default:
-					throw new ArgumentException("Unsupported file access type", "access");
-			}
-		}
+        public FileStream(string path, FileMode mode, FileAccess access)
+            : this(path, mode, access, FileShare.Read)
+        {
+        }
 
-		#endregion
+        public FileStream(string name, FileMode mode, FileAccess access, FileShare share)
+        {
+            try
+            {
+                _internalStream = Task.Run(async () =>
+                {
+                    StorageFile file;
+                    Stream stream;
+                    long position;
+                    switch (mode)
+                    {
+                        case FileMode.Create:
+                        case FileMode.Truncate:
+                            file = await FileHelper.CreateStorageFileAsync(name);
+                            position = 0;
+                            break;
+                        case FileMode.CreateNew:
+                            if (File.Exists(name))
+                                throw new IOException("File mode is CreateNew, but file already exists.");
+                            file = await FileHelper.CreateStorageFileAsync(name);
+                            position = 0;
+                            break;
+                        case FileMode.OpenOrCreate:
+                            if (File.Exists(name))
+                            {
+                                file = await FileHelper.GetStorageFileAsync(name);
+                            }
+                            else
+                            {
+                                file = await FileHelper.CreateStorageFileAsync(name);
+                            }
+                            position = 0;
+                            break;
+                        case FileMode.Open:
+                            if (!File.Exists(name))
+                                throw new FileNotFoundException("File mode is Open, but file does not exist.");
+                            file = await FileHelper.GetStorageFileAsync(name);
+                            position = 0;
+                            break;
+                        case FileMode.Append:
+                            if (File.Exists(name))
+                            {
+                                file = await FileHelper.GetStorageFileAsync(name);
+                                position = (long)(await file.GetBasicPropertiesAsync()).Size;
+                            }
+                            else
+                            {
+                                file = await FileHelper.CreateStorageFileAsync(name);
+                                position = 0;
+                            }
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException("mode");
+                    }
+                    switch (access)
+                    {
+                        case FileAccess.ReadWrite:
+                        case FileAccess.Write:
+                            stream = await file.OpenStreamForWriteAsync();
+                            break;
+                        case FileAccess.Read:
+                            stream = await file.OpenStreamForReadAsync();
+                            break;
+                        default:
+                            throw new ArgumentException("Unsupported file access type", "access");
+                    }
+                    stream.Seek(position, SeekOrigin.Begin);
+                    return stream;
+                }).Result;
 
-		#region PROPERTIES
+                _disposed = false;
+                Name = name;
+            }
+            catch
+            {
+                _internalStream = null;
+                _disposed = true;
+                Name = String.Empty;
+            }
+        }
 
-		public override bool CanRead
-		{
-			get { return _internalStream.CanRead; }
-		}
+        #endregion
 
-		public override bool CanSeek
-		{
-			get { return _internalStream.CanSeek; }
-		}
+        #region PROPERTIES
 
-		public override bool CanWrite
-		{
-			get { return _internalStream.CanWrite; }
-		}
+        public override bool CanRead
+        {
+            get { return _internalStream.CanRead; }
+        }
 
-		public override long Length
-		{
-			get { return _internalStream.Length; }
-		}
+        public override bool CanSeek
+        {
+            get { return _internalStream.CanSeek; }
+        }
 
-		public override long Position
-		{
-			get { return _internalStream.Position; }
-			set { _internalStream.Position = value; }
-		}
+        public override bool CanWrite
+        {
+            get { return _internalStream.CanWrite; }
+        }
 
-		#endregion
+        public override long Length
+        {
+            get { return _internalStream.Length; }
+        }
 
-		#region METHODS
+        public override long Position
+        {
+            get { return _internalStream.Position; }
+            set { _internalStream.Position = value; }
+        }
 
-		public override void Flush()
-		{
-			_internalStream.Flush();
-		}
+        public string Name { get; private set; }
 
-		public override int Read(byte[] buffer, int offset, int count)
-		{
-			return _internalStream.Read(buffer, offset, count);
-		}
+        #endregion
 
-		public override long Seek(long offset, SeekOrigin origin)
-		{
-			return _internalStream.Seek(offset, origin);
-		}
+        #region METHODS
 
-		public override void SetLength(long value)
-		{
-			_internalStream.SetLength(value);
-		}
+        public override void Flush()
+        {
+            _internalStream.Flush();
+        }
 
-		public override void Write(byte[] buffer, int offset, int count)
-		{
-			_internalStream.Write(buffer, offset, count);
-		}
+        public override int Read(byte[] buffer, int offset, int count)
+        {
+            return _internalStream.Read(buffer, offset, count);
+        }
 
-		protected override void Dispose(bool disposing)
-		{
-			if (_disposed) return;
+        public override long Seek(long offset, SeekOrigin origin)
+        {
+            return _internalStream.Seek(offset, origin);
+        }
 
-			_internalStream.Dispose();
-			_internalStream = null;
+        public override void SetLength(long value)
+        {
+            _internalStream.SetLength(value);
+        }
 
-			base.Dispose(disposing);
-			_disposed = true;
-		}
+        public override void Write(byte[] buffer, int offset, int count)
+        {
+            _internalStream.Write(buffer, offset, count);
+        }
 
-		#endregion
-	}
+        protected override void Dispose(bool disposing)
+        {
+            if (_disposed) return;
+
+            _internalStream.Dispose();
+            _internalStream = null;
+
+            base.Dispose(disposing);
+            _disposed = true;
+        }
+
+        private static FileAccessMode GetFileAccessMode(FileAccess access)
+        {
+            switch (access)
+            {
+                case FileAccess.Read:
+                    return FileAccessMode.Read;
+                case FileAccess.ReadWrite:
+                case FileAccess.Write:
+                    return FileAccessMode.ReadWrite;
+                default:
+                    throw new ArgumentOutOfRangeException("access");
+            }
+        }
+
+        #endregion
+    }
 }

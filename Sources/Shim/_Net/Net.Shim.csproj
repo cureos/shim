@@ -58,6 +58,9 @@
     <Compile Include="..\IO\BinaryWriterExtensions.cs">
       <Link>IO\BinaryWriterExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\IO\ShimPath.cs">
+      <Link>IO\ShimPath.cs</Link>
+    </Compile>
     <Compile Include="..\IO\TextReaderExtensions.cs">
       <Link>IO\TextReaderExtensions.cs</Link>
     </Compile>
@@ -73,9 +76,12 @@
     <Compile Include="..\Reflection\ShimAssembly.cs">
       <Link>Reflection\ShimAssembly.cs</Link>
     </Compile>
+    <Compile Include="..\TypeExtensions.cs">
+      <Link>TypeExtensions.cs</Link>
+    </Compile>
     <Compile Include="IO\StreamExtensions.Net.cs" />
     <Compile Include="ShimEnvironment.Net.cs" />
-    <Compile Include="TypeForwarding.cs" />
+    <Compile Include="TypeForwarding.Net.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\LICENSE">

@@ -103,6 +103,11 @@ namespace System.IO
         {
         }
 
+        public static FileStream Open(string path, FileMode mode, FileAccess access)
+        {
+            return new FileStream(path, mode, access);
+        }
+
         public static FileStream OpenRead(string path)
 		{
 			return new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);

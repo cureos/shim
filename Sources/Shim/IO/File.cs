@@ -65,6 +65,11 @@ namespace System.IO
             throw new PlatformNotSupportedException("PCL");
         }
 
+        public static FileStream Open(string path, FileMode mode, FileAccess access)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
         public static FileStream OpenRead(string path)
 		{
             throw new PlatformNotSupportedException("PCL");

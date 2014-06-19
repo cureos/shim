@@ -23,6 +23,7 @@ using System;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
@@ -47,6 +48,10 @@ using System.Threading;
 // System.Net.Sockets
 [assembly: TypeForwardedTo(typeof(SocketError))]
 [assembly: TypeForwardedTo(typeof(SocketException))]
+
+// System.Reflection
+[assembly: TypeForwardedTo(typeof(BindingFlags))]
+[assembly: TypeForwardedTo(typeof(TargetException))]
 
 // System.Runtime.InteropServices
 [assembly: TypeForwardedTo(typeof(GCHandle))]

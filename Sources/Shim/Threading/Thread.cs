@@ -21,14 +21,40 @@
 
 namespace System.Threading
 {
+    using System.Threading.Tasks;
+
+    #region DELEGATES
+
     public delegate void ThreadStart();
+
+    public delegate void ParameterizedThreadStart(object obj);
+
+    #endregion 
 
     public sealed class Thread
     {
+        #region FIELDS
+
+        private readonly ThreadStart start;
+        private readonly ParameterizedThreadStart parameterizedStart;
+        private Task task;
+
+        #endregion
+
         #region CONSTRUCTORS
 
         public Thread(ThreadStart start)
         {
+            this.start = start;
+            this.parameterizedStart = null;
+            this.task = null;
+        }
+
+        public Thread(ParameterizedThreadStart start)
+        {
+            this.start = null;
+            this.parameterizedStart = start;
+            this.task = null;
         }
 
         #endregion
@@ -37,13 +63,22 @@ namespace System.Threading
 
         public string Name { get; set; }
 
+        public bool IsBackground { get; set; }
+
         #endregion
 
         #region METHODS
 
         public void Start()
         {
-            throw new NotImplementedException();
+            if (this.start == null) throw new InvalidOperationException("Parameter-less action not defined for this thread instance.");
+            this.task = Task.Run(new Action(this.start));
+        }
+
+        public void Start(object parameter)
+        {
+            if (this.parameterizedStart == null) throw new InvalidOperationException("Parameterized action not defined for this thread instance.");
+            this.task = Task.Run(() => this.parameterizedStart(parameter));
         }
 
         public void Join()
