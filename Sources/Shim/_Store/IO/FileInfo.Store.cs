@@ -42,6 +42,18 @@ namespace System.IO
 
         #region PROPERTIES
 
+        public FileAttributes Attributes
+        {
+            get
+            {
+                return File.GetAttributes(this.fileName);
+            }
+            set
+            {
+                File.SetAttributes(this.fileName, value);
+            }
+        }
+
         public string FullName
         {
             get

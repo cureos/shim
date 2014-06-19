@@ -34,6 +34,18 @@ namespace System.IO
 
         #region PROPERTIES
 
+        public FileAttributes Attributes
+        {
+            get
+            {
+                throw new PlatformNotSupportedException("PCL");
+            }
+            set
+            {
+                throw new PlatformNotSupportedException("PCL");
+            }
+        }
+
         public string FullName
         {
             get

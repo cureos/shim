@@ -41,6 +41,7 @@ using System.Threading;
 [assembly: TypeForwardedTo(typeof(FileInfo))]
 [assembly: TypeForwardedTo(typeof(FileMode))]
 [assembly: TypeForwardedTo(typeof(FileShare))]
+[assembly: TypeForwardedTo(typeof(FileStream))]
 
 // System.Net
 [assembly: TypeForwardedTo(typeof(IPAddress))]

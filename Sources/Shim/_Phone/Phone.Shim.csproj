@@ -110,9 +110,6 @@
     <Compile Include="..\IO\BinaryWriterExtensions.cs">
       <Link>IO\BinaryWriterExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\IO\FileStream.cs">
-      <Link>IO\FileStream.cs</Link>
-    </Compile>
     <Compile Include="..\IO\SearchOption.cs">
       <Link>IO\SearchOption.cs</Link>
     </Compile>
