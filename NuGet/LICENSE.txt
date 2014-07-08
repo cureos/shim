@@ -1,25 +1,25 @@
-    Shim.NET expands the ability to create Portable Class Libraries by 
-	providing reduced or dummy implementations of .NET Framework classes 
-	that are not represented in PCL.
-	
-    Copyright (C) 2013-2014  Anders Gustafsson, Cureos AB
+Shim.NET expands the ability to create Portable Class Libraries by 
+providing reduced or dummy implementations of .NET Framework classes 
+that are not represented in PCL.
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+Copyright (C) 2013-2014  Anders Gustafsson, Cureos AB
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-	For those interested in using Shim.NET without having to adhere to GPL, 
-	please contact the copyright holder of the Shim.NET assemblies at
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-		licenses@cureos.com
+For those interested in using Shim.NET without having to adhere to GPL, 
+please contact the copyright holder of the Shim.NET assemblies at
 
-	for commercial licensing alternatives.
+    licenses@cureos.com
+
+for commercial licensing alternatives.
