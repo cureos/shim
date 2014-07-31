@@ -1,9 +1,9 @@
-![CSShim](http://upload.wikimedia.org/wikipedia/en/f/fc/Shim.png)
+<img src="NuGet/csshim.png" alt="CSShim logo" height="72" />
 
 CSShim
 =======
 
-Copyright (c) 2013-2014 Anders Gustafsson, Cureos AB; licensed under General Public License (GPL) version 3.
+Copyright (c) 2013-1014 Anders Gustafsson, Cureos AB. Licensed under the General Public License version 3.<br />
 
 *CSShim* provides reduced or dummy implementations of .NET Framework types that are currently not represented in PCL, thereby expanding the ability to create Portable Class Libraries from legacy code.
 
