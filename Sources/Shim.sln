@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPA.Shim", "Shim\_WPA\WPA.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Touch.Shim", "Shim\_Touch\Touch.Shim.csproj", "{28B1CAEE-315F-4981-8476-C14B5EDD2BC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Droid.Shim", "Shim\_Droid\Droid.Shim.csproj", "{97E26603-22F0-4F43-8140-20B7D44A2893}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{28B1CAEE-315F-4981-8476-C14B5EDD2BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28B1CAEE-315F-4981-8476-C14B5EDD2BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28B1CAEE-315F-4981-8476-C14B5EDD2BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97E26603-22F0-4F43-8140-20B7D44A2893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97E26603-22F0-4F43-8140-20B7D44A2893}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97E26603-22F0-4F43-8140-20B7D44A2893}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97E26603-22F0-4F43-8140-20B7D44A2893}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
