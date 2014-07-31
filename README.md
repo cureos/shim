@@ -1,4 +1,4 @@
-<img src="NuGet/csshim.png" alt="CSShim logo" height="72" />
+<img src="NuGet/csshim.png" alt="CSShim logo" height="108" />
 
 CSShim
 =======
