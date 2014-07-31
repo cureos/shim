@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Shim", "Shim\_Store\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPA.Shim", "Shim\_WPA\WPA.Shim.csproj", "{8464069A-34AD-49EE-AE4D-1213DF8BA2B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Touch.Shim", "Shim\_Touch\Touch.Shim.csproj", "{28B1CAEE-315F-4981-8476-C14B5EDD2BC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8464069A-34AD-49EE-AE4D-1213DF8BA2B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8464069A-34AD-49EE-AE4D-1213DF8BA2B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8464069A-34AD-49EE-AE4D-1213DF8BA2B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28B1CAEE-315F-4981-8476-C14B5EDD2BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28B1CAEE-315F-4981-8476-C14B5EDD2BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28B1CAEE-315F-4981-8476-C14B5EDD2BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28B1CAEE-315F-4981-8476-C14B5EDD2BC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
