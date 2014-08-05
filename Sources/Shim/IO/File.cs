@@ -50,7 +50,17 @@ namespace System.IO
             throw new PlatformNotSupportedException("PCL");
         }
 
+        public static string[] ReadAllLines(string path)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
         public static void WriteAllBytes(string path, byte[] bytes)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        public static void WriteAllText(string path, string contents)
         {
             throw new PlatformNotSupportedException("PCL");
         }

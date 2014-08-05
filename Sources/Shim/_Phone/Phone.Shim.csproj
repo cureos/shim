@@ -125,11 +125,17 @@
     <Compile Include="..\Net\HttpWebRequestExtensions.cs">
       <Link>Net\HttpWebRequestExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\Net\WebRequestExtensions.cs">
+      <Link>Net\WebRequestExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Net\IWebProxy.cs">
       <Link>Net\IWebProxy.cs</Link>
     </Compile>
     <Compile Include="..\Net\Security\SslPolicyErrors.cs">
       <Link>Net\Security\SslPolicyErrors.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\WebResponseExtensions.cs">
+      <Link>Net\WebResponseExtensions.cs</Link>
     </Compile>
     <Compile Include="..\NonSerializedAttribute.cs">
       <Link>NonSerializedAttribute.cs</Link>

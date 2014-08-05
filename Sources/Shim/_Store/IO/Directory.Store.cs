@@ -1,10 +1,23 @@
-﻿// Copyright (c) 2010-2013 Anders Gustafsson, Cureos AB.
-// This source is subject to the Microsoft Public License.
-// See http://www.microsoft.com/opensource/licenses.mspx#Ms-PL.
-// All other rights reserved.
-// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, 
-// EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED 
-// WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
+﻿/*
+ *  Copyright (c) 2013-2014, Cureos AB.
+ *  All rights reserved.
+ *  http://www.cureos.com
+ *
+ *	This file is part of CSShim.
+ *
+ *  CSShim is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  CSShim is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with CSShim.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +29,11 @@ namespace System.IO
 {
     public static class Directory
     {
-		#region FIELDS
+        #region FIELDS
 
-	    private const char DirectorySeparatorChar = '\\';
+        private const char DirectorySeparatorChar = '\\';
 
-	    #endregion
+        #endregion
 
         public static bool Exists(string path)
         {
@@ -35,37 +48,37 @@ namespace System.IO
             }
         }
 
-	    public static DirectoryInfo CreateDirectory(string path)
-	    {
-		    try
-		    {
-			    Task.Run(async () =>
-				                   {
-					                   var subFolders = new Stack<string>();
-					                   var root = Path.GetDirectoryName(path.TrimEnd(DirectorySeparatorChar) + DirectorySeparatorChar);
-					                   while (!String.IsNullOrEmpty(root) && !Exists(root))
-					                   {
-						                   subFolders.Push(root.Substring(root.LastIndexOf(DirectorySeparatorChar) + 1));
-						                   root = Path.GetDirectoryName(root);
-					                   }
-					                   if (String.IsNullOrEmpty(root))
-						                   throw new ArgumentException("Failed to identify an existing root folder.");
+        public static DirectoryInfo CreateDirectory(string path)
+        {
+            try
+            {
+                Task.Run(async () =>
+                                   {
+                                       var subFolders = new Stack<string>();
+                                       var root = Path.GetDirectoryName(path.TrimEnd(DirectorySeparatorChar) + DirectorySeparatorChar);
+                                       while (!String.IsNullOrEmpty(root) && !Exists(root))
+                                       {
+                                           subFolders.Push(root.Substring(root.LastIndexOf(DirectorySeparatorChar) + 1));
+                                           root = Path.GetDirectoryName(root);
+                                       }
+                                       if (String.IsNullOrEmpty(root))
+                                           throw new ArgumentException("Failed to identify an existing root folder.");
 
-					                   var rootFolder = await StorageFolder.GetFolderFromPathAsync(root);
-					                   while (subFolders.Count > 0)
-					                   {
-						                   rootFolder = await rootFolder.CreateFolderAsync(subFolders.Pop());
-					                   }
-				                   }).Wait();
-			    return new DirectoryInfo(path);
-		    }
-		    catch (Exception e)
-		    {
-			    throw e.InnerException ?? e;
-		    }
-	    }
+                                       var rootFolder = await StorageFolder.GetFolderFromPathAsync(root);
+                                       while (subFolders.Count > 0)
+                                       {
+                                           rootFolder = await rootFolder.CreateFolderAsync(subFolders.Pop());
+                                       }
+                                   }).Wait();
+                return new DirectoryInfo(path);
+            }
+            catch (Exception e)
+            {
+                throw e.InnerException ?? e;
+            }
+        }
 
-	    public static string[] GetDirectories(string path)
+        public static string[] GetDirectories(string path)
         {
             var folders = Task.Run(async () =>
                                              {
@@ -75,31 +88,36 @@ namespace System.IO
             return folders.Select(folder => folder.Name).ToArray();
         }
 
-	    public static string[] GetFiles(string path, string searchPattern = "*")
-	    {
-		    var files = Task.Run(async () =>
-			                               {
-				                               var folder = await GetStorageFolder(path);
-				                               var fileQuery =
-					                               folder.CreateFileQueryWithOptions(new QueryOptions
-						                                                                 {
-							                                                                 UserSearchFilter = searchPattern
-						                                                                 });
-				                               return await fileQuery.GetFilesAsync();
-			                               }).Result;
+        public static string[] GetFiles(string path, string searchPattern = "*")
+        {
+            var files = Task.Run(async () =>
+                                           {
+                                               var folder = await GetStorageFolder(path);
+                                               var fileQuery =
+                                                   folder.CreateFileQueryWithOptions(new QueryOptions
+                                                                                         {
+                                                                                             UserSearchFilter = searchPattern
+                                                                                         });
+                                               return await fileQuery.GetFilesAsync();
+                                           }).Result;
 
-		    return files.Select(file => file.Path).ToArray();
-	    }
+            return files.Select(file => file.Path).ToArray();
+        }
 
-	    /// <summary>
-		/// Get storage folder from specified directory path.
-		/// </summary>
-		/// <param name="path">Directory path.</param>
-		/// <returns>Storage folder (task) for specified directory path.</returns>
-		private static async Task<StorageFolder> GetStorageFolder(string path)
-		{
-			var directoryName = Path.GetDirectoryName(path.TrimEnd(DirectorySeparatorChar) + DirectorySeparatorChar);
-			return await StorageFolder.GetFolderFromPathAsync(directoryName);
-		}
+        public static void Move(string sourceDirName, string destDirName)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Get storage folder from specified directory path.
+        /// </summary>
+        /// <param name="path">Directory path.</param>
+        /// <returns>Storage folder (task) for specified directory path.</returns>
+        private static async Task<StorageFolder> GetStorageFolder(string path)
+        {
+            var directoryName = Path.GetDirectoryName(path.TrimEnd(DirectorySeparatorChar) + DirectorySeparatorChar);
+            return await StorageFolder.GetFolderFromPathAsync(directoryName);
+        }
     }
 }

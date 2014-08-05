@@ -27,6 +27,12 @@ namespace System.IO
 
     public static class ShimPath
     {
+        #region FIELDS
+
+        public static readonly char PathSeparator = '\\';
+        
+        #endregion
+
         #region METHODS
 
         public static string GetTempPath()

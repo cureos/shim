@@ -70,6 +70,12 @@
     <Compile Include="..\Net\HttpWebRequestExtensions.cs">
       <Link>Net\HttpWebRequestExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\Net\WebRequestExtensions.cs">
+      <Link>Net\WebRequestExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\WebResponseExtensions.cs">
+      <Link>Net\WebResponseExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>

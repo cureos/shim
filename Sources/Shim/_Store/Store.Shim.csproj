@@ -132,6 +132,9 @@
     <Compile Include="..\Net\HttpWebRequestExtensions.cs">
       <Link>Net\HttpWebRequestExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\Net\WebRequestExtensions.cs">
+      <Link>Net\WebRequestExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Net\IPAddress.cs">
       <Link>Net\IPAddress.cs</Link>
     </Compile>
@@ -143,6 +146,9 @@
     </Compile>
     <Compile Include="..\Net\Sockets\SocketException.cs">
       <Link>Net\Sockets\SocketException.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\WebResponseExtensions.cs">
+      <Link>Net\WebResponseExtensions.cs</Link>
     </Compile>
     <Compile Include="..\NonSerializedAttribute.cs">
       <Link>NonSerializedAttribute.cs</Link>

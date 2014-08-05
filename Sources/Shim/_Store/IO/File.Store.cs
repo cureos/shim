@@ -86,12 +86,22 @@ namespace System.IO
             }
         }
 
+        public static string[] ReadAllLines(string path)
+        {
+            throw new NotImplementedException();
+        }
+
         public static void WriteAllBytes(string path, byte[] bytes)
         {
             using (var stream = new FileStream(path, FileMode.Create))
             {
                 stream.Write(bytes, 0, bytes.Length);
             }
+        }
+
+        public static void WriteAllText(string path, string contents)
+        {
+            throw new NotImplementedException();
         }
 
         public static FileAttributes GetAttributes(string path)

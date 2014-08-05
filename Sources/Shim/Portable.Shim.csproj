@@ -51,6 +51,8 @@
     <Compile Include="Console.cs" />
     <Compile Include="ComponentModel\DataAnnotations\RangeAttribute.cs" />
     <Compile Include="IO\ShimPath.cs" />
+    <Compile Include="Net\HttpWebRequestExtensions.cs" />
+    <Compile Include="Net\WebResponseExtensions.cs" />
     <Compile Include="Reflection\BindingFlags.cs" />
     <Compile Include="ShimEnvironment.cs" />
     <Compile Include="Reflection\ShimAssembly.cs" />
@@ -89,7 +91,7 @@
     <Compile Include="IO\FileStream.cs" />
     <Compile Include="IO\SearchOption.cs" />
     <Compile Include="IO\StreamExtensions.cs" />
-    <Compile Include="Net\HttpWebRequestExtensions.cs" />
+    <Compile Include="Net\WebRequestExtensions.cs" />
     <Compile Include="Net\IPAddress.cs" />
     <Compile Include="Net\IWebProxy.cs" />
     <Compile Include="Net\Security\SslPolicyErrors.cs" />

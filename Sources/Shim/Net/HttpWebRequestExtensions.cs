@@ -1,4 +1,4 @@
-﻿/*
+/*
  *  Copyright (c) 2013-2014, Cureos AB.
  *  All rights reserved.
  *  http://www.cureos.com
@@ -21,29 +21,8 @@
 
 namespace System.Net
 {
-    public static class HttpWebRequestExtensions
+    static internal class HttpWebRequestExtensions
     {
-        public static void SetConnectionGroupName(this HttpWebRequest request, string groupName)
-        {
-#if DOTNET
-            request.ConnectionGroupName = groupName;
-#endif
-        }
-
-        public static void SetProxy(this HttpWebRequest request, IWebProxy proxy)
-        {
-#if DOTNET
-            request.Proxy = proxy;
-#endif
-        }
-
-        public static void SetTimeout(this HttpWebRequest request, int timeout)
-        {
-#if DOTNET
-            request.Timeout = timeout;
-#endif
-        }
-
         public static void SetUserAgent(this HttpWebRequest request, string userAgent)
         {
 #if DOTNET

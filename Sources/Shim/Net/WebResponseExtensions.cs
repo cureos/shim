@@ -19,28 +19,13 @@
  *  along with CSShim.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace System.IO
+namespace System.Net
 {
-    public static class Directory
+    public static class WebResponseExtensions
     {
-        public static bool Exists(string path)
+        public static void Close(this WebResponse webResponse)
         {
-            throw new PlatformNotSupportedException("PCL");
-        }
-
-	    public static DirectoryInfo CreateDirectory(string path)
-	    {
-            throw new PlatformNotSupportedException("PCL");
-        }
-
-	    public static string[] GetDirectories(string path)
-        {
-            throw new PlatformNotSupportedException("PCL");
-        }
-
-        public static void Move(string sourceDirName, string destDirName)
-        {
-            throw new PlatformNotSupportedException("PCL");
+            webResponse.Dispose();
         }
     }
 }
