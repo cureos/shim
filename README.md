@@ -16,6 +16,9 @@ Usage
 * .NET Framework 4.5 and later
 * Windows 8 and later (f.k.a. *Windows Store* or *Metro* applications)
 * Windows Phone (Silverlight) 8.0 and later
+* Windows Phone 8.1
+* Xamarin.iOS
+* Xamarin.Android (API Level 7, version 2.1)
 
 Use *NuGet* to include [CSShim](https://www.nuget.org/packages/shim) assemblies in your application.
 
