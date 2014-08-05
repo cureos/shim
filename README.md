@@ -3,7 +3,7 @@
 CSShim
 =======
 
-Copyright (c) 2013-1014 Anders Gustafsson, Cureos AB. Licensed under the General Public License version 3.<br />
+Copyright (c) 2013-1014 Anders Gustafsson, Cureos AB. Licensed under GNU Lesser General Public License version 3.<br />
 
 *CSShim* provides reduced or dummy implementations of .NET Framework types that are currently not represented in PCL, thereby expanding the ability to create Portable Class Libraries from legacy code.
 
@@ -23,8 +23,8 @@ Use *NuGet* to include [CSShim](https://www.nuget.org/packages/shim) assemblies 
 Notes on commercial use
 -----------------------
 
-The *CSShim* assemblies are published under the General Public License, version 3.
-For those interested in using the *CSShim* assemblies without having to adhere to GPL, please contact the copyright holder at
+The *CSShim* assemblies are published under GNU Lesser General Public License, version 3.
+For those interested in using the *CSShim* assemblies without having to adhere to LGPL, please contact the copyright holder at
 
 licenses@cureos.com
 
