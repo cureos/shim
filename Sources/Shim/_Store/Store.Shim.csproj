@@ -39,6 +39,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AppDomain.cs">
+      <Link>AppDomain.cs</Link>
+    </Compile>
     <Compile Include="..\ApplicationException.cs">
       <Link>ApplicationException.cs</Link>
     </Compile>
@@ -86,6 +89,9 @@
     </Compile>
     <Compile Include="..\DBNull.cs">
       <Link>DBNull.cs</Link>
+    </Compile>
+    <Compile Include="..\Diagnostics\Process.cs">
+      <Link>Diagnostics\Process.cs</Link>
     </Compile>
     <Compile Include="..\Diagnostics\Trace.cs">
       <Link>Diagnostics\Trace.cs</Link>
@@ -158,6 +164,9 @@
     </Compile>
     <Compile Include="..\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Reflection\AssemblyExtensions.cs">
+      <Link>Reflection\AssemblyExtensions.cs</Link>
     </Compile>
     <Compile Include="..\Reflection\BindingFlags.cs">
       <Link>Reflection\BindingFlags.cs</Link>

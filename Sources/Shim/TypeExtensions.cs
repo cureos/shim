@@ -46,6 +46,11 @@ namespace System
             return type.GetTypeInfo().IsSubclassOf(c);
         }
 
+        public static bool IsInstanceOfType(this Type type, object o)
+        {
+            return o.GetType() == type || o.GetType().GetTypeInfo().IsSubclassOf(type);
+        }
+
         public static MethodInfo GetMethod(this Type type, string name, BindingFlags bindingAttr)
         {
             return

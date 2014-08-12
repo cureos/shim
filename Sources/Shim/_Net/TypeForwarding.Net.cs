@@ -41,6 +41,7 @@ using System.Threading.Tasks;
 using System.Timers;
 
 // System
+[assembly: TypeForwardedTo(typeof(AppDomain))]
 [assembly: TypeForwardedTo(typeof(ApplicationException))]
 [assembly: TypeForwardedTo(typeof(Converter<,>))]
 [assembly: TypeForwardedTo(typeof(DBNull))]
@@ -73,6 +74,7 @@ using System.Timers;
 [assembly: TypeForwardedTo(typeof(DataView))]
 
 // System.Diagnostics
+[assembly: TypeForwardedTo(typeof(Process))]
 [assembly: TypeForwardedTo(typeof(Trace))]
 
 // System.IO

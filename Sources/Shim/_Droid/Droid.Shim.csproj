@@ -79,6 +79,9 @@
     <Compile Include="..\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="..\Reflection\AssemblyExtensions.cs">
+      <Link>Reflection\AssemblyExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Reflection\ShimAssembly.cs">
       <Link>Reflection\ShimAssembly.cs</Link>
     </Compile>

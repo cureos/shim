@@ -61,6 +61,14 @@ namespace System.Threading
 
         #region PROPERTIES
 
+        public static Thread CurrentThread
+        {
+            get
+            {
+                throw new PlatformNotSupportedException("PCL");
+            }
+        }
+
         public string Name { get; set; }
 
         public bool IsBackground { get; set; }
@@ -83,17 +91,17 @@ namespace System.Threading
 
         public void Join()
         {
-            throw new NotImplementedException();
+            throw new PlatformNotSupportedException("PCL");
         }
 
         public bool Join(int millisecondsTimeout)
         {
-            throw new NotImplementedException();
+            throw new PlatformNotSupportedException("PCL");
         }
 
         public void Abort()
         {
-            throw new NotImplementedException();
+            throw new PlatformNotSupportedException("PCL");
         }
 
         public static void Sleep(int millisecondsTimeout)

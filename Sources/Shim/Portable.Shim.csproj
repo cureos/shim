@@ -47,12 +47,15 @@
     <None Include="Shim.snk" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppDomain.cs" />
     <Compile Include="Collections\Generic\ListExtensions.cs" />
     <Compile Include="Console.cs" />
     <Compile Include="ComponentModel\DataAnnotations\RangeAttribute.cs" />
+    <Compile Include="Diagnostics\Process.cs" />
     <Compile Include="IO\ShimPath.cs" />
     <Compile Include="Net\HttpWebRequestExtensions.cs" />
     <Compile Include="Net\WebResponseExtensions.cs" />
+    <Compile Include="Reflection\AssemblyExtensions.cs" />
     <Compile Include="Reflection\BindingFlags.cs" />
     <Compile Include="ShimEnvironment.cs" />
     <Compile Include="Reflection\ShimAssembly.cs" />
