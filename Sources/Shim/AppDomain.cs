@@ -46,7 +46,7 @@ namespace System
 
         #region PROPERTIES
 
-        public AppDomain CurrentDomain
+        public static AppDomain CurrentDomain
         {
             get
             {

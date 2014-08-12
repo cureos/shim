@@ -25,7 +25,7 @@ namespace System.Reflection
     {
         #region METHODS
 
-        public static object CreateInstance(Assembly assembly, string name)
+        public static object CreateInstance(this Assembly assembly, string name)
         {
 #if DOTNET
             return assembly.CreateInstance(name);
