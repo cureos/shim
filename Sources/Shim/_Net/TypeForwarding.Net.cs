@@ -43,6 +43,7 @@ using System.Timers;
 // System
 [assembly: TypeForwardedTo(typeof(AppDomain))]
 [assembly: TypeForwardedTo(typeof(ApplicationException))]
+[assembly: TypeForwardedTo(typeof(Console))]
 [assembly: TypeForwardedTo(typeof(Converter<,>))]
 [assembly: TypeForwardedTo(typeof(DBNull))]
 [assembly: TypeForwardedTo(typeof(ICloneable))]

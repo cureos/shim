@@ -30,6 +30,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 
 // System
+[assembly: TypeForwardedTo(typeof(Console))]
 [assembly: TypeForwardedTo(typeof(DBNull))]
 
 // System.IO
