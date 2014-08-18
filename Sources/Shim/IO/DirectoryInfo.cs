@@ -54,7 +54,12 @@ namespace System.IO
             // TODO Is it an issue that the CreateDirectory method creates another DirectoryInfo?
 			Directory.CreateDirectory(_path);
 		}
- 
-		#endregion
+
+	    public FileInfo[] GetFiles()
+	    {
+	        throw new NotImplementedException();
+	    }
+
+	    #endregion
 	}
 }

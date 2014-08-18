@@ -29,12 +29,12 @@ namespace System.Runtime.Serialization.Formatters.Binary
 
         public object Deserialize(Stream serializationStream)
         {
-            throw new NotImplementedException();
+            throw new PlatformNotSupportedException("PCL");
         }
 
         public void Serialize(Stream serializationStream, object graph)
         {
-            throw new NotImplementedException();
+            throw new PlatformNotSupportedException("PCL");
         }
 
         #endregion

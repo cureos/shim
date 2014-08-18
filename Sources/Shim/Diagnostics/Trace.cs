@@ -27,27 +27,27 @@ namespace System.Diagnostics
 
         public static void Write(string message)
         {
-            Debug.WriteLine(message);
+            Console.Write(message);
         }
 
         public static void WriteLine(string message)
         {
-            Debug.WriteLine(message);
+            Console.WriteLine(message);
         }
 
         public static void TraceWarning(string message)
         {
-            Debug.WriteLine(message);
-        }
-
-        public static void Assert(bool condition)
-        {
-            Debug.Assert(condition);
+            Console.WriteLine(message);
         }
 
         public static void TraceInformation(string format, params object[] args)
         {
-            Debug.WriteLine(format, args);
+            Console.WriteLine(format, args);
+        }
+
+        public static void Assert(bool condition)
+        {
+            if (!condition) throw new InvalidOperationException("Assertion condition false");
         }
         
         #endregion

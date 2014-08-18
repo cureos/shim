@@ -23,11 +23,24 @@ namespace System.Diagnostics
 {
     public sealed class Process
     {
+        #region FIELDS
+
+        private static readonly Process _currentProcess;
+
+        private IntPtr _processorAffinity;
+
+        #endregion
+
         #region CONSTRUCTORS
+
+        static Process()
+        {
+            _currentProcess = new Process();
+        }
 
         public Process()
         {
-            throw new PlatformNotSupportedException("PCL");
+            _processorAffinity = new IntPtr((1 << Environment.ProcessorCount) - 1);
         }
 
         #endregion
@@ -37,11 +50,11 @@ namespace System.Diagnostics
         public IntPtr ProcessorAffinity {
             get
             {
-                throw new PlatformNotSupportedException("PCL");
+                return _processorAffinity;
             }
             set
             {
-                throw new PlatformNotSupportedException("PCL");
+                _processorAffinity = value;
             }
         }
 
@@ -51,7 +64,7 @@ namespace System.Diagnostics
 
         public static Process GetCurrentProcess()
         {
-            throw new PlatformNotSupportedException("PCL");
+            return _currentProcess;
         }
 
         #endregion

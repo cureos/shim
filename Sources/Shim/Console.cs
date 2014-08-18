@@ -25,11 +25,30 @@ namespace System
 
     public static class Console
     {
+        #region FIELDS
+
+        private static readonly TextWriter _error;
+        private static readonly TextWriter _out;
+
+        #endregion
+
+        #region CONSTRUCTORS
+
+        static Console()
+        {
+            _error = new StringWriter();
+            _out = new StringWriter();
+        }
+
+        #endregion
+
+        #region PROPERTIES
+
         public static TextWriter Error
         {
             get
             {
-                throw new PlatformNotSupportedException("PCL");
+                return _error;
             }
         }
 
@@ -37,18 +56,44 @@ namespace System
         {
             get
             {
-                throw new PlatformNotSupportedException("PCL");
+                return _out;
             }
+        }
+
+        #endregion
+
+        #region METHODS
+
+        public static void Write(char value)
+        {
+            _out.Write(value);
+        }
+
+        public static void Write(string value)
+        {
+            _out.Write(value);
+        }
+
+        public static void Write(int value)
+        {
+            _out.Write(value);
         }
 
         public static void WriteLine()
         {
-            throw new PlatformNotSupportedException("PCL");
+            _out.WriteLine();
+        }
+
+        public static void WriteLine(char value)
+        {
+            _out.WriteLine(value);
         }
 
         public static void WriteLine(string format, params object[] arg)
         {
-            throw new PlatformNotSupportedException("PCL");
+            _out.WriteLine(format, arg);
         }
+
+        #endregion
     }
 }
