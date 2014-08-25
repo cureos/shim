@@ -21,7 +21,7 @@
 
 namespace System.Net
 {
-    static internal class HttpWebRequestExtensions
+    static public class HttpWebRequestExtensions
     {
         public static void SetUserAgent(this HttpWebRequest request, string userAgent)
         {
