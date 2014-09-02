@@ -27,7 +27,7 @@ namespace System.Reflection
 
         public static object CreateInstance(this Assembly assembly, string name)
         {
-#if DOTNET
+#if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
             return assembly.CreateInstance(name);
 #else
             throw new PlatformNotSupportedException("PCL");
