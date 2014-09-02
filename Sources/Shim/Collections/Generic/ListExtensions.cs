@@ -21,13 +21,17 @@
 
 namespace System.Collections.Generic
 {
-	using System.Collections.ObjectModel;
+    using System.Collections.ObjectModel;
 
-	public static class ListExtensions
-	{
-		 public static ReadOnlyCollection<T> AsReadOnly<T>(this IList<T> list)
-		 {
-			 return new ReadOnlyCollection<T>(list);
-		 }
-	}
+    public static class ListExtensions
+    {
+         public static ReadOnlyCollection<T> AsReadOnly<T>(this IList<T> list)
+         {
+#if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
+             return list.AsReadOnly();
+#else
+             return new ReadOnlyCollection<T>(list);
+#endif
+         }
+    }
 }
