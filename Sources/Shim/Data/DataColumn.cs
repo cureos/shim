@@ -46,6 +46,8 @@ namespace System.Data
 
         public Type DataType { get; set; }
 
+        public int MaxLength { get; set; }
+
         public string ColumnName { get; set; }
 
         public string Caption

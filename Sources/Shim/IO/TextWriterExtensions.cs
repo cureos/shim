@@ -25,7 +25,11 @@ namespace System.IO
     {
          public static void Close(this TextWriter writer)
          {
+#if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
+             writer.Close();
+#else
              writer.Dispose();
+#endif
          }
     }
 }

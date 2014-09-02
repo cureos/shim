@@ -25,7 +25,11 @@ namespace System.IO
     {
          public static void Close(this TextReader reader)
          {
+#if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
+             reader.Close();
+#else
              reader.Dispose();
+#endif
          }
     }
 }
