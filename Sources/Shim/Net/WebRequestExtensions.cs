@@ -27,12 +27,20 @@ namespace System.Net
     {
         public static WebResponse GetResponse(this WebRequest request)
         {
+#if DOTNET
+            return request.GetResponse();
+#else
             return request.EndGetResponse(request.BeginGetResponse(null, null));
+#endif
         }
 
         public static Stream GetRequestStream(this WebRequest request)
         {
+#if DOTNET
+            return request.GetRequestStream();
+#else
             return request.EndGetRequestStream(request.BeginGetRequestStream(null, null));
+#endif
         }
 
         public static void SetConnectionGroupName(this WebRequest request, string groupName)

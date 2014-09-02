@@ -25,7 +25,11 @@ namespace System.Net
     {
         public static void Close(this WebResponse webResponse)
         {
+#if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
+            webResponse.Close();
+#else
             webResponse.Dispose();
+#endif
         }
     }
 }
