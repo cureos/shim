@@ -171,6 +171,9 @@
     <Compile Include="..\Reflection\AssemblyExtensions.cs">
       <Link>Reflection\AssemblyExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\Reflection\Binder.cs">
+      <Link>Reflection\Binder.cs</Link>
+    </Compile>
     <Compile Include="..\Reflection\BindingFlags.cs">
       <Link>Reflection\BindingFlags.cs</Link>
     </Compile>

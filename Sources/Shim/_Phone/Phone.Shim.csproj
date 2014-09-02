@@ -41,9 +41,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\AppDomain.cs">
-      <Link>AppDomain.cs</Link>
-    </Compile>
     <Compile Include="..\ApplicationException.cs">
       <Link>ApplicationException.cs</Link>
     </Compile>

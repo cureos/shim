@@ -107,6 +107,7 @@ using System.Timers;
 [assembly: TypeForwardedTo(typeof(TcpListener))]
 
 // System.Reflection
+[assembly: TypeForwardedTo(typeof(Binder))]
 [assembly: TypeForwardedTo(typeof(BindingFlags))]
 [assembly: TypeForwardedTo(typeof(TargetException))]
 

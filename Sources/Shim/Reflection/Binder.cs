@@ -21,15 +21,7 @@
 
 namespace System.Reflection
 {
-    [Flags]
-    public enum BindingFlags
+    public sealed class Binder
     {
-        DeclaredOnly = 0x02,
-		Instance = 0x0004,
-        Static = 0x0008,
-        NonPublic = 0x0010,
-        Public = 0x0020,
-		
-		GetField = 0x0400
     }
 }

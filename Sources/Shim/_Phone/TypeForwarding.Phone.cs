@@ -30,6 +30,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 
 // System
+[assembly: TypeForwardedTo(typeof(AppDomain))]
 [assembly: TypeForwardedTo(typeof(Console))]
 [assembly: TypeForwardedTo(typeof(DBNull))]
 
@@ -52,6 +53,7 @@ using System.Threading;
 [assembly: TypeForwardedTo(typeof(SocketException))]
 
 // System.Reflection
+[assembly: TypeForwardedTo(typeof(Binder))]
 [assembly: TypeForwardedTo(typeof(BindingFlags))]
 [assembly: TypeForwardedTo(typeof(TargetException))]
 
