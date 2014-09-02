@@ -58,6 +58,9 @@
     <Compile Include="..\IO\ShimPath.cs">
       <Link>IO\ShimPath.cs</Link>
     </Compile>
+    <Compile Include="..\IO\StreamExtensions.cs">
+      <Link>IO\StreamExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\IO\TextReaderExtensions.cs">
       <Link>IO\TextReaderExtensions.cs</Link>
     </Compile>
@@ -85,7 +88,6 @@
     <Compile Include="..\TypeExtensions.cs">
       <Link>TypeExtensions.cs</Link>
     </Compile>
-    <Compile Include="IO\StreamExtensions.Net.cs" />
     <Compile Include="ShimEnvironment.Net.cs" />
     <Compile Include="TypeForwarding.Net.cs" />
   </ItemGroup>

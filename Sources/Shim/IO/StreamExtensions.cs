@@ -27,36 +27,55 @@ namespace System.IO
     {
         public static void Close(this Stream stream)
         {
+#if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
+            stream.Close();
+#else
             stream.Dispose();
+#endif
         }
 
         public static IAsyncResult BeginWrite(this Stream stream, byte[] buffer, int offset, int count,
                                               AsyncCallback callback, object state)
         {
-	        return
-		        new TaskFactory().StartNew(asyncState => stream.Write(buffer, offset, count), state)
-		                         .ContinueWith(task => callback(task));
+#if DOTNET || WINDOWS_PHONE
+            return stream.BeginWrite(buffer, offset, count, callback, state);
+#else
+            return
+                new TaskFactory().StartNew(asyncState => stream.Write(buffer, offset, count), state)
+                                 .ContinueWith(task => callback(task));
+#endif
         }
 
         public static void EndWrite(this Stream stream, IAsyncResult asyncResult)
         {
+#if DOTNET || WINDOWS_PHONE
+            stream.EndWrite(asyncResult);
+#endif
         }
 
-		public static IAsyncResult BeginRead(this Stream stream, byte[] buffer, int offset, int count,
-											  AsyncCallback callback, object state)
-		{
-			return new TaskFactory<int>().StartNew(asyncState => stream.Read(buffer, offset, count), state)
-			                             .ContinueWith(task =>
-				                                           {
-					                                           callback(task);
-					                                           return task.Result;
-				                                           });
-		}
+        public static IAsyncResult BeginRead(this Stream stream, byte[] buffer, int offset, int count,
+                                              AsyncCallback callback, object state)
+        {
+#if DOTNET || WINDOWS_PHONE
+            return stream.BeginRead(buffer, offset, count, callback, state);
+#else
+            return new TaskFactory<int>().StartNew(asyncState => stream.Read(buffer, offset, count), state)
+                                         .ContinueWith(task =>
+                                                           {
+                                                               callback(task);
+                                                               return task.Result;
+                                                           });
+#endif
+        }
 
-		public static int EndRead(this Stream stream, IAsyncResult asyncResult)
-		{
-			var task = asyncResult as Task<int>;
-			return task != null ? task.Result : 0;
-		}
-	}
+        public static int EndRead(this Stream stream, IAsyncResult asyncResult)
+        {
+#if DOTNET || WINDOWS_PHONE
+            return stream.EndRead(asyncResult);
+#else
+            var task = asyncResult as Task<int>;
+            return task != null ? task.Result : 0;
+#endif
+        }
+    }
 }
