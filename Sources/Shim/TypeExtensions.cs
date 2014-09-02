@@ -19,54 +19,97 @@
  *  License along with CSShim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Linq;
-using System.Reflection;
-
 namespace System
 {
+#if !DOTNET && !WINDOWS_PHONE
+    using System.Linq;
+#endif
+
+    using System.Reflection;
+    using System.Globalization;
+
     public static class TypeExtensions
     {
         public static bool IsEnum(this Type type)
         {
+#if DOTNET || WINDOWS_PHONE
+            return type.IsEnum;
+#else
             return type.GetTypeInfo().IsEnum;
+#endif
         }
 
         public static bool IsValueType(this Type type)
         {
+#if DOTNET || WINDOWS_PHONE
+            return type.IsValueType;
+#else
             return type.GetTypeInfo().IsValueType;
+#endif
         }
 
         public static bool IsAssignableFrom(this Type type, Type c)
         {
+#if DOTNET || WINDOWS_PHONE
+            return type.IsAssignableFrom(c);
+#else
             return type.GetTypeInfo().IsAssignableFrom(c.GetTypeInfo());
+#endif
         }
 
         public static bool IsSubclassOf(this Type type, Type c)
         {
+#if DOTNET || WINDOWS_PHONE
+            return type.IsSubclassOf(c);
+#else
             return type.GetTypeInfo().IsSubclassOf(c);
+#endif
         }
 
         public static bool IsInstanceOfType(this Type type, object o)
         {
+#if DOTNET || WINDOWS_PHONE
+            return type.IsInstanceOfType(o);
+#else
             return o.GetType() == type || o.GetType().GetTypeInfo().IsSubclassOf(type);
+#endif
         }
 
         public static MethodInfo GetMethod(this Type type, string name, BindingFlags bindingAttr)
         {
+#if DOTNET || WINDOWS_PHONE
+            return type.GetMethod(name, bindingAttr);
+#else
             return
                 type.GetRuntimeMethods()
                     .Where(mi => AreBindingFlagsMatching(mi, bindingAttr))
                     .SingleOrDefault(mi => mi.Name.Equals(name));
+#endif
         }
 
         public static FieldInfo[] GetFields(this Type type, BindingFlags bindingAttr)
         {
+#if DOTNET || WINDOWS_PHONE
+            return type.GetFields(bindingAttr);
+#else
             return
                 type.GetRuntimeFields()
                     .Where(fieldInfo => AreBindingFlagsMatching(fieldInfo, bindingAttr))
                     .ToArray();
+#endif
         }
 
+        public static object InvokeMember(this Type type, string name, BindingFlags invokeAttr, 
+            Binder binder, object target, object[] args, CultureInfo culture)
+        {
+#if DOTNET || WINDOWS_PHONE
+            return type.InvokeMember(name, invokeAttr, binder, target, args, culture);
+#else
+            throw new PlatformNotSupportedException("PCL");
+#endif
+        }
+
+#if !DOTNET && !WINDOWS_PHONE
         private static bool AreBindingFlagsMatching(MethodInfo methodInfo, BindingFlags bindingAttr)
         {
             var publicFlag = bindingAttr.HasFlag(BindingFlags.Public);
@@ -90,5 +133,6 @@ namespace System
             return ((fieldInfo.IsPublic && publicFlag) || (!fieldInfo.IsPublic && nonPublicFlag)) &&
                    ((fieldInfo.IsStatic && staticFlag) || (!fieldInfo.IsStatic && instanceFlag));
         }
+#endif
     }
 }
