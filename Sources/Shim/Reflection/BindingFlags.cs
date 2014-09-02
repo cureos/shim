@@ -24,12 +24,21 @@ namespace System.Reflection
     [Flags]
     public enum BindingFlags
     {
+        Default = 0x00,
+
+        IgnoreCase = 0x01,
         DeclaredOnly = 0x02,
-		Instance = 0x0004,
-        Static = 0x0008,
-        NonPublic = 0x0010,
-        Public = 0x0020,
-		
-		GetField = 0x0400
+        Instance = 0x04,
+        Static = 0x08,
+        Public = 0x10,
+        NonPublic = 0x20,
+        FlattenHierarchy = 0x40,
+
+        InvokeMethod = 0x0100,
+        CreateInstance = 0x0200,
+        GetField = 0x0400,
+        SetField = 0x0800,
+        GetProperty = 0x1000,
+        SetProperty = 0x2000
     }
 }
