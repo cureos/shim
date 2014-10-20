@@ -29,13 +29,13 @@ namespace System.Threading
 
         public Timer(TimerCallback callback)
         {
-            throw new PlatformNotSupportedException();
+            throw new PlatformNotSupportedException("PCL");
         }
 
 		public Timer(TimerCallback callback, object state, int dueTime, int period)
 		{
-            throw new PlatformNotSupportedException();
-		}
+            throw new PlatformNotSupportedException("PCL");
+        }
 
 	    #endregion
 
@@ -43,7 +43,7 @@ namespace System.Threading
 
         public bool Change(int dueTime, int period)
         {
-            throw new PlatformNotSupportedException();
+            throw new PlatformNotSupportedException("PCL");
         }
 
         #endregion

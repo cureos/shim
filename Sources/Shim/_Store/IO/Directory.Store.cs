@@ -88,7 +88,12 @@ namespace System.IO
             return folders.Select(folder => folder.Name).ToArray();
         }
 
-        public static string[] GetFiles(string path, string searchPattern = "*")
+        public static string[] GetFiles(string path)
+        {
+            return GetFiles(path, "*");
+        }
+
+        public static string[] GetFiles(string path, string searchPattern)
         {
             var files = Task.Run(async () =>
                                            {
@@ -106,7 +111,13 @@ namespace System.IO
 
         public static void Move(string sourceDirName, string destDirName)
         {
-            throw new NotImplementedException();
+            // TODO Implement support for identifying and moving individual files
+            Task.Run(
+                async () =>
+                    {
+                        var sourceDir = await StorageFolder.GetFolderFromPathAsync(sourceDirName);
+                        await sourceDir.RenameAsync(destDirName, NameCollisionOption.FailIfExists);
+                    });
         }
 
         /// <summary>

@@ -27,7 +27,7 @@ namespace System.Runtime.Serialization
 
         public void AddValue(string name, double value)
         {
-            throw new NotImplementedException();
+            throw new PlatformNotSupportedException("PCL");
         }
 
         #endregion

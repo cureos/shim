@@ -21,11 +21,12 @@
 
 namespace System.IO
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public static class File
-	{
-		#region METHODS
+    {
+        #region METHODS
 
         public static bool Exists(string path)
         {
@@ -88,7 +89,17 @@ namespace System.IO
 
         public static string[] ReadAllLines(string path)
         {
-            throw new NotImplementedException();
+            using (var stream = new FileStream(path, FileMode.Open))
+            using (var reader = new StreamReader(stream))
+            {
+                var lines = new List<string>();
+                while (reader.Peek() > -1)
+                {
+                    lines.Add(reader.ReadLine());
+                }
+
+                return lines.ToArray();
+            }
         }
 
         public static void WriteAllBytes(string path, byte[] bytes)
@@ -101,7 +112,11 @@ namespace System.IO
 
         public static void WriteAllText(string path, string contents)
         {
-            throw new NotImplementedException();
+            using (var stream = new FileStream(path, FileMode.Create))
+            using (var writer = new StreamWriter(stream))
+            {
+                writer.Write(contents);
+            }
         }
 
         public static FileAttributes GetAttributes(string path)
@@ -119,15 +134,15 @@ namespace System.IO
         }
 
         public static FileStream OpenRead(string path)
-		{
-			return new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
-		}
+        {
+            return new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
+        }
 
-		public static FileStream OpenWrite(string path)
-		{
-			return new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Read);
-		}
+        public static FileStream OpenWrite(string path)
+        {
+            return new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.Read);
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

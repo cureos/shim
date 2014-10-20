@@ -125,34 +125,34 @@ namespace System.Net.Sockets
         }
 
 #if SILVERLIGHT
-		public override IAsyncResult BeginRead(byte[] buffer, int offset, int count,
-												AsyncCallback callback, object state)
-		{
-			return new TaskFactory<int>().StartNew(asyncState => Read(buffer, offset, count), state)
-											.ContinueWith(task =>
-											{
-												callback(task);
-												return task.Result;
-											});
-		}
+        public override IAsyncResult BeginRead(byte[] buffer, int offset, int count,
+                                                AsyncCallback callback, object state)
+        {
+            return new TaskFactory<int>().StartNew(asyncState => Read(buffer, offset, count), state)
+                                            .ContinueWith(task =>
+                                            {
+                                                callback(task);
+                                                return task.Result;
+                                            });
+        }
 
-		public override int EndRead(IAsyncResult asyncResult)
-		{
-			var task = asyncResult as Task<int>;
-			return task != null ? task.Result : 0;
-		}
+        public override int EndRead(IAsyncResult asyncResult)
+        {
+            var task = asyncResult as Task<int>;
+            return task != null ? task.Result : 0;
+        }
 
-		public override IAsyncResult BeginWrite(byte[] buffer, int offset, int count,
-												AsyncCallback callback, object state)
-		{
-			return
-				new TaskFactory().StartNew(asyncState => Write(buffer, offset, count), state)
-									.ContinueWith(task => callback(task));
-		}
+        public override IAsyncResult BeginWrite(byte[] buffer, int offset, int count,
+                                                AsyncCallback callback, object state)
+        {
+            return
+                new TaskFactory().StartNew(asyncState => Write(buffer, offset, count), state)
+                                    .ContinueWith(task => callback(task));
+        }
 
-		public override void EndWrite(IAsyncResult asyncResult)
-		{
-		}
+        public override void EndWrite(IAsyncResult asyncResult)
+        {
+        }
 #endif
 
         protected override void Dispose(bool disposing)

@@ -21,31 +21,31 @@
 
 namespace System.Runtime.InteropServices
 {
-	public struct GCHandle
-	{
-		#region PROPERTIES
+    public struct GCHandle
+    {
+        #region PROPERTIES
 
-		public bool IsAllocated { get; private set; }
-		
-		#endregion
+        public bool IsAllocated { get; private set; }
+        
+        #endregion
 
-		#region METHODS
+        #region METHODS
 
-		public static GCHandle Alloc(object value, GCHandleType type)
-		{
-			throw new NotImplementedException();
-		}
+        public static GCHandle Alloc(object value, GCHandleType type)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
 
-		public IntPtr AddrOfPinnedObject()
-		{
-			throw new NotImplementedException();
-		}
+        public IntPtr AddrOfPinnedObject()
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
 
-		public void Free()
-		{
-			throw new NotImplementedException();
-		}
-		
-		#endregion
-	}
+        public void Free()
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+        
+        #endregion
+    }
 }

@@ -100,7 +100,7 @@ namespace System.Data
 
 		public void CopyTo(Array array, int index)
 		{
-			throw new NotImplementedException();
+		    _columns.TypeSafeCopyTo(array, index);
 		}
 
 		#endregion

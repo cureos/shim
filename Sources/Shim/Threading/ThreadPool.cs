@@ -27,12 +27,12 @@ namespace System.Threading
     {
          public static bool QueueUserWorkItem(WaitCallback callBack)
          {
-             throw new PlatformNotSupportedException();
+             throw new PlatformNotSupportedException("PCL");
          }
 
          public static bool QueueUserWorkItem(WaitCallback callBack, object state)
          {
-             throw new PlatformNotSupportedException();
+             throw new PlatformNotSupportedException("PCL");
          }
     }
 }

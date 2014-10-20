@@ -28,12 +28,22 @@ namespace System.IO
             throw new PlatformNotSupportedException("PCL");
         }
 
-	    public static DirectoryInfo CreateDirectory(string path)
-	    {
+        public static DirectoryInfo CreateDirectory(string path)
+        {
             throw new PlatformNotSupportedException("PCL");
         }
 
-	    public static string[] GetDirectories(string path)
+        public static string[] GetDirectories(string path)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        public static string[] GetFiles(string path)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        public static string[] GetFiles(string path, string searchPattern)
         {
             throw new PlatformNotSupportedException("PCL");
         }

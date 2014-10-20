@@ -19,75 +19,80 @@
  *  License along with CSShim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Collections.Generic;
-
 namespace System.Collections.Concurrent
 {
-	public sealed class ConcurrentStack<T> : IEnumerable<T>, ICollection
-	{
-		#region FIELDS
+    using System.Collections.Generic;
 
-		private readonly Stack<T> _stack;
-		private readonly object _syncRoot;
+    public sealed class ConcurrentStack<T> : IEnumerable<T>, ICollection
+    {
+        #region FIELDS
+
+        private readonly Stack<T> _stack;
+        private readonly object _syncRoot;
  
-		#endregion
+        #endregion
 
-		#region CONSTRUCTORS
+        #region CONSTRUCTORS
 
-		public ConcurrentStack()
-		{
-			_stack = new Stack<T>();
-			_syncRoot = new object();
-		}
+        public ConcurrentStack()
+        {
+            _stack = new Stack<T>();
+            _syncRoot = new object();
+        }
 
-		#endregion
-		
-		#region PROPERTIES
+        #endregion
+        
+        #region PROPERTIES
 
-		public int Count
-		{
-			get { return _stack.Count; }
-		}
+        public int Count
+        {
+            get { return _stack.Count; }
+        }
 
-		public bool IsSynchronized
-		{
-			get { return true; }
-		}
+        public bool IsSynchronized
+        {
+            get { return true; }
+        }
 
-		public object SyncRoot
-		{
-			get { return _syncRoot; }
-		}
+        public object SyncRoot
+        {
+            get { return _syncRoot; }
+        }
 
-		#endregion
+        #endregion
 
-		#region METHODS
+        #region METHODS
 
-		public IEnumerator<T> GetEnumerator()
-		{
-			return _stack.GetEnumerator();
-		}
+        public IEnumerator<T> GetEnumerator()
+        {
+            return _stack.GetEnumerator();
+        }
 
-		IEnumerator IEnumerable.GetEnumerator()
-		{
-			return GetEnumerator();
-		}
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
 
-		public void CopyTo(Array array, int index)
-		{
-			throw new NotImplementedException();
-		}
+        public void CopyTo(T[] array, int index)
+        {
+            _stack.CopyTo(array, index);
+        }
 
-		public T[] ToArray()
-		{
-			return _stack.ToArray();
-		}
+        void ICollection.CopyTo(Array array, int index)
+        {
+            _stack.TypeSafeCopyTo(array, index);
+        }
 
-		public void Push(T item)
-		{
-			_stack.Push(item);
-		}
+        public T[] ToArray()
+        {
+            return _stack.ToArray();
+        }
 
-		#endregion
-	}
+        public void Push(T item)
+        {
+            _stack.Push(item);
+        }
+
+        #endregion
+    }
 }

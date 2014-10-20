@@ -21,22 +21,24 @@
 
 namespace System.IO
 {
-	public class DirectoryInfo
-	{
-		#region FIELDS
+    using System.Linq;
 
-		private readonly string _path;
+    public class DirectoryInfo
+    {
+        #region FIELDS
 
-		#endregion
+        private readonly string _path;
 
-		#region CONSTRUCTORS
+        #endregion
 
-		public DirectoryInfo(string path)
-		{
-			_path = path;
-		}
+        #region CONSTRUCTORS
 
-		#endregion
+        public DirectoryInfo(string path)
+        {
+            _path = path;
+        }
+
+        #endregion
 
         #region PROPERTIES
 
@@ -47,19 +49,19 @@ namespace System.IO
         
         #endregion
 
-		#region METHODS
+        #region METHODS
 
-		public void Create()
-		{
+        public void Create()
+        {
             // TODO Is it an issue that the CreateDirectory method creates another DirectoryInfo?
-			Directory.CreateDirectory(_path);
-		}
+            Directory.CreateDirectory(_path);
+        }
 
-	    public FileInfo[] GetFiles()
-	    {
-	        throw new NotImplementedException();
-	    }
+        public FileInfo[] GetFiles()
+        {
+            return Directory.GetFiles(_path).Select(fileName => new FileInfo(fileName)).ToArray();
+        }
 
-	    #endregion
-	}
+        #endregion
+    }
 }
