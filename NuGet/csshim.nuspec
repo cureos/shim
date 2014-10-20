@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>shim</id>
-        <version>0.9.2-pre7</version>
+        <version>0.9.3-pre1</version>
         <title>CSShim</title>
         <authors>Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/LICENSE.txt</licenseUrl>
@@ -12,7 +12,12 @@
         <description>CSShim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
         <summary>CSShim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2014 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 0.9.2-pre7
+        <releaseNotes>v 0.9.3-pre1
+------------
+* Changed WPA81 assembly to Universal (win81+wpa81)
+* Added a few missing implementations
+
+v 0.9.2-pre7
 ------------
 * Added enums in BindingFlags to enable sufficient binding in InvokeMember
 
@@ -20,15 +25,7 @@ v 0.9.2-pre6
 ------------
 * Added empty Binder class and added enums in BindingFlags
 * Use native methods where available in specific target assemblies
-* Replaced DataColumnExtensions method with equivalent instance property
-
-v 0.9.2-pre5
-------------
-* Added dedicated Xamarin.Android assembly
-* Added minimal implementations of Console, Process and Trace
-* Corrected visibility of HttpWebRequestExtensions to public</releaseNotes>
-        <language>en-US</language>
-        <tags>PCL .NET Windows8 WP8 WPA81 Xamarin.iOS Xamarin.Android Shim</tags>
+* Replaced DataColumnExtensions method with equivalent instance property</tags>
     </metadata>
     <files>
         <file src="..\Sources\Shim\_Net\bin\Release\Shim.dll" target="lib\net45\Shim.dll" />
@@ -42,7 +39,7 @@ v 0.9.2-pre5
         <file src="..\Sources\Shim\_Touch\bin\iPhone\Release\Shim.dll" target="lib\MonoTouch1\Shim.dll" />
         <file src="..\Sources\Shim\_Phone\bin\Release\Shim.dll" target="lib\wp8\Shim.dll" />
         <file src="..\Sources\Shim\_Phone\bin\Release\Shim.pdb" target="lib\wp8\Shim.pdb" />
-        <file src="..\Sources\Shim\_WPA\bin\Release\Shim.dll" target="lib\wpa81\Shim.dll" />
-        <file src="..\Sources\Shim\_WPA\bin\Release\Shim.pdb" target="lib\wpa81\Shim.pdb" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.dll" target="lib\portable-win81+wpa81\Shim.dll" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pdb" target="lib\portable-win81+wpa81\Shim.pdb" />
     </files>
 </package>
