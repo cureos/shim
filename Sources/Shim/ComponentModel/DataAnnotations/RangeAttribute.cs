@@ -38,6 +38,15 @@ namespace System.ComponentModel.DataAnnotations
         {
         }
 
+        /// <summary>
+        /// Constructor that takes integer minimum and maximum values
+        /// </summary>
+        /// <param name="minimum">The minimum value, inclusive</param>
+        /// <param name="maximum">The maximum value, inclusive</param>
+        public RangeAttribute(int minimum, int maximum)
+        {
+        }
+
         #endregion
     }
 }
