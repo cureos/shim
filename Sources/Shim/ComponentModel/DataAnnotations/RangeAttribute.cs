@@ -21,11 +21,19 @@
 
 namespace System.ComponentModel.DataAnnotations
 {
+    /// <summary>
+    /// Used for specifying a range constraint
+    /// </summary>
     [AttributeUsageAttribute(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = false)]
-    public sealed class RangeAttribute : Attribute
+    public class RangeAttribute : Attribute
     {
         #region CONSTRUCTORS
 
+        /// <summary>
+        /// Constructor that takes double minimum and maximum values
+        /// </summary>
+        /// <param name="minimum">The minimum value, inclusive</param>
+        /// <param name="maximum">The maximum value, inclusive</param>        
         public RangeAttribute(double minimum, double maximum)
         {
         }
