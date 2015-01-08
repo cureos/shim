@@ -52,6 +52,11 @@
     <Compile Include="Collections\Generic\ListExtensions.cs" />
     <Compile Include="Console.cs" />
     <Compile Include="ComponentModel\DataAnnotations\RangeAttribute.cs" />
+    <Compile Include="Data\Common\SchemaTableColumn.cs" />
+    <Compile Include="Data\Common\SchemaTableOptionalColumn.cs" />
+    <Compile Include="Data\DbType.cs" />
+    <Compile Include="Data\IDataReader.cs" />
+    <Compile Include="Data\IDataRecord.cs" />
     <Compile Include="Diagnostics\Process.cs" />
     <Compile Include="IO\ShimPath.cs" />
     <Compile Include="Net\HttpWebRequestExtensions.cs" />

@@ -73,6 +73,12 @@
     <Compile Include="..\Converter.cs">
       <Link>Converter.cs</Link>
     </Compile>
+    <Compile Include="..\Data\Common\SchemaTableColumn.cs">
+      <Link>Data\Common\SchemaTableColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\Common\SchemaTableOptionalColumn.cs">
+      <Link>Data\Common\SchemaTableOptionalColumn.cs</Link>
+    </Compile>
     <Compile Include="..\Data\DataColumn.cs">
       <Link>Data\DataColumn.cs</Link>
     </Compile>
@@ -90,6 +96,15 @@
     </Compile>
     <Compile Include="..\Data\DataView.cs">
       <Link>Data\DataView.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DbType.cs">
+      <Link>Data\DbType.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\IDataReader.cs">
+      <Link>Data\IDataReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\IDataRecord.cs">
+      <Link>Data\IDataRecord.cs</Link>
     </Compile>
     <Compile Include="..\DBNull.cs">
       <Link>DBNull.cs</Link>

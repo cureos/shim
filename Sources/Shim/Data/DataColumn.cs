@@ -35,6 +35,7 @@ namespace System.Data
         {
             Table = table;
             ColumnName = columnName;
+            ReadOnly = false;
             DataType = dataType;
         }
 
@@ -43,6 +44,8 @@ namespace System.Data
         #region PROPERTIES
 
         public DataTable Table { get; private set; }
+
+        public bool ReadOnly { get; set; }
 
         public Type DataType { get; set; }
 

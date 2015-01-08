@@ -19,74 +19,88 @@
  *  License along with CSShim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Globalization;
-using System.Linq;
-
 namespace System.Data
 {
-	public sealed class DataTable
-	{
-		#region CONSTRUCTORS
+    using System.Globalization;
 
-		public DataTable()
-		{
-			Columns = new DataColumnCollection(this);
-			Rows = new DataRowCollection(this);
-			Locale = CultureInfo.CurrentCulture;
-			DefaultView = new DataView(this);
-		}
+    public sealed class DataTable
+    {
+        #region CONSTRUCTORS
 
-		#endregion
+        public DataTable()
+        {
+            Columns = new DataColumnCollection(this);
+            Rows = new DataRowCollection(this);
+            Locale = CultureInfo.CurrentCulture;
+            DefaultView = new DataView(this);
+        }
 
-		#region PROPERTIES
+        public DataTable(string tableName)
+            : this()
+        {
+            this.TableName = tableName ?? "";
+        }
 
-		public DataColumnCollection Columns { get; private set; }
+        #endregion
 
-		public DataRowCollection Rows { get; private set; }
+        #region PROPERTIES
 
-		public CultureInfo Locale { get; set; }
+        public string TableName { get; private set; }
 
-		public DataView DefaultView { get; private set; }
+        public DataColumnCollection Columns { get; private set; }
 
-		#endregion
+        public DataRowCollection Rows { get; private set; }
 
-		#region METHODS
+        public CultureInfo Locale { get; set; }
 
-		public DataTable Clone()
-		{
-			var table = new DataTable { Locale = this.Locale };
-			foreach (DataColumn column in this.Columns) table.Columns.Add(column.ColumnName, column.DataType);
-			return table;
-		}
+        public DataView DefaultView { get; private set; }
 
-		public DataTable Copy()
-		{
-			var table = Clone();
-			foreach (DataRow row in this.Rows) table.Rows.Add(row.ItemArray);
-			return table;
-		}
+        public int MinimumCapacity { get; set; }
 
-		public void ImportRow(DataRow row)
-		{
-			var newRow = new DataRow(this);
-			foreach (DataColumn column in this.Columns)
-			{
-				var columnName = column.ColumnName;
-				newRow[columnName] = row[columnName];
-			}
-			Rows.Add(newRow);
-		}
+        #endregion
 
-		public DataRow NewRow()
-		{
-			return new DataRow(this);
-		}
+        #region METHODS
 
-		public DataRow[] Select(string filterExpression, string sort)
-		{
-			throw new NotImplementedException();
-		}
+        public DataTable Clone()
+        {
+            var table = new DataTable { Locale = this.Locale };
+            foreach (DataColumn column in this.Columns) table.Columns.Add(column.ColumnName, column.DataType);
+            return table;
+        }
 
-		#endregion
-	}
+        public DataTable Copy()
+        {
+            var table = Clone();
+            foreach (DataRow row in this.Rows) table.Rows.Add(row.ItemArray);
+            return table;
+        }
+
+        public void ImportRow(DataRow row)
+        {
+            var newRow = new DataRow(this);
+            foreach (DataColumn column in this.Columns)
+            {
+                var columnName = column.ColumnName;
+                newRow[columnName] = row[columnName];
+            }
+            Rows.Add(newRow);
+        }
+
+        public DataRow NewRow()
+        {
+            return new DataRow(this);
+        }
+
+        public DataRow[] Select(string filterExpression, string sort)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Load(IDataReader reader)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+    }
 }

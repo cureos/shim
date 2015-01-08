@@ -24,6 +24,7 @@ using System.Collections.Concurrent;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Data.Common;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -73,6 +74,13 @@ using System.Timers;
 [assembly: TypeForwardedTo(typeof(DataRowCollection))]
 [assembly: TypeForwardedTo(typeof(DataTable))]
 [assembly: TypeForwardedTo(typeof(DataView))]
+[assembly: TypeForwardedTo(typeof(DbType))]
+[assembly: TypeForwardedTo(typeof(IDataReader))]
+[assembly: TypeForwardedTo(typeof(IDataRecord))]
+
+// System.Data.Common
+[assembly: TypeForwardedTo(typeof(SchemaTableColumn))]
+[assembly: TypeForwardedTo(typeof(SchemaTableOptionalColumn))]
 
 // System.Diagnostics
 [assembly: TypeForwardedTo(typeof(Process))]
