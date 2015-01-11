@@ -27,6 +27,13 @@ namespace System.ComponentModel.DataAnnotations
     [AttributeUsageAttribute(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = false)]
     public class RangeAttribute : Attribute
     {
+        #region FIELDS
+
+        private readonly object minimum;
+        private readonly object maximum;
+
+        #endregion
+
         #region CONSTRUCTORS
 
         /// <summary>
@@ -36,6 +43,8 @@ namespace System.ComponentModel.DataAnnotations
         /// <param name="maximum">The maximum value, inclusive</param>        
         public RangeAttribute(double minimum, double maximum)
         {
+            this.minimum = minimum;
+            this.maximum = maximum;
         }
 
         /// <summary>
@@ -45,6 +54,28 @@ namespace System.ComponentModel.DataAnnotations
         /// <param name="maximum">The maximum value, inclusive</param>
         public RangeAttribute(int minimum, int maximum)
         {
+            this.minimum = minimum;
+            this.maximum = maximum;
+        }
+
+        #endregion
+
+        #region PROPERTIES
+
+        public object Minimum
+        {
+            get
+            {
+                return minimum;
+            }
+        }
+
+        public object Maximum
+        {
+            get
+            {
+                return maximum;
+            }
         }
 
         #endregion

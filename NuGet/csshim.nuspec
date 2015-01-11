@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>shim</id>
-        <version>0.9.4-pre1</version>
+        <version>0.9.4-pre2</version>
         <title>CSShim</title>
         <authors>Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/LICENSE.txt</licenseUrl>
@@ -12,7 +12,11 @@
         <description>CSShim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
         <summary>CSShim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 0.9.4-pre1
+        <releaseNotes>v 0.9.4-pre2
+------------
+* Added Minimum and Maximum properties to RangeAttribute
+
+v 0.9.4-pre1
 ------------
 * Added DbType, IDataRecord and IDataReader to System.Data namespace
 * Added SchemaTableColumn and SchemaTableOptionalColumn to System.Data.Common namespace
@@ -20,12 +24,7 @@
 
 v 0.9.3-pre2
 ------------
-* RangeAttribute not sealed in compliance with .NET impl
-
-v 0.9.3-pre1
-------------
-* Changed WPA81 assembly to Universal (win81+wpa81)
-* Added a few missing implementations</releaseNotes>
+* RangeAttribute not sealed in compliance with .NET impl</releaseNotes>
         <language>en-US</language>
         <tags>PCL .NET Windows8 WP8 WPA81 Xamarin.iOS Xamarin.Android Shim</tags>
     </metadata>
