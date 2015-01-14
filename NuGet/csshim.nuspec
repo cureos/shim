@@ -2,17 +2,21 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>shim</id>
-        <version>0.9.4-pre2</version>
-        <title>CSShim</title>
+        <version>1.0.0.20150115</version>
+        <title>Shim</title>
         <authors>Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/LICENSE.txt</licenseUrl>
         <projectUrl>https://github.com/cureos/shim</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/csshim.png</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
-        <description>CSShim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
-        <summary>CSShim provides .NET Framework types otherwise missing in PCL.</summary>
+        <description>Shim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
+        <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 0.9.4-pre2
+        <releaseNotes>v 1.0.0.20150115
+------------
+* Added iOS Universal API DLL
+
+v 0.9.4-pre2
 ------------
 * Added Minimum and Maximum properties to RangeAttribute
 
@@ -20,24 +24,21 @@ v 0.9.4-pre1
 ------------
 * Added DbType, IDataRecord and IDataReader to System.Data namespace
 * Added SchemaTableColumn and SchemaTableOptionalColumn to System.Data.Common namespace
-* Added methods and properties to DataTable, DataColumn and DataRow
-
-v 0.9.3-pre2
-------------
-* RangeAttribute not sealed in compliance with .NET impl</releaseNotes>
+* Added methods and properties to DataTable, DataColumn and DataRow</releaseNotes>
         <language>en-US</language>
-        <tags>PCL .NET Windows8 WP8 WPA81 Xamarin.iOS Xamarin.Android Shim</tags>
+        <tags>PCL Shim .NET Windows WP8 WPA81 Xamarin iOS Android</tags>
     </metadata>
     <files>
         <file src="..\Sources\Shim\_Net\bin\Release\Shim.dll" target="lib\net45\Shim.dll" />
         <file src="..\Sources\Shim\_Net\bin\Release\Shim.pdb" target="lib\net45\Shim.pdb" />
         <file src="..\Sources\Shim\_Store\bin\Release\Shim.dll" target="lib\netcore45\Shim.dll" />
         <file src="..\Sources\Shim\_Store\bin\Release\Shim.pdb" target="lib\netcore45\Shim.pdb" />
-        <file src="..\Sources\Shim\bin\Release\Shim.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Shim.dll" />
-        <file src="..\Sources\Shim\bin\Release\Shim.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Shim.pdb" />
+        <file src="..\Sources\Shim\bin\Release\Shim.dll" target="lib\portable-net45+netcore45+wpa81+wp8\Shim.dll" />
+        <file src="..\Sources\Shim\bin\Release\Shim.pdb" target="lib\portable-net45+netcore45+wpa81+wp8\Shim.pdb" />
         <file src="..\Sources\Shim\_Droid\bin\Release\Shim.dll" target="lib\MonoAndroid1\Shim.dll" />
         <file src="..\Sources\Shim\_Droid\bin\Release\Shim.pdb" target="lib\MonoAndroid1\Shim.pdb" />
-        <file src="..\Sources\Shim\_Touch\bin\iPhone\Release\Shim.dll" target="lib\MonoTouch1\Shim.dll" />
+        <file src="..\Sources\Shim\_iOS\bin\Release\Shim.dll" target="lib\Xamarin.iOS10\Shim.dll" />
+        <file src="..\Sources\Shim\_Touch\bin\Release\Shim.dll" target="lib\MonoTouch1\Shim.dll" />
         <file src="..\Sources\Shim\_Phone\bin\Release\Shim.dll" target="lib\wp8\Shim.dll" />
         <file src="..\Sources\Shim\_Phone\bin\Release\Shim.pdb" target="lib\wp8\Shim.pdb" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.dll" target="lib\portable-win81+wpa81\Shim.dll" />
