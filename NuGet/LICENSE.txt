@@ -1,24 +1,24 @@
-CSShim expands the ability to create Portable Class Libraries by 
+Shim expands the ability to create Portable Class Libraries by 
 providing reduced or dummy implementations of .NET Framework classes 
 that are not represented in PCL.
 
 Copyright (C) 2013-2014  Anders Gustafsson, Cureos AB
 
-CSShim is free software: you can redistribute it and/or modify
+Shim is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as
 published by the Free Software Foundation, either version 3 of the
 License, or (at your option) any later version.
 
-CSShim is distributed in the hope that it will be useful,
+Shim is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public 
-License along with CSShim.  If not, see <http://www.gnu.org/licenses/>.
+License along with Shim.  If not, see <http://www.gnu.org/licenses/>.
 
-For those interested in using CSShim without having to adhere to LGPL, 
-please contact the copyright holder of the CSShim assemblies at
+For those interested in using Shim without having to adhere to LGPL, 
+please contact the copyright holder of the Shim assemblies at
 
     licenses@cureos.com
 
