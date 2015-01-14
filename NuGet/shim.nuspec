@@ -13,7 +13,7 @@
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
         <releaseNotes>v 1.0.0.20150115
-------------
+----------------
 * Added iOS Universal API DLL
 
 v 0.9.4-pre2
