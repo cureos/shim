@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Shim", "Shim\Portable.Shim.csproj", "{A60B1E41-53AB-4777-8B2C-4F2D91DD864F}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Droid.Shim", "Shim\_Droid\Droid.Shim.csproj", "{97E26603-22F0-4F43-8140-20B7D44A2893}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universal.Shim", "Shim\_Universal\Universal.Shim.csproj", "{8464069A-34AD-49EE-AE4D-1213DF8BA2B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOS.Shim", "Shim\_iOS\iOS.Shim.csproj", "{62D2C8BC-8690-4719-B213-4B68B1ABDAC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{8464069A-34AD-49EE-AE4D-1213DF8BA2B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8464069A-34AD-49EE-AE4D-1213DF8BA2B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8464069A-34AD-49EE-AE4D-1213DF8BA2B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D2C8BC-8690-4719-B213-4B68B1ABDAC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D2C8BC-8690-4719-B213-4B68B1ABDAC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D2C8BC-8690-4719-B213-4B68B1ABDAC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D2C8BC-8690-4719-B213-4B68B1ABDAC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
