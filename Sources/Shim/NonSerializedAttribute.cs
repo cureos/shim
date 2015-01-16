@@ -21,6 +21,7 @@
 
 namespace System
 {
+    /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.NonSerializedAttribute"]/*' />
     [AttributeUsage(AttributeTargets.Field, Inherited = false)]
     public sealed class NonSerializedAttribute : Attribute
     {

@@ -21,6 +21,7 @@
 
 namespace System
 {
+    /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.SerializableAttribute"]/*' />
     [AttributeUsageAttribute(
         AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Delegate,
         Inherited = false)]

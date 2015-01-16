@@ -23,6 +23,7 @@ namespace System
 {
     using System.IO;
 
+    /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Console"]/*' />
     public static class Console
     {
         #region FIELDS
@@ -44,6 +45,7 @@ namespace System
 
         #region PROPERTIES
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Console.Error"]/*' />
         public static TextWriter Error
         {
             get
@@ -52,6 +54,7 @@ namespace System
             }
         }
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Console.Out"]/*' />
         public static TextWriter Out
         {
             get
@@ -64,31 +67,37 @@ namespace System
 
         #region METHODS
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.Write(System.Char)"]/*' />
         public static void Write(char value)
         {
             _out.Write(value);
         }
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.Write(System.String)"]/*' />
         public static void Write(string value)
         {
             _out.Write(value);
         }
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.Write(System.Int32)"]/*' />
         public static void Write(int value)
         {
             _out.Write(value);
         }
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.WriteLine"]/*' />
         public static void WriteLine()
         {
             _out.WriteLine();
         }
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.WriteLine(System.Char)"]/*' />
         public static void WriteLine(char value)
         {
             _out.WriteLine(value);
         }
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.WriteLine(System.String,System.Object[])"]/*' />
         public static void WriteLine(string format, params object[] arg)
         {
             _out.WriteLine(format, arg);

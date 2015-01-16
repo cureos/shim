@@ -21,8 +21,10 @@
 
 namespace System
 {
+    /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.ICloneable"]/*' />
     public interface ICloneable
     {
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.ICloneable.Clone"]/*' />
         object Clone();
     }
 }

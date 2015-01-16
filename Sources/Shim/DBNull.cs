@@ -21,10 +21,12 @@
 
 namespace System
 {
+    /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.DBNull"]/*' />
     public sealed class DBNull
     {
         #region FIELDS
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.DBNull.Value"]/*' />
         public static readonly DBNull Value;
 
         #endregion

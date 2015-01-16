@@ -18,18 +18,22 @@
  *  You should have received a copy of the GNU Lesser General Public
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
-	
+    
 namespace System
 {
+    /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.ApplicationException"]/*' />
     public sealed class ApplicationException : Exception
     {
         #region CONSTRUCTORS
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.ApplicationException.#ctor"]/*' />
         public ApplicationException()
         {
         }
 
-        public ApplicationException(string message) : base(message)
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.ApplicationException.#ctor(System.String)"]/*' />
+        public ApplicationException(string message)
+            : base(message)
         {
         }
 

@@ -21,8 +21,13 @@
 
 namespace System
 {
+    /// <summary>
+    /// Shim complement for the <see cref="Environment"/> class, providing members that are
+    /// not included in the PCL member subset of the <see cref="Environment"/> class.
+    /// </summary>
     public static class ShimEnvironment
     {
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Environment.MachineName"]/*' />
         public static string MachineName
         {
             get

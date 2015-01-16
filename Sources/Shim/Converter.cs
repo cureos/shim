@@ -21,5 +21,6 @@
 
 namespace System
 {
+    /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Converter`2"]/*' />
     public delegate TOutput Converter<in TInput, out TOutput>(TInput input);
 }

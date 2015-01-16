@@ -21,10 +21,12 @@
 
 namespace System
 {
+    /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.NotFiniteNumberException"]/*' />
     public sealed class NotFiniteNumberException : Exception
     {
         #region CONSTRUCTORS
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.NotFiniteNumberException.#ctor(System.String,System.Double)"]/*' />
         public NotFiniteNumberException(string message, double offendingNumber)
             : base(message)
         {

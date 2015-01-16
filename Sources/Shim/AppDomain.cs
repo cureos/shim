@@ -23,6 +23,7 @@ namespace System
 {
     using System.Reflection;
 
+    /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.AppDomain"]/*' />
     public sealed class AppDomain
     {
         #region FIELDS
@@ -46,6 +47,7 @@ namespace System
 
         #region PROPERTIES
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.AppDomain.CurrentDomain"]/*' />
         public static AppDomain CurrentDomain
         {
             get
@@ -58,6 +60,7 @@ namespace System
 
         #region METHODS
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.AppDomain.GetAssemblies"]/*' />
         public Assembly[] GetAssemblies()
         {
             throw new PlatformNotSupportedException("PCL");
