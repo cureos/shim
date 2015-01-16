@@ -33,6 +33,7 @@
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
     <DefineConstants>__IOS__;__MOBILE__;DOTNET</DefineConstants>
+    <DocumentationFile>bin\Release\Shim.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
