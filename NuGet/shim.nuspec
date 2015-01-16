@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>shim</id>
-        <version>1.0.0.20150115</version>
+        <version>1.0.0.50116</version>
         <title>Shim</title>
         <authors>Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/LICENSE.txt</licenseUrl>
@@ -12,9 +12,10 @@
         <description>Shim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 1.0.0.20150115
+        <releaseNotes>v 1.0.0.50116
 ----------------
 * Added iOS Universal API DLL
+* Added documentation XML files
 
 v 0.9.4-pre2
 ------------
@@ -31,17 +32,25 @@ v 0.9.4-pre1
     <files>
         <file src="..\Sources\Shim\_Net\bin\Release\Shim.dll" target="lib\net45" />
         <file src="..\Sources\Shim\_Net\bin\Release\Shim.pdb" target="lib\net45" />
+        <file src="..\Sources\Shim\_Net\bin\Release\Shim.xml" target="lib\net45" />
         <file src="..\Sources\Shim\_Store\bin\Release\Shim.dll" target="lib\netcore45" />
         <file src="..\Sources\Shim\_Store\bin\Release\Shim.pdb" target="lib\netcore45" />
+        <file src="..\Sources\Shim\_Store\bin\Release\Shim.xml" target="lib\netcore45" />
         <file src="..\Sources\Shim\bin\Release\Shim.dll" target="lib\portable-net45+netcore45+wpa81+wp8" />
         <file src="..\Sources\Shim\bin\Release\Shim.pdb" target="lib\portable-net45+netcore45+wpa81+wp8" />
+        <file src="..\Sources\Shim\bin\Release\Shim.xml" target="lib\portable-net45+netcore45+wpa81+wp8" />
         <file src="..\Sources\Shim\_Droid\bin\Release\Shim.dll" target="lib\MonoAndroid1" />
         <file src="..\Sources\Shim\_Droid\bin\Release\Shim.pdb" target="lib\MonoAndroid1" />
+        <file src="..\Sources\Shim\_Droid\bin\Release\Shim.xml" target="lib\MonoAndroid1" />
         <file src="..\Sources\Shim\_iOS\bin\Release\Shim.dll" target="lib\Xamarin.iOS10" />
+        <file src="..\Sources\Shim\_iOS\bin\Release\Shim.xml" target="lib\Xamarin.iOS10" />
         <file src="..\Sources\Shim\_Touch\bin\Release\Shim.dll" target="lib\MonoTouch1" />
+        <file src="..\Sources\Shim\_Touch\bin\Release\Shim.xml" target="lib\MonoTouch1" />
         <file src="..\Sources\Shim\_Phone\bin\Release\Shim.dll" target="lib\wp8" />
         <file src="..\Sources\Shim\_Phone\bin\Release\Shim.pdb" target="lib\wp8" />
+        <file src="..\Sources\Shim\_Phone\bin\Release\Shim.xml" target="lib\wp8" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.dll" target="lib\portable-win81+wpa81" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pdb" target="lib\portable-win81+wpa81" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.xml" target="lib\portable-win81+wpa81" />
     </files>
 </package>
