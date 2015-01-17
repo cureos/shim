@@ -23,6 +23,7 @@ namespace System.Collections.Concurrent
 {
     using System.Collections.Generic;
 
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Collections.Concurrent.ConcurrentStack`1"]/*' />
     public sealed class ConcurrentStack<T> : IEnumerable<T>, ICollection
     {
         #region FIELDS
@@ -34,6 +35,7 @@ namespace System.Collections.Concurrent
 
         #region CONSTRUCTORS
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.#ctor"]/*' />
         public ConcurrentStack()
         {
             _stack = new Stack<T>();
@@ -44,16 +46,19 @@ namespace System.Collections.Concurrent
         
         #region PROPERTIES
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Collections.Concurrent.ConcurrentStack`1.Count"]/*' />
         public int Count
         {
             get { return _stack.Count; }
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#IsSynchronized"]/*' />
         public bool IsSynchronized
         {
             get { return true; }
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#SyncRoot"]/*' />
         public object SyncRoot
         {
             get { return _syncRoot; }
@@ -63,31 +68,37 @@ namespace System.Collections.Concurrent
 
         #region METHODS
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.GetEnumerator"]/*' />
         public IEnumerator<T> GetEnumerator()
         {
             return _stack.GetEnumerator();
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.System#Collections#IEnumerable#GetEnumerator"]/*' />
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.CopyTo(`0[],System.Int32)"]/*' />
         public void CopyTo(T[] array, int index)
         {
             _stack.CopyTo(array, index);
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)"]/*' />
         void ICollection.CopyTo(Array array, int index)
         {
             _stack.TypeSafeCopyTo(array, index);
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.ToArray"]/*' />
         public T[] ToArray()
         {
             return _stack.ToArray();
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.Push(`0)"]/*' />
         public void Push(T item)
         {
             _stack.Push(item);

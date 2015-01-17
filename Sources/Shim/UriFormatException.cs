@@ -32,8 +32,8 @@ namespace System
         }
 
         /// <include file='_Doc/System.xml' path='doc/members/member[@name="M:System.UriFormatException.#ctor(System.String)"]/*' />
-        public UriFormatException(string message)
-            : base(message)
+        public UriFormatException(string textString)
+            : base(textString)
         {
         }
 

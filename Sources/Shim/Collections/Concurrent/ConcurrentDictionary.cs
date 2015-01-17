@@ -19,15 +19,19 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Collections.Generic;
-
 namespace System.Collections.Concurrent
 {
-	public sealed class ConcurrentDictionary<TKey, TValue> : Dictionary<TKey, TValue>
-	{
+    using System.Collections.Generic;
+
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Collections.Concurrent.ConcurrentDictionary`2"]/*' />
+    public sealed class ConcurrentDictionary<TKey, TValue> : Dictionary<TKey, TValue>
+    {
         #region METHODS
 
-        public TValue AddOrUpdate(TKey key, Func<TKey, TValue> addValueFactory,
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate(`0,System.Func{`0,`1},System.Func{`0,`1,`1})"]/*' />
+        public TValue AddOrUpdate(
+            TKey key,
+            Func<TKey, TValue> addValueFactory,
             Func<TKey, TValue, TValue> updateValueFactory)
         {
             TValue value;
@@ -43,7 +47,7 @@ namespace System.Collections.Concurrent
             }
             return value;
         }
-        
+
         #endregion
-	}
+    }
 }

@@ -19,10 +19,11 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Collections.Generic;
-
 namespace System.Collections.Concurrent
 {
+    using System.Collections.Generic;
+
+    /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="T:System.Collections.Concurrent.ConcurrentBag`1"]/*' />
     public class ConcurrentBag<T> : List<T>
     {
         #region FIELDS
@@ -33,26 +34,43 @@ namespace System.Collections.Concurrent
 
         #region METHODS
 
+        /// <remarks>
+        /// Class currently inherits <see cref="List{T}"/> for convenience, and overrides this methd for safety. 
+        /// Ideally <see cref="ConcurrentBag{T}"/> should be implemented independently of <see cref="List{T}"/>.
+        /// </remarks>
         public new bool Remove(T item)
         {
             throw new NotSupportedException();
         }
 
+        /// <remarks>
+        /// Class currently inherits <see cref="List{T}"/> for convenience, and overrides this methd for safety. 
+        /// Ideally <see cref="ConcurrentBag{T}"/> should be implemented independently of <see cref="List{T}"/>.
+        /// </remarks>
         public new bool RemoveAt(int index)
         {
             throw new NotSupportedException();
         }
 
+        /// <remarks>
+        /// Class currently inherits <see cref="List{T}"/> for convenience, and overrides this methd for safety. 
+        /// Ideally <see cref="ConcurrentBag{T}"/> should be implemented independently of <see cref="List{T}"/>.
+        /// </remarks>
         public new int RemoveAll(Predicate<T> match)
         {
             throw new NotSupportedException();
         }
 
+        /// <remarks>
+        /// Class currently inherits <see cref="List{T}"/> for convenience, and overrides this methd for safety. 
+        /// Ideally <see cref="ConcurrentBag{T}"/> should be implemented independently of <see cref="List{T}"/>.
+        /// </remarks>
         public new void RemoveRange(int index, int count)
         {
             throw new NotSupportedException();
         }
 
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentBag`1.TryPeek(`0@)"]/*' />
         public bool TryPeek(out T result)
         {
             if (_peekCounter < Count)

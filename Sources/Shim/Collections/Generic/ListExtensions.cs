@@ -23,9 +23,14 @@ namespace System.Collections.Generic
 {
     using System.Collections.ObjectModel;
 
+    /// <summary>
+    /// Shim complement for the <see cref="List{T}"/> class. <see cref="List{T}"/> instance methods that are not available in the 
+    /// PCL profile are here provided as equivalent extension methods.
+    /// </summary>
     public static class ListExtensions
     {
-         public static ReadOnlyCollection<T> AsReadOnly<T>(this IList<T> list)
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Generic.List`1.AsReadOnly"]/*' />
+        public static ReadOnlyCollection<T> AsReadOnly<T>(this IList<T> list)
          {
 #if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
              return list.AsReadOnly();
