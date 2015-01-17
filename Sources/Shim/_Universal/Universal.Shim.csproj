@@ -44,8 +44,8 @@
     <Compile Include="..\ApplicationException.cs">
       <Link>ApplicationException.cs</Link>
     </Compile>
-    <Compile Include="..\Collections\CollectionExtensions.cs">
-      <Link>Collections\CollectionExtensions.cs</Link>
+    <Compile Include="..\Collections\Generic\EnumerableExtensions.cs">
+      <Link>Collections\Generic\EnumerableExtensions.cs</Link>
     </Compile>
     <Compile Include="..\Collections\Generic\ListExtensions.cs">
       <Link>Collections\Generic\ListExtensions.cs</Link>

@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDomain.cs" />
-    <Compile Include="Collections\CollectionExtensions.cs" />
+    <Compile Include="Collections\Generic\EnumerableExtensions.cs" />
     <Compile Include="Collections\Generic\ListExtensions.cs" />
     <Compile Include="Console.cs" />
     <Compile Include="ComponentModel\DataAnnotations\RangeAttribute.cs" />

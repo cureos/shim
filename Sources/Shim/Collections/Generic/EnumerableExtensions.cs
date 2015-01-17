@@ -19,13 +19,22 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace System.Collections
+namespace System.Collections.Generic
 {
-    using System.Collections.Generic;
     using System.Linq;
 
-    internal static class CollectionExtensions
+    /// <summary>
+    /// Internal class providing <see cref="IEnumerable{T}"/> support methods.
+    /// </summary>
+    internal static class EnumerableExtensions
     {
+        /// <summary>
+        /// Copy contents from type collection to array, provided the array is of same type as collection.
+        /// </summary>
+        /// <typeparam name="T">Type of the collection items.</typeparam>
+        /// <param name="source">Collection subject to copying.</param>
+        /// <param name="array">Array to which the collection should be copied, items must be of same type as collection items.</param>
+        /// <param name="index">Start index in <paramref name="array"/>.</param>
         internal static void TypeSafeCopyTo<T>(this IEnumerable<T> source, Array array, int index)
         {
             if (array == null)

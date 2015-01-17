@@ -45,9 +45,6 @@
     <Compile Include="..\ApplicationException.cs">
       <Link>ApplicationException.cs</Link>
     </Compile>
-    <Compile Include="..\Collections\CollectionExtensions.cs">
-      <Link>Collections\CollectionExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\Collections\Concurrent\ConcurrentBag.cs">
       <Link>Collections\Concurrent\ConcurrentBag.cs</Link>
     </Compile>
@@ -56,6 +53,9 @@
     </Compile>
     <Compile Include="..\Collections\Concurrent\ConcurrentStack.cs">
       <Link>Collections\Concurrent\ConcurrentStack.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\Generic\EnumerableExtensions.cs">
+      <Link>Collections\Generic\EnumerableExtensions.cs</Link>
     </Compile>
     <Compile Include="..\Collections\Generic\ListExtensions.cs">
       <Link>Collections\Generic\ListExtensions.cs</Link>
