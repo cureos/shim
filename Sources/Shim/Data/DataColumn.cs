@@ -21,6 +21,7 @@
 
 namespace System.Data
 {
+    /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="T:System.Data.DataColumn"]/*' />
     public sealed class DataColumn
     {
         #region FIELDS
@@ -31,6 +32,8 @@ namespace System.Data
 
         #region CONSTRUCTORS
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataColumn.#ctor(System.String,System.Type)"]/*' />
+        /// <param name="table"><see cref="DataTable"/> in which the column resides.</param>
         internal DataColumn(DataTable table, string columnName, Type dataType)
         {
             Table = table;
@@ -43,16 +46,22 @@ namespace System.Data
 
         #region PROPERTIES
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumn.Table"]/*' />
         public DataTable Table { get; private set; }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumn.ReadOnly"]/*' />
         public bool ReadOnly { get; set; }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumn.DataType"]/*' />
         public Type DataType { get; set; }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumn.MaxLength"]/*' />
         public int MaxLength { get; set; }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumn.ColumnName"]/*' />
         public string ColumnName { get; set; }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumn.Caption"]/*' />
         public string Caption
         {
             get { return _caption ?? ColumnName; }

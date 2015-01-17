@@ -19,90 +19,104 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace System.Data
 {
-	public sealed class DataColumnCollection : ICollection
-	{
-		#region FIELDS
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
 
-		private readonly DataTable _table;
-		private readonly List<DataColumn> _columns;
-		private readonly object _syncRoot;
+    /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="T:System.Data.DataColumnCollection"]/*' />
+    public sealed class DataColumnCollection : ICollection
+    {
+        #region FIELDS
 
-		#endregion
+        private readonly DataTable _table;
+        private readonly List<DataColumn> _columns;
+        private readonly object _syncRoot;
 
-		#region CONSTRUCTORS
+        #endregion
 
-		internal DataColumnCollection(DataTable table)
-		{
-			_table = table;
-			_columns = new List<DataColumn>();
-			_syncRoot = new object();
-		}
+        #region CONSTRUCTORS
 
-		#endregion
+        /// <summary>
+        /// Initializes a collection of data columns.
+        /// </summary>
+        /// <param name="table">Table that is the owner of the collection of data columns.</param>
+        internal DataColumnCollection(DataTable table)
+        {
+            _table = table;
+            _columns = new List<DataColumn>();
+            _syncRoot = new object();
+        }
 
-		#region INDEXERS
+        #endregion
 
-		public DataColumn this[string columnName]
-		{
-			get { return _columns.Single(col => col.ColumnName.Equals(columnName)); }
-		}
+        #region INDEXERS
 
-		public DataColumn this[int index]
-		{
-			get { return _columns[index]; }
-		}
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumnCollection.Item(System.String)"]/*' />
+        public DataColumn this[string name]
+        {
+            get { return _columns.Single(col => col.ColumnName.Equals(name)); }
+        }
 
-		#endregion
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumnCollection.Item(System.Int32)"]/*' />
+        public DataColumn this[int index]
+        {
+            get { return _columns[index]; }
+        }
 
-		#region PROPERTIES
+        #endregion
 
-		public int Count
-		{
-			get { return _columns.Count; }
-		}
+        #region PROPERTIES
 
-		public bool IsSynchronized
-		{
-			get { return true; }
-		}
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.InternalDataCollectionBase.Count"]/*' />
+        public int Count
+        {
+            get { return _columns.Count; }
+        }
 
-		public object SyncRoot
-		{
-			get { return _syncRoot; }
-		}
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.InternalDataCollectionBase.IsSynchronized"]/*' />
+        public bool IsSynchronized
+        {
+            get { return true; }
+        }
 
-		#endregion
-		
-		#region METHODS
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.InternalDataCollectionBase.SyncRoot"]/*' />
+        public object SyncRoot
+        {
+            get { return _syncRoot; }
+        }
 
-		public DataColumn Add(string columnName, Type type)
-		{
-			var column = new DataColumn(_table, columnName, type);
-			_columns.Add(column);
-			return column;
-		}
+        #endregion
+        
+        #region METHODS
 
-		public bool Contains(string columnName)
-		{
-			return _columns.Any(col => col.ColumnName.Equals(columnName));
-		}
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataColumnCollection.Add(System.String,System.Type)"]/*' />
+        public DataColumn Add(string columnName, Type type)
+        {
+            var column = new DataColumn(_table, columnName, type);
+            _columns.Add(column);
+            return column;
+        }
 
-		public IEnumerator GetEnumerator()
-		{
-			return _columns.GetEnumerator();
-		}
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataColumnCollection.Contains(System.String)"]/*' />
+        public bool Contains(string name)
+        {
+            return _columns.Any(col => col.ColumnName.Equals(name));
+        }
 
-		public void CopyTo(Array array, int index)
-		{
-		    _columns.TypeSafeCopyTo(array, index);
-		}
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.InternalDataCollectionBase.GetEnumerator"]/*' />
+        public IEnumerator GetEnumerator()
+        {
+            return _columns.GetEnumerator();
+        }
 
-		#endregion
-	}
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.InternalDataCollectionBase.CopyTo(System.Array,System.Int32)"]/*' />
+        public void CopyTo(Array ar, int index)
+        {
+            _columns.TypeSafeCopyTo(ar, index);
+        }
+
+        #endregion
+    }
 }
