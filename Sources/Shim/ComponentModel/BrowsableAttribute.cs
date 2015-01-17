@@ -21,11 +21,13 @@
 
 namespace System.ComponentModel
 {
+    /// <include file='../_Doc/System.xml' path='doc/members/member[@name="T:System.ComponentModel.BrowsableAttribute"]/*' />
     [AttributeUsageAttribute(AttributeTargets.All)]
     public sealed class BrowsableAttribute : Attribute
     {
         #region CONSTRUCTORS
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.ComponentModel.BrowsableAttribute.#ctor(System.Boolean)"]/*' />
         public BrowsableAttribute(bool browsable)
         {
         }

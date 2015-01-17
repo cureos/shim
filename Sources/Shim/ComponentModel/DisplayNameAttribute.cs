@@ -21,11 +21,13 @@
 
 namespace System.ComponentModel
 {
+    /// <include file='../_Doc/System.xml' path='doc/members/member[@name="T:System.ComponentModel.DisplayNameAttribute"]/*' />
     [AttributeUsageAttribute(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Event)]
     public sealed class DisplayNameAttribute : Attribute
     {
         #region CONSTRUCTORS
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.ComponentModel.DisplayNameAttribute.#ctor(System.String)"]/*' />
         public DisplayNameAttribute(string displayName)
         {
         }

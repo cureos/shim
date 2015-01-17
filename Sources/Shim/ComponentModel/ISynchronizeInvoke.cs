@@ -21,6 +21,7 @@
 
 namespace System.ComponentModel
 {
+    /// <include file='../_Doc/System.xml' path='doc/members/member[@name="T:System.ComponentModel.ISynchronizeInvoke"]/*' />
     public interface ISynchronizeInvoke
     {
     }

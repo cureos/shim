@@ -56,6 +56,7 @@ namespace System
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.IsAssignableFrom(System.Type)"]/*' />
+        /// <param name="type"><see cref="Type"/> object.</param>
         public static bool IsAssignableFrom(this Type type, Type c)
         {
 #if DOTNET || WINDOWS_PHONE
@@ -66,6 +67,7 @@ namespace System
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.IsSubclassOf(System.Type)"]/*' />
+        /// <param name="type"><see cref="Type"/> object.</param>
         public static bool IsSubclassOf(this Type type, Type c)
         {
 #if DOTNET || WINDOWS_PHONE
@@ -76,6 +78,7 @@ namespace System
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.IsInstanceOfType(System.Object)"]/*' />
+        /// <param name="type"><see cref="Type"/> object.</param>
         public static bool IsInstanceOfType(this Type type, object o)
         {
 #if DOTNET || WINDOWS_PHONE
@@ -86,6 +89,7 @@ namespace System
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.GetMethod(System.String,System.Reflection.BindingFlags)"]/*' />
+        /// <param name="type"><see cref="Type"/> object.</param>
         public static MethodInfo GetMethod(this Type type, string name, BindingFlags bindingAttr)
         {
 #if DOTNET || WINDOWS_PHONE
@@ -99,6 +103,7 @@ namespace System
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.GetFields(System.Reflection.BindingFlags)"]/*' />
+        /// <param name="type"><see cref="Type"/> object.</param>
         public static FieldInfo[] GetFields(this Type type, BindingFlags bindingAttr)
         {
 #if DOTNET || WINDOWS_PHONE
@@ -112,6 +117,7 @@ namespace System
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Globalization.CultureInfo)"]/*' />
+        /// <param name="type"><see cref="Type"/> object.</param>
         public static object InvokeMember(this Type type, string name, BindingFlags invokeAttr, 
             Binder binder, object target, object[] args, CultureInfo culture)
         {

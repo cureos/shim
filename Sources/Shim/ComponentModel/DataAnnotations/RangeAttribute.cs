@@ -21,9 +21,7 @@
 
 namespace System.ComponentModel.DataAnnotations
 {
-    /// <summary>
-    /// Used for specifying a range constraint
-    /// </summary>
+    /// <include file='../../_Doc/System.ComponentModel.DataAnnotations.xml' path='doc/members/member[@name="T:System.ComponentModel.DataAnnotations.RangeAttribute"]/*' />
     [AttributeUsageAttribute(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = false)]
     public class RangeAttribute : Attribute
     {
@@ -36,22 +34,14 @@ namespace System.ComponentModel.DataAnnotations
 
         #region CONSTRUCTORS
 
-        /// <summary>
-        /// Constructor that takes double minimum and maximum values
-        /// </summary>
-        /// <param name="minimum">The minimum value, inclusive</param>
-        /// <param name="maximum">The maximum value, inclusive</param>        
+        /// <include file='../../_Doc/System.ComponentModel.DataAnnotations.xml' path='doc/members/member[@name="M:System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Double,System.Double)"]/*' />
         public RangeAttribute(double minimum, double maximum)
         {
             this.minimum = minimum;
             this.maximum = maximum;
         }
 
-        /// <summary>
-        /// Constructor that takes integer minimum and maximum values
-        /// </summary>
-        /// <param name="minimum">The minimum value, inclusive</param>
-        /// <param name="maximum">The maximum value, inclusive</param>
+        /// <include file='../../_Doc/System.ComponentModel.DataAnnotations.xml' path='doc/members/member[@name="M:System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)"]/*' />
         public RangeAttribute(int minimum, int maximum)
         {
             this.minimum = minimum;
@@ -62,6 +52,7 @@ namespace System.ComponentModel.DataAnnotations
 
         #region PROPERTIES
 
+        /// <include file='../../_Doc/System.ComponentModel.DataAnnotations.xml' path='doc/members/member[@name="P:System.ComponentModel.DataAnnotations.RangeAttribute.Minimum"]/*' />
         public object Minimum
         {
             get
@@ -70,6 +61,7 @@ namespace System.ComponentModel.DataAnnotations
             }
         }
 
+        /// <include file='../../_Doc/System.ComponentModel.DataAnnotations.xml' path='doc/members/member[@name="P:System.ComponentModel.DataAnnotations.RangeAttribute.Maximum"]/*' />
         public object Maximum
         {
             get

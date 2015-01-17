@@ -21,6 +21,7 @@
 
 namespace System.ComponentModel
 {
+    /// <include file='../_Doc/System.xml' path='doc/members/member[@name="T:System.ComponentModel.DescriptionAttribute"]/*' />
     [AttributeUsageAttribute(AttributeTargets.All)]
     public sealed class DescriptionAttribute : Attribute
     {
@@ -32,6 +33,7 @@ namespace System.ComponentModel
 
         #region CONSTRUCTORS
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.ComponentModel.DescriptionAttribute.#ctor(System.String)"]/*' />
         public DescriptionAttribute(string description)
         {
             _description = description;
@@ -41,6 +43,7 @@ namespace System.ComponentModel
 
         #region PROPERTIES
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="P:System.ComponentModel.DescriptionAttribute.Description"]/*' />
         public string Description
         {
             get { return _description; }

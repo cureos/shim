@@ -21,11 +21,13 @@
 
 namespace System.ComponentModel
 {
+    /// <include file='../_Doc/System.xml' path='doc/members/member[@name="T:System.ComponentModel.CategoryAttribute"]/*' />
     [AttributeUsageAttribute(AttributeTargets.All)]
     public sealed class CategoryAttribute : Attribute
     {
         #region CONSTRUCTORS
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.ComponentModel.CategoryAttribute.#ctor(System.String)"]/*' />
         public CategoryAttribute(string category)
         {
         }
