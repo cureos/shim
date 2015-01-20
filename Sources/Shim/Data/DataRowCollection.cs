@@ -19,11 +19,12 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Collections;
-using System.Collections.Generic;
-
 namespace System.Data
 {
+    using System.Collections;
+    using System.Collections.Generic;
+
+    /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="T:System.Data.DataRowCollection"]/*' />
     public sealed class DataRowCollection : ICollection
     {
         #region FIELDS
@@ -36,6 +37,10 @@ namespace System.Data
 
         #region CONSTRUCTORS
 
+        /// <summary>
+        /// Initializes a collection of data rows.
+        /// </summary>
+        /// <param name="table">Data table that owns this collection of data rows.</param>
         internal DataRowCollection(DataTable table)
         {
             _table = table;
@@ -47,6 +52,7 @@ namespace System.Data
 
         #region INDEXERS
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataRowCollection.Item(System.Int32)"]/*' />
         public DataRow this[int index]
         {
             get { return _rows[index]; }
@@ -56,16 +62,19 @@ namespace System.Data
         
         #region PROPERTIES
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataRowCollection.Count"]/*' />
         public int Count
         {
             get { return _rows.Count; }
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.InternalDataCollectionBase.IsSynchronized"]/*' />
         public bool IsSynchronized
         {
             get { return true; }
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.InternalDataCollectionBase.SyncRoot"]/*' />
         public object SyncRoot
         {
             get { return _syncRoot; }
@@ -75,11 +84,13 @@ namespace System.Data
         
         #region METHODS
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataRowCollection.Add(System.Data.DataRow)"]/*' />
         public void Add(DataRow row)
         {
             _rows.Add(row);
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataRowCollection.Add(System.Object[])"]/*' />
         public DataRow Add(object[] values)
         {
             var row = new DataRow(_table, values);
@@ -87,24 +98,28 @@ namespace System.Data
             return row;
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataRowCollection.Remove(System.Data.DataRow)"]/*' />
         public void Remove(DataRow row)
         {
             _rows.Remove(row);
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataRowCollection.IndexOf(System.Data.DataRow)"]/*' />
         public int IndexOf(DataRow row)
         {
             return _rows.IndexOf(row);
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataRowCollection.GetEnumerator"]/*' />
         public IEnumerator GetEnumerator()
         {
             return _rows.GetEnumerator();
         }
 
-        public void CopyTo(Array array, int index)
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataRowCollection.CopyTo(System.Array,System.Int32)"]/*' />
+        public void CopyTo(Array ar, int index)
         {
-            _rows.TypeSafeCopyTo(array, index);
+            _rows.TypeSafeCopyTo(ar, index);
         }
 
         #endregion

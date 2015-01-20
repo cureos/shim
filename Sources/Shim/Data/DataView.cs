@@ -24,89 +24,95 @@ using System.Linq;
 
 namespace System.Data
 {
-	public sealed class DataView
-	{
-		#region FIELDS
+    /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="T:System.Data.DataView"]/*' />
+    public sealed class DataView
+    {
+        #region FIELDS
 
-		private readonly DataTable _table;
+        private readonly DataTable _table;
 
-		#endregion
+        #endregion
 
-		#region CONSTRUCTORS
+        #region CONSTRUCTORS
 
-		internal DataView(DataTable table)
-		{
-			_table = table;
-		}
+        /// <summary>
+        /// Initializes a data view.
+        /// </summary>
+        /// <param name="table">Data table for which the view should be defined.</param>
+        internal DataView(DataTable table)
+        {
+            _table = table;
+        }
 
-		#endregion
+        #endregion
 
-		#region METHODS
+        #region METHODS
 
-		public DataTable ToTable(bool distinct, params string[] columnNames)
-		{
-			var table = new DataTable { Locale = _table.Locale };
-			foreach (var name in columnNames)
-				table.Columns.Add(name, _table.Columns.Contains(name) ? _table.Columns[name].DataType : typeof (object));
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataView.ToTable(System.Boolean,System.String[])"]/*' />
+        public DataTable ToTable(bool distinct, params string[] columnNames)
+        {
+            var table = new DataTable { Locale = _table.Locale };
+            foreach (var name in columnNames)
+                table.Columns.Add(name, _table.Columns.Contains(name) ? _table.Columns[name].DataType : typeof (object));
 
-			var viewRows = new List<DataRow>();
-			foreach (DataRow row in _table.Rows)
-			{
-				var viewRow = new DataRow(table);
-				foreach (var columnName in columnNames)
-				{
-					if (table.Columns.Contains(columnName))
-						viewRow[columnName] = row[columnName];
-				}
-				viewRows.Add(viewRow);
-			}
-			foreach (var row in (distinct ? viewRows.Distinct(new DataRowComparer(_table)) : viewRows))
-				table.Rows.Add(row);
+            var viewRows = new List<DataRow>();
+            foreach (DataRow row in _table.Rows)
+            {
+                var viewRow = new DataRow(table);
+                foreach (var columnName in columnNames)
+                {
+                    if (table.Columns.Contains(columnName))
+                        viewRow[columnName] = row[columnName];
+                }
+                viewRows.Add(viewRow);
+            }
+            foreach (var row in (distinct ? viewRows.Distinct(new DataRowComparer(_table)) : viewRows))
+                table.Rows.Add(row);
 
-			return table;
-		}
+            return table;
+        }
 
-		#endregion
+        #endregion
 
-		#region INNER CLASSES
+        #region INNER CLASSES
 
-		private class DataRowComparer : IEqualityComparer<DataRow>
-		{
-			#region FIELDS
+        private class DataRowComparer : IEqualityComparer<DataRow>
+        {
+            #region FIELDS
 
-			private readonly DataTable _table;
+            private readonly DataTable _table;
  
-			#endregion
+            #endregion
 
-			#region CONSTRUCTORS
+            #region CONSTRUCTORS
 
-			internal DataRowComparer(DataTable table)
-			{
-				_table = table;
-			}
+            internal DataRowComparer(DataTable table)
+            {
+                _table = table;
+            }
 
-			#endregion
+            #endregion
 
-			#region METHODS
+            #region METHODS
 
-			public bool Equals(DataRow x, DataRow y)
-			{
-				foreach (DataColumn column in _table.Columns)
-				{
-					var columnName = column.ColumnName;
-					if (!x[columnName].Equals(y[columnName])) return false;
-				}
-				return true;
-			}
+            public bool Equals(DataRow x, DataRow y)
+            {
+                foreach (DataColumn column in _table.Columns)
+                {
+                    var columnName = column.ColumnName;
+                    if (!x[columnName].Equals(y[columnName])) return false;
+                }
+                return true;
+            }
 
-			public int GetHashCode(DataRow obj)
-			{
-				return 1;
-			}
-			
-			#endregion
-		}
+            public int GetHashCode(DataRow obj)
+            {
+                return 1;
+            }
+            
+            #endregion
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

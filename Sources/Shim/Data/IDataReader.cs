@@ -21,29 +21,45 @@
 
 namespace System.Data
 {
+    /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="T:System.Data.IDataReader"]/*' />
     public interface IDataReader : IDisposable, IDataRecord
     {
+        #region PROPERTIES
+
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.IDataReader.Depth"]/*' />
         int Depth
         {
             get;
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.IDataReader.IsClosed"]/*' />
         bool IsClosed
         {
             get;
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.IDataReader.RecordsAffected"]/*' />
         int RecordsAffected
         {
             get;
         }
 
+        #endregion
+
+        #region METHODS
+
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.IDataReader.Close"]/*' />
         void Close();
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.IDataReader.GetSchemaTable"]/*' />
         DataTable GetSchemaTable();
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.IDataReader.NextResult"]/*' />
         bool NextResult();
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.IDataReader.Read"]/*' />
         bool Read();
+
+        #endregion
     }
 }

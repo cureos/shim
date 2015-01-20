@@ -21,8 +21,10 @@
 
 namespace System.Data
 {
+    /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="T:System.Data.DbType"]/*' />
     public enum DbType
     {
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="F:System.Data.DbType.String"]/*' />
         String = 16
     }
 }

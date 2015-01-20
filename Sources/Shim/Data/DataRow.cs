@@ -19,13 +19,14 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-
 namespace System.Data
 {
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+
+    /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="T:System.Data.DataRow"]/*' />
     public sealed class DataRow
     {
         #region FIELDS
@@ -36,6 +37,11 @@ namespace System.Data
         
         #region CONSTRUCTORS
 
+        /// <summary>
+        /// Initializes a data row with specified cells.
+        /// </summary>
+        /// <param name="table">Data table that is the owner of this data row.</param>
+        /// <param name="cells">Cells to be included in the data row.</param>
         internal DataRow(DataTable table, IEnumerable cells)
         {
             Table = table;
@@ -44,6 +50,10 @@ namespace System.Data
                 .ToDictionary(tuple => tuple.Item1, tuple => tuple.Item2);
         }
 
+        /// <summary>
+        /// Initializes an empty data row.
+        /// </summary>
+        /// <param name="table">Data table that is the owner of this data row.</param>
         internal DataRow(DataTable table)
         {
             Table = table;
@@ -54,11 +64,13 @@ namespace System.Data
 
         #region INDEXERS
 
-        public object this[int index]
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataRow.Item(System.Int32)"]/*' />
+        public object this[int columnIndex]
         {
-            get { return _objects.ElementAt(index); }
+            get { return _objects.ElementAt(columnIndex); }
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataRow.Item(System.Data.DataColumn)"]/*' />
         public object this[DataColumn column]
         {
             get
@@ -74,6 +86,7 @@ namespace System.Data
             }
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataRow.Item(System.String)"]/*' />
         public object this[string columnName]
         {
             get
@@ -92,10 +105,13 @@ namespace System.Data
 
         #region PROPERTIES
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataRow.Table"]/*' />
         public DataTable Table { get; private set; }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataRow.RowError"]/*' />
         public string RowError { get; set; }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataRow.ItemArray"]/*' />
         public object[] ItemArray
         {
             get { return _objects.Values.ToArray(); }

@@ -23,10 +23,12 @@ namespace System.Data
 {
     using System.Globalization;
 
+    /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="T:System.Data.DataTable"]/*' />
     public sealed class DataTable
     {
         #region CONSTRUCTORS
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.#ctor"]/*' />
         public DataTable()
         {
             Columns = new DataColumnCollection(this);
@@ -35,6 +37,7 @@ namespace System.Data
             DefaultView = new DataView(this);
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.#ctor(System.String)"]/*' />
         public DataTable(string tableName)
             : this()
         {
@@ -45,22 +48,29 @@ namespace System.Data
 
         #region PROPERTIES
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataTable.TableName"]/*' />
         public string TableName { get; private set; }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataTable.Columns"]/*' />
         public DataColumnCollection Columns { get; private set; }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataTable.Rows"]/*' />
         public DataRowCollection Rows { get; private set; }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataTable.Locale"]/*' />
         public CultureInfo Locale { get; set; }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataTable.DefaultView"]/*' />
         public DataView DefaultView { get; private set; }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataTable.MinimumCapacity"]/*' />
         public int MinimumCapacity { get; set; }
 
         #endregion
 
         #region METHODS
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.Clone"]/*' />
         public DataTable Clone()
         {
             var table = new DataTable { Locale = this.Locale };
@@ -68,6 +78,7 @@ namespace System.Data
             return table;
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.Copy"]/*' />
         public DataTable Copy()
         {
             var table = Clone();
@@ -75,6 +86,7 @@ namespace System.Data
             return table;
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.ImportRow(System.Data.DataRow)"]/*' />
         public void ImportRow(DataRow row)
         {
             var newRow = new DataRow(this);
@@ -86,16 +98,19 @@ namespace System.Data
             Rows.Add(newRow);
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.NewRow"]/*' />
         public DataRow NewRow()
         {
             return new DataRow(this);
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.Select(System.String,System.String)"]/*' />
         public DataRow[] Select(string filterExpression, string sort)
         {
             throw new NotImplementedException();
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.Load(System.Data.IDataReader)"]/*' />
         public void Load(IDataReader reader)
         {
             throw new NotImplementedException();
