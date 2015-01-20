@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Droid.Shim", "Shim\_Droid\D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universal.Shim", "Shim\_Universal\Universal.Shim.csproj", "{8464069A-34AD-49EE-AE4D-1213DF8BA2B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOS.Shim", "Shim\_iOS\iOS.Shim.csproj", "{62D2C8BC-8690-4719-B213-4B68B1ABDAC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unified.Shim", "Shim\_Unified\Unified.Shim.csproj", "{62D2C8BC-8690-4719-B213-4B68B1ABDAC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
