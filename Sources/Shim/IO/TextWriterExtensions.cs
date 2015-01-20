@@ -21,9 +21,15 @@
 
 namespace System.IO
 {
+    /// <summary>
+    /// Shim complement for the <see cref="TextWriter"/> class. <see cref="TextWriter"/> instance methods that are not available in the 
+    /// PCL profile are here provided as equivalent extension methods.
+    /// </summary>
     public static class TextWriterExtensions
     {
-         public static void Close(this TextWriter writer)
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.TextWriter.Close"]/*' />
+        /// <param name="writer">Text writer to be closed.</param>
+        public static void Close(this TextWriter writer)
          {
 #if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
              writer.Close();

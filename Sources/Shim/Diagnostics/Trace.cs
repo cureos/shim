@@ -21,30 +21,36 @@
 
 namespace System.Diagnostics
 {
+    /// <include file='../_Doc/System.xml' path='doc/members/member[@name="T:System.Diagnostics.Trace"]/*' />
     public static class Trace
     {
         #region METHODS
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Diagnostics.Trace.Write(System.String)"]/*' />
         public static void Write(string message)
         {
             Console.Write(message);
         }
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Diagnostics.Trace.WriteLine(System.String)"]/*' />
         public static void WriteLine(string message)
         {
             Console.WriteLine(message);
         }
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Diagnostics.Trace.TraceWarning(System.String)"]/*' />
         public static void TraceWarning(string message)
         {
             Console.WriteLine(message);
         }
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Diagnostics.Trace.TraceInformation(System.String,System.Object[])"]/*' />
         public static void TraceInformation(string format, params object[] args)
         {
             Console.WriteLine(format, args);
         }
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Diagnostics.Trace.Assert(System.Boolean)"]/*' />
         public static void Assert(bool condition)
         {
             if (!condition) throw new InvalidOperationException("Assertion condition false");

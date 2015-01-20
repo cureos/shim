@@ -21,9 +21,15 @@
 
 namespace System.IO
 {
+    /// <summary>
+    /// Shim complement for the <see cref="TextReader"/> class. <see cref="TextReader"/> instance methods that are not available in the 
+    /// PCL profile are here provided as equivalent extension methods.
+    /// </summary>
     public static class TextReaderExtensions
     {
-         public static void Close(this TextReader reader)
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.TextReader.Close"]/*' />
+        /// <param name="reader">Text reader to be closed.</param>
+        public static void Close(this TextReader reader)
          {
 #if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
              reader.Close();

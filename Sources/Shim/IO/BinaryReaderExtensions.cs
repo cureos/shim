@@ -21,9 +21,15 @@
 
 namespace System.IO
 {
+    /// <summary>
+    /// Shim complement for the <see cref="BinaryReader"/> class. <see cref="BinaryReader"/> instance methods that are not available in the 
+    /// PCL profile are here provided as equivalent extension methods.
+    /// </summary>
     public static class BinaryReaderExtensions
     {
-         public static void Close(this BinaryReader reader)
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.BinaryReader.Close"]/*' />
+        /// <param name="reader">Binary reader to be closed.</param>
+        public static void Close(this BinaryReader reader)
          {
 #if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
              reader.Close();

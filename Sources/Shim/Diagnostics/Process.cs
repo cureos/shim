@@ -21,6 +21,7 @@
 
 namespace System.Diagnostics
 {
+    /// <include file='../_Doc/System.xml' path='doc/members/member[@name="T:System.Diagnostics.Process"]/*' />
     public sealed class Process
     {
         #region FIELDS
@@ -38,6 +39,7 @@ namespace System.Diagnostics
             _currentProcess = new Process();
         }
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Diagnostics.Process.#ctor"]/*' />
         public Process()
         {
             _processorAffinity = new IntPtr((1 << Environment.ProcessorCount) - 1);
@@ -47,7 +49,9 @@ namespace System.Diagnostics
 
         #region PROPERTIES
 
-        public IntPtr ProcessorAffinity {
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="P:System.Diagnostics.Process.ProcessorAffinity"]/*' />
+        public IntPtr ProcessorAffinity
+        {
             get
             {
                 return _processorAffinity;
@@ -62,6 +66,7 @@ namespace System.Diagnostics
 
         #region METHODS
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Diagnostics.Process.GetCurrentProcess"]/*' />
         public static Process GetCurrentProcess()
         {
             return _currentProcess;

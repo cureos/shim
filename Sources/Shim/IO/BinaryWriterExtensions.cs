@@ -21,9 +21,15 @@
 
 namespace System.IO
 {
+    /// <summary>
+    /// Shim complement for the <see cref="BinaryWriter"/> class. <see cref="BinaryWriter"/> instance methods that are not available in the 
+    /// PCL profile are here provided as equivalent extension methods.
+    /// </summary>
     public static class BinaryWriterExtensions
     {
-         public static void Close(this BinaryWriter writer)
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.BinaryWriter.Close"]/*' />
+        /// <param name="writer">Binary writer to be closed.</param>
+        public static void Close(this BinaryWriter writer)
          {
 #if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
              writer.Close();
