@@ -21,8 +21,15 @@
 
 namespace System.Net
 {
+    /// <summary>
+    /// Shim complement for the <see cref="HttpWebRequest"/> class. <see cref="HttpWebRequest"/> instance properties that are not available in the 
+    /// PCL profile are here provided as equivalent extension methods (since extension properties is not available in C#).
+    /// </summary>
     static public class HttpWebRequestExtensions
     {
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.HttpWebRequest.UserAgent"]/*' />
+        /// <param name="request">HTTP web request object on which to set user agent.</param>
+        /// <param name="userAgent">User agent value to set.</param>
         public static void SetUserAgent(this HttpWebRequest request, string userAgent)
         {
 #if DOTNET

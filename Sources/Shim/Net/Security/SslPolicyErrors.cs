@@ -21,9 +21,11 @@
 
 namespace System.Net.Security
 {
+    /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Security.SslPolicyErrors"]/*' />
     [Flags]
-	public enum SslPolicyErrors
-	{
-		None = 0
-	}
+    public enum SslPolicyErrors
+    {
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Security.SslPolicyErrors.None"]/*' />
+        None = 0
+    }
 }

@@ -21,23 +21,26 @@
 
 namespace System.Net
 {
-	public sealed class IPAddress
-	{
+    /// <include file='../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.IPAddress"]/*' />
+    public sealed class IPAddress
+    {
         #region FIELDS
 
-		public static readonly IPAddress Any = new IPAddress(0);
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.IPAddress.Any"]/*' />
+        public static readonly IPAddress Any = new IPAddress(0);
 
-	    private readonly long _address;
+        private readonly long newAddress;
 
-	    #endregion
+        #endregion
 
         #region CONSTRUCTORS
 
-        private IPAddress(long address)
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.IPAddress.#ctor(System.Int64)"]/*' />
+        private IPAddress(long newAddress)
         {
-            _address = address;
+            this.newAddress = newAddress;
         }
         
         #endregion
-	}
+    }
 }

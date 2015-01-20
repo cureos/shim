@@ -25,41 +25,50 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace System.Net.Security
 {
-	public delegate bool RemoteCertificateValidationCallback(
-		object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors);
-	
-	public sealed class SslStream : MemoryStream
-	{
-		#region CONSTRUCTORS
+    /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Security.RemoteCertificateValidationCallback"]/*' />
+    public delegate bool RemoteCertificateValidationCallback(
+        object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors);
 
-		public SslStream(Stream innerStream, bool leaveInnerStreamOpen, RemoteCertificateValidationCallback validateServerCertificate)
-		{
+    /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Security.SslStream"]/*' />
+    public sealed class SslStream : MemoryStream
+    {
+        #region CONSTRUCTORS
+
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Security.SslStream.#ctor(System.IO.Stream,System.Boolean,System.Net.Security.RemoteCertificateValidationCallback)"]/*' />
+        public SslStream(Stream innerStream, bool leaveInnerStreamOpen, RemoteCertificateValidationCallback userCertificateValidationCallback)
+        {
             throw new PlatformNotSupportedException("PCL");
         }
 
-		public SslStream(Stream innerStream, bool leaveInnerStreamOpen) : this(innerStream, leaveInnerStreamOpen, null)
-		{
-		}
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Security.SslStream.#ctor(System.IO.Stream,System.Boolean)"]/*' />
+        public SslStream(Stream innerStream, bool leaveInnerStreamOpen)
+            : this(innerStream, leaveInnerStreamOpen, null)
+        {
+        }
 
-		public SslStream(Stream innerStream) : this(innerStream, true, null)
-		{
-		}
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Security.SslStream.#ctor(System.IO.Stream)"]/*' />
+        public SslStream(Stream innerStream)
+            : this(innerStream, true, null)
+        {
+        }
 
-		#endregion
+        #endregion
 
-		#region METHODS
+        #region METHODS
 
-		public void AuthenticateAsServer(X509Certificate serverCertificate, 
-			bool clientCertificateRequired, SslProtocols enabledSslProtocols, bool checkCertificateRevocation)
-		{
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Security.SslStream.AuthenticateAsServer(System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Security.Authentication.SslProtocols,System.Boolean)"]/*' />
+        public void AuthenticateAsServer(X509Certificate serverCertificate, 
+            bool clientCertificateRequired, SslProtocols enabledSslProtocols, bool checkCertificateRevocation)
+        {
             throw new PlatformNotSupportedException("PCL");
         }
 
-		public void AuthenticateAsClient(string targetHost)
-		{
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Security.SslStream.AuthenticateAsClient(System.String)"]/*' />
+        public void AuthenticateAsClient(string targetHost)
+        {
             throw new PlatformNotSupportedException("PCL");
         }
-		
-		#endregion
-	}
+        
+        #endregion
+    }
 }

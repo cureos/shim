@@ -21,31 +21,37 @@
 
 namespace System.Net.Sockets
 {
-	public class SocketException : Exception
-	{
-		#region CONSTRUCTORS
+    /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Sockets.SocketException"]/*' />
+    public class SocketException : Exception
+    {
+        #region CONSTRUCTORS
 
-		public SocketException(int errorCode)
-		{
-			ErrorCode = errorCode;
-		}
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.SocketException.#ctor(System.Int32)"]/*' />
+        public SocketException(int errorCode)
+        {
+            ErrorCode = errorCode;
+        }
 
         // TODO Check in fo-dicom where this constructor originates from?
-		public SocketException(string format, params object[] args) : base(String.Format(format, args))
-		{
-		}
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Sockets.SocketException.#ctor(System.String,System.Object[])"]/*' />
+        public SocketException(string format, params object[] args)
+            : base(String.Format(format, args))
+        {
+        }
 
-		#endregion
+        #endregion
 
-		#region PROPERTIES
+        #region PROPERTIES
 
-		public int ErrorCode { get; private set; }
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.SocketException.ErrorCode"]/*' />
+        public int ErrorCode { get; private set; }
 
-		public SocketError SocketErrorCode
-		{
-			get { return (SocketError)ErrorCode; }
-		}
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.SocketException.SocketErrorCode"]/*' />
+        public SocketError SocketErrorCode
+        {
+            get { return (SocketError)ErrorCode; }
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

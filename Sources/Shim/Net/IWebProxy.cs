@@ -21,6 +21,7 @@
 
 namespace System.Net
 {
+    /// <include file='../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.IWebProxy"]/*' />
     public interface IWebProxy
     {
          

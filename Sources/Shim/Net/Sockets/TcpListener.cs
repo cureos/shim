@@ -21,39 +21,45 @@
 
 namespace System.Net.Sockets
 {
-	public sealed class TcpListener
-	{
-		#region CONSTRUCTORS
+    /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Sockets.TcpListener"]/*' />
+    public sealed class TcpListener
+    {
+        #region CONSTRUCTORS
 
-		public TcpListener(IPAddress localaddr, int port)
-		{
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.#ctor(System.Net.IPAddress,System.Int32)"]/*' />
+        public TcpListener(IPAddress localaddr, int port)
+        {
             throw new PlatformNotSupportedException("PCL");
         }
 
-		#endregion
+        #endregion
 
-		#region METHODS
+        #region METHODS
 
-		public void Start()
-		{
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.Start"]/*' />
+        public void Start()
+        {
             throw new PlatformNotSupportedException("PCL");
         }
 
-		public IAsyncResult BeginAcceptTcpClient(AsyncCallback callback, object state)
-		{
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.BeginAcceptTcpClient(System.AsyncCallback,System.Object)"]/*' />
+        public IAsyncResult BeginAcceptTcpClient(AsyncCallback callback, object state)
+        {
             throw new PlatformNotSupportedException("PCL");
         }
 
-		public TcpClient EndAcceptTcpClient(IAsyncResult asyncResult)
-		{
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.EndAcceptTcpClient(System.IAsyncResult)"]/*' />
+        public TcpClient EndAcceptTcpClient(IAsyncResult asyncResult)
+        {
             throw new PlatformNotSupportedException("PCL");
         }
 
-		public void Stop()
-		{
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.Stop"]/*' />
+        public void Stop()
+        {
             throw new PlatformNotSupportedException("PCL");
         }
 
-		#endregion
-	}
+        #endregion
+    }
 }

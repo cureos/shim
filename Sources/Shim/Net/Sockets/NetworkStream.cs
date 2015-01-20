@@ -23,31 +23,37 @@ namespace System.Net.Sockets
 {
     using System.IO;
 
+    /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Sockets.NetworkStream"]/*' />
     public sealed class NetworkStream : Stream
     {
         #region METHODS
 
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.Flush"]/*' />
         public override void Flush()
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
-        public override int Read(byte[] buffer, int offset, int count)
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.Read(System.Byte[],System.Int32,System.Int32)"]/*' />
+        public override int Read(byte[] buffer, int offset, int size)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.Seek(System.Int64,System.IO.SeekOrigin)"]/*' />
         public override long Seek(long offset, SeekOrigin origin)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.SetLength(System.Int64)"]/*' />
         public override void SetLength(long value)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
-        public override void Write(byte[] buffer, int offset, int count)
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.Write(System.Byte[],System.Int32,System.Int32)"]/*' />
+        public override void Write(byte[] buffer, int offset, int size)
         {
             throw new PlatformNotSupportedException("PCL");
         }
@@ -56,6 +62,7 @@ namespace System.Net.Sockets
 
         #region PROPERTIES
 
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.NetworkStream.CanRead"]/*' />
         public override bool CanRead
         {
             get
@@ -64,6 +71,7 @@ namespace System.Net.Sockets
             }
         }
 
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.NetworkStream.CanSeek"]/*' />
         public override bool CanSeek
         {
             get
@@ -72,6 +80,7 @@ namespace System.Net.Sockets
             }
         }
 
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.NetworkStream.CanWrite"]/*' />
         public override bool CanWrite
         {
             get
@@ -80,6 +89,7 @@ namespace System.Net.Sockets
             }
         }
 
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.NetworkStream.Length"]/*' />
         public override long Length
         {
             get
@@ -88,7 +98,9 @@ namespace System.Net.Sockets
             }
         }
 
-        public override long Position {
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.NetworkStream.Position"]/*' />
+        public override long Position
+        {
             get
             {
                 throw new PlatformNotSupportedException("PCL");

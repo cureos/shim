@@ -53,54 +53,102 @@
 
 namespace System.Net.Sockets
 {
+    /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Sockets.SocketError"]/*' />
     public enum SocketError
     {
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.AccessDenied"]/*' />
         AccessDenied = 10013,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.AddressAlreadyInUse"]/*' />
         AddressAlreadyInUse = 10048,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.AddressFamilyNotSupported"]/*' />
         AddressFamilyNotSupported = 10047,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.AddressNotAvailable"]/*' />
         AddressNotAvailable = 10049,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.AlreadyInProgress"]/*' />
         AlreadyInProgress = 10037,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.ConnectionAborted"]/*' />
         ConnectionAborted = 10053,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.ConnectionRefused"]/*' />
         ConnectionRefused = 10061,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.ConnectionReset"]/*' />
         ConnectionReset = 10054,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.DestinationAddressRequired"]/*' />
         DestinationAddressRequired = 10039,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.Disconnecting"]/*' />
         Disconnecting = 10101,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.Fault"]/*' />
         Fault = 10014,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.HostDown"]/*' />
         HostDown = 10064,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.HostNotFound"]/*' />
         HostNotFound = 11001,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.HostUnreachable"]/*' />
         HostUnreachable = 10065,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.InProgress"]/*' />
         InProgress = 10036,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.Interrupted"]/*' />
         Interrupted = 10004,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.InvalidArgument"]/*' />
         InvalidArgument = 10022,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.IOPending"]/*' />
         IOPending = 997,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.IsConnected"]/*' />
         IsConnected = 10056,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.MessageSize"]/*' />
         MessageSize = 10040,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.NetworkDown"]/*' />
         NetworkDown = 10050,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.NetworkReset"]/*' />
         NetworkReset = 10052,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.NetworkUnreachable"]/*' />
         NetworkUnreachable = 10051,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.NoBufferSpaceAvailable"]/*' />
         NoBufferSpaceAvailable = 10055,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.NoData"]/*' />
         NoData = 11004,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.NoRecovery"]/*' />
         NoRecovery = 11003,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.NotConnected"]/*' />
         NotConnected = 10057,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.NotInitialized"]/*' />
         NotInitialized = 10093,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.NotSocket"]/*' />
         NotSocket = 10038,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.OperationAborted"]/*' />
         OperationAborted = 995,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.OperationNotSupported"]/*' />
         OperationNotSupported = 10045,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.ProcessLimit"]/*' />
         ProcessLimit = 10067,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.ProtocolFamilyNotSupported"]/*' />
         ProtocolFamilyNotSupported = 10046,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.ProtocolNotSupported"]/*' />
         ProtocolNotSupported = 10043,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.ProtocolOption"]/*' />
         ProtocolOption = 10042,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.ProtocolType"]/*' />
         ProtocolType = 10041,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.Shutdown"]/*' />
         Shutdown = 10058,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.SocketError"]/*' />
         SocketError = -1,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.SocketNotSupported"]/*' />
         SocketNotSupported = 10044,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.Success"]/*' />
         Success = 0,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.SystemNotReady"]/*' />
         SystemNotReady = 10091,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.TimedOut"]/*' />
         TimedOut = 10060,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.TooManyOpenSockets"]/*' />
         TooManyOpenSockets = 10024,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.TryAgain"]/*' />
         TryAgain = 11002,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.TypeNotFound"]/*' />
         TypeNotFound = 10109,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.VersionNotSupported"]/*' />
         VersionNotSupported = 10092,
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Net.Sockets.SocketError.WouldBlock"]/*' />
         WouldBlock = 10035
     }
 }

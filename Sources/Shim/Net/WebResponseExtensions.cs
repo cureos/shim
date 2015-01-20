@@ -21,8 +21,14 @@
 
 namespace System.Net
 {
+    /// <summary>
+    /// Shim complement for the <see cref="WebResponse"/> class. <see cref="WebResponse"/> instance methods that are not available in the 
+    /// PCL profile are here provided as equivalent extension methods.
+    /// </summary>
     public static class WebResponseExtensions
     {
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.WebResponse.Close"]/*' />
+        /// <param name="webResponse">HTTP web response object to close.</param>
         public static void Close(this WebResponse webResponse)
         {
 #if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP

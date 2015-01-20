@@ -21,44 +21,50 @@
 
 namespace System.Net.Sockets
 {
-	public sealed class TcpClient
-	{
-		#region CONSTRUCTORS
+    /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Sockets.TcpClient"]/*' />
+    public sealed class TcpClient
+    {
+        #region CONSTRUCTORS
 
-		public TcpClient(string hostname, int port)
-		{
-            throw new PlatformNotSupportedException("PCL");
-		}
-
-		#endregion
-
-		#region PROPERTIES
-
-		public bool NoDelay {
-		    get
-            {
-                throw new PlatformNotSupportedException("PCL");
-		    }
-		    set
-            {
-                throw new PlatformNotSupportedException("PCL");
-		    }
-		}
-
-		#endregion
-		
-		#region METHODS
-
-		public NetworkStream GetStream()
-		{
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.#ctor(System.String,System.Int32)"]/*' />
+        public TcpClient(string hostname, int port)
+        {
             throw new PlatformNotSupportedException("PCL");
         }
 
-		public void Close()
-		{
+        #endregion
+
+        #region PROPERTIES
+
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.TcpClient.NoDelay"]/*' />
+        public bool NoDelay
+        {
+            get
+            {
+                throw new PlatformNotSupportedException("PCL");
+            }
+            set
+            {
+                throw new PlatformNotSupportedException("PCL");
+            }
+        }
+
+        #endregion
+        
+        #region METHODS
+
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.GetStream"]/*' />
+        public NetworkStream GetStream()
+        {
             throw new PlatformNotSupportedException("PCL");
         }
 
-		#endregion
-	}
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.Close"]/*' />
+        public void Close()
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        #endregion
+    }
 }
