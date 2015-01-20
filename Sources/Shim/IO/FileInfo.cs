@@ -21,10 +21,12 @@
 
 namespace System.IO
 {
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.IO.FileInfo"]/*' />
     public sealed class FileInfo
     {
         #region CONSTRUCTORS
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileInfo.#ctor(System.String)"]/*' />
         public FileInfo(string fileName)
         {
             throw new PlatformNotSupportedException("PCL");
@@ -34,6 +36,7 @@ namespace System.IO
 
         #region PROPERTIES
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileInfo.Attributes"]/*' />
         public FileAttributes Attributes
         {
             get
@@ -46,6 +49,7 @@ namespace System.IO
             }
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileInfo.FullName"]/*' />
         public string FullName
         {
             get
@@ -55,6 +59,7 @@ namespace System.IO
         }
 
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileInfo.Name"]/*' />
         public string Name
         {
             get
@@ -64,6 +69,7 @@ namespace System.IO
         }
 
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileInfo.DirectoryName"]/*' />
         public string DirectoryName
         {
             get
@@ -73,6 +79,7 @@ namespace System.IO
         }
 
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileInfo.Exists"]/*' />
         public bool Exists
         {
             get
@@ -81,6 +88,7 @@ namespace System.IO
             }
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileInfo.Directory"]/*' />
         public DirectoryInfo Directory
         {
             get
@@ -93,26 +101,31 @@ namespace System.IO
 
         #region METHODS
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileInfo.Delete"]/*' />
         public void Delete()
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileInfo.Create"]/*' />
         public FileStream Create()
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileInfo.OpenRead"]/*' />
         public FileStream OpenRead()
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileInfo.OpenWrite"]/*' />
         public FileStream OpenWrite()
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileInfo.MoveTo(System.String)"]/*' />
         public void MoveTo(string destFileName)
         {
             throw new PlatformNotSupportedException("PCL");

@@ -23,6 +23,7 @@ namespace System.IO
 {
     using System.Linq;
 
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.IO.DirectoryInfo"]/*' />
     public class DirectoryInfo
     {
         #region FIELDS
@@ -33,6 +34,7 @@ namespace System.IO
 
         #region CONSTRUCTORS
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.DirectoryInfo.#ctor(System.String)"]/*' />
         public DirectoryInfo(string path)
         {
             _path = path;
@@ -42,6 +44,7 @@ namespace System.IO
 
         #region PROPERTIES
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.DirectoryInfo.Exists"]/*' />
         public bool Exists
         {
             get { return Directory.Exists(_path); }
@@ -51,12 +54,14 @@ namespace System.IO
 
         #region METHODS
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.DirectoryInfo.Create"]/*' />
         public void Create()
         {
             // TODO Is it an issue that the CreateDirectory method creates another DirectoryInfo?
             Directory.CreateDirectory(_path);
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.DirectoryInfo.GetFiles"]/*' />
         public FileInfo[] GetFiles()
         {
             return Directory.GetFiles(_path).Select(fileName => new FileInfo(fileName)).ToArray();

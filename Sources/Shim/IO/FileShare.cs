@@ -21,11 +21,14 @@
 
 namespace System.IO
 {
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.IO.FileShare"]/*' />
     [Flags]
     public enum FileShare : int
     {
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileShare.None"]/*' />
         None = 0,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileShare.Read"]/*' />
         Read = 1
     }
 }

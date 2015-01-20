@@ -21,33 +21,40 @@
 
 namespace System.IO
 {
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.IO.Directory"]/*' />
     public static class Directory
     {
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Directory.Exists(System.String)"]/*' />
         public static bool Exists(string path)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Directory.CreateDirectory(System.String)"]/*' />
         public static DirectoryInfo CreateDirectory(string path)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Directory.GetDirectories(System.String)"]/*' />
         public static string[] GetDirectories(string path)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Directory.GetFiles(System.String)"]/*' />
         public static string[] GetFiles(string path)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Directory.GetFiles(System.String,System.String)"]/*' />
         public static string[] GetFiles(string path, string searchPattern)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Directory.Move(System.String,System.String)"]/*' />
         public static void Move(string sourceDirName, string destDirName)
         {
             throw new PlatformNotSupportedException("PCL");

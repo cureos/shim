@@ -21,9 +21,12 @@
 
 namespace System.IO
 {
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.IO.SearchOption"]/*' />
     public enum SearchOption
     {
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.SearchOption.TopDirectoryOnly"]/*' />
         TopDirectoryOnly,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.SearchOption.AllDirectories"]/*' />
         AllDirectories
     }
 }

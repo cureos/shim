@@ -25,16 +25,22 @@ namespace System.IO
     using global::Windows.Storage;
 #endif
 
+    /// <summary>
+    /// Shim complement for the <see cref="Path"/> class, providing members that are
+    /// not included in the PCL member subset of the <see cref="Path"/> class.
+    /// </summary>
     public static class ShimPath
     {
         #region FIELDS
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.Path.PathSeparator"]/*' />
         public static readonly char PathSeparator = '\\';
         
         #endregion
 
         #region METHODS
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Path.GetTempPath"]/*' />
         public static string GetTempPath()
         {
 #if NETFX_CORE
@@ -46,6 +52,7 @@ namespace System.IO
 #endif
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Path.GetTempFileName"]/*' />
         public static string GetTempFileName()
         {
 #if NETFX_CORE
@@ -59,6 +66,7 @@ namespace System.IO
 #endif
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Path.GetFullPath(System.String)"]/*' />
         public static string GetFullPath(string path)
         {
 #if NETFX_CORE
@@ -70,6 +78,7 @@ namespace System.IO
 #endif
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Path.Combine(System.String[])"]/*' />
         public static string Combine(params string[] paths)
         {
             return Path.Combine(paths);

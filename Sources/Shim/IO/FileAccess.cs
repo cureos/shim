@@ -21,11 +21,15 @@
 
 namespace System.IO
 {
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.IO.FileAccess"]/*' />
     [Flags]
     public enum FileAccess
     {
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAccess.Read"]/*' />
         Read = 0x01,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAccess.Write"]/*' />
         Write = 0x02,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAccess.ReadWrite"]/*' />
         ReadWrite = Read | Write
     }
 }

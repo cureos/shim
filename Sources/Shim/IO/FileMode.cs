@@ -21,13 +21,20 @@
 
 namespace System.IO
 {
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.IO.FileMode"]/*' />
     public enum FileMode
     {
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileMode.CreateNew"]/*' />
         CreateNew = 1,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileMode.Create"]/*' />
         Create = 2,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileMode.Open"]/*' />
         Open = 3,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileMode.OpenOrCreate"]/*' />
         OpenOrCreate = 4,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileMode.Truncate"]/*' />
         Truncate = 5,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileMode.Append"]/*' />
         Append = 6
     }
 }
