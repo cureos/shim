@@ -21,8 +21,10 @@
 
 namespace System.Runtime.InteropServices
 {
-	public enum GCHandleType
-	{
-		Pinned = 3
-	}
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Runtime.InteropServices.GCHandleType"]/*' />
+    public enum GCHandleType
+    {
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.Runtime.InteropServices.GCHandleType.Pinned"]/*' />
+        Pinned = 3
+    }
 }

@@ -21,6 +21,7 @@
 
 namespace System.Runtime.Serialization
 {
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Runtime.Serialization.OptionalFieldAttribute"]/*' />
     [AttributeUsageAttribute(AttributeTargets.Field, Inherited = false)]
     public sealed class OptionalFieldAttribute : Attribute
     {

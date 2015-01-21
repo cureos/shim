@@ -21,17 +21,19 @@
 
 namespace System.Runtime.InteropServices
 {
-	[AttributeUsageAttribute(
-		AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum |
-		AttributeTargets.Interface | AttributeTargets.Delegate, Inherited = false)]
-	public sealed class GuidAttribute : Attribute
-	{
-		#region CONSTRUCTORS
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Runtime.InteropServices.GuidAttribute"]/*' />
+    [AttributeUsageAttribute(
+        AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum |
+        AttributeTargets.Interface | AttributeTargets.Delegate, Inherited = false)]
+    public sealed class GuidAttribute : Attribute
+    {
+        #region CONSTRUCTORS
 
-		public GuidAttribute(string guid)
-		{
-		}
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Runtime.InteropServices.GuidAttribute.#ctor(System.String)"]/*' />
+        public GuidAttribute(string guid)
+        {
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

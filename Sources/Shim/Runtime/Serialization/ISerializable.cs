@@ -21,8 +21,10 @@
 
 namespace System.Runtime.Serialization
 {
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Runtime.Serialization.ISerializable"]/*' />
     public interface ISerializable
     {
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerailizationInfo,System.Runtime.Serialization.StreamingContext)"]/*' />
         void GetObjectData(SerializationInfo info, StreamingContext context);
     }
 }

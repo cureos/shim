@@ -21,8 +21,10 @@
 
 namespace System.Runtime.InteropServices
 {
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Runtime.InteropServices.UnmanagedType"]/*' />
     public enum UnmanagedType
     {
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.Runtime.InteropServices.UnmanagedType.ByValArray"]/*' />
         ByValArray = 30
     }
 }

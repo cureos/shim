@@ -21,11 +21,13 @@
 
 namespace System.Runtime.InteropServices
 {
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Runtime.InteropServices.MarshalAsAttribute"]/*' />
     [AttributeUsageAttribute(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue, Inherited = false)]
     public sealed class MarshalAsAttribute : Attribute
-	{
-		#region CONSTRUCTORS
+    {
+        #region CONSTRUCTORS
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Runtime.InteropServices.MarshalAsAttribute.#ctor(System.Runtime.InteropServices.UnmanagedType)"]/*' />
         public MarshalAsAttribute(UnmanagedType unmanagedType)
         {
         }
@@ -34,8 +36,9 @@ namespace System.Runtime.InteropServices
 
         #region FIELDS
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst"]/*' />
         public int SizeConst;
 
         #endregion
-	}
+    }
 }

@@ -21,10 +21,12 @@
 
 namespace System.Runtime.Serialization
 {
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Runtime.Serialization.SerializationInfo"]/*' />
     public sealed class SerializationInfo
     {
         #region METHODS
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Runtime.Serialization.SerializationInfo.AddValue(System.String,System.Double)"]/*' />
         public void AddValue(string name, double value)
         {
             throw new PlatformNotSupportedException("PCL");
