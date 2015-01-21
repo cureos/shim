@@ -21,33 +21,38 @@
 
 namespace System.Security.Cryptography.X509Certificates
 {
-	public sealed class X509Store
-	{
-		#region CONSTRUCTORS
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Authentication.X509Certificates.X509Store"]/*' />
+    public sealed class X509Store
+    {
+        #region CONSTRUCTORS
 
-		public X509Store(StoreName storeName, StoreLocation storeLocation)
-		{
-			Certificates = new X509Certificate2Collection();
-		}
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Security.Cryptography.X509Certificates.X509Store.#ctor(System.Security.Cryptography.X509Certificates.StoreName,System.Security.Cryptography.X509Certificates.StoreLocation)"]/*' />
+        public X509Store(StoreName storeName, StoreLocation storeLocation)
+        {
+            Certificates = new X509Certificate2Collection();
+        }
 
-		#endregion
+        #endregion
 
-		#region PROPERTIES
+        #region PROPERTIES
 
-		public X509Certificate2Collection Certificates { get; private set; }
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="P:System.Security.Authentication.X509Certificates.X509Store.Certificates"]/*' />
+        public X509Certificate2Collection Certificates { get; private set; }
 
-		#endregion
+        #endregion
 
-		#region METHODS
+        #region METHODS
 
-		public void Open(OpenFlags openFlags)
-		{			
-		}
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Security.Authentication.X509Certificates.X509Store.Open(System.Security.Cryptography.X509Certificates.OpenFlags)"]/*' />
+        public void Open(OpenFlags openFlags)
+        {			
+        }
 
-		public void Close()
-		{			
-		}
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Security.Authentication.X509Certificates.X509Store.Close"]/*' />
+        public void Close()
+        {			
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

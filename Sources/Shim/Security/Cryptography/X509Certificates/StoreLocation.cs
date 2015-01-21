@@ -21,8 +21,10 @@
 
 namespace System.Security.Cryptography.X509Certificates
 {
-	public enum StoreLocation
-	{
-		LocalMachine = 2
-	}
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Authentication.X509Certificates.StoreLocation"]/*' />
+    public enum StoreLocation
+    {
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="F:System.Security.Authentication.X509Certificates.StoreLocation.LocalMachine"]/*' />
+        LocalMachine = 2
+    }
 }

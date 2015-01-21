@@ -21,9 +21,11 @@
 
 namespace System.Security.Authentication
 {
+    /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Authentication.SslProtocols"]/*' />
     [Flags]
-	public enum SslProtocols
-	{
-		Tls = 0x00c0
-	}
+    public enum SslProtocols
+    {
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="F:System.Security.Authentication.SslProtocols.Tls"]/*' />
+        Tls = 0x00c0
+    }
 }

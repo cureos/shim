@@ -21,8 +21,10 @@
 
 namespace System.Security.Cryptography.X509Certificates
 {
-	public enum StoreName
-	{
-		My = 5
-	}
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Authentication.X509Certificates.StoreName"]/*' />
+    public enum StoreName
+    {
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="F:System.Security.Authentication.X509Certificates.StoreName.My"]/*' />
+        My = 5
+    }
 }

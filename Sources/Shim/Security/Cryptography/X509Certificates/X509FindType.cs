@@ -21,8 +21,10 @@
 
 namespace System.Security.Cryptography.X509Certificates
 {
-	public enum X509FindType
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Authentication.X509Certificates.X509FindType"]/*' />
+    public enum X509FindType
 	{
-		FindBySubjectName = 1
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="F:System.Security.Authentication.X509Certificates.X509FindType.FindBySubjectName"]/*' />
+        FindBySubjectName = 1
 	}
 }

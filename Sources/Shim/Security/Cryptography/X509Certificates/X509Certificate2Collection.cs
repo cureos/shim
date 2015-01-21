@@ -23,17 +23,19 @@ using System.Collections.Generic;
 
 namespace System.Security.Cryptography.X509Certificates
 {
-	public sealed class X509Certificate2Collection : List<X509Certificate>
-	{
-		#region METHODS
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Authentication.X509Certificates.X509Certificate2Collection"]/*' />
+    public sealed class X509Certificate2Collection : List<X509Certificate>
+    {
+        #region METHODS
 
         // TODO Examine which invoked methods in fo-dicom that are relying on List<>
 
-		public X509Certificate2Collection Find(X509FindType findType, object findValue, bool validOnly)
-		{
-			return new X509Certificate2Collection();
-		}
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Find(System.Security.Cryptography.X509Certificates.X509FindType,System.Object,System.Boolean)"]/*' />
+        public X509Certificate2Collection Find(X509FindType findType, object findValue, bool validOnly)
+        {
+            return new X509Certificate2Collection();
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }
