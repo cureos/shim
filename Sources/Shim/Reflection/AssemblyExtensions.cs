@@ -21,14 +21,20 @@
 
 namespace System.Reflection
 {
+    /// <summary>
+    /// Shim complement for the <see cref="Assembly"/> class. <see cref="Assembly"/> instance methods that are not available in the 
+    /// PCL profile are here provided as equivalent extension methods.
+    /// </summary>
     public static class AssemblyExtensions
     {
         #region METHODS
 
-        public static object CreateInstance(this Assembly assembly, string name)
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.Assembly.CreateInstance(System.String)"]/*' />
+        /// <param name="assembly">Assembly on which the <paramref name="typeName"/> instance should be created.</param>
+        public static object CreateInstance(this Assembly assembly, string typeName)
         {
 #if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
-            return assembly.CreateInstance(name);
+            return assembly.CreateInstance(typeName);
 #else
             throw new PlatformNotSupportedException("PCL");
 #endif

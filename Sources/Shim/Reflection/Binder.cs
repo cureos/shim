@@ -21,6 +21,7 @@
 
 namespace System.Reflection
 {
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Reflection.Binder"]/*' />
     public sealed class Binder
     {
     }

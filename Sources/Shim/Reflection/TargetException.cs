@@ -18,17 +18,20 @@
  *  You should have received a copy of the GNU Lesser General Public
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
-	
+    
 namespace System.Reflection
 {
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Reflection.TargetException"]/*' />
     public sealed class TargetException : Exception
     {
         #region CONSTRUCTORS
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.TargetException.#ctor"]/*' />
         public TargetException()
         {
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.TargetException.#ctor(System.String)"]/*' />
         public TargetException(string message)
             : base(message)
         {

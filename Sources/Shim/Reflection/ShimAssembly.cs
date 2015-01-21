@@ -21,23 +21,33 @@
 
 namespace System.Reflection
 {
+    /// <summary>
+    /// Shim complement for the <see cref="Assembly"/> class, providing static members that are
+    /// not included in the PCL member subset of the <see cref="Assembly"/> class.
+    /// </summary>
     public static class ShimAssembly
     {
-		/// <summary>
-		/// Gets the assembly that contains the code that is currently executing.
-		/// </summary>
-		/// <returns>The assembly that contains the code that is currently executing.</returns>
-		/// <remarks>
-		/// By definition, the executing assembly is the assembly from which this method is invoked.
-		/// The return value should thus be the assembly from which this method is called.
-		/// The "classic" method used to obtain this assembly, <code>Assembly.GetCallingAssembly</code> is not
-		/// publicly exposed in the .NET for Windows Store assembly. Therefore the method is
-		/// here invoked through reflection, based on a StackOverflow tip at http://stackoverflow.com/a/14754653/650012 .
-		/// </remarks>
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.Assembly.GetExecutingAssembly"]/*' />
+#if NETFX_CORE
+        /// <returns>The assembly that contains the code that is currently executing.</returns>
+        /// <remarks>
+        /// By definition, the executing assembly is the assembly from which this method is invoked.
+        /// The return value should thus be the assembly from which this method is called.
+        /// The "classic" method used to obtain this assembly, <code>Assembly.GetCallingAssembly</code> is not
+        /// publicly exposed in the .NET for Windows Store assembly. Therefore the method is
+        /// here invoked through reflection, based on a StackOverflow tip at http://stackoverflow.com/a/14754653/650012 .
+        /// </remarks>
+#endif
         public static Assembly GetExecutingAssembly()
-		{
-		    return
-		        (Assembly)typeof(Assembly).GetTypeInfo().GetDeclaredMethod("GetCallingAssembly").Invoke(null, new object[0]);
-		}
+        {
+#if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
+            return Assembly.GetExecutingAssembly();
+#elif NETFX_CORE
+            return
+                (Assembly)typeof(Assembly).GetTypeInfo().GetDeclaredMethod("GetCallingAssembly").Invoke(null, new object[0]);
+#else
+            throw new PlatformNotSupportedException("PCL");
+#endif
+        }
     }
 }
