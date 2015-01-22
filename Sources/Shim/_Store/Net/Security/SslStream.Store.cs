@@ -19,62 +19,71 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.IO;
-using System.Net.Sockets;
-using System.Security.Authentication;
-using System.Security.Cryptography.X509Certificates;
-
 namespace System.Net.Security
 {
-	public delegate bool RemoteCertificateValidationCallback(
-		object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors);
-	
-	public sealed class SslStream : MemoryStream
-	{
-		#region FIELDS
+    using System.IO;
+    using System.Net.Sockets;
+    using System.Security.Authentication;
+    using System.Security.Cryptography.X509Certificates;
 
-		private readonly NetworkStream _innerStream;
-		private readonly bool _leaveInnerStreamOpen;
-		private readonly RemoteCertificateValidationCallback _validateServerCertificate;
-		
-		#endregion
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Security.RemoteCertificateValidationCallback"]/*' />
+    public delegate bool RemoteCertificateValidationCallback(
+        object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors);
 
-		#region CONSTRUCTORS
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Security.SslStream"]/*' />
+    public sealed class SslStream : MemoryStream
+    {
+        #region FIELDS
 
-		public SslStream(Stream innerStream, bool leaveInnerStreamOpen, RemoteCertificateValidationCallback validateServerCertificate)
-		{
-			var tcpClientStream = innerStream as NetworkStream;
-			if (tcpClientStream == null)
-				throw new ArgumentException("Stream type not associated with TCP client", "innerStream");
+        private readonly NetworkStream _innerStream;
+        private readonly bool _leaveInnerStreamOpen;
+        private readonly RemoteCertificateValidationCallback userCertificateValidationCallback;
+        
+        #endregion
 
-			_innerStream = tcpClientStream;
-			_leaveInnerStreamOpen = leaveInnerStreamOpen;
-			_validateServerCertificate = validateServerCertificate;
-		}
+        #region CONSTRUCTORS
 
-		public SslStream(Stream innerStream, bool leaveInnerStreamOpen) : this(innerStream, leaveInnerStreamOpen, null)
-		{
-		}
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Security.SslStream.#ctor(System.IO.Stream,System.Boolean,System.Net.Security.RemoteCertificateValidationCallback)"]/*' />
+        public SslStream(Stream innerStream, bool leaveInnerStreamOpen, RemoteCertificateValidationCallback userCertificateValidationCallback)
+        {
+            var tcpClientStream = innerStream as NetworkStream;
+            if (tcpClientStream == null)
+                throw new ArgumentException("Stream type not associated with TCP client", "innerStream");
 
-		public SslStream(Stream innerStream) : this(innerStream, true, null)
-		{
-		}
+            _innerStream = tcpClientStream;
+            _leaveInnerStreamOpen = leaveInnerStreamOpen;
+            this.userCertificateValidationCallback = userCertificateValidationCallback;
+        }
 
-		#endregion
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Security.SslStream.#ctor(System.IO.Stream,System.Boolean)"]/*' />
+        public SslStream(Stream innerStream, bool leaveInnerStreamOpen)
+            : this(innerStream, leaveInnerStreamOpen, null)
+        {
+        }
 
-		#region METHODS
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Security.SslStream.#ctor(System.IO.Stream)"]/*' />
+        public SslStream(Stream innerStream)
+            : this(innerStream, true, null)
+        {
+        }
 
-		public void AuthenticateAsServer(X509Certificate serverCertificate, 
-			bool clientCertificateRequired, SslProtocols enabledSslProtocols, bool checkCertificateRevocation)
-		{
-			throw new NotImplementedException("SSL server support is not implemented");
-		}
+        #endregion
 
-		public void AuthenticateAsClient(string targetHost)
-		{
-			_innerStream.UpgradeToSsl(targetHost);
-		}
-		
-		#endregion
-	}
+        #region METHODS
+
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Security.SslStream.AuthenticateAsServer(System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Security.Authentication.SslProtocols,System.Boolean)"]/*' />
+        public void AuthenticateAsServer(X509Certificate serverCertificate, 
+            bool clientCertificateRequired, SslProtocols enabledSslProtocols, bool checkCertificateRevocation)
+        {
+            throw new NotImplementedException("SSL server support is not implemented");
+        }
+
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Security.SslStream.AuthenticateAsClient(System.String)"]/*' />
+        public void AuthenticateAsClient(string targetHost)
+        {
+            _innerStream.UpgradeToSsl(targetHost);
+        }
+        
+        #endregion
+    }
 }

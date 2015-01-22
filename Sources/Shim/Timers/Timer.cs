@@ -19,10 +19,10 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.ComponentModel;
-
 namespace System.Timers
 {
+    using System.ComponentModel;
+
     /// <include file='../_Doc/System.xml' path='doc/members/member[@name="T:System.Timers.ElapsedEventHandler"]/*' />
     public delegate void ElapsedEventHandler(object sender, ElapsedEventArgs e);
 

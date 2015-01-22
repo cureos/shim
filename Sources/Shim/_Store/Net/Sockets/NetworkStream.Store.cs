@@ -28,6 +28,7 @@ namespace System.Net.Sockets
     using global::Windows.Networking.Sockets;
     using global::Windows.Storage.Streams;
 
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Sockets.NetworkStream"]/*' />
     public sealed class NetworkStream : Stream
     {
         #region FIELDS
@@ -38,11 +39,18 @@ namespace System.Net.Sockets
 
         #region CONSTRUCTORS
 
+        /// <summary>
+        /// Default constructor is private to avoid invalid initialization of the <see cref="NetworkStream"/> class.
+        /// </summary>
         private NetworkStream()
         {
             throw new NotSupportedException();
         }
 
+        /// <summary>
+        /// Initializes a network stream object.
+        /// </summary>
+        /// <param name="socket">Socket corresponding to the network stream.</param>
         internal NetworkStream(StreamSocket socket)
         {
             _socket = socket;
@@ -52,6 +60,10 @@ namespace System.Net.Sockets
 
         #region METHODS
 
+        /// <summary>
+        /// Attempt to upgrade stream to SSL.
+        /// </summary>
+        /// <param name="validationHost">Host subject to SSL upgrade.</param>
         internal void UpgradeToSsl(string validationHost)
         {
             if (
@@ -62,11 +74,13 @@ namespace System.Net.Sockets
                     String.Format("Could not authenticate '{0}' as SSL server", validationHost));
         }
 
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.Flush"]/*' />
         public override void Flush()
         {
         }
 
-        public override int Read(byte[] buffer, int offset, int count)
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.Read(System.Byte[],System.Int32,System.Int32)"]/*' />
+        public override int Read(byte[] buffer, int offset, int size)
         {
             return Task.Run(
                 async () =>
@@ -75,8 +89,8 @@ namespace System.Net.Sockets
                         {
                             using (var reader = new DataReader(_socket.InputStream))
                             {
-                                await reader.LoadAsync((uint)count);
-                                var length = Math.Min((int)reader.UnconsumedBufferLength, count);
+                                await reader.LoadAsync((uint)size);
+                                var length = Math.Min((int)reader.UnconsumedBufferLength, size);
                                 var buf = new byte[length];
                                 reader.ReadBytes(buf);
                                 reader.DetachStream();
@@ -91,25 +105,28 @@ namespace System.Net.Sockets
                     }).Result;
         }
 
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.Seek(System.Int64,System.IO.SeekOrigin)"]/*' />
         public override long Seek(long offset, SeekOrigin origin)
         {
             throw new NotSupportedException();
         }
 
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.SetLength(System.Int64)"]/*' />
         public override void SetLength(long value)
         {
             throw new NotSupportedException();
         }
 
-        public override void Write(byte[] buffer, int offset, int count)
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.Write(System.Byte[],System.Int32,System.Int32)"]/*' />
+        public override void Write(byte[] buffer, int offset, int size)
         {
             try
             {
                 Task.Run(
                     async () =>
                         {
-                            var buf = new byte[count];
-                            Array.Copy(buffer, offset, buf, 0, count);
+                            var buf = new byte[size];
+                            Array.Copy(buffer, offset, buf, 0, size);
                             using (var writer = new DataWriter(_socket.OutputStream))
                             {
                                 writer.WriteBytes(buf);
@@ -125,10 +142,11 @@ namespace System.Net.Sockets
         }
 
 #if SILVERLIGHT
-        public override IAsyncResult BeginRead(byte[] buffer, int offset, int count,
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)"]/*' />
+        public override IAsyncResult BeginRead(byte[] buffer, int offset, int size,
                                                 AsyncCallback callback, object state)
         {
-            return new TaskFactory<int>().StartNew(asyncState => Read(buffer, offset, count), state)
+            return new TaskFactory<int>().StartNew(asyncState => Read(buffer, offset, size), state)
                                             .ContinueWith(task =>
                                             {
                                                 callback(task);
@@ -136,25 +154,29 @@ namespace System.Net.Sockets
                                             });
         }
 
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.EndRead(System.IAsyncResult)"]/*' />
         public override int EndRead(IAsyncResult asyncResult)
         {
             var task = asyncResult as Task<int>;
             return task != null ? task.Result : 0;
         }
 
-        public override IAsyncResult BeginWrite(byte[] buffer, int offset, int count,
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)"]/*' />
+        public override IAsyncResult BeginWrite(byte[] buffer, int offset, int size,
                                                 AsyncCallback callback, object state)
         {
             return
-                new TaskFactory().StartNew(asyncState => Write(buffer, offset, count), state)
+                new TaskFactory().StartNew(asyncState => Write(buffer, offset, size), state)
                                     .ContinueWith(task => callback(task));
         }
 
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.NetworkStream.EndWrite(System.IAsyncResult)"]/*' />
         public override void EndWrite(IAsyncResult asyncResult)
         {
         }
 #endif
 
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.NetworkStream.Dispose(System.Boolean)"]/*' />
         protected override void Dispose(bool disposing)
         {
             _socket.Dispose();
@@ -164,6 +186,7 @@ namespace System.Net.Sockets
 
         #region PROPERTIES
 
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.NetworkStream.CanRead"]/*' />
         public override bool CanRead
         {
             get
@@ -172,6 +195,7 @@ namespace System.Net.Sockets
             }
         }
 
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.NetworkStream.CanSeek"]/*' />
         public override bool CanSeek
         {
             get
@@ -180,6 +204,7 @@ namespace System.Net.Sockets
             }
         }
 
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.NetworkStream.CanWrite"]/*' />
         public override bool CanWrite
         {
             get
@@ -188,6 +213,7 @@ namespace System.Net.Sockets
             }
         }
 
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.NetworkStream.Length"]/*' />
         public override long Length
         {
             get
@@ -196,6 +222,7 @@ namespace System.Net.Sockets
             }
         }
 
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.NetworkStream.Position"]/*' />
         public override long Position
         {
             get

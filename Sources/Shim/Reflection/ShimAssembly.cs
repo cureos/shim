@@ -27,9 +27,8 @@ namespace System.Reflection
     /// </summary>
     public static class ShimAssembly
     {
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.Assembly.GetExecutingAssembly"]/*' />
 #if NETFX_CORE
-        /// <returns>The assembly that contains the code that is currently executing.</returns>
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.Assembly.GetExecutingAssembly"]/*' />
         /// <remarks>
         /// By definition, the executing assembly is the assembly from which this method is invoked.
         /// The return value should thus be the assembly from which this method is called.
@@ -37,6 +36,8 @@ namespace System.Reflection
         /// publicly exposed in the .NET for Windows Store assembly. Therefore the method is
         /// here invoked through reflection, based on a StackOverflow tip at http://stackoverflow.com/a/14754653/650012 .
         /// </remarks>
+#else
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.Assembly.GetExecutingAssembly"]/*' />
 #endif
         public static Assembly GetExecutingAssembly()
         {

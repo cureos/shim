@@ -19,12 +19,12 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.IO;
-using System.Security.Authentication;
-using System.Security.Cryptography.X509Certificates;
-
 namespace System.Net.Security
 {
+    using System.IO;
+    using System.Security.Authentication;
+    using System.Security.Cryptography.X509Certificates;
+
     /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Security.RemoteCertificateValidationCallback"]/*' />
     public delegate bool RemoteCertificateValidationCallback(
         object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors);

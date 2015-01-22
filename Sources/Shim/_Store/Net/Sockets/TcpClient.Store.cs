@@ -19,68 +19,76 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Globalization;
-using System.IO;
-using System.Threading.Tasks;
-using Windows.Networking;
-using Windows.Networking.Sockets;
-using Windows.Storage.Streams;
-
 namespace System.Net.Sockets
 {
-	public sealed class TcpClient
-	{
-		#region FIELDS
+    using System.Globalization;
+    using System.Threading.Tasks;
 
-		private readonly NetworkStream _stream;
+    using global::Windows.Networking;
+    using global::Windows.Networking.Sockets;
 
-		#endregion
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Sockets.TcpClient"]/*' />
+    public sealed class TcpClient
+    {
+        #region FIELDS
 
-		#region CONSTRUCTORS
+        private readonly NetworkStream _stream;
 
-		public TcpClient(string hostname, int port)
-		{
-			try
-			{
-				_stream = Task.Run(async () =>
-											 {
-												 var socket = new StreamSocket();
-												 await socket.ConnectAsync(new HostName(hostname), port.ToString(CultureInfo.InvariantCulture));
-												 return new NetworkStream(socket);
-											 }).Result;
-			}
-			catch (Exception e)
-			{
-				throw e.InnerException ?? e;
-			}
-		}
+        #endregion
 
-		internal TcpClient(StreamSocket socket)
-		{
-			if (socket == null) throw new ArgumentNullException("socket");
-			_stream = new NetworkStream(socket);
-		}
+        #region CONSTRUCTORS
 
-		#endregion
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.#ctor(System.String,System.Int32)"]/*' />
+        public TcpClient(string hostname, int port)
+        {
+            try
+            {
+                _stream = Task.Run(async () =>
+                                             {
+                                                 var socket = new StreamSocket();
+                                                 await socket.ConnectAsync(new HostName(hostname), port.ToString(CultureInfo.InvariantCulture));
+                                                 return new NetworkStream(socket);
+                                             }).Result;
+            }
+            catch (Exception e)
+            {
+                throw e.InnerException ?? e;
+            }
+        }
 
-		#region PROPERTIES
+        /// <summary>
+        /// Initializes a TCP client for an existing <paramref name="socket"/>.
+        /// </summary>
+        /// <param name="socket">Socket on which the TCP client should be based.</param>
+        internal TcpClient(StreamSocket socket)
+        {
+            if (socket == null) throw new ArgumentNullException("socket");
+            _stream = new NetworkStream(socket);
+        }
 
-		public bool NoDelay { get; set; }
+        #endregion
 
-		#endregion
-		
-		#region METHODS
+        #region PROPERTIES
 
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.TcpClient.NoDelay"]/*' />
+        public bool NoDelay { get; set; }
+
+        #endregion
+        
+        #region METHODS
+
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.GetStream"]/*' />
         public NetworkStream GetStream()
-		{
-			return _stream;
-		}
+        {
+            return _stream;
+        }
 
-		public void Close()
-		{
-			if (_stream != null) _stream.Dispose();
-		}
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.Close"]/*' />
+        public void Close()
+        {
+            if (_stream != null) _stream.Dispose();
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

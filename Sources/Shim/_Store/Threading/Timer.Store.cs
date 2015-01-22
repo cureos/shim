@@ -19,53 +19,67 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Windows.System.Threading;
-
 namespace System.Threading
 {
+    using global::Windows.System.Threading;
+
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.TimerCallback"]/*' />
     public delegate void TimerCallback(object state);
 
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.Timer"]/*' />
     public class Timer
-	{
-		#region FIELDS
+    {
+        #region FIELDS
 
-	    private readonly TimerCallback _callback;
-	    private readonly object _state;
-	    private ThreadPoolTimer _timer;
+        private readonly TimerCallback _callback;
+        private readonly object _state;
+        private ThreadPoolTimer _timer;
 
-		#endregion
+        #endregion
 
-		#region CONSTRUCTORS
+        #region CONSTRUCTORS
 
-        public Timer(TimerCallback callback) : this(callback, null, Timeout.Infinite, Timeout.Infinite)
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Timer.#ctor(System.Threading.TimerCallback)"]/*' />
+        public Timer(TimerCallback callback)
+            : this(callback, null, Timeout.Infinite, Timeout.Infinite)
         {
         }
 
-		public Timer(TimerCallback callback, object state, int dueTime, int period)
-		{
-			_callback = callback;
-			_state = state;
-			_timer = CreateThreadPoolTimer(callback, state, dueTime, period);
-		}
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Timer.#ctor(System.Threading.TimerCallback,System.Object,System.Int32,System.Int32)"]/*' />
+        public Timer(TimerCallback callback, object state, int dueTime, int period)
+        {
+            _callback = callback;
+            _state = state;
+            _timer = CreateThreadPoolTimer(callback, state, dueTime, period);
+        }
 
-	    #endregion
+        #endregion
 
         #region METHODS
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Timer.Change(System.Int32,System.Int32)"]/*' />
         public bool Change(int dueTime, int period)
         {
-			if (_timer != null) _timer.Cancel();
-	        _timer = CreateThreadPoolTimer(_callback, _state, dueTime, period);
+            if (_timer != null) _timer.Cancel();
+            _timer = CreateThreadPoolTimer(_callback, _state, dueTime, period);
             return _timer != null;
         }
 
-	    private static ThreadPoolTimer CreateThreadPoolTimer(TimerCallback callback, object state, int dueTime, int period)
-	    {
-		    if (dueTime == Timeout.Infinite) return null;
-		    return period == Timeout.Infinite
-			             ? ThreadPoolTimer.CreateTimer(timer => callback(state), TimeSpan.FromMilliseconds(dueTime))
-			             : ThreadPoolTimer.CreatePeriodicTimer(timer => callback(state), TimeSpan.FromMilliseconds(period));
-	    }
+        /// <summary>
+        /// Create internal timer object.
+        /// </summary>
+        /// <param name="callback">Timer callback</param>
+        /// <param name="state">Object state.</param>
+        /// <param name="dueTime">Due time.</param>
+        /// <param name="period">Period.</param>
+        /// <returns>Internal timer object.</returns>
+        private static ThreadPoolTimer CreateThreadPoolTimer(TimerCallback callback, object state, int dueTime, int period)
+        {
+            if (dueTime == Timeout.Infinite) return null;
+            return period == Timeout.Infinite
+                         ? ThreadPoolTimer.CreateTimer(timer => callback(state), TimeSpan.FromMilliseconds(dueTime))
+                         : ThreadPoolTimer.CreatePeriodicTimer(timer => callback(state), TimeSpan.FromMilliseconds(period));
+        }
 
         #endregion
     }

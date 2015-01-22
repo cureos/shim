@@ -19,22 +19,26 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using Windows.Foundation;
-
 namespace System.Threading
 {
+    using global::Windows.Foundation;
+
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.WaitCallback"]/*' />
     public delegate void WaitCallback(object state);
 
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.ThreadPool"]/*' />
     public static class ThreadPool
     {
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.QueueUserWorkItem(System.Threading.WaitCallback)"]/*' />
         public static bool QueueUserWorkItem(WaitCallback callBack)
         {
             return QueueUserWorkItem(callBack, null);
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.QueueUserWorkItem(System.Threading.WaitCallback,System.Object)"]/*' />
         public static bool QueueUserWorkItem(WaitCallback callBack, object state)
          {
-	         var workItem = global::Windows.System.Threading.ThreadPool.RunAsync(source => callBack(state));
+             var workItem = global::Windows.System.Threading.ThreadPool.RunAsync(source => callBack(state));
              return workItem.Status != AsyncStatus.Error;
          }
     }

@@ -19,71 +19,83 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System.Globalization;
-using System.Threading;
-using System.Threading.Tasks;
-using Windows.Networking.Sockets;
-
 namespace System.Net.Sockets
 {
-	public sealed class TcpListener
-	{
-		private readonly ManualResetEventSlim _event;
-		private readonly IPAddress _localaddr;
-		private readonly string _port;
-		private StreamSocketListener _listener;
-		private TcpClient _client;
+    using System.Globalization;
+    using System.Threading;
+    using System.Threading.Tasks;
 
-		#region CONSTRUCTORS
+    using global::Windows.Networking.Sockets;
 
-		public TcpListener(IPAddress localaddr, int port)
-		{
-			_event = new ManualResetEventSlim();
-			_localaddr = localaddr;
-			_port = port.ToString(CultureInfo.InvariantCulture);
-		}
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Sockets.TcpListener"]/*' />
+    public sealed class TcpListener
+    {
+        private readonly ManualResetEventSlim _event;
+        private readonly IPAddress _localaddr;
+        private readonly string _port;
+        private StreamSocketListener _listener;
+        private TcpClient _client;
 
-		#endregion
+        #region CONSTRUCTORS
 
-		#region METHODS
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.#ctor(System.Net.IPAddress,System.Int32)"]/*' />
+        public TcpListener(IPAddress localaddr, int port)
+        {
+            _event = new ManualResetEventSlim();
+            _localaddr = localaddr;
+            _port = port.ToString(CultureInfo.InvariantCulture);
+        }
 
-		public void Start()
-		{
-			_client = null;
+        #endregion
 
-			_listener = new StreamSocketListener();
-			_listener.ConnectionReceived += OnConnectionReceived;
+        #region METHODS
 
-			// Binding to specific endpoint is currently not supported.
-			_event.Reset();
-			Task.Run(async () => await _listener.BindServiceNameAsync(_port));
-		}
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.Start"]/*' />
+        public void Start()
+        {
+            _client = null;
 
-		public IAsyncResult BeginAcceptTcpClient(AsyncCallback callback, object state)
-		{
-			return
-				new TaskFactory().StartNew(new Action<object>(asyncState => _event.Wait()), state)
-				                 .ContinueWith(task => callback(task));
-		}
+            _listener = new StreamSocketListener();
+            _listener.ConnectionReceived += OnConnectionReceived;
 
-		private void OnConnectionReceived(StreamSocketListener sender, StreamSocketListenerConnectionReceivedEventArgs args)
-		{
-			_client = new TcpClient(args.Socket);
-			_event.Set();
-		}
+            // Binding to specific endpoint is currently not supported.
+            _event.Reset();
+            Task.Run(async () => await _listener.BindServiceNameAsync(_port));
+        }
 
-		public TcpClient EndAcceptTcpClient(IAsyncResult asyncResult)
-		{
-			_event.Reset();
-			return _client;
-		}
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.BeginAcceptTcpClient(System.AsyncCallback,System.Object)"]/*' />
+        public IAsyncResult BeginAcceptTcpClient(AsyncCallback callback, object state)
+        {
+            return
+                new TaskFactory().StartNew(new Action<object>(asyncState => _event.Wait()), state)
+                                 .ContinueWith(task => callback(task));
+        }
 
-		public void Stop()
-		{
-			_listener.ConnectionReceived -= OnConnectionReceived;
-			_listener.Dispose();
-		}
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.EndAcceptTcpClient(System.IAsyncResult)"]/*' />
+        public TcpClient EndAcceptTcpClient(IAsyncResult asyncResult)
+        {
+            _event.Reset();
+            return _client;
+        }
 
-		#endregion
-	}
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.Stop"]/*' />
+        public void Stop()
+        {
+            _listener.ConnectionReceived -= OnConnectionReceived;
+            _listener.Dispose();
+        }
+
+        /// <summary>
+        /// Event handler when connection is established.
+        /// </summary>
+        /// <param name="sender">Listener object.</param>
+        /// <param name="args">Connection received event arguments.</param>
+        private void OnConnectionReceived(StreamSocketListener sender, StreamSocketListenerConnectionReceivedEventArgs args)
+        {
+            _client = new TcpClient(args.Socket);
+            _event.Set();
+        }
+
+        #endregion
+    }
 }
