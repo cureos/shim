@@ -14,8 +14,9 @@
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
         <releaseNotes>v 1.0.0.50122
 ----------------
-* Added iOS Universal API DLL
+* Added iOS Unified API DLL
 * Added documentation XML files
+* Added PDB files for iOS Classic and Unified API
 
 v 0.9.4-pre2
 ------------
@@ -42,9 +43,9 @@ v 0.9.4-pre1
         <file src="..\Sources\Shim\_Droid\bin\Release\Shim.dll" target="lib\MonoAndroid1" />
         <file src="..\Sources\Shim\_Droid\bin\Release\Shim.pdb" target="lib\MonoAndroid1" />
         <file src="..\Sources\Shim\_Droid\bin\Release\Shim.xml" target="lib\MonoAndroid1" />
-        <file src="..\Sources\Shim\_iOS\bin\Release\Shim.dll" target="lib\Xamarin.iOS10" />
-        <file src="..\Sources\Shim\_iOS\bin\Release\Shim.pdb" target="lib\Xamarin.iOS10" />
-        <file src="..\Sources\Shim\_iOS\bin\Release\Shim.xml" target="lib\Xamarin.iOS10" />
+        <file src="..\Sources\Shim\_Unified\bin\Release\Shim.dll" target="lib\Xamarin.iOS10" />
+        <file src="..\Sources\Shim\_Unified\bin\Release\Shim.pdb" target="lib\Xamarin.iOS10" />
+        <file src="..\Sources\Shim\_Unified\bin\Release\Shim.xml" target="lib\Xamarin.iOS10" />
         <file src="..\Sources\Shim\_Touch\bin\Release\Shim.dll" target="lib\MonoTouch1" />
         <file src="..\Sources\Shim\_Touch\bin\Release\Shim.pdb" target="lib\MonoTouch1" />
         <file src="..\Sources\Shim\_Touch\bin\Release\Shim.xml" target="lib\MonoTouch1" />
