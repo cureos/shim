@@ -21,6 +21,7 @@
 
 namespace System.Threading
 {
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.ThreadAbortException"]/*' />
     public sealed class ThreadAbortException : Exception
     {
          

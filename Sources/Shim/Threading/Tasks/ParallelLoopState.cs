@@ -21,10 +21,12 @@
 
 namespace System.Threading.Tasks
 {
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.Tasks.ParallelLoopState"]/*' />
     public class ParallelLoopState
     {
         #region PROPERTIES
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration"]/*' />
         public bool ShouldExitCurrentIteration
         {
             get { return false; }
@@ -34,6 +36,7 @@ namespace System.Threading.Tasks
 
         #region METHODS
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Tasks.ParallelLoopState.Stop"]/*' />
         public void Stop()
         {
         }

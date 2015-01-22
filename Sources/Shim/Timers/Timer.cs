@@ -23,12 +23,15 @@ using System.ComponentModel;
 
 namespace System.Timers
 {
+    /// <include file='../_Doc/System.xml' path='doc/members/member[@name="T:System.Timers.ElapsedEventHandler"]/*' />
     public delegate void ElapsedEventHandler(object sender, ElapsedEventArgs e);
 
+    /// <include file='../_Doc/System.xml' path='doc/members/member[@name="T:System.Timers.Timer"]/*' />
     public sealed class Timer : IDisposable
     {
         #region EVENTS
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="E:System.Timers.Timer.Elapsed"]/*' />
         public event ElapsedEventHandler Elapsed
         {
             add
@@ -45,26 +48,32 @@ namespace System.Timers
 
         #region PROPERTIES
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="P:System.Timers.Timer.Enabled"]/*' />
         public bool Enabled { get; set; }
-        
+
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="P:System.Timers.Timer.Interval"]/*' />
         public double Interval { get; set; }
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="P:System.Timers.Timer.SynchronizingObject"]/*' />
         public ISynchronizeInvoke SynchronizingObject { get; set; }
 
         #endregion
 
         #region METHODS
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Timers.Timer.Dispose"]/*' />
         public void Dispose()
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Timers.Timer.Start"]/*' />
         public void Start()
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Timers.Timer.Stop"]/*' />
         public void Stop()
         {
             throw new PlatformNotSupportedException("PCL");

@@ -21,6 +21,7 @@
 
 namespace System.Threading.Tasks
 {
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.Tasks.ParallelLoopResult"]/*' />
     public struct ParallelLoopResult
     {
     }

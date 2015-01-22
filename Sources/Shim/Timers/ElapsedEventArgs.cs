@@ -21,6 +21,7 @@
 
 namespace System.Timers
 {
+    /// <include file='../_Doc/System.xml' path='doc/members/member[@name="T:System.Timers.ElapsedEventArgs"]/*' />
     public sealed class ElapsedEventArgs : EventArgs
     {
     }

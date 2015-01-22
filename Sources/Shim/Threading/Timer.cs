@@ -21,26 +21,31 @@
 
 namespace System.Threading
 {
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.TimerCallback"]/*' />
     public delegate void TimerCallback(object state);
 
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.Timer"]/*' />
     public class Timer
-	{
-		#region CONSTRUCTORS
+    {
+        #region CONSTRUCTORS
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Timer.#ctor(System.Threading.TimerCallback)"]/*' />
         public Timer(TimerCallback callback)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
-		public Timer(TimerCallback callback, object state, int dueTime, int period)
-		{
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Timer.#ctor(System.Threading.TimerCallback,System.Object,System.Int32,System.Int32)"]/*' />
+        public Timer(TimerCallback callback, object state, int dueTime, int period)
+        {
             throw new PlatformNotSupportedException("PCL");
         }
 
-	    #endregion
+        #endregion
 
         #region METHODS
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Timer.Change(System.Int32,System.Int32)"]/*' />
         public bool Change(int dueTime, int period)
         {
             throw new PlatformNotSupportedException("PCL");

@@ -25,12 +25,15 @@ namespace System.Threading
 
     #region DELEGATES
 
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.ThreadStart"]/*' />
     public delegate void ThreadStart();
 
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.ParameterizedThreadStart"]/*' />
     public delegate void ParameterizedThreadStart(object obj);
 
     #endregion 
 
+    /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.Thread"]/*' />
     public sealed class Thread
     {
         #region FIELDS
@@ -43,6 +46,7 @@ namespace System.Threading
 
         #region CONSTRUCTORS
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.#ctor(System.Threading.ThreadStart)"]/*' />
         public Thread(ThreadStart start)
         {
             this.start = start;
@@ -50,6 +54,7 @@ namespace System.Threading
             this.task = null;
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.#ctor(System.Threading.ParameterizedThreadStart)"]/*' />
         public Thread(ParameterizedThreadStart start)
         {
             this.start = null;
@@ -61,6 +66,7 @@ namespace System.Threading
 
         #region PROPERTIES
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Threading.Thread.CurrentThread"]/*' />
         public static Thread CurrentThread
         {
             get
@@ -69,41 +75,49 @@ namespace System.Threading
             }
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Threading.Thread.Name"]/*' />
         public string Name { get; set; }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Threading.Thread.IsBackground"]/*' />
         public bool IsBackground { get; set; }
 
         #endregion
 
         #region METHODS
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.Start"]/*' />
         public void Start()
         {
             if (this.start == null) throw new InvalidOperationException("Parameter-less action not defined for this thread instance.");
             this.task = Task.Run(new Action(this.start));
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.Start(System.Object)"]/*' />
         public void Start(object parameter)
         {
             if (this.parameterizedStart == null) throw new InvalidOperationException("Parameterized action not defined for this thread instance.");
             this.task = Task.Run(() => this.parameterizedStart(parameter));
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.Join"]/*' />
         public void Join()
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.Join(System.Int32)"]/*' />
         public bool Join(int millisecondsTimeout)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.Abort"]/*' />
         public void Abort()
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.Sleep(System.Int32)"]/*' />
         public static void Sleep(int millisecondsTimeout)
         {
             new ManualResetEvent(false).WaitOne(millisecondsTimeout);
