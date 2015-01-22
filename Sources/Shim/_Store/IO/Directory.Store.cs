@@ -27,6 +27,7 @@ using Windows.Storage.Search;
 
 namespace System.IO
 {
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.IO.Directory"]/*' />
     public static class Directory
     {
         #region FIELDS
@@ -35,6 +36,7 @@ namespace System.IO
 
         #endregion
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Directory.Exists(System.String)"]/*' />
         public static bool Exists(string path)
         {
             try
@@ -48,6 +50,7 @@ namespace System.IO
             }
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Directory.CreateDirectory(System.String)"]/*' />
         public static DirectoryInfo CreateDirectory(string path)
         {
             try
@@ -78,6 +81,7 @@ namespace System.IO
             }
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Directory.GetDirectories(System.String)"]/*' />
         public static string[] GetDirectories(string path)
         {
             var folders = Task.Run(async () =>
@@ -88,11 +92,13 @@ namespace System.IO
             return folders.Select(folder => folder.Name).ToArray();
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Directory.GetFiles(System.String)"]/*' />
         public static string[] GetFiles(string path)
         {
             return GetFiles(path, "*");
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Directory.GetFiles(System.String,System.String)"]/*' />
         public static string[] GetFiles(string path, string searchPattern)
         {
             var files = Task.Run(async () =>
@@ -109,6 +115,7 @@ namespace System.IO
             return files.Select(file => file.Path).ToArray();
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Directory.Move(System.String,System.String)"]/*' />
         public static void Move(string sourceDirName, string destDirName)
         {
             // TODO Implement support for identifying and moving individual files

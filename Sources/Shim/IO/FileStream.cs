@@ -26,19 +26,19 @@ namespace System.IO
     {
         #region CONSTRUCTORS
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileShare.#ctor(System.String,System.IO.FileMode)"]/*' />
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode)"]/*' />
         public FileStream(string path, FileMode mode)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileShare.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess)"]/*' />
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess)"]/*' />
         public FileStream(string path, FileMode mode, FileAccess access)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileShare.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)"]/*' />
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)"]/*' />
         public FileStream(string path, FileMode mode, FileAccess access, FileShare share)
         {
             throw new PlatformNotSupportedException("PCL");
@@ -48,19 +48,19 @@ namespace System.IO
 
         #region PROPERTIES
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileShare.CanRead"]/*' />
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileStream.CanRead"]/*' />
         public override bool CanRead { get { throw new PlatformNotSupportedException("PCL"); } }
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileShare.CanSeek"]/*' />
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileStream.CanSeek"]/*' />
         public override bool CanSeek { get { throw new PlatformNotSupportedException("PCL"); } }
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileShare.CanWrite"]/*' />
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileStream.CanWrite"]/*' />
         public override bool CanWrite { get { throw new PlatformNotSupportedException("PCL"); } }
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileShare.Length"]/*' />
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileStream.Length"]/*' />
         public override long Length { get { throw new PlatformNotSupportedException("PCL"); } }
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileShare.Position"]/*' />
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileStream.Position"]/*' />
         public override long Position
         {
             get
@@ -73,27 +73,27 @@ namespace System.IO
             }
         }
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileShare.Name"]/*' />
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileStream.Name"]/*' />
         public string Name { get { throw new PlatformNotSupportedException("PCL"); } }
         
         #endregion
 
         #region METHODS
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileShare.Flush"]/*' />
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileStream.Flush"]/*' />
         public override void Flush() { throw new PlatformNotSupportedException("PCL"); }
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileShare.Read(System.Byte[],System.Int32,System.Int32)"]/*' />
-        public override int Read(byte[] buffer, int offset, int count) { throw new PlatformNotSupportedException("PCL"); }
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileStream.Read(System.Byte[],System.Int32,System.Int32)"]/*' />
+        public override int Read(byte[] array, int offset, int count) { throw new PlatformNotSupportedException("PCL"); }
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileShare.Seek(System.Int64,System.IO.SeekOrigin)"]/*' />
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileStream.Seek(System.Int64,System.IO.SeekOrigin)"]/*' />
         public override long Seek(long offset, SeekOrigin origin) { throw new PlatformNotSupportedException("PCL"); }
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileShare.SetLength(System.Int64)"]/*' />
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileStream.SetLength(System.Int64)"]/*' />
         public override void SetLength(long value) { throw new PlatformNotSupportedException("PCL"); }
 
-        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileShare.Write(System.Byte[],System.Int32,System.Int32)"]/*' />
-        public override void Write(byte[] buffer, int offset, int count) { throw new PlatformNotSupportedException("PCL"); }
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.FileStream.Write(System.Byte[],System.Int32,System.Int32)"]/*' />
+        public override void Write(byte[] array, int offset, int count) { throw new PlatformNotSupportedException("PCL"); }
 
         #endregion
     }
