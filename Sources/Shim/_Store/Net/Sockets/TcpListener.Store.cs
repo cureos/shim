@@ -19,14 +19,14 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Globalization;
+using System.Threading;
+using System.Threading.Tasks;
+
+using Windows.Networking.Sockets;
+
 namespace System.Net.Sockets
 {
-    using System.Globalization;
-    using System.Threading;
-    using System.Threading.Tasks;
-
-    using global::Windows.Networking.Sockets;
-
     /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Sockets.TcpListener"]/*' />
     public sealed class TcpListener
     {

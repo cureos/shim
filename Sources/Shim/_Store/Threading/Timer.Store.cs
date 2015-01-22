@@ -19,10 +19,10 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Windows.System.Threading;
+
 namespace System.Threading
 {
-    using global::Windows.System.Threading;
-
     /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.TimerCallback"]/*' />
     public delegate void TimerCallback(object state);
 

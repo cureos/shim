@@ -19,15 +19,15 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.IO;
+using System.Threading.Tasks;
+
+using Windows.Networking;
+using Windows.Networking.Sockets;
+using Windows.Storage.Streams;
+
 namespace System.Net.Sockets
 {
-    using System.IO;
-    using System.Threading.Tasks;
-
-    using global::Windows.Networking;
-    using global::Windows.Networking.Sockets;
-    using global::Windows.Storage.Streams;
-
     /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Sockets.NetworkStream"]/*' />
     public sealed class NetworkStream : Stream
     {

@@ -19,12 +19,13 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Linq;
+
+using Windows.Networking;
+using Windows.Networking.Connectivity;
+
 namespace System
 {
-    using System.Linq;
-    using global::Windows.Networking;
-    using global::Windows.Networking.Connectivity;
-
     /// <summary>
     /// Shim complement for the <see cref="Environment"/> class, providing members that are
     /// not included in the PCL member subset of the <see cref="Environment"/> class.

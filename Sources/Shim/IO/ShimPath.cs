@@ -19,12 +19,12 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace System.IO
-{
 #if NETFX_CORE
-    using global::Windows.Storage;
+using Windows.Storage;
 #endif
 
+namespace System.IO
+{
     /// <summary>
     /// Shim complement for the <see cref="Path"/> class, providing members that are
     /// not included in the PCL member subset of the <see cref="Path"/> class.

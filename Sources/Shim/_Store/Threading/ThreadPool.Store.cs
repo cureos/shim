@@ -19,10 +19,10 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Windows.Foundation;
+
 namespace System.Threading
 {
-    using global::Windows.Foundation;
-
     /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.WaitCallback"]/*' />
     public delegate void WaitCallback(object state);
 
