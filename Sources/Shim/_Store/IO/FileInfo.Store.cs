@@ -44,7 +44,7 @@ namespace System.IO
 
         #region PROPERTIES
 
-        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileInfo.Attributes"]/*' />
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileSystemInfo.Attributes"]/*' />
         public FileAttributes Attributes
         {
             get
@@ -57,7 +57,7 @@ namespace System.IO
             }
         }
 
-        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileInfo.FullName"]/*' />
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileSystemInfo.FullName"]/*' />
         public string FullName
         {
             get

@@ -1,4 +1,4 @@
-<img src="NuGet/shim.png" alt="CSShim logo" height="108" />
+<img src="NuGet/shim.png" alt="Shim logo" height="108" />
 
 Shim
 =======
@@ -17,7 +17,7 @@ Usage
 * Windows 8 and later (f.k.a. *Windows Store* or *Metro* applications)
 * Windows Phone (Silverlight) 8.0 and later
 * Windows Phone 8.1
-* Xamarin.iOS (Classic API and Universal API)
+* Xamarin.iOS (Classic API and Unified API)
 * Xamarin.Android (API Level 7, version 2.1)
 
 Use *NuGet* to include [Shim](https://www.nuget.org/packages/shim) assemblies in your application.

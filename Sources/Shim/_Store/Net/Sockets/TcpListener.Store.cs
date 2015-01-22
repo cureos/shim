@@ -38,7 +38,7 @@ namespace System.Net.Sockets
 
         #region CONSTRUCTORS
 
-        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.#ctor(System.Net.IPAddress,System.Int32)"]/*' />
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpListener.#ctor(System.Net.IPAddress,System.Int32)"]/*' />
         public TcpListener(IPAddress localaddr, int port)
         {
             _event = new ManualResetEventSlim();
@@ -50,7 +50,7 @@ namespace System.Net.Sockets
 
         #region METHODS
 
-        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.Start"]/*' />
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpListener.Start"]/*' />
         public void Start()
         {
             _client = null;
@@ -63,7 +63,7 @@ namespace System.Net.Sockets
             Task.Run(async () => await _listener.BindServiceNameAsync(_port));
         }
 
-        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.BeginAcceptTcpClient(System.AsyncCallback,System.Object)"]/*' />
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpListener.BeginAcceptTcpClient(System.AsyncCallback,System.Object)"]/*' />
         public IAsyncResult BeginAcceptTcpClient(AsyncCallback callback, object state)
         {
             return
@@ -71,14 +71,14 @@ namespace System.Net.Sockets
                                  .ContinueWith(task => callback(task));
         }
 
-        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.EndAcceptTcpClient(System.IAsyncResult)"]/*' />
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpListener.EndAcceptTcpClient(System.IAsyncResult)"]/*' />
         public TcpClient EndAcceptTcpClient(IAsyncResult asyncResult)
         {
             _event.Reset();
             return _client;
         }
 
-        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.Stop"]/*' />
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpListener.Stop"]/*' />
         public void Stop()
         {
             _listener.ConnectionReceived -= OnConnectionReceived;

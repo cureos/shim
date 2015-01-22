@@ -61,7 +61,7 @@ namespace System.Timers
 
         #region METHODS
 
-        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Timers.Timer.Dispose"]/*' />
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.ComponentModel.Component.Dispose"]/*' />
         public void Dispose()
         {
             throw new PlatformNotSupportedException("PCL");

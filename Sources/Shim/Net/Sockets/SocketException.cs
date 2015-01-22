@@ -33,7 +33,7 @@ namespace System.Net.Sockets
         }
 
         // TODO Check in fo-dicom where this constructor originates from?
-        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="T:System.Net.Sockets.SocketException.#ctor(System.String,System.Object[])"]/*' />
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.SocketException.#ctor(System.String,System.Object[])"]/*' />
         public SocketException(string format, params object[] args)
             : base(String.Format(format, args))
         {

@@ -21,11 +21,11 @@
 
 namespace System.Security.Cryptography.X509Certificates
 {
-    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Authentication.X509Certificates.OpenFlags"]/*' />
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Cryptography.X509Certificates.OpenFlags"]/*' />
     [Flags]
     public enum OpenFlags
     {
-        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="F:System.Security.Authentication.X509Certificates.OpenFlags.ReadOnly"]/*' />
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="F:System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly"]/*' />
         ReadOnly = 0x0000
     }
 }

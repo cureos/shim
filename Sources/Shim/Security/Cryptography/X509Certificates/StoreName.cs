@@ -21,10 +21,10 @@
 
 namespace System.Security.Cryptography.X509Certificates
 {
-    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Authentication.X509Certificates.StoreName"]/*' />
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Cryptography.X509Certificates.StoreName"]/*' />
     public enum StoreName
     {
-        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="F:System.Security.Authentication.X509Certificates.StoreName.My"]/*' />
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="F:System.Security.Cryptography.X509Certificates.StoreName.My"]/*' />
         My = 5
     }
 }

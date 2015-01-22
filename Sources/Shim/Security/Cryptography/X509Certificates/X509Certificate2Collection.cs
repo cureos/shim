@@ -23,7 +23,7 @@ using System.Collections.Generic;
 
 namespace System.Security.Cryptography.X509Certificates
 {
-    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Authentication.X509Certificates.X509Certificate2Collection"]/*' />
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection"]/*' />
     public sealed class X509Certificate2Collection : List<X509Certificate>
     {
         #region METHODS

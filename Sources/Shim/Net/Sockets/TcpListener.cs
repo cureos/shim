@@ -26,7 +26,7 @@ namespace System.Net.Sockets
     {
         #region CONSTRUCTORS
 
-        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.#ctor(System.Net.IPAddress,System.Int32)"]/*' />
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpListener.#ctor(System.Net.IPAddress,System.Int32)"]/*' />
         public TcpListener(IPAddress localaddr, int port)
         {
             throw new PlatformNotSupportedException("PCL");
@@ -36,25 +36,25 @@ namespace System.Net.Sockets
 
         #region METHODS
 
-        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.Start"]/*' />
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpListener.Start"]/*' />
         public void Start()
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
-        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.BeginAcceptTcpClient(System.AsyncCallback,System.Object)"]/*' />
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpListener.BeginAcceptTcpClient(System.AsyncCallback,System.Object)"]/*' />
         public IAsyncResult BeginAcceptTcpClient(AsyncCallback callback, object state)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
-        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.EndAcceptTcpClient(System.IAsyncResult)"]/*' />
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpListener.EndAcceptTcpClient(System.IAsyncResult)"]/*' />
         public TcpClient EndAcceptTcpClient(IAsyncResult asyncResult)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
-        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpClient.Stop"]/*' />
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.TcpListener.Stop"]/*' />
         public void Stop()
         {
             throw new PlatformNotSupportedException("PCL");

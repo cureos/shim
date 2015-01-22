@@ -29,13 +29,13 @@ namespace System.Threading
     /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.ThreadPool"]/*' />
     public static class ThreadPool
     {
-        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.QueueUserWorkItem(System.Threading.WaitCallback)"]/*' />
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.ThreadPool.QueueUserWorkItem(System.Threading.WaitCallback)"]/*' />
         public static bool QueueUserWorkItem(WaitCallback callBack)
         {
             return QueueUserWorkItem(callBack, null);
         }
 
-        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.QueueUserWorkItem(System.Threading.WaitCallback,System.Object)"]/*' />
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.ThreadPool.QueueUserWorkItem(System.Threading.WaitCallback,System.Object)"]/*' />
         public static bool QueueUserWorkItem(WaitCallback callBack, object state)
          {
              var workItem = global::Windows.System.Threading.ThreadPool.RunAsync(source => callBack(state));

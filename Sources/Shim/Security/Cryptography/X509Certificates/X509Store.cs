@@ -21,7 +21,7 @@
 
 namespace System.Security.Cryptography.X509Certificates
 {
-    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Authentication.X509Certificates.X509Store"]/*' />
+    /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="T:System.Security.Cryptography.X509Certificates.X509Store"]/*' />
     public sealed class X509Store
     {
         #region CONSTRUCTORS
@@ -36,19 +36,19 @@ namespace System.Security.Cryptography.X509Certificates
 
         #region PROPERTIES
 
-        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="P:System.Security.Authentication.X509Certificates.X509Store.Certificates"]/*' />
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="P:System.Security.Cryptography.X509Certificates.X509Store.Certificates"]/*' />
         public X509Certificate2Collection Certificates { get; private set; }
 
         #endregion
 
         #region METHODS
 
-        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Security.Authentication.X509Certificates.X509Store.Open(System.Security.Cryptography.X509Certificates.OpenFlags)"]/*' />
-        public void Open(OpenFlags openFlags)
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Security.Cryptography.X509Certificates.X509Store.Open(System.Security.Cryptography.X509Certificates.OpenFlags)"]/*' />
+        public void Open(OpenFlags flags)
         {			
         }
 
-        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Security.Authentication.X509Certificates.X509Store.Close"]/*' />
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Security.Cryptography.X509Certificates.X509Store.Close"]/*' />
         public void Close()
         {			
         }
