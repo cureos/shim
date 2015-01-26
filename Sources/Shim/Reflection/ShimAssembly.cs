@@ -41,9 +41,9 @@ namespace System.Reflection
 #endif
         public static Assembly GetExecutingAssembly()
         {
-#if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
+#if DOTNET
             return Assembly.GetExecutingAssembly();
-#elif NETFX_CORE
+#elif NETFX_CORE || WINDOWS_PHONE
             return
                 (Assembly)typeof(Assembly).GetTypeInfo().GetDeclaredMethod("GetCallingAssembly").Invoke(null, new object[0]);
 #else

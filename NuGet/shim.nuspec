@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>shim</id>
-        <version>1.0.0.50122</version>
+        <version>1.0.0.50126</version>
         <title>Shim</title>
         <authors>Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/LICENSE.txt</licenseUrl>
@@ -12,7 +12,11 @@
         <description>Shim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 1.0.0.50122
+        <releaseNotes>v 1.0.0.50126
+----------------
+* TypeInfo based impl of ShimAssembly.GetExecutingAssembly for Windows Phone
+
+v 1.0.0.50122
 ----------------
 * Added iOS Unified API DLL
 * Added documentation XML files
@@ -20,13 +24,7 @@
 
 v 0.9.4-pre2
 ------------
-* Added Minimum and Maximum properties to RangeAttribute
-
-v 0.9.4-pre1
-------------
-* Added DbType, IDataRecord and IDataReader to System.Data namespace
-* Added SchemaTableColumn and SchemaTableOptionalColumn to System.Data.Common namespace
-* Added methods and properties to DataTable, DataColumn and DataRow</releaseNotes>
+* Added Minimum and Maximum properties to RangeAttribute</releaseNotes>
         <language>en-US</language>
         <tags>PCL Shim .NET Windows WP8 WPA81 Xamarin iOS Android</tags>
     </metadata>
