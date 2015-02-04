@@ -35,7 +35,10 @@ namespace System.IO
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.Path.PathSeparator"]/*' />
         public static readonly char PathSeparator = '\\';
-        
+
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.Path.DirectorySeparatorChar"]/*' />
+        public static readonly char DirectorySeparatorChar = '\\';
+
         #endregion
 
         #region METHODS

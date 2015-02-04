@@ -36,10 +36,13 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Authentication;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
+
+using Timer = System.Threading.Timer;
 
 // System
 [assembly: TypeForwardedTo(typeof(AppDomain))]
@@ -56,6 +59,7 @@ using System.Timers;
 [assembly: TypeForwardedTo(typeof(ConcurrentBag<>))]
 [assembly: TypeForwardedTo(typeof(ConcurrentStack<>))]
 [assembly: TypeForwardedTo(typeof(ConcurrentDictionary<,>))]
+[assembly: TypeForwardedTo(typeof(Partitioner))]
 
 // System.ComponentModel
 [assembly: TypeForwardedTo(typeof(BrowsableAttribute))]
@@ -135,6 +139,9 @@ using System.Timers;
 // System.Runtime.Serialization.Formatters.Binary
 [assembly: TypeForwardedTo(typeof(BinaryFormatter))]
 
+// System.Security
+[assembly: TypeForwardedTo(typeof(RNGCryptoServiceProvider))]
+
 // System.Security.Authentication
 [assembly: TypeForwardedTo(typeof(SslProtocols))]
 
@@ -153,7 +160,7 @@ using System.Timers;
 [assembly: TypeForwardedTo(typeof(ThreadAbortException))]
 [assembly: TypeForwardedTo(typeof(ThreadPool))]
 [assembly: TypeForwardedTo(typeof(ThreadStart))]
-[assembly: TypeForwardedTo(typeof(System.Threading.Timer))]
+[assembly: TypeForwardedTo(typeof(Timer))]
 [assembly: TypeForwardedTo(typeof(TimerCallback))]
 [assembly: TypeForwardedTo(typeof(WaitCallback))]
 

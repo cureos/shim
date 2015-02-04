@@ -24,6 +24,16 @@ namespace System.Threading.Tasks
     /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.Tasks.ParallelOptions"]/*' />
     public class ParallelOptions
     {
+        #region CONSTRUCTORS
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Tasks.ParallelOptions.#ctor"]/*' />
+        public ParallelOptions()
+        {
+            MaxDegreeOfParallelism = Environment.ProcessorCount;
+        }
+
+        #endregion
+
         #region PROPERTIES
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Threading.Tasks.ParallelOptions.MaxDegreeOfParallelism"]/*' />

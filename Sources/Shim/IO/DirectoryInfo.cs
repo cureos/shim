@@ -21,6 +21,7 @@
 
 namespace System.IO
 {
+    using System.Collections.Generic;
     using System.Linq;
 
     /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.IO.DirectoryInfo"]/*' />
@@ -28,7 +29,7 @@ namespace System.IO
     {
         #region FIELDS
 
-        private readonly string _path;
+        private readonly string path;
 
         #endregion
 
@@ -37,7 +38,7 @@ namespace System.IO
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.DirectoryInfo.#ctor(System.String)"]/*' />
         public DirectoryInfo(string path)
         {
-            _path = path;
+            this.path = path.TrimEnd(ShimPath.DirectorySeparatorChar);
         }
 
         #endregion
@@ -47,9 +48,38 @@ namespace System.IO
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.DirectoryInfo.Exists"]/*' />
         public bool Exists
         {
-            get { return Directory.Exists(_path); }
+            get { return Directory.Exists(this.path); }
         }
-        
+
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.DirectoryInfo.Parent"]/*' />
+        public DirectoryInfo Parent
+        {
+            get
+            {
+                var parent = Path.GetDirectoryName(this.path);
+                return parent == null ? null : new DirectoryInfo(parent);
+            }
+        }
+
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.DirectoryInfo.Name"]/*' />
+        public string Name
+        {
+            get
+            {
+                var index = this.path.LastIndexOf(ShimPath.DirectorySeparatorChar);
+                return index < 0 ? this.path : this.path.Substring(index + 1);
+            }
+        }
+
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.DirectoryInfo.FullName"]/*' />
+        public string FullName
+        {
+            get
+            {
+                return this.path;
+            }
+        }
+
         #endregion
 
         #region METHODS
@@ -58,13 +88,24 @@ namespace System.IO
         public void Create()
         {
             // TODO Is it an issue that the CreateDirectory method creates another DirectoryInfo?
-            Directory.CreateDirectory(_path);
+            Directory.CreateDirectory(this.path);
         }
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.DirectoryInfo.GetFiles"]/*' />
         public FileInfo[] GetFiles()
         {
-            return Directory.GetFiles(_path).Select(fileName => new FileInfo(fileName)).ToArray();
+            return Directory.GetFiles(this.path).Select(fileName => new FileInfo(fileName)).ToArray();
+        }
+
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.DirectoryInfo.EnumerateFiles(System.String,System.IO.SearchOption"]/*' />
+        public IEnumerable<FileInfo> EnumerateFiles(String searchPattern, SearchOption searchOption)
+        {
+            var files = Directory.GetFiles(this.path, searchPattern).Select(f => new FileInfo(f));
+            return searchOption == SearchOption.TopDirectoryOnly
+                       ? files
+                       : files.Concat(
+                           Directory.GetDirectories(this.path)
+                             .SelectMany(d => new DirectoryInfo(d).EnumerateFiles(searchPattern, searchOption)));
         }
 
         #endregion

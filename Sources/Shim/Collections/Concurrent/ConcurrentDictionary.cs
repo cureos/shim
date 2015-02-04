@@ -26,6 +26,12 @@ namespace System.Collections.Concurrent
     /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Collections.Concurrent.ConcurrentDictionary`2"]/*' />
     public sealed class ConcurrentDictionary<TKey, TValue> : Dictionary<TKey, TValue>
     {
+        #region FIELDS
+
+        private readonly object locker = new object();
+
+        #endregion
+
         #region METHODS
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate(`0,System.Func{`0,`1},System.Func{`0,`1,`1})"]/*' />
@@ -35,17 +41,70 @@ namespace System.Collections.Concurrent
             Func<TKey, TValue, TValue> updateValueFactory)
         {
             TValue value;
-            if (ContainsKey(key))
+            lock (this.locker)
             {
-                value = updateValueFactory(key, this[key]);
-                this[key] = value;
-            }
-            else
-            {
-                value = addValueFactory(key);
-                Add(key, value);
+                if (ContainsKey(key))
+                {
+                    value = updateValueFactory(key, this[key]);
+                    this[key] = value;
+                }
+                else
+                {
+                    value = addValueFactory(key);
+                    Add(key, value);
+                }
             }
             return value;
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(`0,System.Func{`0,`1})"]/*' />
+        public TValue GetOrAdd(TKey key, Func<TKey, TValue> valueFactory)
+        {
+            TValue value;
+            lock (this.locker)
+            {
+                if (ContainsKey(key))
+                {
+                    value = this[key];
+                }
+                else
+                {
+                    value = valueFactory(key);
+                    Add(key, value);
+                }
+            }
+            return value;
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(`0,`1)"]/*' />
+        public TValue GetOrAdd(TKey key, TValue value)
+        {
+            lock (this.locker)
+            {
+                if (ContainsKey(key))
+                {
+                    return this[key];
+                }
+
+                Add(key, value);
+                return value;
+            }
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove(`0,`1@)"]/*' />
+        public bool TryRemove(TKey key, out TValue value)
+        {
+            lock (this.locker)
+            {
+                if (ContainsKey(key))
+                {
+                    value = this[key];
+                    return Remove(key);
+                }
+
+                value = default(TValue);
+                return false;
+            }
         }
 
         #endregion

@@ -25,9 +25,33 @@ namespace System.IO
     [Flags]
     public enum FileAttributes
     {
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.ReadOnly"]/*' />
+        ReadOnly = 0x1,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.Hidden"]/*' />
+        Hidden = 0x2,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.System"]/*' />
+        System = 0x4,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.Directory"]/*' />
+        Directory = 0x10,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.Archive"]/*' />
+        Archive = 0x20,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.Device"]/*' />
+        Device = 0x40,
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.Normal"]/*' />
         Normal = 0x00080,
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.Temporary"]/*' />
-        Temporary = 0x00100
+        Temporary = 0x00100,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.SparseFile"]/*' />
+        SparseFile = 0x200,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.ReparsePoint"]/*' />
+        ReparsePoint = 0x400,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.Compressed"]/*' />
+        Compressed = 0x800,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.Offline"]/*' />
+        Offline = 0x1000,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.NotContentIndexed"]/*' />
+        NotContentIndexed = 0x2000,
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.FileAttributes.Encrypted"]/*' />
+        Encrypted = 0x4000
     }
 }

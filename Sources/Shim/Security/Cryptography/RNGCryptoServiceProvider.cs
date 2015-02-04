@@ -19,18 +19,29 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace System.Threading.Tasks
+#if NETFX_CORE
+using System.Runtime.InteropServices.WindowsRuntime;
+
+using Windows.Security.Cryptography;
+#endif
+
+namespace System.Security.Cryptography
 {
-    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.Tasks.ParallelLoopResult"]/*' />
-    public struct ParallelLoopResult
+    /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Security.Cryptography.RNGCryptoServiceProvider"]/*' />
+    public class RNGCryptoServiceProvider
     {
-        #region PROPERTIES
+        #region METHODS
 
-        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Threading.Tasks.ParallelLoopResult.IsCompleted"]/*' />
-        public bool IsCompleted { get; internal set; }
-
-        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Threading.Tasks.ParallelLoopResult.LowestBreakIteration"]/*' />
-        public long? LowestBreakIteration { get; internal set; }
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Security.Cryptography.RNGCryptoServiceProvider.GetBytes(System.Byte[])"]/*' />
+        public void GetBytes(byte[] data)
+        {
+#if NETFX_CORE
+            var buffer = CryptographicBuffer.GenerateRandom((uint)data.Length);
+            buffer.CopyTo(data);
+#else
+            throw new PlatformNotSupportedException("PCL");
+#endif
+        }
 
         #endregion
     }

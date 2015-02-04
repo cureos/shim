@@ -29,7 +29,7 @@ namespace System
         #region FIELDS
 
         private static readonly TextWriter _error;
-        private static readonly TextWriter _out;
+        private static TextWriter _out;
 
         #endregion
 
@@ -66,6 +66,12 @@ namespace System
         #endregion
 
         #region METHODS
+
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.SetOut(System.IO.TextWriter)"]/*' />
+        public static void SetOut(TextWriter newOut)
+        {
+            _out = newOut;
+        }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.Write(System.Char)"]/*' />
         public static void Write(char value)

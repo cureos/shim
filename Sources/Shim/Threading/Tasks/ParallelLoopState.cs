@@ -24,13 +24,20 @@ namespace System.Threading.Tasks
     /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.Tasks.ParallelLoopState"]/*' />
     public class ParallelLoopState
     {
+        #region CONSTRUCTORS
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Tasks.ParallelLoopState.#ctor"]/*' />
+        public ParallelLoopState()
+        {
+            this.ShouldExitCurrentIteration = false;
+        }
+
+        #endregion
+
         #region PROPERTIES
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration"]/*' />
-        public bool ShouldExitCurrentIteration
-        {
-            get { return false; }
-        }
+        public bool ShouldExitCurrentIteration { get; private set; }
 
         #endregion
 
@@ -39,6 +46,7 @@ namespace System.Threading.Tasks
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Tasks.ParallelLoopState.Stop"]/*' />
         public void Stop()
         {
+            this.ShouldExitCurrentIteration = true;
         }
 
         #endregion

@@ -26,6 +26,7 @@ using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 
@@ -64,6 +65,9 @@ using System.Threading;
 [assembly: TypeForwardedTo(typeof(Marshal))]
 [assembly: TypeForwardedTo(typeof(MarshalAsAttribute))]
 [assembly: TypeForwardedTo(typeof(UnmanagedType))]
+
+// System.Security
+[assembly: TypeForwardedTo(typeof(RNGCryptoServiceProvider))]
 
 // System.Security.Cryptography.X509Certificates
 [assembly: TypeForwardedTo(typeof(X509Certificate))]

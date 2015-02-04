@@ -54,6 +54,9 @@
     <Compile Include="..\Collections\Concurrent\ConcurrentStack.cs">
       <Link>Collections\Concurrent\ConcurrentStack.cs</Link>
     </Compile>
+    <Compile Include="..\Collections\Concurrent\Partitioner.cs">
+      <Link>Collections\Concurrent\Partitioner.cs</Link>
+    </Compile>
     <Compile Include="..\Collections\Generic\EnumerableExtensions.cs">
       <Link>Collections\Generic\EnumerableExtensions.cs</Link>
     </Compile>

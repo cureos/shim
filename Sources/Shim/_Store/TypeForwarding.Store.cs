@@ -30,6 +30,7 @@ using System.Threading.Tasks;
 [assembly: TypeForwardedTo(typeof(ConcurrentBag<>))]
 [assembly: TypeForwardedTo(typeof(ConcurrentStack<>))]
 [assembly: TypeForwardedTo(typeof(ConcurrentDictionary<,>))]
+[assembly: TypeForwardedTo(typeof(Partitioner))]
 
 // System.ComponentModel.DataAnnotations
 [assembly: TypeForwardedTo(typeof(RangeAttribute))]

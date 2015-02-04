@@ -211,6 +211,9 @@
     <Compile Include="..\Security\Authentication\SslProtocols.cs">
       <Link>Security\Authentication\SslProtocols.cs</Link>
     </Compile>
+    <Compile Include="..\Security\Cryptography\RNGCryptoServiceProvider.cs">
+      <Link>Security\Cryptography\RNGCryptoServiceProvider.cs</Link>
+    </Compile>
     <Compile Include="..\Security\Cryptography\X509Certificates\OpenFlags.cs">
       <Link>Security\Cryptography\X509Certificates\OpenFlags.cs</Link>
     </Compile>
