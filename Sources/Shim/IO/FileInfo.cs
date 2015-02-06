@@ -88,6 +88,15 @@ namespace System.IO
             }
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileInfo.Extension"]/*' />
+        public string Extension
+        {
+            get
+            {
+                throw new PlatformNotSupportedException("PCL");
+            }
+        }
+
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileInfo.Directory"]/*' />
         public DirectoryInfo Directory
         {

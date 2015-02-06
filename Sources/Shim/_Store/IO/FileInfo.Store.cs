@@ -96,6 +96,15 @@ namespace System.IO
             }
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileInfo.Extension"]/*' />
+        public string Extension
+        {
+            get
+            {
+                return Path.GetExtension(this.fileName);
+            }
+        }
+
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.FileInfo.Directory"]/*' />
         public DirectoryInfo Directory
         {
