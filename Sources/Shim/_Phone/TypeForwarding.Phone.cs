@@ -20,6 +20,7 @@
  */
 
 using System;
+using System.ComponentModel;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
@@ -34,6 +35,11 @@ using System.Threading;
 [assembly: TypeForwardedTo(typeof(AppDomain))]
 [assembly: TypeForwardedTo(typeof(Console))]
 [assembly: TypeForwardedTo(typeof(DBNull))]
+
+// System.ComponentModel
+[assembly: TypeForwardedTo(typeof(BrowsableAttribute))]
+[assembly: TypeForwardedTo(typeof(CategoryAttribute))]
+[assembly: TypeForwardedTo(typeof(DescriptionAttribute))]
 
 // System.IO
 [assembly: TypeForwardedTo(typeof(Directory))]

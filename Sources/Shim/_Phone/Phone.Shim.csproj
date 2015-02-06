@@ -63,17 +63,8 @@
     <Compile Include="..\Collections\Generic\ListExtensions.cs">
       <Link>Collections\Generic\ListExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\ComponentModel\BrowsableAttribute.cs">
-      <Link>ComponentModel\BrowsableAttribute.cs</Link>
-    </Compile>
-    <Compile Include="..\ComponentModel\CategoryAttribute.cs">
-      <Link>ComponentModel\CategoryAttribute.cs</Link>
-    </Compile>
     <Compile Include="..\ComponentModel\DataAnnotations\RangeAttribute.cs">
       <Link>ComponentModel\DataAnnotations\RangeAttribute.cs</Link>
-    </Compile>
-    <Compile Include="..\ComponentModel\DescriptionAttribute.cs">
-      <Link>ComponentModel\DescriptionAttribute.cs</Link>
     </Compile>
     <Compile Include="..\ComponentModel\DisplayNameAttribute.cs">
       <Link>ComponentModel\DisplayNameAttribute.cs</Link>
