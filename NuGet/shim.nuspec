@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>shim</id>
-        <version>1.0.1.50204</version>
+        <version>1.0.1.50206</version>
         <title>Shim</title>
         <authors>Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/LICENSE.txt</licenseUrl>
@@ -12,7 +12,13 @@
         <description>Shim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 1.0.1.50204
+        <releaseNotes>v 1.0.1.50206
+----------------
+* Fixed issues:
+#1 Redundant attribute types in WP8 target
+#2 FileInfo.Extension property missing
+
+v 1.0.1.50204
 ----------------
 * Added Partitioner and RNGCryptoServiceProvider classes
 * Added new methods and properties to ConcurrentDictionary, DirectoryInfo, Console, Parallel classes
@@ -21,17 +27,7 @@
 
 v 1.0.0.50126
 ----------------
-* TypeInfo based impl of ShimAssembly.GetExecutingAssembly for Windows Phone
-
-v 1.0.0.50122
-----------------
-* Added iOS Unified API DLL
-* Added documentation XML files
-* Added PDB files for iOS Classic and Unified API
-
-v 0.9.4-pre2
-------------
-* Added Minimum and Maximum properties to RangeAttribute</releaseNotes>
+* TypeInfo based impl of ShimAssembly.GetExecutingAssembly for Windows Phone</releaseNotes>
         <language>en-US</language>
         <tags>PCL Shim .NET Windows WP8 WPA81 Xamarin iOS Android</tags>
     </metadata>
