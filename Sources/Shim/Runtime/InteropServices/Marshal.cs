@@ -50,6 +50,18 @@ namespace System.Runtime.InteropServices
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Runtime.InteropServices.Marshal.Copy(System.Int32[],System.Int32,System.IntPtr,System.Int32)"]/*' />
+        public static void Copy(short[] source, int startIndex, IntPtr destination, int length)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Runtime.InteropServices.Marshal.Copy(System.Int16[],System.Int32,System.IntPtr,System.Int32)"]/*' />
+        public static void Copy(int[] source, int startIndex, IntPtr destination, int length)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Runtime.InteropServices.Marshal.SizeOf(System.Object)"]/*' />
         public static int SizeOf(object structure)
         {
@@ -73,7 +85,31 @@ namespace System.Runtime.InteropServices
         {
             throw new PlatformNotSupportedException("PCL");
         }
-        
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Runtime.InteropServices.Marshal.WriteByte(System.IntPtr,System.Byte)"]/*' />
+        public static void WriteByte(IntPtr ptr, byte val)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Runtime.InteropServices.Marshal.WriteInt16(System.IntPtr,System.Int16)"]/*' />
+        public static void WriteInt16(IntPtr ptr, short val)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Runtime.InteropServices.Marshal.WriteInt32(System.IntPtr,System.Int32)"]/*' />
+        public static void WriteInt32(IntPtr ptr, int val)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Runtime.InteropServices.Marshal.WriteInt32(System.IntPtr,System.Int32,System.Int32)"]/*' />
+        public static void WriteInt32(IntPtr ptr, int ofs, int val)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
         #endregion
     }
 }
