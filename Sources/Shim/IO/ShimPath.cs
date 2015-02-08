@@ -81,6 +81,12 @@ namespace System.IO
 #endif
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Path.GetDirectoryName(System.String)"]/*' />
+        public static string GetDirectoryName(string path)
+        {
+            return Path.GetDirectoryName(path);
+        }
+
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Path.Combine(System.String[])"]/*' />
         public static string Combine(params string[] paths)
         {

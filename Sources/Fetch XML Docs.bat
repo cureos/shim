@@ -11,6 +11,7 @@
 @xcopy /k /r /v /y %SOURCE%System.Data.xml %TARGET%
 @xcopy /k /r /v /y %SOURCE%System.Core.xml %TARGET%
 @xcopy /k /r /v /y %SOURCE%System.Xml.xml %TARGET%
+@xcopy /k /r /v /y %SOURCE%System.Xml.Linq.xml %TARGET%
 @xcopy /k /r /v /y %SOURCE%System.ComponentModel.DataAnnotations.xml %TARGET%
 
 :end

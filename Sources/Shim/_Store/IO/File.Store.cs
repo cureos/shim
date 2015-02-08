@@ -64,6 +64,12 @@ namespace System.IO
             return new FileStream(path, FileMode.Create);
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.CreateText(System.String)"]/*' />
+        public static StreamWriter CreateText(string path)
+        {
+            return new StreamWriter(Create(path));
+        }
+
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.Move(System.String,System.String)"]/*' />
         public static void Move(string sourceFileName, string destFileName)
         {

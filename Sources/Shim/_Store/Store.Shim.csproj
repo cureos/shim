@@ -256,6 +256,9 @@
     <Compile Include="..\TypeExtensions.cs">
       <Link>TypeExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\Xml\Linq\XDocumentExtensions.cs">
+      <Link>Xml\Linq\XDocumentExtensions.cs</Link>
+    </Compile>
     <Compile Include="IO\Directory.Store.cs" />
     <Compile Include="IO\File.Store.cs" />
     <Compile Include="IO\FileHelper.cs" />
