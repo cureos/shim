@@ -31,7 +31,7 @@ namespace System.Xml.Linq
         /// <param name="self">Document object itself.</param>
         public static void Save(this XDocument self, string fileName)
         {
-#if NETFX_CORE || WINDOWS_PHONE || DOTNET
+#if DOTNET
             self.Save(fileName);
 #else
             self.Save(System.IO.File.Open(fileName, System.IO.FileMode.Create, System.IO.FileAccess.Write));
