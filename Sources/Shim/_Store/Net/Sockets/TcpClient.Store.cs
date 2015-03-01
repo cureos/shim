@@ -73,6 +73,9 @@ namespace System.Net.Sockets
         /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.TcpClient.NoDelay"]/*' />
         public bool NoDelay { get; set; }
 
+        /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.TcpClient.Client"]/*' />
+        public Socket Client { get; set; }
+
         #endregion
         
         #region METHODS

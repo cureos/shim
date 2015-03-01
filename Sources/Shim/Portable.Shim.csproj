@@ -61,7 +61,9 @@
     <Compile Include="Data\IDataRecord.cs" />
     <Compile Include="Diagnostics\Process.cs" />
     <Compile Include="IO\ShimPath.cs" />
+    <Compile Include="Net\EndPoint.cs" />
     <Compile Include="Net\HttpWebRequestExtensions.cs" />
+    <Compile Include="Net\Sockets\Socket.cs" />
     <Compile Include="Net\WebResponseExtensions.cs" />
     <Compile Include="Reflection\AssemblyExtensions.cs" />
     <Compile Include="Reflection\Binder.cs" />

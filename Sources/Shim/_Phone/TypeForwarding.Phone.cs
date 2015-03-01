@@ -53,9 +53,11 @@ using System.Threading;
 [assembly: TypeForwardedTo(typeof(FileStream))]
 
 // System.Net
+[assembly: TypeForwardedTo(typeof(EndPoint))]
 [assembly: TypeForwardedTo(typeof(IPAddress))]
 
 // System.Net.Sockets
+[assembly: TypeForwardedTo(typeof(Socket))]
 [assembly: TypeForwardedTo(typeof(SocketError))]
 [assembly: TypeForwardedTo(typeof(SocketException))]
 

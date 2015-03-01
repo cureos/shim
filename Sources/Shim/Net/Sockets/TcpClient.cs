@@ -49,6 +49,19 @@ namespace System.Net.Sockets
             }
         }
 
+        /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.TcpClient.Client"]/*' />
+        public Socket Client
+        {
+            get
+            {
+                throw new PlatformNotSupportedException("PCL");
+            }
+            set
+            {
+                throw new PlatformNotSupportedException("PCL");
+            }
+        }
+
         #endregion
         
         #region METHODS

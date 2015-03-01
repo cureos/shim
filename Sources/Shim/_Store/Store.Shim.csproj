@@ -154,8 +154,14 @@
     <Compile Include="..\IO\TextWriterExtensions.cs">
       <Link>IO\TextWriterExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\Net\EndPoint.cs">
+      <Link>Net\EndPoint.cs</Link>
+    </Compile>
     <Compile Include="..\Net\HttpWebRequestExtensions.cs">
       <Link>Net\HttpWebRequestExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\Sockets\Socket.cs">
+      <Link>Net\Sockets\Socket.cs</Link>
     </Compile>
     <Compile Include="..\Net\WebRequestExtensions.cs">
       <Link>Net\WebRequestExtensions.cs</Link>

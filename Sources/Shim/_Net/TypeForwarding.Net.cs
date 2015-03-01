@@ -103,6 +103,7 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(SearchOption))]
 
 // System.Net
+[assembly: TypeForwardedTo(typeof(EndPoint))]
 [assembly: TypeForwardedTo(typeof(IPAddress))]
 [assembly: TypeForwardedTo(typeof(IWebProxy))]
 
@@ -113,6 +114,7 @@ using Timer = System.Threading.Timer;
 
 // System.Net.Sockets
 [assembly: TypeForwardedTo(typeof(NetworkStream))]
+[assembly: TypeForwardedTo(typeof(Socket))]
 [assembly: TypeForwardedTo(typeof(SocketError))]
 [assembly: TypeForwardedTo(typeof(SocketException))]
 [assembly: TypeForwardedTo(typeof(TcpClient))]
