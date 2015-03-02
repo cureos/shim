@@ -37,6 +37,7 @@ v 1.0.1.50207
         <file src="..\Sources\Shim\_Store\bin\Release\Shim.dll" target="lib\netcore45" />
         <file src="..\Sources\Shim\_Store\bin\Release\Shim.pdb" target="lib\netcore45" />
         <file src="..\Sources\Shim\_Store\bin\Release\Shim.xml" target="lib\netcore45" />
+        <file src="..\Sources\Shim\_Store\bin\Release\Shim.pri" target="lib\netcore45" />
         <file src="..\Sources\Shim\bin\Release\Shim.dll" target="lib\portable-net45+netcore45+wpa81+wp8" />
         <file src="..\Sources\Shim\bin\Release\Shim.pdb" target="lib\portable-net45+netcore45+wpa81+wp8" />
         <file src="..\Sources\Shim\bin\Release\Shim.xml" target="lib\portable-net45+netcore45+wpa81+wp8" />
@@ -55,8 +56,10 @@ v 1.0.1.50207
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.dll" target="lib\portable-win81+wpa81" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pdb" target="lib\portable-win81+wpa81" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.xml" target="lib\portable-win81+wpa81" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pri" target="lib\portable-win81+wpa81" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.dll" target="lib\netcore451" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pdb" target="lib\netcore451" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.xml" target="lib\netcore451" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pri" target="lib\netcore451" />
     </files>
 </package>
