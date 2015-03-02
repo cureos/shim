@@ -1,7 +1,5 @@
-@cd "%HOMEDRIVE%%HOMEPATH%\Documents\Visual Studio 2012\Projects\shim\Sources\Shim"
-
 @set SOURCE="%ProgramFiles(x86)%\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\"
-@set TARGET=_Doc
+@set TARGET=.\Shim\_Doc
 
 @if EXIST %TARGET% (rd /s /q %TARGET%)
 

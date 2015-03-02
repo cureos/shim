@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>shim</id>
-        <version>1.0.1.50208</version>
+        <version>1.0.1.50302</version>
         <title>Shim</title>
         <authors>Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/LICENSE.txt</licenseUrl>
@@ -12,7 +12,13 @@
         <description>Shim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 1.0.1.50208
+        <releaseNotes>v 1.0.1.50302
+----------------
+* Fixed issues:
+#6 Add Socket and EndPoint classes
+#5 Invalid use of XDocument.Save(string) in WP8 and Universal projects
+
+v 1.0.1.50208
 ----------------
 * Fixed issues:
 #4 Methods missing to support Accord.Extensions.Imaging.Algorithms
@@ -20,13 +26,7 @@
 v 1.0.1.50207
 ----------------
 * Fixed issues:
-#3 Missing Copy and Write methods in Marshal class
-
-v 1.0.1.50206
-----------------
-* Fixed issues:
-#1 Redundant attribute types in WP8 target
-#2 FileInfo.Extension property missing</releaseNotes>
+#3 Missing Copy and Write methods in Marshal class</releaseNotes>
         <language>en-US</language>
         <tags>PCL Shim .NET Windows WP8 WPA81 Xamarin iOS Android</tags>
     </metadata>
@@ -55,5 +55,8 @@ v 1.0.1.50206
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.dll" target="lib\portable-win81+wpa81" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pdb" target="lib\portable-win81+wpa81" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.xml" target="lib\portable-win81+wpa81" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.dll" target="lib\netcore451" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pdb" target="lib\netcore451" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.xml" target="lib\netcore451" />
     </files>
 </package>
