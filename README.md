@@ -23,12 +23,20 @@ Usage
 Use *NuGet* to include [Shim](https://www.nuget.org/packages/shim) assemblies in your application.
 
 
-Notes on commercial use
------------------------
+Contributing
+------------
 
-The *Shim* assemblies are published under GNU Lesser General Public License, version 3.
-For those interested in using the *Shim* assemblies without having to adhere to LGPL, please contact the copyright holder at
+If you like *Shim* and want to contribute to its continued development, you could either fork the repository and provide pull requests with new or improved functionality, or you could make a small monetary contribution:
 
-licenses@cureos.com
-
-for commercial licensing alternatives.
+<table>
+<tr>
+<th>$10</th>
+<th>$50</th>
+<th>$100</th>
+</tr>
+<tr>
+<td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8BY5WJSTJYHS6"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif"/></a></td>
+<td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EXB948DWYJA2C"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif"/></a></td>
+<td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4QTUZ8YPEN4ZG"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif"/></a></td>
+</tr>
+</table>
