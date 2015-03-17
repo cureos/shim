@@ -66,9 +66,14 @@ namespace System.Net.Sockets
         /// <param name="validationHost">Host subject to SSL upgrade.</param>
         internal void UpgradeToSsl(string validationHost)
         {
+#if SSL
+            const SocketProtectionLevel protectionLevel = SocketProtectionLevel.Ssl;
+#else
+            const SocketProtectionLevel protectionLevel = SocketProtectionLevel.Tls10;
+#endif
             if (
                 !Task.Run(
-                    async () => await _socket.UpgradeToSslAsync(SocketProtectionLevel.Ssl, new HostName(validationHost)))
+                    async () => await _socket.UpgradeToSslAsync(protectionLevel, new HostName(validationHost)))
                      .Wait(10000))
                 throw new InvalidOperationException(
                     String.Format("Could not authenticate '{0}' as SSL server", validationHost));

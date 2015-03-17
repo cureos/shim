@@ -27,7 +27,7 @@ namespace System.Xml.Linq
     /// </summary>
     public static class XDocumentExtensions
     {
-        /// <include file='../_Doc/System.Xml.Linq.xml' path='doc/members/member[@name="M:System.Xml.Linq.XDocument.Save(System.String)"]/*' />
+        /// <include file='../../_Doc/System.Xml.Linq.xml' path='doc/members/member[@name="M:System.Xml.Linq.XDocument.Save(System.String)"]/*' />
         /// <param name="self">Document object itself.</param>
         public static void Save(this XDocument self, string fileName)
         {
