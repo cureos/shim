@@ -13,18 +13,19 @@
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
         <releaseNotes>v 1.0.1.50317
-----------------
+-------------
 * Fixed issues:
+#8 Correct handling of SyncRoot in ConcurrentStack
 #7 Add dummy System.Diagnostics.StackTrace class
 
 v 1.0.1.50302
-----------------
+-------------
 * Fixed issues:
 #6 Add Socket and EndPoint classes
 #5 Invalid use of XDocument.Save(string) in WP8 and Universal projects
 
 v 1.0.1.50208
-----------------
+-------------
 * Fixed issues:
 #4 Methods missing to support Accord.Extensions.Imaging.Algorithms</releaseNotes>
         <language>en-US</language>
