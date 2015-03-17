@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>shim</id>
-        <version>1.0.1.50302</version>
+        <version>1.0.1.50317</version>
         <title>Shim</title>
         <authors>Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/LICENSE.txt</licenseUrl>
@@ -12,7 +12,12 @@
         <description>Shim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 1.0.1.50302
+        <releaseNotes>v 1.0.1.50317
+----------------
+* Fixed issues:
+#7 Add dummy System.Diagnostics.StackTrace class
+
+v 1.0.1.50302
 ----------------
 * Fixed issues:
 #6 Add Socket and EndPoint classes
@@ -21,12 +26,7 @@
 v 1.0.1.50208
 ----------------
 * Fixed issues:
-#4 Methods missing to support Accord.Extensions.Imaging.Algorithms
-
-v 1.0.1.50207
-----------------
-* Fixed issues:
-#3 Missing Copy and Write methods in Marshal class</releaseNotes>
+#4 Methods missing to support Accord.Extensions.Imaging.Algorithms</releaseNotes>
         <language>en-US</language>
         <tags>PCL Shim .NET Windows WP8 WPA81 Xamarin iOS Android</tags>
     </metadata>

@@ -112,6 +112,9 @@
     <Compile Include="..\Diagnostics\Process.cs">
       <Link>Diagnostics\Process.cs</Link>
     </Compile>
+    <Compile Include="..\Diagnostics\StackTrace.cs">
+      <Link>Diagnostics\StackTrace.cs</Link>
+    </Compile>
     <Compile Include="..\Diagnostics\Trace.cs">
       <Link>Diagnostics\Trace.cs</Link>
     </Compile>

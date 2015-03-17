@@ -21,6 +21,7 @@
 
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
@@ -40,6 +41,9 @@ using System.Threading;
 [assembly: TypeForwardedTo(typeof(BrowsableAttribute))]
 [assembly: TypeForwardedTo(typeof(CategoryAttribute))]
 [assembly: TypeForwardedTo(typeof(DescriptionAttribute))]
+
+// System.Diagnostics
+[assembly: TypeForwardedTo(typeof(StackTrace))]
 
 // System.IO
 [assembly: TypeForwardedTo(typeof(Directory))]

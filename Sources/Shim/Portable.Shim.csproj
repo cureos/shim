@@ -60,6 +60,7 @@
     <Compile Include="Data\IDataReader.cs" />
     <Compile Include="Data\IDataRecord.cs" />
     <Compile Include="Diagnostics\Process.cs" />
+    <Compile Include="Diagnostics\StackTrace.cs" />
     <Compile Include="IO\ShimPath.cs" />
     <Compile Include="Net\EndPoint.cs" />
     <Compile Include="Net\HttpWebRequestExtensions.cs" />

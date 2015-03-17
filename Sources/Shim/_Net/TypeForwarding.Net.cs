@@ -88,6 +88,7 @@ using Timer = System.Threading.Timer;
 
 // System.Diagnostics
 [assembly: TypeForwardedTo(typeof(Process))]
+[assembly: TypeForwardedTo(typeof(StackTrace))]
 [assembly: TypeForwardedTo(typeof(Trace))]
 
 // System.IO
