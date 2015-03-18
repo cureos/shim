@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable.Shim", "Shim\Portable.Shim.csproj", "{A60B1E41-53AB-4777-8B2C-4F2D91DD864F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable259.Shim", "Shim\Portable259.Shim.csproj", "{A60B1E41-53AB-4777-8B2C-4F2D91DD864F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Shim", "Shim\_Net\Net.Shim.csproj", "{816E086D-DA84-4997-8BD9-448C92A1514F}"
 EndProject
@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 		..\NuGet\shim.nuspec = ..\NuGet\shim.nuspec
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable111.Shim", "Shim\_Profile111\Portable111.Shim.csproj", "{56A94CF2-5B95-459A-B623-716EEDAA18FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{62D2C8BC-8690-4719-B213-4B68B1ABDAC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62D2C8BC-8690-4719-B213-4B68B1ABDAC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62D2C8BC-8690-4719-B213-4B68B1ABDAC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56A94CF2-5B95-459A-B623-716EEDAA18FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56A94CF2-5B95-459A-B623-716EEDAA18FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56A94CF2-5B95-459A-B623-716EEDAA18FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56A94CF2-5B95-459A-B623-716EEDAA18FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
