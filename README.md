@@ -3,6 +3,8 @@
 Shim
 =======
 
+[![Join the chat at https://gitter.im/cureos/shim](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cureos/shim?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Copyright (c) 2013-2015 Anders Gustafsson, Cureos AB. Licensed under GNU Lesser General Public License version 3.<br />
 
 *Shim* provides reduced or dummy implementations of .NET Framework types that are currently not represented in PCL, thereby expanding the ability to create Portable Class Libraries from legacy code.
