@@ -23,6 +23,14 @@ namespace System
 {
     using System.Reflection;
 
+    #region DELEGATES
+
+    /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.ResolveEventHandler"]/*' />
+    [Serializable]
+    public delegate Assembly ResolveEventHandler(object sender, ResolveEventArgs args);
+
+    #endregion
+
     /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.AppDomain"]/*' />
     public sealed class AppDomain
     {
@@ -45,6 +53,13 @@ namespace System
 
         #endregion
 
+        #region EVENTS
+
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="E:System.AppDomain.AssemblyResolve"]/*' />
+        public event ResolveEventHandler AssemblyResolve;
+
+        #endregion
+
         #region PROPERTIES
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.AppDomain.CurrentDomain"]/*' />
@@ -62,6 +77,12 @@ namespace System
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.AppDomain.GetAssemblies"]/*' />
         public Assembly[] GetAssemblies()
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.AppDomain.Load(System.String)"]/*' />
+        public Assembly Load(string assemblyString)
         {
             throw new PlatformNotSupportedException("PCL");
         }
