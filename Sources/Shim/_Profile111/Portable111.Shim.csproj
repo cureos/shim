@@ -239,6 +239,9 @@
     <Compile Include="..\Reflection\TargetException.cs">
       <Link>Reflection\TargetException.cs</Link>
     </Compile>
+    <Compile Include="..\ResolveEventArgs.cs">
+      <Link>ResolveEventArgs.cs</Link>
+    </Compile>
     <Compile Include="..\Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs">
       <Link>Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs</Link>
     </Compile>

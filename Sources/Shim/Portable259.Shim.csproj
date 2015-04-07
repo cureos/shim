@@ -69,6 +69,7 @@
     <Compile Include="Reflection\AssemblyExtensions.cs" />
     <Compile Include="Reflection\Binder.cs" />
     <Compile Include="Reflection\BindingFlags.cs" />
+    <Compile Include="ResolveEventArgs.cs" />
     <Compile Include="Security\Cryptography\RNGCryptoServiceProvider.cs" />
     <Compile Include="ShimEnvironment.cs" />
     <Compile Include="Reflection\ShimAssembly.cs" />

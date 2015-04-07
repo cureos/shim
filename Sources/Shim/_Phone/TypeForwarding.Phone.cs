@@ -36,6 +36,7 @@ using System.Threading;
 [assembly: TypeForwardedTo(typeof(AppDomain))]
 [assembly: TypeForwardedTo(typeof(Console))]
 [assembly: TypeForwardedTo(typeof(DBNull))]
+[assembly: TypeForwardedTo(typeof(ResolveEventArgs))]
 
 // System.ComponentModel
 [assembly: TypeForwardedTo(typeof(BrowsableAttribute))]

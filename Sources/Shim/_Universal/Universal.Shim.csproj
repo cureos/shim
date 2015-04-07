@@ -206,6 +206,9 @@
     <Compile Include="..\Reflection\ShimAssembly.cs">
       <Link>Reflection\ShimAssembly.cs</Link>
     </Compile>
+    <Compile Include="..\ResolveEventArgs.cs">
+      <Link>ResolveEventArgs.cs</Link>
+    </Compile>
     <Compile Include="..\Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs">
       <Link>Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs</Link>
     </Compile>
