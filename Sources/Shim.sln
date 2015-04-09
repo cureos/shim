@@ -35,6 +35,13 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shim.Tests.Shared", "..\Uni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phone.Shim.Tests", "..\UnitTests\Phone.Shim.Tests\Phone.Shim.Tests.csproj", "{9ACB59B3-90D7-4150-BC9E-918AEF7E68AB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6BF63D14-86CE-4B03-A8DB-CF55FD060B6E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\UnitTests\Shim.Tests.Shared\Shim.Tests.Shared.projitems*{9acb59b3-90d7-4150-bc9e-918aef7e68ab}*SharedItemsImports = 4

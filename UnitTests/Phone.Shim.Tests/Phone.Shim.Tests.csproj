@@ -28,6 +28,8 @@
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <NuGetPackageImportStamp>87c81d90</NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Sources\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -215,7 +217,9 @@
     <Error Condition="!Exists('..\..\Sources\packages\xunit.core.2.0.0\build\wp8\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\Sources\packages\xunit.core.2.0.0\build\wp8\xunit.core.targets'))" />
     <Error Condition="!Exists('..\..\Sources\packages\Xamarin.Forms.1.4.0.6341\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\Sources\packages\Xamarin.Forms.1.4.0.6341\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
     <Error Condition="!Exists('..\..\Sources\packages\xunit.runner.devices.1.0.0\build\wp8\xunit.runner.devices.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\Sources\packages\xunit.runner.devices.1.0.0\build\wp8\xunit.runner.devices.props'))" />
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <Import Project="..\..\Sources\packages\xunit.core.2.0.0\build\wp8\xunit.core.targets" Condition="Exists('..\..\Sources\packages\xunit.core.2.0.0\build\wp8\xunit.core.targets')" />
   <Import Project="..\..\Sources\packages\Xamarin.Forms.1.4.0.6341\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\Sources\packages\Xamarin.Forms.1.4.0.6341\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
 </Project>

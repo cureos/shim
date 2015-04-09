@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>shim</id>
-        <version>1.0.1.50407</version>
+        <version>1.0.1.50409</version>
         <title>Shim</title>
         <authors>Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/LICENSE.txt</licenseUrl>
@@ -12,7 +12,12 @@
         <description>Shim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 1.0.1.50407
+        <releaseNotes>v 1.0.1.50409
+-------------
+* Fixed issues:
+#13 Add some Type and String extension methods from Portable Accord
+
+v 1.0.1.50407
 -------------
 * Fixed issues:
 #12 Add AssemblyResolve event and Load method to AppDomain
@@ -20,13 +25,7 @@
 
 v 1.0.1.50318
 -------------
-* Added library for Profile 111
-
-v 1.0.1.50317
--------------
-* Fixed issues:
-#8 Correct handling of SyncRoot in ConcurrentStack
-#7 Add dummy System.Diagnostics.StackTrace class</releaseNotes>
+* Added library for Profile 111</releaseNotes>
         <language>en-US</language>
         <tags>PCL Shim .NET Windows WP8 WPA81 Xamarin iOS Android</tags>
     </metadata>
