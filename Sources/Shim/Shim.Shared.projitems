@@ -19,6 +19,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Net/HttpWebRequestExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Net/WebRequestExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Net/WebResponseExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties/AssemblyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Reflection/AssemblyExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Reflection/ShimAssembly.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Xml/Linq/XDocumentExtensions.cs" />
