@@ -73,6 +73,7 @@
     <Compile Include="Security\Cryptography\RNGCryptoServiceProvider.cs" />
     <Compile Include="ShimEnvironment.cs" />
     <Compile Include="Reflection\ShimAssembly.cs" />
+    <Compile Include="StringExtensions.cs" />
     <Compile Include="TypeExtensions.cs" />
     <Compile Include="UriFormatException.cs" />
     <Compile Include="ApplicationException.cs" />

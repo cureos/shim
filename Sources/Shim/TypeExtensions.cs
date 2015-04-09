@@ -88,6 +88,47 @@ namespace System
 #endif
         }
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.GetConstructor(System.Type[])"]/*' />
+        /// <param name="type"><see cref="Type"/> object.</param>
+        public static ConstructorInfo GetConstructor(this Type type, Type[] types)
+        {
+#if DOTNET || WINDOWS_PHONE
+            return type.GetConstructor(types);
+#else
+            var typeInfo = type.GetTypeInfo();
+            foreach (var constructorInfo in typeInfo.DeclaredConstructors)
+            {
+                var constructorTypes = constructorInfo.GetParameters().Select(param => param.ParameterType).ToArray();
+                if (constructorTypes.Length != types.Length)
+                {
+                    continue;
+                }
+                var use = true;
+                for (var i = 0; i < constructorTypes.Length; ++i)
+                {
+                    if (constructorTypes[i] != types[i])
+                    {
+                        use = false;
+                        break;
+                    }
+                }
+                if (use) return constructorInfo;
+            }
+            return null;
+#endif
+        }
+
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.GetField(System.String)"]/*' />
+        /// <param name="type"><see cref="Type"/> object.</param>
+        public static FieldInfo GetField(this Type type, string name)
+        {
+#if DOTNET || WINDOWS_PHONE
+            return type.GetField(name);
+#else
+            return type.GetRuntimeField(name);
+#endif
+        }
+
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.GetMethod(System.String,System.Reflection.BindingFlags)"]/*' />
         /// <param name="type"><see cref="Type"/> object.</param>
         public static MethodInfo GetMethod(this Type type, string name, BindingFlags bindingAttr)

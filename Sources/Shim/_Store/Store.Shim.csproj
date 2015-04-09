@@ -253,6 +253,9 @@
     <Compile Include="..\SerializableAttribute.cs">
       <Link>SerializableAttribute.cs</Link>
     </Compile>
+    <Compile Include="..\StringExtensions.cs">
+      <Link>StringExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Threading\Thread.cs">
       <Link>Threading\Thread.cs</Link>
     </Compile>

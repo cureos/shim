@@ -87,6 +87,9 @@
     <Compile Include="..\Reflection\ShimAssembly.cs">
       <Link>Reflection\ShimAssembly.cs</Link>
     </Compile>
+    <Compile Include="..\StringExtensions.cs">
+      <Link>StringExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\TypeExtensions.cs">
       <Link>TypeExtensions.cs</Link>
     </Compile>
