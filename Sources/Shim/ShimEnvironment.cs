@@ -32,7 +32,11 @@ namespace System
         {
             get
             {
+#if DOTNET
+                return Environment.MachineName;
+#else
                 throw new PlatformNotSupportedException("PCL");
+#endif
             }
         }
     }

@@ -42,11 +42,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6BF63D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable259.Shim", "Shim\_Profile259\Portable259.Shim.csproj", "{31382903-E9DB-4426-A85A-CF88F71B45F2}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shim.Shared", "Shim\Shim.Shared.shproj", "{CB573E57-FEF7-4FB0-8922-560A85D80F20}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\UnitTests\Shim.Tests.Shared\Shim.Tests.Shared.projitems*{9acb59b3-90d7-4150-bc9e-918aef7e68ab}*SharedItemsImports = 4
 		..\UnitTests\Shim.Tests.Shared\Shim.Tests.Shared.projitems*{e3a98d89-504b-4387-85d4-7f0c8fc1790c}*SharedItemsImports = 13
 		..\UnitTests\Shim.Tests.Shared\Shim.Tests.Shared.projitems*{9e1902d0-6e48-46f9-bb9c-fe538d013085}*SharedItemsImports = 4
+		Shim\Shim.Shared.projitems*{cb573e57-fef7-4fb0-8922-560a85d80f20}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
