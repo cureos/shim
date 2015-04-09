@@ -21,6 +21,11 @@
 
 namespace System
 {
+#if NETFX_CORE || WINDOWS_PHONE
+    using global::Windows.Networking;
+    using global::Windows.Networking.Connectivity;
+#endif
+
     /// <summary>
     /// Shim complement for the <see cref="Environment"/> class, providing members that are
     /// not included in the PCL member subset of the <see cref="Environment"/> class.
@@ -34,6 +39,46 @@ namespace System
             {
 #if DOTNET
                 return Environment.MachineName;
+#elif NETFX_CORE || WINDOWS_PHONE
+                // Want to store the hostname to send for push notifications to make
+                // the management UI better. Take the substring up to the first period
+                // of the first DomainName entry.
+                // Thanks to Jeff Wilcox and Matthijs Hoekstra
+                // Adapted from Q42.WinRT library at https://github.com/Q42/Q42.WinRT
+                var list = NetworkInformation.GetHostNames();
+                string name = null;
+                if (list.Count > 0)
+                {
+                    foreach (var entry in list)
+                    {
+                        if (entry.Type == HostNameType.DomainName)
+                        {
+                            var s = entry.CanonicalName;
+                            if (!String.IsNullOrEmpty(s))
+                            {
+                                // Domain-joined. Requires at least a one-character name.
+                                var j = s.IndexOf('.');
+
+                                if (j > 0)
+                                {
+                                    name = s.Substring(0, j);
+                                    break;
+                                }
+
+                                // Typical home machine.
+                                name = s;
+                            }
+                        }
+                    }
+                }
+
+                if (String.IsNullOrEmpty(name))
+                {
+                    // TODO: Localize?
+                    name = "Unknown Windows 8";
+                }
+
+                return name;
 #else
                 throw new PlatformNotSupportedException("PCL");
 #endif
