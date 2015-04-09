@@ -21,21 +21,15 @@
 
 namespace System
 {
+    using System.Resources;
+
     /// <summary>
-    /// Shim complement for the <see cref="String"/> class. <see cref="String"/> instance methods that are not available in the 
-    /// PCL profile are here provided as equivalent extension methods.
+    /// Provides access to string resources.
     /// </summary>
-    public static class StringExtensions
+    public class LocalizedStrings
     {
-        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.String.Clone"]/*' />
-        /// <param name="thisString"><see cref="String"/> object.</param>
-        public static string Clone(this string thisString)
-        {
-            if (Equals(null, thisString))
-            {
-                throw new NullReferenceException();
-            }
-            return thisString;
-        }
+        private static AppResources _localizedResources = new AppResources();
+
+        public AppResources LocalizedResources { get { return _localizedResources; } }
     }
 }

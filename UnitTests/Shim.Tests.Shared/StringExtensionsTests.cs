@@ -21,21 +21,18 @@
 
 namespace System
 {
-    /// <summary>
-    /// Shim complement for the <see cref="String"/> class. <see cref="String"/> instance methods that are not available in the 
-    /// PCL profile are here provided as equivalent extension methods.
-    /// </summary>
-    public static class StringExtensions
+    using Xunit;
+
+    public class StringExtensionsTests
     {
-        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.String.Clone"]/*' />
-        /// <param name="thisString"><see cref="String"/> object.</param>
-        public static string Clone(this string thisString)
+        /// <summary>
+        /// Assert that String.Clone() does not accept a null string
+        /// </summary>
+        [Fact]
+        public void InstanceClone_Null_ShouldThrow()
         {
-            if (Equals(null, thisString))
-            {
-                throw new NullReferenceException();
-            }
-            return thisString;
+            string str = null;
+            Assert.Throws<NullReferenceException>(() => str.Clone());
         }
     }
 }

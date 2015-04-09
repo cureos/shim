@@ -21,21 +21,25 @@
 
 namespace System
 {
-    /// <summary>
-    /// Shim complement for the <see cref="String"/> class. <see cref="String"/> instance methods that are not available in the 
-    /// PCL profile are here provided as equivalent extension methods.
-    /// </summary>
-    public static class StringExtensions
+    using System.Reflection;
+
+    public partial class MainPage
     {
-        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.String.Clone"]/*' />
-        /// <param name="thisString"><see cref="String"/> object.</param>
-        public static string Clone(this string thisString)
+        // Constructor
+        public MainPage()
         {
-            if (Equals(null, thisString))
-            {
-                throw new NullReferenceException();
-            }
-            return thisString;
+            InitializeComponent();
+        }
+
+        protected override void OnInitializeRunner()
+        {
+            // tests can be inside the main assembly
+            this.AddTestAssembly(Assembly.GetExecutingAssembly());
+
+            // otherwise you need to ensure that the test assemblies will 
+            // become part of the app bundle
+            // AddTestAssembly(typeof(PortableTests).Assembly);
         }
     }
 }
+
