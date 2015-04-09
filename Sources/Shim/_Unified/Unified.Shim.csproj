@@ -35,7 +35,9 @@
     <DefineConstants>__IOS__;__MOBILE__;DOTNET</DefineConstants>
     <DocumentationFile>bin\Release\Shim.XML</DocumentationFile>
   </PropertyGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -45,67 +47,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Collections\Generic\ListExtensions.cs">
-      <Link>Collections\Generic\ListExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\BinaryReaderExtensions.cs">
-      <Link>IO\BinaryReaderExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\BinaryWriterExtensions.cs">
-      <Link>IO\BinaryWriterExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\ShimPath.cs">
-      <Link>IO\ShimPath.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\StreamExtensions.cs">
-      <Link>IO\StreamExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\TextReaderExtensions.cs">
-      <Link>IO\TextReaderExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\TextWriterExtensions.cs">
-      <Link>IO\TextWriterExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\Net\HttpWebRequestExtensions.cs">
-      <Link>Net\HttpWebRequestExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\Net\WebRequestExtensions.cs">
-      <Link>Net\WebRequestExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\Net\WebResponseExtensions.cs">
-      <Link>Net\WebResponseExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\Properties\AssemblyInfo.cs">
-      <Link>Properties\AssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\Reflection\AssemblyExtensions.cs">
-      <Link>Reflection\AssemblyExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\Reflection\ShimAssembly.cs">
-      <Link>Reflection\ShimAssembly.cs</Link>
-    </Compile>
-    <Compile Include="..\StringExtensions.cs">
-      <Link>StringExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\TypeExtensions.cs">
-      <Link>TypeExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\Xml\Linq\XDocumentExtensions.cs">
-      <Link>Xml\Linq\XDocumentExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\_Net\ShimEnvironment.Net.cs">
-      <Link>ShimEnvironment.Net.cs</Link>
-    </Compile>
     <Compile Include="..\_Net\TypeForwarding.Net.cs">
       <Link>TypeForwarding.Net.cs</Link>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\LICENSE">
-      <Link>LICENSE</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+  <Import Project="..\Shim.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>

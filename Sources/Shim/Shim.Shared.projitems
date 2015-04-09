@@ -9,20 +9,20 @@
     <Import_RootNamespace>System</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Collections/Generic/ListExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IO/BinaryReaderExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IO/BinaryWriterExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IO/ShimPath.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IO/StreamExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IO/TextReaderExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IO/TextWriterExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Net/HttpWebRequestExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Net/WebRequestExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Net/WebResponseExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Properties/AssemblyInfo.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Reflection/AssemblyExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Reflection/ShimAssembly.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Xml/Linq/XDocumentExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\Generic\ListExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IO\BinaryReaderExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IO\BinaryWriterExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IO\ShimPath.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IO\StreamExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IO\TextReaderExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IO\TextWriterExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\HttpWebRequestExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\WebRequestExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\WebResponseExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reflection\AssemblyExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reflection\ShimAssembly.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Xml\Linq\XDocumentExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ShimEnvironment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StringExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TypeExtensions.cs" />
