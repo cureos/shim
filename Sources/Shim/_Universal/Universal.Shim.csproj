@@ -47,9 +47,6 @@
     <Compile Include="..\Collections\Generic\EnumerableExtensions.cs">
       <Link>Collections\Generic\EnumerableExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\Collections\Generic\ListExtensions.cs">
-      <Link>Collections\Generic\ListExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\ComponentModel\BrowsableAttribute.cs">
       <Link>ComponentModel\BrowsableAttribute.cs</Link>
     </Compile>
@@ -122,12 +119,6 @@
     <Compile Include="..\ICloneable.cs">
       <Link>ICloneable.cs</Link>
     </Compile>
-    <Compile Include="..\IO\BinaryReaderExtensions.cs">
-      <Link>IO\BinaryReaderExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\BinaryWriterExtensions.cs">
-      <Link>IO\BinaryWriterExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\IO\DirectoryInfo.cs">
       <Link>IO\DirectoryInfo.cs</Link>
     </Compile>
@@ -146,29 +137,11 @@
     <Compile Include="..\IO\SearchOption.cs">
       <Link>IO\SearchOption.cs</Link>
     </Compile>
-    <Compile Include="..\IO\ShimPath.cs">
-      <Link>IO\ShimPath.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\StreamExtensions.cs">
-      <Link>IO\StreamExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\TextReaderExtensions.cs">
-      <Link>IO\TextReaderExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\TextWriterExtensions.cs">
-      <Link>IO\TextWriterExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\Net\EndPoint.cs">
       <Link>Net\EndPoint.cs</Link>
     </Compile>
-    <Compile Include="..\Net\HttpWebRequestExtensions.cs">
-      <Link>Net\HttpWebRequestExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\Net\Sockets\Socket.cs">
       <Link>Net\Sockets\Socket.cs</Link>
-    </Compile>
-    <Compile Include="..\Net\WebRequestExtensions.cs">
-      <Link>Net\WebRequestExtensions.cs</Link>
     </Compile>
     <Compile Include="..\Net\IPAddress.cs">
       <Link>Net\IPAddress.cs</Link>
@@ -182,29 +155,17 @@
     <Compile Include="..\Net\Sockets\SocketException.cs">
       <Link>Net\Sockets\SocketException.cs</Link>
     </Compile>
-    <Compile Include="..\Net\WebResponseExtensions.cs">
-      <Link>Net\WebResponseExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\NonSerializedAttribute.cs">
       <Link>NonSerializedAttribute.cs</Link>
     </Compile>
     <Compile Include="..\NotFiniteNumberException.cs">
       <Link>NotFiniteNumberException.cs</Link>
     </Compile>
-    <Compile Include="..\Properties\AssemblyInfo.cs">
-      <Link>Properties\AssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\Reflection\AssemblyExtensions.cs">
-      <Link>Reflection\AssemblyExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\Reflection\Binder.cs">
       <Link>Reflection\Binder.cs</Link>
     </Compile>
     <Compile Include="..\Reflection\BindingFlags.cs">
       <Link>Reflection\BindingFlags.cs</Link>
-    </Compile>
-    <Compile Include="..\Reflection\ShimAssembly.cs">
-      <Link>Reflection\ShimAssembly.cs</Link>
     </Compile>
     <Compile Include="..\ResolveEventArgs.cs">
       <Link>ResolveEventArgs.cs</Link>
@@ -254,9 +215,6 @@
     <Compile Include="..\SerializableAttribute.cs">
       <Link>SerializableAttribute.cs</Link>
     </Compile>
-    <Compile Include="..\StringExtensions.cs">
-      <Link>StringExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\Threading\Thread.cs">
       <Link>Threading\Thread.cs</Link>
     </Compile>
@@ -265,12 +223,6 @@
     </Compile>
     <Compile Include="..\Timers\ElapsedEventArgs.cs">
       <Link>Timers\ElapsedEventArgs.cs</Link>
-    </Compile>
-    <Compile Include="..\TypeExtensions.cs">
-      <Link>TypeExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\Xml\Linq\XDocumentExtensions.cs">
-      <Link>Xml\Linq\XDocumentExtensions.cs</Link>
     </Compile>
     <Compile Include="..\_Store\IO\Directory.Store.cs">
       <Link>IO\Directory.Store.cs</Link>
@@ -299,9 +251,6 @@
     <Compile Include="..\_Store\Net\Sockets\TcpListener.Store.cs">
       <Link>Net\Sockets\TcpListener.Store.cs</Link>
     </Compile>
-    <Compile Include="..\_Store\ShimEnvironment.Store.cs">
-      <Link>ShimEnvironment.Store.cs</Link>
-    </Compile>
     <Compile Include="..\_Store\Threading\ThreadPool.Store.cs">
       <Link>Threading\ThreadPool.Store.cs</Link>
     </Compile>
@@ -312,10 +261,7 @@
     <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\LICENSE">
-      <Link>LICENSE</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
@@ -326,6 +272,7 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\Shim.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <Import Project="..\Shim.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

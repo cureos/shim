@@ -48,13 +48,17 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shim\Shim.Shared.projitems*{97e26603-22f0-4f43-8140-20b7d44a2893}*SharedItemsImports = 4
 		..\UnitTests\Shim.Tests.Shared\Shim.Tests.Shared.projitems*{9acb59b3-90d7-4150-bc9e-918aef7e68ab}*SharedItemsImports = 4
+		Shim\Shim.Shared.projitems*{8464069a-34ad-49ee-ae4d-1213df8ba2b2}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{62d2c8bc-8690-4719-b213-4b68b1abdac9}*SharedItemsImports = 4
 		..\UnitTests\Shim.Tests.Shared\Shim.Tests.Shared.projitems*{e3a98d89-504b-4387-85d4-7f0c8fc1790c}*SharedItemsImports = 13
 		Shim\Shim.Shared.projitems*{28b1caee-315f-4981-8476-c14b5edd2bc9}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{8a8a3ec5-94b0-4579-9c09-c4dd6431f958}*SharedItemsImports = 4
 		..\UnitTests\Shim.Tests.Shared\Shim.Tests.Shared.projitems*{9e1902d0-6e48-46f9-bb9c-fe538d013085}*SharedItemsImports = 4
+		Shim\Shim.Shared.projitems*{31382903-e9db-4426-a85a-cf88f71b45f2}*SharedItemsImports = 4
+		Shim\Shim.Shared.projitems*{ab25d53a-a1c1-4815-9cc8-15012fb7e416}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{816e086d-da84-4997-8bd9-448c92a1514f}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{cb573e57-fef7-4fb0-8922-560a85d80f20}*SharedItemsImports = 13
+		Shim\Shim.Shared.projitems*{56a94cf2-5b95-459a-b623-716eedaa18fc}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

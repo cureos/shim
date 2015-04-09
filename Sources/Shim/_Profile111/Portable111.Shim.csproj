@@ -36,12 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\LICENSE">
-      <Link>LICENSE</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AppDomain.cs">
@@ -52,9 +47,6 @@
     </Compile>
     <Compile Include="..\Collections\Generic\EnumerableExtensions.cs">
       <Link>Collections\Generic\EnumerableExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\Collections\Generic\ListExtensions.cs">
-      <Link>Collections\Generic\ListExtensions.cs</Link>
     </Compile>
     <Compile Include="..\ComponentModel\BrowsableAttribute.cs">
       <Link>ComponentModel\BrowsableAttribute.cs</Link>
@@ -128,12 +120,6 @@
     <Compile Include="..\ICloneable.cs">
       <Link>ICloneable.cs</Link>
     </Compile>
-    <Compile Include="..\IO\BinaryReaderExtensions.cs">
-      <Link>IO\BinaryReaderExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\BinaryWriterExtensions.cs">
-      <Link>IO\BinaryWriterExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\IO\Directory.cs">
       <Link>IO\Directory.cs</Link>
     </Compile>
@@ -164,23 +150,8 @@
     <Compile Include="..\IO\SearchOption.cs">
       <Link>IO\SearchOption.cs</Link>
     </Compile>
-    <Compile Include="..\IO\ShimPath.cs">
-      <Link>IO\ShimPath.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\StreamExtensions.cs">
-      <Link>IO\StreamExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\TextReaderExtensions.cs">
-      <Link>IO\TextReaderExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\IO\TextWriterExtensions.cs">
-      <Link>IO\TextWriterExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\Net\EndPoint.cs">
       <Link>Net\EndPoint.cs</Link>
-    </Compile>
-    <Compile Include="..\Net\HttpWebRequestExtensions.cs">
-      <Link>Net\HttpWebRequestExtensions.cs</Link>
     </Compile>
     <Compile Include="..\Net\IPAddress.cs">
       <Link>Net\IPAddress.cs</Link>
@@ -209,32 +180,17 @@
     <Compile Include="..\Net\Sockets\TcpListener.cs">
       <Link>Net\Sockets\TcpListener.cs</Link>
     </Compile>
-    <Compile Include="..\Net\WebRequestExtensions.cs">
-      <Link>Net\WebRequestExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\Net\WebResponseExtensions.cs">
-      <Link>Net\WebResponseExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\NonSerializedAttribute.cs">
       <Link>NonSerializedAttribute.cs</Link>
     </Compile>
     <Compile Include="..\NotFiniteNumberException.cs">
       <Link>NotFiniteNumberException.cs</Link>
     </Compile>
-    <Compile Include="..\Properties\AssemblyInfo.cs">
-      <Link>Properties\AssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\Reflection\AssemblyExtensions.cs">
-      <Link>Reflection\AssemblyExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\Reflection\Binder.cs">
       <Link>Reflection\Binder.cs</Link>
     </Compile>
     <Compile Include="..\Reflection\BindingFlags.cs">
       <Link>Reflection\BindingFlags.cs</Link>
-    </Compile>
-    <Compile Include="..\Reflection\ShimAssembly.cs">
-      <Link>Reflection\ShimAssembly.cs</Link>
     </Compile>
     <Compile Include="..\Reflection\TargetException.cs">
       <Link>Reflection\TargetException.cs</Link>
@@ -287,12 +243,6 @@
     <Compile Include="..\SerializableAttribute.cs">
       <Link>SerializableAttribute.cs</Link>
     </Compile>
-    <Compile Include="..\ShimEnvironment.cs">
-      <Link>ShimEnvironment.cs</Link>
-    </Compile>
-    <Compile Include="..\StringExtensions.cs">
-      <Link>StringExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\Threading\Thread.cs">
       <Link>Threading\Thread.cs</Link>
     </Compile>
@@ -311,14 +261,8 @@
     <Compile Include="..\Timers\Timer.cs">
       <Link>Timers\Timer.cs</Link>
     </Compile>
-    <Compile Include="..\TypeExtensions.cs">
-      <Link>TypeExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\UriFormatException.cs">
       <Link>UriFormatException.cs</Link>
-    </Compile>
-    <Compile Include="..\Xml\Linq\XDocumentExtensions.cs">
-      <Link>Xml\Linq\XDocumentExtensions.cs</Link>
     </Compile>
     <Compile Include="TypeForwarding.Profile111.cs" />
   </ItemGroup>
@@ -328,6 +272,7 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\Shim.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <Import Project="..\Shim.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
