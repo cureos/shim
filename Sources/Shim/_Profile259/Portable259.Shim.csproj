@@ -309,6 +309,7 @@
     <Compile Include="..\UriFormatException.cs">
       <Link>UriFormatException.cs</Link>
     </Compile>
+    <Compile Include="TypeForwarding.Profile259.cs" />
   </ItemGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>

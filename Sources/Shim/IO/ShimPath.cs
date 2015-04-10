@@ -84,13 +84,21 @@ namespace System.IO
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Path.GetDirectoryName(System.String)"]/*' />
         public static string GetDirectoryName(string path)
         {
+#if PROFILE328
+            throw new PlatformNotSupportedException("PCL");
+#else
             return Path.GetDirectoryName(path);
+#endif
         }
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.Path.Combine(System.String[])"]/*' />
         public static string Combine(params string[] paths)
         {
+#if PROFILE328
+            throw new PlatformNotSupportedException("PCL");
+#else
             return Path.Combine(paths);
+#endif
         }
 
         #endregion

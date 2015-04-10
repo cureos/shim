@@ -44,6 +44,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable259.Shim", "Shim\_P
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shim.Shared", "Shim\Shim.Shared.shproj", "{CB573E57-FEF7-4FB0-8922-560A85D80F20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable328.Shim", "Shim\_Profile328\Portable328.Shim.csproj", "{45C3CF7E-ED11-4BAF-866A-B191F17D77C3}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shim\Shim.Shared.projitems*{97e26603-22f0-4f43-8140-20b7d44a2893}*SharedItemsImports = 4
@@ -55,6 +57,7 @@ Global
 		Shim\Shim.Shared.projitems*{8a8a3ec5-94b0-4579-9c09-c4dd6431f958}*SharedItemsImports = 4
 		..\UnitTests\Shim.Tests.Shared\Shim.Tests.Shared.projitems*{9e1902d0-6e48-46f9-bb9c-fe538d013085}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{31382903-e9db-4426-a85a-cf88f71b45f2}*SharedItemsImports = 4
+		Shim\Shim.Shared.projitems*{45c3cf7e-ed11-4baf-866a-b191f17d77c3}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{ab25d53a-a1c1-4815-9cc8-15012fb7e416}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{816e086d-da84-4997-8bd9-448c92a1514f}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{cb573e57-fef7-4fb0-8922-560a85d80f20}*SharedItemsImports = 13
@@ -111,6 +114,10 @@ Global
 		{31382903-E9DB-4426-A85A-CF88F71B45F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31382903-E9DB-4426-A85A-CF88F71B45F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31382903-E9DB-4426-A85A-CF88F71B45F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45C3CF7E-ED11-4BAF-866A-B191F17D77C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C3CF7E-ED11-4BAF-866A-B191F17D77C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C3CF7E-ED11-4BAF-866A-B191F17D77C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C3CF7E-ED11-4BAF-866A-B191F17D77C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

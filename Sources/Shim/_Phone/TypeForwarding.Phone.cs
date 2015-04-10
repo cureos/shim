@@ -31,6 +31,7 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
+using System.Xml.Linq;
 
 // System
 [assembly: TypeForwardedTo(typeof(AppDomain))]
@@ -93,3 +94,6 @@ using System.Threading;
 [assembly: TypeForwardedTo(typeof(Timer))]
 [assembly: TypeForwardedTo(typeof(TimerCallback))]
 [assembly: TypeForwardedTo(typeof(WaitCallback))]
+
+// System.Xml.Linq
+[assembly: TypeForwardedTo(typeof(XDocument))]

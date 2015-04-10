@@ -43,7 +43,12 @@ namespace System.Collections.Generic
             }
             if (index < 0)
             {
-                throw new ArgumentOutOfRangeException("index", index, "Must be non-negative");
+                throw new ArgumentOutOfRangeException(
+                    "index", 
+#if !PROFILE328
+                    index, 
+#endif
+                    "Must be non-negative");
             }
             if (array.Rank > 1)
             {

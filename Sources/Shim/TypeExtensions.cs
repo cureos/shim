@@ -21,7 +21,7 @@
 
 namespace System
 {
-#if !DOTNET && !WINDOWS_PHONE
+#if !DOTNET && !WINDOWS_PHONE && !PROFILE328
     using System.Linq;
 #endif
 
@@ -38,7 +38,7 @@ namespace System
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Type.IsEnum"]/*' />
         public static bool IsEnum(this Type type)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || WINDOWS_PHONE || PROFILE328
             return type.IsEnum;
 #else
             return type.GetTypeInfo().IsEnum;
@@ -48,7 +48,7 @@ namespace System
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Type.IsValueType"]/*' />
         public static bool IsValueType(this Type type)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || WINDOWS_PHONE || PROFILE328
             return type.IsValueType;
 #else
             return type.GetTypeInfo().IsValueType;
@@ -59,7 +59,7 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static bool IsAssignableFrom(this Type type, Type c)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || WINDOWS_PHONE || PROFILE328
             return type.IsAssignableFrom(c);
 #else
             return type.GetTypeInfo().IsAssignableFrom(c.GetTypeInfo());
@@ -70,7 +70,7 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static bool IsSubclassOf(this Type type, Type c)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || WINDOWS_PHONE || PROFILE328
             return type.IsSubclassOf(c);
 #else
             return type.GetTypeInfo().IsSubclassOf(c);
@@ -81,7 +81,7 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static bool IsInstanceOfType(this Type type, object o)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || WINDOWS_PHONE || PROFILE328
             return type.IsInstanceOfType(o);
 #else
             return o.GetType() == type || o.GetType().GetTypeInfo().IsSubclassOf(type);
@@ -92,7 +92,7 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static ConstructorInfo GetConstructor(this Type type, Type[] types)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || WINDOWS_PHONE || PROFILE328
             return type.GetConstructor(types);
 #else
             var typeInfo = type.GetTypeInfo();
@@ -122,7 +122,7 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static FieldInfo GetField(this Type type, string name)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || WINDOWS_PHONE || PROFILE328
             return type.GetField(name);
 #else
             return type.GetRuntimeField(name);
@@ -133,7 +133,7 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static MethodInfo GetMethod(this Type type, string name, BindingFlags bindingAttr)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || WINDOWS_PHONE || PROFILE328
             return type.GetMethod(name, bindingAttr);
 #else
             return
@@ -147,7 +147,7 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static FieldInfo[] GetFields(this Type type, BindingFlags bindingAttr)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || WINDOWS_PHONE || PROFILE328
             return type.GetFields(bindingAttr);
 #else
             return
@@ -162,14 +162,14 @@ namespace System
         public static object InvokeMember(this Type type, string name, BindingFlags invokeAttr, 
             Binder binder, object target, object[] args, CultureInfo culture)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || WINDOWS_PHONE || PROFILE328
             return type.InvokeMember(name, invokeAttr, binder, target, args, culture);
 #else
             throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
-#if !DOTNET && !WINDOWS_PHONE
+#if !DOTNET && !WINDOWS_PHONE && !PROFILE328
         private static bool AreBindingFlagsMatching(MethodInfo methodInfo, BindingFlags bindingAttr)
         {
             var publicFlag = bindingAttr.HasFlag(BindingFlags.Public);

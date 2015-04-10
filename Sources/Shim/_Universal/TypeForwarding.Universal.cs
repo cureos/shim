@@ -25,12 +25,13 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 // System.Collections.Concurrent
 [assembly: TypeForwardedTo(typeof(ConcurrentBag<>))]
 [assembly: TypeForwardedTo(typeof(ConcurrentStack<>))]
 [assembly: TypeForwardedTo(typeof(ConcurrentDictionary<,>))]
-[assembly: TypeForwardedTo(typeof(Partitioner))]
+[assembly: TypeForwardedTo(typeof(Partitioner<>))]
 
 // System.Net
 [assembly: TypeForwardedTo(typeof(IWebProxy))]
@@ -52,3 +53,6 @@ using System.Threading.Tasks;
 [assembly: TypeForwardedTo(typeof(ParallelLoopResult))]
 [assembly: TypeForwardedTo(typeof(ParallelLoopState))]
 [assembly: TypeForwardedTo(typeof(ParallelOptions))]
+
+// System.Xml.Linq
+[assembly: TypeForwardedTo(typeof(XDocument))]

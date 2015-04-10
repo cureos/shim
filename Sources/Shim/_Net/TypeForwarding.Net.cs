@@ -41,6 +41,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
+using System.Xml.Linq;
 
 using Timer = System.Threading.Timer;
 
@@ -60,7 +61,7 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(ConcurrentBag<>))]
 [assembly: TypeForwardedTo(typeof(ConcurrentStack<>))]
 [assembly: TypeForwardedTo(typeof(ConcurrentDictionary<,>))]
-[assembly: TypeForwardedTo(typeof(Partitioner))]
+[assembly: TypeForwardedTo(typeof(Partitioner<>))]
 
 // System.ComponentModel
 [assembly: TypeForwardedTo(typeof(BrowsableAttribute))]
@@ -178,3 +179,6 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(ElapsedEventArgs))]
 [assembly: TypeForwardedTo(typeof(ElapsedEventHandler))]
 [assembly: TypeForwardedTo(typeof(System.Timers.Timer))]
+
+// System.Xml.Linq
+[assembly: TypeForwardedTo(typeof(XDocument))]

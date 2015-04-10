@@ -79,7 +79,11 @@ namespace System.Data
             }
             set
             {
+#if PROFILE328
+                if (!column.DataType.IsInstanceOfType(value))
+#else
                 if (!column.DataType.GetTypeInfo().IsAssignableFrom(value.GetType().GetTypeInfo()))
+#endif
                     throw new InvalidCastException(String.Format("Value {0} of type {1} is not assignable to column data type {2}.",
                         value, value.GetType().Name, column.DataType.Name));
                 _objects[column] = value;

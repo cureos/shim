@@ -56,7 +56,11 @@ namespace System.IO
         {
             get
             {
+#if PROFILE328
+                var parent = ShimPath.GetDirectoryName(this.path);
+#else
                 var parent = Path.GetDirectoryName(this.path);
+#endif
                 return parent == null ? null : new DirectoryInfo(parent);
             }
         }
