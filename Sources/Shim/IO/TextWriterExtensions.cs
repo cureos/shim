@@ -31,7 +31,7 @@ namespace System.IO
         /// <param name="writer">Text writer to be closed.</param>
         public static void Close(this TextWriter writer)
          {
-#if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
+#if DOTNET || SILVERLIGHT || WINDOWS_PHONE_APP
              writer.Close();
 #else
              writer.Dispose();

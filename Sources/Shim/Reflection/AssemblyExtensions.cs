@@ -33,7 +33,7 @@ namespace System.Reflection
         /// <param name="assembly">Assembly on which the <paramref name="typeName"/> instance should be created.</param>
         public static object CreateInstance(this Assembly assembly, string typeName)
         {
-#if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
+#if DOTNET || SILVERLIGHT || WINDOWS_PHONE_APP
             return assembly.CreateInstance(typeName);
 #else
             throw new PlatformNotSupportedException("PCL");

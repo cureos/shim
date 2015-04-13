@@ -31,7 +31,7 @@ namespace System.Net
         /// <param name="webResponse">HTTP web response object to close.</param>
         public static void Close(this WebResponse webResponse)
         {
-#if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
+#if DOTNET || SILVERLIGHT || WINDOWS_PHONE_APP
             webResponse.Close();
 #else
             webResponse.Dispose();

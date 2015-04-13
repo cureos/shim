@@ -41,7 +41,7 @@ namespace System.Reflection
 #endif
         public static Assembly GetExecutingAssembly()
         {
-#if DOTNET
+#if DOTNET || SILVERLIGHT
             return Assembly.GetExecutingAssembly();
 #elif NETFX_CORE || WINDOWS_PHONE
             return

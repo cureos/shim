@@ -48,7 +48,7 @@ namespace System.IO
         {
 #if NETFX_CORE
             return ApplicationData.Current.TemporaryFolder.Path;
-#elif WINDOWS_PHONE || DOTNET
+#elif SILVERLIGHT || DOTNET
             return Path.GetTempPath();
 #else
             throw new PlatformNotSupportedException("PCL");
@@ -62,7 +62,7 @@ namespace System.IO
             const string DefaultFileExtension = ".tmp";
             return Path.ChangeExtension(global::System.IO.Path.Combine(GetTempPath(),
                                                   global::System.IO.Path.GetRandomFileName()), DefaultFileExtension);
-#elif WINDOWS_PHONE || DOTNET
+#elif SILVERLIGHT || DOTNET
             return Path.GetTempFileName();
 #else
             throw new PlatformNotSupportedException("PCL");
@@ -74,7 +74,7 @@ namespace System.IO
         {
 #if NETFX_CORE
             return path;
-#elif WINDOWS_PHONE || DOTNET
+#elif SILVERLIGHT || DOTNET
             return Path.GetFullPath(path);
 #else
             throw new PlatformNotSupportedException("PCL");

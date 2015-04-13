@@ -33,7 +33,7 @@ namespace System.IO
         /// <param name="stream">Stream to be closed.</param>
         public static void Close(this Stream stream)
         {
-#if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
+#if DOTNET || SILVERLIGHT || WINDOWS_PHONE_APP
             stream.Close();
 #else
             stream.Dispose();
@@ -45,7 +45,7 @@ namespace System.IO
         public static IAsyncResult BeginWrite(this Stream stream, byte[] buffer, int offset, int count,
                                               AsyncCallback callback, object state)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || SILVERLIGHT
             return stream.BeginWrite(buffer, offset, count, callback, state);
 #else
             return
@@ -58,7 +58,7 @@ namespace System.IO
         /// <param name="stream">Stream on which to end writing.</param>
         public static void EndWrite(this Stream stream, IAsyncResult asyncResult)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || SILVERLIGHT
             stream.EndWrite(asyncResult);
 #endif
         }
@@ -68,7 +68,7 @@ namespace System.IO
         public static IAsyncResult BeginRead(this Stream stream, byte[] buffer, int offset, int count,
                                               AsyncCallback callback, object state)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || SILVERLIGHT
             return stream.BeginRead(buffer, offset, count, callback, state);
 #else
             return new TaskFactory<int>().StartNew(asyncState => stream.Read(buffer, offset, count), state)
@@ -84,7 +84,7 @@ namespace System.IO
         /// <param name="stream">Stream on which to end reading.</param>
         public static int EndRead(this Stream stream, IAsyncResult asyncResult)
         {
-#if DOTNET || WINDOWS_PHONE
+#if DOTNET || SILVERLIGHT
             return stream.EndRead(asyncResult);
 #else
             var task = asyncResult as Task<int>;
