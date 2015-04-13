@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>shim</id>
-        <version>1.9.0-pre</version>
+        <version>$version$</version>
         <title>Shim</title>
         <authors>Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/LICENSE.txt</licenseUrl>
@@ -12,9 +12,7 @@
         <description>Shim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 1.9.0-pre
--------------
-* Switched to PCL profile 328
+        <releaseNotes>* Switched to PCL profile 328
 * Fixed issues:
 #17 Compact names of extension "properties"
 #15 Add .NET 4.0 and Silverlight 5 targets</releaseNotes>
