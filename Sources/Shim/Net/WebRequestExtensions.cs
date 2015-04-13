@@ -54,40 +54,48 @@ namespace System.Net
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.WebRequest.ConnectionGroupName"]/*' />
         /// <param name="request">HTTP web request object on which to set connection group name.</param>
         /// <param name="groupName">Connection group name value to set.</param>
-        public static void SetConnectionGroupName(this WebRequest request, string groupName)
+        public static void ConnectionGroupName(this WebRequest request, string groupName)
         {
 #if DOTNET
             request.ConnectionGroupName = groupName;
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.WebRequest.Proxy"]/*' />
         /// <param name="request">HTTP web request object on which to set proxy.</param>
         /// <param name="proxy">Web proxy value to set.</param>
-        public static void SetProxy(this WebRequest request, IWebProxy proxy)
+        public static void Proxy(this WebRequest request, IWebProxy proxy)
         {
 #if DOTNET
             request.Proxy = proxy;
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.WebRequest.Timeout"]/*' />
         /// <param name="request">HTTP web request object on which to set timeout.</param>
         /// <param name="timeout">Timeout value to set.</param>
-        public static void SetTimeout(this WebRequest request, int timeout)
+        public static void Timeout(this WebRequest request, int timeout)
         {
 #if DOTNET
             request.Timeout = timeout;
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.WebRequest.ContentLength"]/*' />
         /// <param name="request">HTTP web request object on which to set content length.</param>
         /// <param name="contentLength">Content length value to set.</param>
-        public static void SetContentLength(this WebRequest request, long contentLength)
+        public static void ContentLength(this WebRequest request, long contentLength)
         {
 #if DOTNET
             request.ContentLength = contentLength;
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
     }

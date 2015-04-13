@@ -30,10 +30,12 @@ namespace System.Net
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.HttpWebRequest.UserAgent"]/*' />
         /// <param name="request">HTTP web request object on which to set user agent.</param>
         /// <param name="userAgent">User agent value to set.</param>
-        public static void SetUserAgent(this HttpWebRequest request, string userAgent)
+        public static void UserAgent(this HttpWebRequest request, string userAgent)
         {
 #if DOTNET
             request.UserAgent = userAgent;
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
     }
