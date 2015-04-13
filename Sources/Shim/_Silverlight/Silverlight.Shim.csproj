@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1F718FA3-88F0-47D8-B695-7BA01A3643F8}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System</RootNamespace>
+    <AssemblyName>Shim</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core">
+      <HintPath>$(TargetFrameworkDirectory)System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\ApplicationException.cs">
+      <Link>ApplicationException.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\Concurrent\ConcurrentBag.cs">
+      <Link>Collections\Concurrent\ConcurrentBag.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\Concurrent\ConcurrentDictionary.cs">
+      <Link>Collections\Concurrent\ConcurrentDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\Concurrent\ConcurrentStack.cs">
+      <Link>Collections\Concurrent\ConcurrentStack.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\Concurrent\Partitioner.cs">
+      <Link>Collections\Concurrent\Partitioner.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\Generic\EnumerableExtensions.cs">
+      <Link>Collections\Generic\EnumerableExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\BrowsableAttribute.cs">
+      <Link>ComponentModel\BrowsableAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\CategoryAttribute.cs">
+      <Link>ComponentModel\CategoryAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\DataAnnotations\RangeAttribute.cs">
+      <Link>ComponentModel\DataAnnotations\RangeAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\DescriptionAttribute.cs">
+      <Link>ComponentModel\DescriptionAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\DisplayNameAttribute.cs">
+      <Link>ComponentModel\DisplayNameAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\ISynchronizeInvoke.cs">
+      <Link>ComponentModel\ISynchronizeInvoke.cs</Link>
+    </Compile>
+    <Compile Include="..\Converter.cs">
+      <Link>Converter.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\Common\SchemaTableColumn.cs">
+      <Link>Data\Common\SchemaTableColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\Common\SchemaTableOptionalColumn.cs">
+      <Link>Data\Common\SchemaTableOptionalColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DataColumn.cs">
+      <Link>Data\DataColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DataColumnCollection.cs">
+      <Link>Data\DataColumnCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DataRow.cs">
+      <Link>Data\DataRow.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DataRowCollection.cs">
+      <Link>Data\DataRowCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DataTable.cs">
+      <Link>Data\DataTable.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DataView.cs">
+      <Link>Data\DataView.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DbType.cs">
+      <Link>Data\DbType.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\IDataReader.cs">
+      <Link>Data\IDataReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\IDataRecord.cs">
+      <Link>Data\IDataRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Diagnostics\Process.cs">
+      <Link>Diagnostics\Process.cs</Link>
+    </Compile>
+    <Compile Include="..\Diagnostics\Trace.cs">
+      <Link>Diagnostics\Trace.cs</Link>
+    </Compile>
+    <Compile Include="..\ICloneable.cs">
+      <Link>ICloneable.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\SearchOption.cs">
+      <Link>IO\SearchOption.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\IWebProxy.cs">
+      <Link>Net\IWebProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\Security\SslPolicyErrors.cs">
+      <Link>Net\Security\SslPolicyErrors.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\Security\SslStream.cs">
+      <Link>Net\Security\SslStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\Sockets\NetworkStream.cs">
+      <Link>Net\Sockets\NetworkStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\Sockets\TcpClient.cs">
+      <Link>Net\Sockets\TcpClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\Sockets\TcpListener.cs">
+      <Link>Net\Sockets\TcpListener.cs</Link>
+    </Compile>
+    <Compile Include="..\NonSerializedAttribute.cs">
+      <Link>NonSerializedAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\NotFiniteNumberException.cs">
+      <Link>NotFiniteNumberException.cs</Link>
+    </Compile>
+    <Compile Include="..\Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs">
+      <Link>Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\Runtime\Serialization\ISerializable.cs">
+      <Link>Runtime\Serialization\ISerializable.cs</Link>
+    </Compile>
+    <Compile Include="..\Runtime\Serialization\OptionalFieldAttribute.cs">
+      <Link>Runtime\Serialization\OptionalFieldAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Runtime\Serialization\SerializationInfo.cs">
+      <Link>Runtime\Serialization\SerializationInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Authentication\SslProtocols.cs">
+      <Link>Security\Authentication\SslProtocols.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\OpenFlags.cs">
+      <Link>Security\Cryptography\X509Certificates\OpenFlags.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\StoreLocation.cs">
+      <Link>Security\Cryptography\X509Certificates\StoreLocation.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\StoreName.cs">
+      <Link>Security\Cryptography\X509Certificates\StoreName.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\X509Certificate2Collection.cs">
+      <Link>Security\Cryptography\X509Certificates\X509Certificate2Collection.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\X509Chain.cs">
+      <Link>Security\Cryptography\X509Certificates\X509Chain.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\X509FindType.cs">
+      <Link>Security\Cryptography\X509Certificates\X509FindType.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\X509Store.cs">
+      <Link>Security\Cryptography\X509Certificates\X509Store.cs</Link>
+    </Compile>
+    <Compile Include="..\SerializableAttribute.cs">
+      <Link>SerializableAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Threading\Tasks\Parallel.cs">
+      <Link>Threading\Tasks\Parallel.cs</Link>
+    </Compile>
+    <Compile Include="..\Threading\Tasks\ParallelLoopResult.cs">
+      <Link>Threading\Tasks\ParallelLoopResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Threading\Tasks\ParallelLoopState.cs">
+      <Link>Threading\Tasks\ParallelLoopState.cs</Link>
+    </Compile>
+    <Compile Include="..\Threading\Tasks\ParallelOptions.cs">
+      <Link>Threading\Tasks\ParallelOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Timers\ElapsedEventArgs.cs">
+      <Link>Timers\ElapsedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Timers\Timer.cs">
+      <Link>Timers\Timer.cs</Link>
+    </Compile>
+    <Compile Include="..\Xml\Linq\XDocument.cs">
+      <Link>Xml\Linq\XDocument.cs</Link>
+    </Compile>
+    <Compile Include="TypeForwarding.Silverlight.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Shim.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="..\Shim.Shared.projitems" Label="Shared" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -45,7 +45,7 @@ namespace System.Collections.Generic
             {
                 throw new ArgumentOutOfRangeException(
                     "index", 
-#if !PROFILE328
+#if !PROFILE328 && !SILVERLIGHT
                     index, 
 #endif
                     "Must be non-negative");
