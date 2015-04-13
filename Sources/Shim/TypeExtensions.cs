@@ -162,7 +162,7 @@ namespace System
         public static object InvokeMember(this Type type, string name, BindingFlags invokeAttr, 
             Binder binder, object target, object[] args, CultureInfo culture)
         {
-#if DOTNET || WINDOWS_PHONE || PROFILE328
+#if DOTNET || WINDOWS_PHONE
             return type.InvokeMember(name, invokeAttr, binder, target, args, culture);
 #else
             throw new PlatformNotSupportedException("PCL");
