@@ -16,6 +16,7 @@
 -------------
 * Switched to PCL profile 328
 * Fixed issues:
+#17 Compact names of extension "properties"
 #15 Add .NET 4.0 and Silverlight 5 targets</releaseNotes>
         <language>en-US</language>
         <tags>PCL Shim .NET Windows WP8 WPA81 Xamarin iOS Android</tags>
@@ -43,6 +44,9 @@
         <file src="..\Sources\Shim\_Phone\bin\Release\Shim.dll" target="lib\wp8" />
         <file src="..\Sources\Shim\_Phone\bin\Release\Shim.pdb" target="lib\wp8" />
         <file src="..\Sources\Shim\_Phone\bin\Release\Shim.xml" target="lib\wp8" />
+        <file src="..\Sources\Shim\_Silverlight\Bin\Release\Shim.dll" target="lib\sl5" />
+        <file src="..\Sources\Shim\_Silverlight\Bin\Release\Shim.pdb" target="lib\sl5" />
+        <file src="..\Sources\Shim\_Silverlight\Bin\Release\Shim.xml" target="lib\sl5" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.dll" target="lib\portable-win81+wpa81" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pdb" target="lib\portable-win81+wpa81" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.xml" target="lib\portable-win81+wpa81" />
