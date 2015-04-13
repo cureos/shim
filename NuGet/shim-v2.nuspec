@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>shim</id>
+        <version>1.9.0-pre</version>
+        <title>Shim</title>
+        <authors>Anders Gustafsson, Cureos AB</authors>
+        <licenseUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/LICENSE.txt</licenseUrl>
+        <projectUrl>https://github.com/cureos/shim</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/shim.png</iconUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>Shim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
+        <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
+        <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
+        <releaseNotes>v 1.9.0-pre
+-------------
+* Switched to PCL profile 328
+* Fixed issues:
+#15 Add .NET 4.0 and Silverlight 5 targets</releaseNotes>
+        <language>en-US</language>
+        <tags>PCL Shim .NET Windows WP8 WPA81 Xamarin iOS Android</tags>
+    </metadata>
+    <files>
+        <file src="..\Sources\Shim\_Net\bin\Release\Shim.dll" target="lib\net40" />
+        <file src="..\Sources\Shim\_Net\bin\Release\Shim.pdb" target="lib\net40" />
+        <file src="..\Sources\Shim\_Net\bin\Release\Shim.xml" target="lib\net40" />
+        <file src="..\Sources\Shim\_Store\bin\Release\Shim.dll" target="lib\netcore45" />
+        <file src="..\Sources\Shim\_Store\bin\Release\Shim.pdb" target="lib\netcore45" />
+        <file src="..\Sources\Shim\_Store\bin\Release\Shim.xml" target="lib\netcore45" />
+        <file src="..\Sources\Shim\_Store\bin\Release\Shim.pri" target="lib\netcore45" />
+        <file src="..\Sources\Shim\_Profile328\bin\Release\Shim.dll" target="lib\portable-net4+sl5+netcore45+wpa81+wp8" />
+        <file src="..\Sources\Shim\_Profile328\bin\Release\Shim.pdb" target="lib\portable-net4+sl5+netcore45+wpa81+wp8" />
+        <file src="..\Sources\Shim\_Profile328\bin\Release\Shim.xml" target="lib\portable-net4+sl5+netcore45+wpa81+wp8" />
+        <file src="..\Sources\Shim\_Droid\bin\Release\Shim.dll" target="lib\MonoAndroid1" />
+        <file src="..\Sources\Shim\_Droid\bin\Release\Shim.pdb" target="lib\MonoAndroid1" />
+        <file src="..\Sources\Shim\_Droid\bin\Release\Shim.xml" target="lib\MonoAndroid1" />
+        <file src="..\Sources\Shim\_Unified\bin\Release\Shim.dll" target="lib\Xamarin.iOS10" />
+        <file src="..\Sources\Shim\_Unified\bin\Release\Shim.pdb" target="lib\Xamarin.iOS10" />
+        <file src="..\Sources\Shim\_Unified\bin\Release\Shim.xml" target="lib\Xamarin.iOS10" />
+        <file src="..\Sources\Shim\_Touch\bin\Release\Shim.dll" target="lib\MonoTouch1" />
+        <file src="..\Sources\Shim\_Touch\bin\Release\Shim.pdb" target="lib\MonoTouch1" />
+        <file src="..\Sources\Shim\_Touch\bin\Release\Shim.xml" target="lib\MonoTouch1" />
+        <file src="..\Sources\Shim\_Phone\bin\Release\Shim.dll" target="lib\wp8" />
+        <file src="..\Sources\Shim\_Phone\bin\Release\Shim.pdb" target="lib\wp8" />
+        <file src="..\Sources\Shim\_Phone\bin\Release\Shim.xml" target="lib\wp8" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.dll" target="lib\portable-win81+wpa81" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pdb" target="lib\portable-win81+wpa81" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.xml" target="lib\portable-win81+wpa81" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pri" target="lib\portable-win81+wpa81" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.dll" target="lib\netcore451" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pdb" target="lib\netcore451" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.xml" target="lib\netcore451" />
+        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pri" target="lib\netcore451" />
+    </files>
+</package>
