@@ -306,6 +306,7 @@
     <Compile Include="..\Xml\Linq\XDocument.cs">
       <Link>Xml\Linq\XDocument.cs</Link>
     </Compile>
+    <Compile Include="IO\Path.cs" />
     <Compile Include="TypeForwarding.Profile328.cs" />
   </ItemGroup>
   <PropertyGroup>

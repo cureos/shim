@@ -29,6 +29,9 @@ namespace System.IO
     {
         #region FIELDS
 
+#if NETFX_CORE
+        private const char DirectorySeparatorChar = '\\';
+#endif
         private readonly string path;
 
         #endregion
@@ -38,7 +41,11 @@ namespace System.IO
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.DirectoryInfo.#ctor(System.String)"]/*' />
         public DirectoryInfo(string path)
         {
-            this.path = path.TrimEnd(ShimPath.DirectorySeparatorChar);
+#if NETFX_CORE
+            this.path = path.TrimEnd(DirectorySeparatorChar);
+#else
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion
@@ -48,7 +55,14 @@ namespace System.IO
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.DirectoryInfo.Exists"]/*' />
         public bool Exists
         {
-            get { return Directory.Exists(this.path); }
+            get
+            {
+#if NETFX_CORE
+                return Directory.Exists(this.path);
+#else
+                throw new PlatformNotSupportedException("PCL");
+#endif
+            }
         }
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.IO.DirectoryInfo.Parent"]/*' />
@@ -56,12 +70,12 @@ namespace System.IO
         {
             get
             {
-#if PROFILE328
-                var parent = ShimPath.GetDirectoryName(this.path);
-#else
+#if NETFX_CORE
                 var parent = Path.GetDirectoryName(this.path);
-#endif
                 return parent == null ? null : new DirectoryInfo(parent);
+#else
+                throw new PlatformNotSupportedException("PCL");
+#endif
             }
         }
 
@@ -70,8 +84,12 @@ namespace System.IO
         {
             get
             {
-                var index = this.path.LastIndexOf(ShimPath.DirectorySeparatorChar);
+#if NETFX_CORE
+                var index = this.path.LastIndexOf(DirectorySeparatorChar);
                 return index < 0 ? this.path : this.path.Substring(index + 1);
+#else
+                throw new PlatformNotSupportedException("PCL");
+#endif
             }
         }
 
@@ -80,7 +98,11 @@ namespace System.IO
         {
             get
             {
+#if NETFX_CORE
                 return this.path;
+#else
+                throw new PlatformNotSupportedException("PCL");
+#endif
             }
         }
 
@@ -91,25 +113,37 @@ namespace System.IO
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.DirectoryInfo.Create"]/*' />
         public void Create()
         {
+#if NETFX_CORE
             // TODO Is it an issue that the CreateDirectory method creates another DirectoryInfo?
             Directory.CreateDirectory(this.path);
+#else
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.DirectoryInfo.GetFiles"]/*' />
         public FileInfo[] GetFiles()
         {
+#if NETFX_CORE
             return Directory.GetFiles(this.path).Select(fileName => new FileInfo(fileName)).ToArray();
+#else
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.DirectoryInfo.EnumerateFiles(System.String,System.IO.SearchOption"]/*' />
         public IEnumerable<FileInfo> EnumerateFiles(String searchPattern, SearchOption searchOption)
         {
+#if NETFX_CORE
             var files = Directory.GetFiles(this.path, searchPattern).Select(f => new FileInfo(f));
             return searchOption == SearchOption.TopDirectoryOnly
                        ? files
                        : files.Concat(
                            Directory.GetDirectories(this.path)
                              .SelectMany(d => new DirectoryInfo(d).EnumerateFiles(searchPattern, searchOption)));
+#else
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion

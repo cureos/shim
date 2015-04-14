@@ -103,6 +103,7 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(FileMode))]
 [assembly: TypeForwardedTo(typeof(FileShare))]
 [assembly: TypeForwardedTo(typeof(FileStream))]
+[assembly: TypeForwardedTo(typeof(Path))]
 [assembly: TypeForwardedTo(typeof(SearchOption))]
 
 // System.Net

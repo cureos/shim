@@ -20,6 +20,7 @@
  */
 
 using System.Collections.Concurrent;
+using System.IO;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -32,6 +33,9 @@ using System.Xml.Linq;
 [assembly: TypeForwardedTo(typeof(ConcurrentStack<>))]
 [assembly: TypeForwardedTo(typeof(ConcurrentDictionary<,>))]
 [assembly: TypeForwardedTo(typeof(Partitioner<>))]
+
+// System.IO
+[assembly: TypeForwardedTo(typeof(Path))]
 
 // System.Net
 [assembly: TypeForwardedTo(typeof(IWebProxy))]

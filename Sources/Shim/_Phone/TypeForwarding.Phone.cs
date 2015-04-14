@@ -57,6 +57,7 @@ using System.Xml.Linq;
 [assembly: TypeForwardedTo(typeof(FileMode))]
 [assembly: TypeForwardedTo(typeof(FileShare))]
 [assembly: TypeForwardedTo(typeof(FileStream))]
+[assembly: TypeForwardedTo(typeof(Path))]
 
 // System.Net
 [assembly: TypeForwardedTo(typeof(EndPoint))]
