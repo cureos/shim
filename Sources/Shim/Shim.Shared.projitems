@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Reflection\AssemblyExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Reflection\Assembly (Shim).cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Threading\WaitHandleExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Xml\Linq\XDocumentExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ShimEnvironment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StringExtensions.cs" />
