@@ -20,27 +20,36 @@
 //    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
-// ReSharper disable once CheckNamespace
-namespace Shim
+namespace System
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
-    /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Array"]/*' />
-    public static class Array
+    /// <summary>
+    /// Shim complement for the <see cref="Array"/> class, providing static members that are
+    /// not included in the PCL member subset of the <see cref="Array"/> class.
+    /// </summary>
+    // ReSharper disable once InconsistentNaming
+    public static class Array_
     {
         #region METHODS
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Array.Sort``2(``0[],``1[])"]/*' />
         public static void Sort<TKey, TValue>(TKey[] keys, TValue[] items)
         {
+#if PROFILE328
+            throw new PlatformNotSupportedException("PCL");
+#else
             Sort(keys, items, Comparer<TKey>.Default);
+#endif
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Array.Sort``2(``0[],``1[],System.Collections.Generic.IComparer{``0})"]/*' />
         public static void Sort<TKey, TValue>(TKey[] keys, TValue[] items, IComparer<TKey> comparer)
         {
+#if PROFILE328
+            throw new PlatformNotSupportedException("PCL");
+#else
             if (items != null)
             {
                 var ordered =
@@ -49,14 +58,15 @@ namespace Shim
                         .ToArray();
                 lock (keys)
                 {
-                    System.Array.Copy(ordered.Select(kv => kv.Key).ToArray(), keys, ordered.Length);
-                    System.Array.Copy(ordered.Select(kv => kv.Value).ToArray(), items, ordered.Length);
+                    Array.Copy(ordered.Select(kv => kv.Key).ToArray(), keys, ordered.Length);
+                    Array.Copy(ordered.Select(kv => kv.Value).ToArray(), items, ordered.Length);
                 }
             }
             else
             {
-                System.Array.Sort(keys);
+                Array.Sort(keys);
             }
+#endif
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Array.Sort``2(``0[],``1[],System.Int32,System.Int32,System.Collections.Generic.IComparer{``0})"]/*' />
@@ -67,6 +77,9 @@ namespace Shim
             int length,
             IComparer<TKey> comparer)
         {
+#if PROFILE328
+            throw new PlatformNotSupportedException("PCL");
+#else
             if (items != null)
             {
                 var ordered =
@@ -77,19 +90,23 @@ namespace Shim
                         .ToList();
                 lock (keys)
                 {
-                    System.Array.Copy(ordered.Select(kv => kv.Key).ToArray(), 0, keys, index, length);
-                    System.Array.Copy(ordered.Select(kv => kv.Value).ToArray(), 0, items, index, length);
+                    Array.Copy(ordered.Select(kv => kv.Key).ToArray(), 0, keys, index, length);
+                    Array.Copy(ordered.Select(kv => kv.Value).ToArray(), 0, items, index, length);
                 }
             }
             else
             {
-                System.Array.Sort(keys, index, length, comparer);
+                Array.Sort(keys, index, length, comparer);
             }
+#endif
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Array.ConvertAll``2(``0[],System.Converter{``0,``1})"]/*' />
         public static TOutput[] ConvertAll<TInput, TOutput>(TInput[] array, Converter<TInput, TOutput> converter)
         {
+#if PROFILE328
+            throw new PlatformNotSupportedException("PCL");
+#else
             if (array == null)
             {
                 throw new ArgumentNullException("array");
@@ -106,6 +123,7 @@ namespace Shim
                 newArray[i] = converter(array[i]);
             }
             return newArray;
+#endif
         }
 
         #endregion
