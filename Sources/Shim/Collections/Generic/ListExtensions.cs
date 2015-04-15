@@ -22,6 +22,7 @@
 namespace System.Collections.Generic
 {
     using System.Collections.ObjectModel;
+    using System.Linq;
 
     /// <summary>
     /// Shim complement for the <see cref="List{T}"/> class. <see cref="List{T}"/> instance methods that are not available in the 
@@ -30,13 +31,27 @@ namespace System.Collections.Generic
     public static class ListExtensions
     {
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Generic.List`1.AsReadOnly"]/*' />
-        public static ReadOnlyCollection<T> AsReadOnly<T>(this IList<T> list)
-         {
-#if DOTNET || WINDOWS_PHONE || WINDOWS_PHONE_APP
-             return list.AsReadOnly();
+        /// <param name="list">List to be returned as a read-only list.</param>
+        public static ReadOnlyCollection<T> AsReadOnly<T>(this List<T> list)
+        {
+#if PROFILE328
+            throw new PlatformNotSupportedException("PCL");
 #else
-             return new ReadOnlyCollection<T>(list);
+            return list.AsReadOnly();
 #endif
-         }
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Generic.List`1.ConvertAll``1(System.Converter{`0,``0})"]/*' />
+        /// <param name="list">List subject to conversion.</param>
+        public static List<TOutput> ConvertAll<T, TOutput>(this List<T> list, Converter<T, TOutput> converter)
+        {
+#if PROFILE328
+            throw new PlatformNotSupportedException("PCL");
+#elif DOTNET
+            return list.ConvertAll(converter);
+#else
+            return list.Select(item => converter(item)).ToList();
+#endif
+        }
     }
 }
