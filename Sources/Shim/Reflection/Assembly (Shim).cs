@@ -19,44 +19,35 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-// ReSharper disable once CheckNamespace
-namespace Shim.Reflection
+namespace System.Reflection
 {
-    using System;
-    using System.Reflection;
-
     /// <summary>
-    /// Shim replacement for the <see cref="Assembly"/> class, providing static members that are
+    /// Shim complement for the <see cref="Assembly"/> class, providing static members that are
     /// not included in the PCL member subset of the <see cref="Assembly"/> class.
     /// </summary>
-    public static class Assembly
+    // ReSharper disable once InconsistentNaming
+    public static class Assembly_
     {
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.Assembly.GetExecutingAssembly"]/*' />
+        public static Assembly GetExecutingAssembly()
+        {
 #if PROFILE328
-        public static System.Reflection.Assembly GetExecutingAssembly()
-        {
             throw new PlatformNotSupportedException("PCL");
-        }
 #elif NETFX_CORE
-        public static System.Reflection.Assembly GetExecutingAssembly()
-        {
             // By definition, the executing assembly is the assembly from which this method is invoked.
             // The return value should thus be the assembly from which this method is called.
             // The "classic" method used to obtain this assembly, <code>Assembly.GetCallingAssembly</code> is not
             // publicly exposed in the .NET for Windows Store assembly. Therefore the method is
             // here invoked through reflection, based on a StackOverflow tip at http://stackoverflow.com/a/14754653/650012 .
             return
-                (System.Reflection.Assembly)typeof(System.Reflection.Assembly)
+                (Assembly)typeof(Assembly)
                 .GetTypeInfo().GetDeclaredMethod("GetCallingAssembly").Invoke(null, new object[0]);
-        }
 #else
-        public static System.Reflection.Assembly GetExecutingAssembly()
-        {
             // By definition, the executing assembly is the assembly from which this method is invoked.
             // The return value should thus be the assembly from which this method is called.
-            return System.Reflection.Assembly.GetCallingAssembly();
-        }
+            return Assembly.GetCallingAssembly();
 #endif
+        }
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.Assembly.Load(System.String)"]/*' />
         public static System.Reflection.Assembly Load(string assemblyString)
@@ -64,9 +55,9 @@ namespace Shim.Reflection
 #if PROFILE328
             throw new PlatformNotSupportedException("PCL");
 #elif NETFX_CORE
-            return System.Reflection.Assembly.Load(new AssemblyName(assemblyString));
+            return Assembly.Load(new AssemblyName(assemblyString));
 #else
-            return System.Reflection.Assembly.Load(assemblyString);
+            return Assembly.Load(assemblyString);
 #endif
         }
     }
