@@ -99,6 +99,12 @@ namespace System.Data
             return column;
         }
 
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataColumnCollection.Add(System.String)"]/*' />
+        public DataColumn Add(string columnName)
+        {
+            return this.Add(columnName, typeof(string));
+        }
+
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataColumnCollection.Contains(System.String)"]/*' />
         public bool Contains(string name)
         {
