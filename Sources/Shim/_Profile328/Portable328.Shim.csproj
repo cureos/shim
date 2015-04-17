@@ -159,6 +159,9 @@
     <Compile Include="..\IO\FileStream.cs">
       <Link>IO\FileStream.cs</Link>
     </Compile>
+    <Compile Include="..\IO\Path.cs">
+      <Link>IO\Path.cs</Link>
+    </Compile>
     <Compile Include="..\IO\SearchOption.cs">
       <Link>IO\SearchOption.cs</Link>
     </Compile>
@@ -306,7 +309,6 @@
     <Compile Include="..\Xml\Linq\XDocument.cs">
       <Link>Xml\Linq\XDocument.cs</Link>
     </Compile>
-    <Compile Include="IO\Path.cs" />
     <Compile Include="TypeForwarding.Profile328.cs" />
   </ItemGroup>
   <PropertyGroup>
