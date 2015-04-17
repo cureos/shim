@@ -291,12 +291,6 @@
     <Compile Include="..\Threading\ThreadAbortException.cs">
       <Link>Threading\ThreadAbortException.cs</Link>
     </Compile>
-    <Compile Include="..\Threading\ThreadPool.cs">
-      <Link>Threading\ThreadPool.cs</Link>
-    </Compile>
-    <Compile Include="..\Threading\Timer.cs">
-      <Link>Threading\Timer.cs</Link>
-    </Compile>
     <Compile Include="..\Timers\ElapsedEventArgs.cs">
       <Link>Timers\ElapsedEventArgs.cs</Link>
     </Compile>

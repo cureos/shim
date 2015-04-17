@@ -28,3 +28,8 @@ using System.Threading;
 
 // System.Threading
 [assembly: TypeForwardedTo(typeof(Thread))]
+[assembly: TypeForwardedTo(typeof(ThreadPool))]
+[assembly: TypeForwardedTo(typeof(Timer))]
+[assembly: TypeForwardedTo(typeof(TimerCallback))]
+[assembly: TypeForwardedTo(typeof(WaitCallback))]
+
