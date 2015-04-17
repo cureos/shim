@@ -21,6 +21,8 @@
 
 namespace System.Reflection
 {
+    using System.Linq;
+
     /// <summary>
     /// Shim complement for the <see cref="Assembly"/> class. <see cref="Assembly"/> instance methods that are not available in the 
     /// PCL profile are here provided as equivalent extension methods.
@@ -40,6 +42,18 @@ namespace System.Reflection
 #endif
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.Assembly.GetTypes"]/*' />
+        /// <param name="assembly">Assembly for which the array of types should be listed.</param>
+        public static Type[] GetTypes(this Assembly assembly)
+        {
+#if DOTNET || SILVERLIGHT
+            return assembly.GetTypes();
+#elif NETFX_CORE
+            return assembly.DefinedTypes.Select(typeInfo => typeInfo.AsType()).ToArray();
+#else
+            throw new PlatformNotSupportedException("PCL");
+#endif
+        }
 
         #endregion
     }
