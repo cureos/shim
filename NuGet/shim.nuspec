@@ -42,7 +42,7 @@
         <file src="..\Sources\Shim\_Profile259\bin\Release\Shim.dll" target="lib\portable-net45+netcore45+wpa81+wp8" />
         <file src="..\Sources\Shim\_Profile259\bin\Release\Shim.pdb" target="lib\portable-net45+netcore45+wpa81+wp8" />
         <file src="..\Sources\Shim\_Profile259\bin\Release\Shim.xml" target="lib\portable-net45+netcore45+wpa81+wp8" />
-        <file src="..\Sources\Shim\_Profile328\bin\Release\Shim.dll" target="lib\portable-net45+netcore45+wpa81+wp8" />
+        <file src="..\Sources\Shim\_Profile328\bin\Release\Shim.dll" target="lib\portable-net4+sl5+netcore45+wpa81+wp8" />
         <file src="..\Sources\Shim\_Profile328\bin\Release\Shim.pdb" target="lib\portable-net4+sl5+netcore45+wpa81+wp8" />
         <file src="..\Sources\Shim\_Profile328\bin\Release\Shim.xml" target="lib\portable-net4+sl5+netcore45+wpa81+wp8" />
         <file src="..\Sources\Shim\_Droid\bin\Release\Shim.dll" target="lib\MonoAndroid1" />
