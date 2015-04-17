@@ -21,10 +21,8 @@
 
 namespace System
 {
-#if !DOTNET && !SILVERLIGHT && !PCL
     using System.Linq;
-#endif
-    using System.Reflection;
+        using System.Reflection;
     using System.Globalization;
 
     /// <summary>
@@ -37,20 +35,24 @@ namespace System
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Type.IsEnum"]/*' />
         public static bool IsEnum(this Type type)
         {
-#if DOTNET || SILVERLIGHT || PCL
+#if DOTNET || SILVERLIGHT
             return type.IsEnum;
-#else
+#elif NETFX_CORE
             return type.GetTypeInfo().IsEnum;
+#else 
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Type.IsValueType"]/*' />
         public static bool IsValueType(this Type type)
         {
-#if DOTNET || SILVERLIGHT || PCL
+#if DOTNET || SILVERLIGHT
             return type.IsValueType;
-#else
+#elif NETFX_CORE
             return type.GetTypeInfo().IsValueType;
+#else 
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
@@ -58,10 +60,12 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static bool IsAssignableFrom(this Type type, Type c)
         {
-#if DOTNET || SILVERLIGHT || PCL
+#if DOTNET || SILVERLIGHT
             return type.IsAssignableFrom(c);
-#else
+#elif NETFX_CORE
             return type.GetTypeInfo().IsAssignableFrom(c.GetTypeInfo());
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
@@ -69,10 +73,12 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static bool IsSubclassOf(this Type type, Type c)
         {
-#if DOTNET || SILVERLIGHT || PCL
+#if DOTNET || SILVERLIGHT
             return type.IsSubclassOf(c);
-#else
+#elif NETFX_CORE
             return type.GetTypeInfo().IsSubclassOf(c);
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
@@ -80,10 +86,12 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static bool IsInstanceOfType(this Type type, object o)
         {
-#if DOTNET || SILVERLIGHT || PCL
+#if DOTNET || SILVERLIGHT
             return type.IsInstanceOfType(o);
-#else
+#elif NETFX_CORE
             return o.GetType() == type || o.GetType().GetTypeInfo().IsSubclassOf(type);
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
@@ -91,9 +99,9 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static ConstructorInfo GetConstructor(this Type type, Type[] types)
         {
-#if DOTNET || SILVERLIGHT || PCL
+#if DOTNET || SILVERLIGHT
             return type.GetConstructor(types);
-#else
+#elif NETFX_CORE
             var typeInfo = type.GetTypeInfo();
             foreach (var constructorInfo in typeInfo.DeclaredConstructors)
             {
@@ -114,6 +122,8 @@ namespace System
                 if (use) return constructorInfo;
             }
             return null;
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
@@ -121,10 +131,12 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static FieldInfo GetField(this Type type, string name)
         {
-#if DOTNET || SILVERLIGHT || PCL
+#if DOTNET || SILVERLIGHT
             return type.GetField(name);
-#else
+#elif NETFX_CORE
             return type.GetRuntimeField(name);
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
@@ -132,13 +144,15 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static MethodInfo GetMethod(this Type type, string name, BindingFlags bindingAttr)
         {
-#if DOTNET || SILVERLIGHT || PCL
+#if DOTNET || SILVERLIGHT
             return type.GetMethod(name, bindingAttr);
-#else
+#elif NETFX_CORE
             return
                 type.GetRuntimeMethods()
                     .Where(mi => AreBindingFlagsMatching(mi, bindingAttr))
                     .SingleOrDefault(mi => mi.Name.Equals(name));
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
@@ -146,13 +160,15 @@ namespace System
         /// <param name="type"><see cref="Type"/> object.</param>
         public static FieldInfo[] GetFields(this Type type, BindingFlags bindingAttr)
         {
-#if DOTNET || SILVERLIGHT || PCL
+#if DOTNET || SILVERLIGHT
             return type.GetFields(bindingAttr);
-#else
+#elif NETFX_CORE
             return
                 type.GetRuntimeFields()
                     .Where(fieldInfo => AreBindingFlagsMatching(fieldInfo, bindingAttr))
                     .ToArray();
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
@@ -168,7 +184,7 @@ namespace System
 #endif
         }
 
-#if !DOTNET && !SILVERLIGHT && !PCL
+#if NETFX_CORE
         private static bool AreBindingFlagsMatching(MethodInfo methodInfo, BindingFlags bindingAttr)
         {
             var publicFlag = bindingAttr.HasFlag(BindingFlags.Public);
