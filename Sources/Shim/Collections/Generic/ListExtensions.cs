@@ -34,7 +34,7 @@ namespace System.Collections.Generic
         /// <param name="list">List to be returned as a read-only list.</param>
         public static ReadOnlyCollection<T> AsReadOnly<T>(this List<T> list)
         {
-#if PROFILE328
+#if PCL
             throw new PlatformNotSupportedException("PCL");
 #else
             return list.AsReadOnly();
@@ -45,7 +45,7 @@ namespace System.Collections.Generic
         /// <param name="list">List subject to conversion.</param>
         public static List<TOutput> ConvertAll<T, TOutput>(this List<T> list, Converter<T, TOutput> converter)
         {
-#if PROFILE328
+#if PCL
             throw new PlatformNotSupportedException("PCL");
 #elif DOTNET
             return list.ConvertAll(converter);

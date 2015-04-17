@@ -31,7 +31,7 @@ namespace System.Reflection
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.Assembly.GetExecutingAssembly"]/*' />
         public static Assembly GetExecutingAssembly()
         {
-#if PROFILE328
+#if PCL
             throw new PlatformNotSupportedException("PCL");
 #elif NETFX_CORE
             // By definition, the executing assembly is the assembly from which this method is invoked.
@@ -52,7 +52,7 @@ namespace System.Reflection
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.Assembly.Load(System.String)"]/*' />
         public static System.Reflection.Assembly Load(string assemblyString)
         {
-#if PROFILE328
+#if PCL
             throw new PlatformNotSupportedException("PCL");
 #elif NETFX_CORE
             return Assembly.Load(new AssemblyName(assemblyString));

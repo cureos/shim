@@ -79,7 +79,7 @@ namespace System.Data
             }
             set
             {
-#if SILVERLIGHT || PROFILE328
+#if SILVERLIGHT || PCL
                 if (!column.DataType.IsInstanceOfType(value))
 #else
                 if (!column.DataType.GetTypeInfo().IsAssignableFrom(value.GetType().GetTypeInfo()))

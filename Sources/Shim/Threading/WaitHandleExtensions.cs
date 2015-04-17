@@ -33,7 +33,7 @@ namespace System.Threading
         /// <param name="waitHandle">Wait handle to be closed.</param>
         public static void Close(this WaitHandle waitHandle)
         {
-#if PROFILE328
+#if PCL
             throw new PlatformNotSupportedException("PCL");
 #else
             waitHandle.Close();

@@ -37,7 +37,7 @@ namespace System
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Array.Sort``2(``0[],``1[])"]/*' />
         public static void Sort<TKey, TValue>(TKey[] keys, TValue[] items)
         {
-#if PROFILE328
+#if PCL
             throw new PlatformNotSupportedException("PCL");
 #else
             Sort(keys, items, Comparer<TKey>.Default);
@@ -47,7 +47,7 @@ namespace System
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Array.Sort``2(``0[],``1[],System.Collections.Generic.IComparer{``0})"]/*' />
         public static void Sort<TKey, TValue>(TKey[] keys, TValue[] items, IComparer<TKey> comparer)
         {
-#if PROFILE328
+#if PCL
             throw new PlatformNotSupportedException("PCL");
 #else
             if (items != null)
@@ -77,7 +77,7 @@ namespace System
             int length,
             IComparer<TKey> comparer)
         {
-#if PROFILE328
+#if PCL
             throw new PlatformNotSupportedException("PCL");
 #else
             if (items != null)
@@ -104,7 +104,7 @@ namespace System
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Array.ConvertAll``2(``0[],System.Converter{``0,``1})"]/*' />
         public static TOutput[] ConvertAll<TInput, TOutput>(TInput[] array, Converter<TInput, TOutput> converter)
         {
-#if PROFILE328
+#if PCL
             throw new PlatformNotSupportedException("PCL");
 #else
             if (array == null)
