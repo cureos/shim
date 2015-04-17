@@ -26,7 +26,7 @@ namespace System.IO
     /// not included in all platform subsets of the <see cref="Path"/> class.
     /// </summary>
     // ReSharper disable once InconsistentNaming
-    class Path_
+    public class Path_
     {
         #region FIELDS
 
