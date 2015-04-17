@@ -14,6 +14,7 @@
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
         <releaseNotes>* Switched to PCL profile 328
 * Fixed issues:
+#24 Converter delegate already available in Phone and Silverlight targets
 #22 Remove ShimPath (PathSeparator and DirectorSeparatorChar remain)
 #21 Add extension method for WaitHandle.Close
 #20 Add extension method for List&lt;T&gt;.ConvertAll

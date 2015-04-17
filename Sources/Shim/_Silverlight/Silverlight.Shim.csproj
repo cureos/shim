@@ -94,9 +94,6 @@
     <Compile Include="..\ComponentModel\ISynchronizeInvoke.cs">
       <Link>ComponentModel\ISynchronizeInvoke.cs</Link>
     </Compile>
-    <Compile Include="..\Converter.cs">
-      <Link>Converter.cs</Link>
-    </Compile>
     <Compile Include="..\Data\Common\SchemaTableColumn.cs">
       <Link>Data\Common\SchemaTableColumn.cs</Link>
     </Compile>

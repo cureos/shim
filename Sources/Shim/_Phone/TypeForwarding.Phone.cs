@@ -36,6 +36,7 @@ using System.Xml.Linq;
 // System
 [assembly: TypeForwardedTo(typeof(AppDomain))]
 [assembly: TypeForwardedTo(typeof(Console))]
+[assembly: TypeForwardedTo(typeof(Converter<,>))]
 [assembly: TypeForwardedTo(typeof(DBNull))]
 [assembly: TypeForwardedTo(typeof(ResolveEventArgs))]
 
