@@ -19,18 +19,19 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace System
-{
 #if NETFX_CORE || WINDOWS_PHONE
-    using global::Windows.Networking;
-    using global::Windows.Networking.Connectivity;
+using Windows.Networking;
+using Windows.Networking.Connectivity;
 #endif
 
+namespace System
+{
     /// <summary>
     /// Shim complement for the <see cref="Environment"/> class, providing members that are
     /// not included in the PCL member subset of the <see cref="Environment"/> class.
     /// </summary>
-    public static class ShimEnvironment
+    // ReSharper disable once InconsistentNaming
+    public static class Environment_
     {
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Environment.MachineName"]/*' />
         public static string MachineName
@@ -74,8 +75,7 @@ namespace System
 
                 if (String.IsNullOrEmpty(name))
                 {
-                    // TODO: Localize?
-                    name = "Unknown Windows 8";
+                    name = "Unknown";
                 }
 
                 return name;
