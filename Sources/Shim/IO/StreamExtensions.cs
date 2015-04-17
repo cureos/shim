@@ -33,7 +33,7 @@ namespace System.IO
         /// <param name="stream">Stream to be closed.</param>
         public static void Close(this Stream stream)
         {
-#if DOTNET || SILVERLIGHT || WINDOWS_PHONE_APP
+#if DOTNET || SILVERLIGHT
             stream.Close();
 #else
             stream.Dispose();

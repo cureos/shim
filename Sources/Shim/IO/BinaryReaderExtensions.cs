@@ -31,7 +31,7 @@ namespace System.IO
         /// <param name="reader">Binary reader to be closed.</param>
         public static void Close(this BinaryReader reader)
          {
-#if DOTNET || SILVERLIGHT || WINDOWS_PHONE_APP
+#if DOTNET || SILVERLIGHT
              reader.Close();
 #else
              reader.Dispose();
