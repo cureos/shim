@@ -30,12 +30,14 @@ namespace System.IO
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.TextWriter.Close"]/*' />
         /// <param name="writer">Text writer to be closed.</param>
         public static void Close(this TextWriter writer)
-         {
+        {
 #if DOTNET || SILVERLIGHT
-             writer.Close();
+            writer.Close();
+#elif NETFX_CORE
+            writer.Dispose();
 #else
-             writer.Dispose();
+            throw new PlatformNotSupportedException("PCL");
 #endif
-         }
+        }
     }
 }

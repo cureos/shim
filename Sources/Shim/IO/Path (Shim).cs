@@ -26,15 +26,32 @@ namespace System.IO
     /// not included in all platform subsets of the <see cref="Path"/> class.
     /// </summary>
     // ReSharper disable once InconsistentNaming
-    public class Path_
+    public static class Path_
     {
         #region FIELDS
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.Path.PathSeparator"]/*' />
-        public const char PathSeparator = '\\';
+        public static readonly char PathSeparator;
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="F:System.IO.Path.DirectorySeparatorChar"]/*' />
-        public static readonly char DirectorySeparatorChar = '\\';
+        public static readonly char DirectorySeparatorChar;
+
+        #endregion
+
+        #region CONSTRUCTORS
+
+        static Path_()
+        {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#elif __IOS__
+            PathSeparator ='/';
+            DirectorySeparatorChar = '/';
+#else
+            PathSeparator = '\\';
+            DirectorySeparatorChar = '\\';
+#endif
+        }
 
         #endregion
     }

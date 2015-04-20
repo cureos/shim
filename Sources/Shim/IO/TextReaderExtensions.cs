@@ -30,12 +30,14 @@ namespace System.IO
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.TextReader.Close"]/*' />
         /// <param name="reader">Text reader to be closed.</param>
         public static void Close(this TextReader reader)
-         {
+        {
 #if DOTNET || SILVERLIGHT
-             reader.Close();
+            reader.Close();
+#elif NETFX_CORE
+            reader.Dispose();
 #else
-             reader.Dispose();
+            throw new PlatformNotSupportedException("PCL");
 #endif
-         }
+        }
     }
 }

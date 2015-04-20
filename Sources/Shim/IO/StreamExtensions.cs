@@ -35,8 +35,10 @@ namespace System.IO
         {
 #if DOTNET || SILVERLIGHT
             stream.Close();
-#else
+#elif NETFX_CORE
             stream.Dispose();
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
@@ -47,10 +49,12 @@ namespace System.IO
         {
 #if DOTNET || SILVERLIGHT
             return stream.BeginWrite(buffer, offset, count, callback, state);
-#else
+#elif NETFX_CORE
             return
                 new TaskFactory().StartNew(asyncState => stream.Write(buffer, offset, count), state)
                                  .ContinueWith(task => callback(task));
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
@@ -60,6 +64,9 @@ namespace System.IO
         {
 #if DOTNET || SILVERLIGHT
             stream.EndWrite(asyncResult);
+#elif NETFX_CORE
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
@@ -70,13 +77,15 @@ namespace System.IO
         {
 #if DOTNET || SILVERLIGHT
             return stream.BeginRead(buffer, offset, count, callback, state);
-#else
+#elif NETFX_CORE
             return new TaskFactory<int>().StartNew(asyncState => stream.Read(buffer, offset, count), state)
                                          .ContinueWith(task =>
                                                            {
                                                                callback(task);
                                                                return task.Result;
                                                            });
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
@@ -86,9 +95,11 @@ namespace System.IO
         {
 #if DOTNET || SILVERLIGHT
             return stream.EndRead(asyncResult);
-#else
+#elif NETFX_CORE
             var task = asyncResult as Task<int>;
             return task != null ? task.Result : 0;
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
     }

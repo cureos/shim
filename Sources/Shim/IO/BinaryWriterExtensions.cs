@@ -33,8 +33,10 @@ namespace System.IO
          {
 #if DOTNET || SILVERLIGHT
              writer.Close();
-#else
+#elif NETFX_CORE
              writer.Dispose();
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
          }
     }
