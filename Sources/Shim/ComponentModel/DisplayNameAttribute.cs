@@ -30,6 +30,9 @@ namespace System.ComponentModel
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.ComponentModel.DisplayNameAttribute.#ctor(System.String)"]/*' />
         public DisplayNameAttribute(string displayName)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion

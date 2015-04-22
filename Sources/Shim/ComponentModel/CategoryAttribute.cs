@@ -30,6 +30,9 @@ namespace System.ComponentModel
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.ComponentModel.CategoryAttribute.#ctor(System.String)"]/*' />
         public CategoryAttribute(string category)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion

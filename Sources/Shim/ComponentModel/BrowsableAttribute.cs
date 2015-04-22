@@ -30,6 +30,9 @@ namespace System.ComponentModel
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.ComponentModel.BrowsableAttribute.#ctor(System.Boolean)"]/*' />
         public BrowsableAttribute(bool browsable)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion

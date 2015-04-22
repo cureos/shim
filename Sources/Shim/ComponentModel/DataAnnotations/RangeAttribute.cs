@@ -27,8 +27,10 @@ namespace System.ComponentModel.DataAnnotations
     {
         #region FIELDS
 
+#if !PCL
         private readonly object minimum;
         private readonly object maximum;
+#endif
 
         #endregion
 
@@ -37,15 +39,23 @@ namespace System.ComponentModel.DataAnnotations
         /// <include file='../../_Doc/System.ComponentModel.DataAnnotations.xml' path='doc/members/member[@name="M:System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Double,System.Double)"]/*' />
         public RangeAttribute(double minimum, double maximum)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             this.minimum = minimum;
             this.maximum = maximum;
+#endif
         }
 
         /// <include file='../../_Doc/System.ComponentModel.DataAnnotations.xml' path='doc/members/member[@name="M:System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)"]/*' />
         public RangeAttribute(int minimum, int maximum)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             this.minimum = minimum;
             this.maximum = maximum;
+#endif
         }
 
         #endregion
@@ -57,7 +67,11 @@ namespace System.ComponentModel.DataAnnotations
         {
             get
             {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
                 return minimum;
+#endif
             }
         }
 
@@ -66,7 +80,11 @@ namespace System.ComponentModel.DataAnnotations
         {
             get
             {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
                 return maximum;
+#endif
             }
         }
 

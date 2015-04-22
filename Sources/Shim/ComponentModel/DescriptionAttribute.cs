@@ -27,7 +27,9 @@ namespace System.ComponentModel
     {
         #region FIELDS
 
+#if !PCL
         private readonly string _description;
+#endif
         
         #endregion
 
@@ -36,7 +38,11 @@ namespace System.ComponentModel
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.ComponentModel.DescriptionAttribute.#ctor(System.String)"]/*' />
         public DescriptionAttribute(string description)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _description = description;
+#endif
         }
 
         #endregion
@@ -46,7 +52,14 @@ namespace System.ComponentModel
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="P:System.ComponentModel.DescriptionAttribute.Description"]/*' />
         public string Description
         {
-            get { return _description; }
+            get
+            {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
+                return _description;
+#endif
+            }
         }
 
         #endregion
