@@ -31,11 +31,15 @@ namespace System
         /// <param name="thisString"><see cref="String"/> object.</param>
         public static string Clone(this string thisString)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             if (Equals(null, thisString))
             {
                 throw new NullReferenceException();
             }
             return thisString;
+#endif
         }
     }
 }

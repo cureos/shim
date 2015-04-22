@@ -33,8 +33,10 @@ namespace System.Xml.Linq
         {
 #if DOTNET
             self.Save(fileName);
-#else
+#elif SILVERLIGHT || NETFX_CORE
             self.Save(System.IO.File.Open(fileName, System.IO.FileMode.Create, System.IO.FileAccess.Write));
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
     }

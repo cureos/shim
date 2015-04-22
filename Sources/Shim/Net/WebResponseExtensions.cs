@@ -33,8 +33,10 @@ namespace System.Net
         {
 #if DOTNET || SILVERLIGHT
             webResponse.Close();
-#else
+#elif NETFX_CORE
             webResponse.Dispose();
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
     }

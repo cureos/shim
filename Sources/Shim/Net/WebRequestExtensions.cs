@@ -35,8 +35,10 @@ namespace System.Net
         {
 #if DOTNET
             return request.GetResponse();
-#else
+#elif SILVERLIGHT || NETFX_CORE
             return request.EndGetResponse(request.BeginGetResponse(null, null));
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
@@ -46,8 +48,10 @@ namespace System.Net
         {
 #if DOTNET
             return request.GetRequestStream();
-#else
+#elif SILVERLIGHT || NETFX_CORE
             return request.EndGetRequestStream(request.BeginGetRequestStream(null, null));
+#else
+            throw new PlatformNotSupportedException("PCL");
 #endif
         }
 
