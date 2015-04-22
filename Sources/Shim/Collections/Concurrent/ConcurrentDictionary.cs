@@ -28,7 +28,9 @@ namespace System.Collections.Concurrent
     {
         #region FIELDS
 
+#if !PCL
         private readonly object locker = new object();
+#endif
 
         #endregion
 
@@ -40,6 +42,9 @@ namespace System.Collections.Concurrent
             Func<TKey, TValue> addValueFactory,
             Func<TKey, TValue, TValue> updateValueFactory)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             TValue value;
             lock (this.locker)
             {
@@ -55,11 +60,15 @@ namespace System.Collections.Concurrent
                 }
             }
             return value;
+#endif
         }
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(`0,System.Func{`0,`1})"]/*' />
         public TValue GetOrAdd(TKey key, Func<TKey, TValue> valueFactory)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             TValue value;
             lock (this.locker)
             {
@@ -74,11 +83,15 @@ namespace System.Collections.Concurrent
                 }
             }
             return value;
+#endif
         }
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(`0,`1)"]/*' />
         public TValue GetOrAdd(TKey key, TValue value)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             lock (this.locker)
             {
                 if (ContainsKey(key))
@@ -89,11 +102,15 @@ namespace System.Collections.Concurrent
                 Add(key, value);
                 return value;
             }
+#endif
         }
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentDictionary`2.TryRemove(`0,`1@)"]/*' />
         public bool TryRemove(TKey key, out TValue value)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             lock (this.locker)
             {
                 if (ContainsKey(key))
@@ -105,6 +122,7 @@ namespace System.Collections.Concurrent
                 value = default(TValue);
                 return false;
             }
+#endif
         }
 
         #endregion

@@ -45,9 +45,6 @@
     <Compile Include="..\ApplicationException.cs">
       <Link>ApplicationException.cs</Link>
     </Compile>
-    <Compile Include="..\Collections\Generic\EnumerableExtensions.cs">
-      <Link>Collections\Generic\EnumerableExtensions.cs</Link>
-    </Compile>
     <Compile Include="..\ComponentModel\BrowsableAttribute.cs">
       <Link>ComponentModel\BrowsableAttribute.cs</Link>
     </Compile>

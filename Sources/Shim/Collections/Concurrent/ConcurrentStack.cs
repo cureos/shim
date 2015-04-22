@@ -28,8 +28,10 @@ namespace System.Collections.Concurrent
     {
         #region FIELDS
 
+#if !PCL
         private readonly Stack<T> stack;
- 
+#endif
+
         #endregion
 
         #region CONSTRUCTORS
@@ -37,7 +39,11 @@ namespace System.Collections.Concurrent
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.#ctor"]/*' />
         public ConcurrentStack()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             this.stack = new Stack<T>();
+#endif
         }
 
         #endregion
@@ -47,13 +53,27 @@ namespace System.Collections.Concurrent
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Collections.Concurrent.ConcurrentStack`1.Count"]/*' />
         public int Count
         {
-            get { return this.stack.Count; }
+            get
+            {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
+                return this.stack.Count;
+#endif
+            }
         }
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#IsSynchronized"]/*' />
         bool ICollection.IsSynchronized
         {
-            get { return false; }
+            get
+            {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
+                return false;
+#endif
+            }
         }
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="P:System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#SyncRoot"]/*' />
@@ -61,7 +81,11 @@ namespace System.Collections.Concurrent
         {
             get
             {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
                 throw new NotSupportedException();
+#endif
             }
         }
 
@@ -72,37 +96,61 @@ namespace System.Collections.Concurrent
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.GetEnumerator"]/*' />
         public IEnumerator<T> GetEnumerator()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             return this.stack.GetEnumerator();
+#endif
         }
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.System#Collections#IEnumerable#GetEnumerator"]/*' />
         IEnumerator IEnumerable.GetEnumerator()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             return GetEnumerator();
+#endif
         }
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.CopyTo(`0[],System.Int32)"]/*' />
         public void CopyTo(T[] array, int index)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             this.stack.CopyTo(array, index);
+#endif
         }
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)"]/*' />
         void ICollection.CopyTo(Array array, int index)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             this.stack.TypeSafeCopyTo(array, index);
+#endif
         }
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.ToArray"]/*' />
         public T[] ToArray()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             return this.stack.ToArray();
+#endif
         }
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentStack`1.Push(`0)"]/*' />
         public void Push(T item)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             this.stack.Push(item);
+#endif
         }
 
         #endregion

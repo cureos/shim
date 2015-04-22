@@ -29,9 +29,11 @@ namespace System.Data
     {
         #region FIELDS
 
+#if !PCL
         private readonly DataTable _table;
         private readonly List<DataRow> _rows;
         private readonly object _syncRoot;
+#endif
 
         #endregion
 
@@ -43,9 +45,13 @@ namespace System.Data
         /// <param name="table">Data table that owns this collection of data rows.</param>
         internal DataRowCollection(DataTable table)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _table = table;
             _rows = new List<DataRow>();
             _syncRoot = new object();
+#endif
         }
 
         #endregion
@@ -55,7 +61,14 @@ namespace System.Data
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataRowCollection.Item(System.Int32)"]/*' />
         public DataRow this[int index]
         {
-            get { return _rows[index]; }
+            get
+            {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
+                return _rows[index];
+#endif
+            }
         }
 
         #endregion
@@ -65,19 +78,40 @@ namespace System.Data
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataRowCollection.Count"]/*' />
         public int Count
         {
-            get { return _rows.Count; }
+            get
+            {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
+                return _rows.Count;
+#endif
+            }
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.InternalDataCollectionBase.IsSynchronized"]/*' />
         public bool IsSynchronized
         {
-            get { return true; }
+            get
+            {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
+                return true;
+#endif
+            }
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.InternalDataCollectionBase.SyncRoot"]/*' />
         public object SyncRoot
         {
-            get { return _syncRoot; }
+            get
+            {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
+                return _syncRoot;
+#endif
+            }
         }
 
         #endregion
@@ -87,39 +121,63 @@ namespace System.Data
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataRowCollection.Add(System.Data.DataRow)"]/*' />
         public void Add(DataRow row)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _rows.Add(row);
+#endif
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataRowCollection.Add(System.Object[])"]/*' />
         public DataRow Add(object[] values)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             var row = new DataRow(_table, values);
             _rows.Add(row);
             return row;
+#endif
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataRowCollection.Remove(System.Data.DataRow)"]/*' />
         public void Remove(DataRow row)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _rows.Remove(row);
+#endif
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataRowCollection.IndexOf(System.Data.DataRow)"]/*' />
         public int IndexOf(DataRow row)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             return _rows.IndexOf(row);
+#endif
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataRowCollection.GetEnumerator"]/*' />
         public IEnumerator GetEnumerator()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             return _rows.GetEnumerator();
+#endif
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataRowCollection.CopyTo(System.Array,System.Int32)"]/*' />
         public void CopyTo(Array ar, int index)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _rows.TypeSafeCopyTo(ar, index);
+#endif
         }
 
         #endregion

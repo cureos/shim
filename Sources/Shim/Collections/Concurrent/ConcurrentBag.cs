@@ -28,7 +28,9 @@ namespace System.Collections.Concurrent
     {
         #region FIELDS
 
+#if !PCL
         private int _peekCounter = 0;
+#endif
 
         #endregion
 
@@ -73,6 +75,9 @@ namespace System.Collections.Concurrent
         /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentBag`1.TryPeek(`0@)"]/*' />
         public bool TryPeek(out T result)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             if (_peekCounter < Count)
             {
                 result = this[_peekCounter++];
@@ -81,6 +86,7 @@ namespace System.Collections.Concurrent
 
             result = default(T);
             return false;
+#endif
         }
 
         #endregion
