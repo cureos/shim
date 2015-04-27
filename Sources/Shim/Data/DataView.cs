@@ -35,11 +35,8 @@ namespace System.Data
 
         #region CONSTRUCTORS
 
-        /// <summary>
-        /// Initializes a data view.
-        /// </summary>
-        /// <param name="table">Data table for which the view should be defined.</param>
-        internal DataView(DataTable table)
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataView.#ctor(System.Data.DataTable)"]/*' />
+        public DataView(DataTable table)
         {
             _table = table;
         }
