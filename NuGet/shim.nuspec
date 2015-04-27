@@ -12,8 +12,9 @@
         <description>Shim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>* Switched to PCL profile 328
+        <releaseNotes>* Added PCL profile 328
 * Fixed issues:
+#27 Add DataColumnCollection.Remove, public DataColumn constructor and DefaultValue property
 #25 ThreadPool and Timer already available in PCL profile 328
 #24 Converter delegate already available in Phone and Silverlight targets
 #22 Remove ShimPath (PathSeparator and DirectorSeparatorChar remain)
