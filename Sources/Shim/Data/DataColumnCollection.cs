@@ -28,15 +28,15 @@ namespace System.Data
     /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="T:System.Data.DataColumnCollection"]/*' />
     public sealed class DataColumnCollection : ICollection
     {
+#if !PCL
         #region FIELDS
 
-#if !PCL
         private readonly DataTable _table;
         private readonly List<DataColumn> _columns;
         private readonly object _syncRoot;
-#endif
 
         #endregion
+#endif
 
         #region CONSTRUCTORS
 
@@ -138,7 +138,7 @@ namespace System.Data
 #if PCL
             throw new PlatformNotSupportedException("PCL");
 #else
-            var column = new DataColumn(_table, columnName, type);
+            var column = new DataColumn(columnName, type) { Table = _table };
             _columns.Add(column);
             return column;
 #endif
@@ -151,6 +151,31 @@ namespace System.Data
             throw new PlatformNotSupportedException("PCL");
 #else
             return this.Add(columnName, typeof(string));
+#endif
+        }
+
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataColumnCollection.Add(System.Data.DataColumn)"]/*' />
+        public void Add(DataColumn column)
+        {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
+            column.Table = _table;
+            _columns.Add(column);
+#endif
+        }
+
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataColumnCollection.Remove(System.String)"]/*' />
+        public void Remove(string name)
+        {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
+            var column = _columns.SingleOrDefault(col => col.ColumnName.Equals(name));
+            if (column != null)
+            {
+                _columns.Remove(column);
+            }
 #endif
         }
 

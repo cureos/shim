@@ -33,13 +33,13 @@ namespace System.Data
         #region CONSTRUCTORS
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataColumn.#ctor(System.String,System.Type)"]/*' />
-        /// <param name="table"><see cref="DataTable"/> in which the column resides.</param>
-        internal DataColumn(DataTable table, string columnName, Type dataType)
+        public DataColumn(string columnName, Type dataType)
         {
-            Table = table;
             ColumnName = columnName;
-            ReadOnly = false;
             DataType = dataType;
+            Table = null;
+            ReadOnly = false;
+            DefaultValue = null;
         }
 
         #endregion
@@ -47,7 +47,7 @@ namespace System.Data
         #region PROPERTIES
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumn.Table"]/*' />
-        public DataTable Table { get; private set; }
+        public DataTable Table { get; internal set; }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumn.ReadOnly"]/*' />
         public bool ReadOnly { get; set; }
@@ -60,6 +60,9 @@ namespace System.Data
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumn.ColumnName"]/*' />
         public string ColumnName { get; set; }
+
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumn.DefaultValue"]/*' />
+        public Object DefaultValue { get; set; }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumn.Caption"]/*' />
         public string Caption

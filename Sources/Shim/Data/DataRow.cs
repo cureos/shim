@@ -75,7 +75,10 @@ namespace System.Data
         {
             get
             {
-                return _objects.ContainsKey(column) ? _objects[column] : DBNull.Value;
+                return _objects.ContainsKey(column)
+                           ? (_objects[column]
+                              ?? (column.DefaultValue != null ? (_objects[column] = column.DefaultValue) : null))
+                           : DBNull.Value;
             }
             set
             {
