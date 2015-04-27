@@ -94,9 +94,26 @@ namespace System.Data
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataColumnCollection.Add(System.String,System.Type)"]/*' />
         public DataColumn Add(string columnName, Type type)
         {
-            var column = new DataColumn(_table, columnName, type);
+            var column = new DataColumn(columnName, type) { Table = _table };
             _columns.Add(column);
             return column;
+        }
+
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataColumnCollection.Add(System.Data.DataColumn)"]/*' />
+        public void Add(DataColumn column)
+        {
+            column.Table = _table;
+            _columns.Add(column);
+        }
+
+        /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataColumnCollection.Remove(System.String)"]/*' />
+        public void Remove(string name)
+        {
+            var column = _columns.SingleOrDefault(col => col.ColumnName.Equals(name));
+            if (column != null)
+            {
+                _columns.Remove(column);
+            }
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataColumnCollection.Contains(System.String)"]/*' />

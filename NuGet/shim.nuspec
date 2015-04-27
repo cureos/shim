@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>shim</id>
-        <version>1.0.1.50409</version>
+        <version>1.0.1.50427</version>
         <title>Shim</title>
         <authors>Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/LICENSE.txt</licenseUrl>
@@ -12,7 +12,12 @@
         <description>Shim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 1.0.1.50409
+        <releaseNotes>v 1.0.1.50427
+-------------
+* Fixed issues:
+#27 Add DataColumnCollection.Remove, public DataColumn constructor and DefaultValue property
+
+v 1.0.1.50409
 -------------
 * Fixed issues:
 #13 Add some Type and String extension methods from Portable Accord
@@ -21,11 +26,7 @@ v 1.0.1.50407
 -------------
 * Fixed issues:
 #12 Add AssemblyResolve event and Load method to AppDomain
-#11 Add ResolveEventArgs type
-
-v 1.0.1.50318
--------------
-* Added library for Profile 111</releaseNotes>
+#11 Add ResolveEventArgs type</releaseNotes>
         <language>en-US</language>
         <tags>PCL Shim .NET Windows WP8 WPA81 Xamarin iOS Android</tags>
     </metadata>
