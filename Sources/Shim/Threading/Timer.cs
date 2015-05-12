@@ -25,7 +25,7 @@ namespace System.Threading
     public delegate void TimerCallback(object state);
 
     /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.Timer"]/*' />
-    public class Timer
+    public sealed class Timer : IDisposable
     {
         #region CONSTRUCTORS
 
@@ -47,6 +47,12 @@ namespace System.Threading
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Timer.Change(System.Int32,System.Int32)"]/*' />
         public bool Change(int dueTime, int period)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Timer.Dispose"]/*' />
+        public void Dispose()
         {
             throw new PlatformNotSupportedException("PCL");
         }
