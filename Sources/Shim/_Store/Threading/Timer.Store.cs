@@ -27,7 +27,7 @@ namespace System.Threading
     public delegate void TimerCallback(object state);
 
     /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Threading.Timer"]/*' />
-    public class Timer
+    public sealed class Timer : IDisposable
     {
         #region FIELDS
 
@@ -63,6 +63,11 @@ namespace System.Threading
             if (_timer != null) _timer.Cancel();
             _timer = CreateThreadPoolTimer(_callback, _state, dueTime, period);
             return _timer != null;
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Timer.Dispose"]/*' />
+        public void Dispose()
+        {
         }
 
         /// <summary>
