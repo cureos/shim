@@ -13,7 +13,9 @@
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
         <releaseNotes>* Added PCL profile 328
+* Minimum supported API for Xamarin Android is now Level 10 (v 2.3)
 * Fixed issues:
+#28 Implement IDisposable interface in System.Threading.Timer
 #27 Add DataColumnCollection.Remove, public DataColumn constructor and DefaultValue property
 #25 ThreadPool and Timer already available in PCL profile 328
 #24 Converter delegate already available in Phone and Silverlight targets
