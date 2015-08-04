@@ -21,7 +21,6 @@
 
 using System.Collections.Concurrent;
 using System.ComponentModel.DataAnnotations;
-using System.IO;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -37,9 +36,6 @@ using System.Xml.Linq;
 
 // System.ComponentModel.DataAnnotations
 [assembly: TypeForwardedTo(typeof(RangeAttribute))]
-
-// System.IO
-[assembly: TypeForwardedTo(typeof(Path))]
 
 // System.Net
 [assembly: TypeForwardedTo(typeof(IWebProxy))]
