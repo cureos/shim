@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B0773BAF-50E1-4C87-B863-CAAD804F8843}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shim</RootNamespace>
+    <AssemblyName>Shim</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Shim.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AppDomain.cs">
+      <Link>AppDomain.cs</Link>
+    </Compile>
+    <Compile Include="..\ApplicationException.cs">
+      <Link>ApplicationException.cs</Link>
+    </Compile>
+    <Compile Include="..\Collections\Generic\EnumerableExtensions.cs">
+      <Link>Collections\Generic\EnumerableExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\BrowsableAttribute.cs">
+      <Link>ComponentModel\BrowsableAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\CategoryAttribute.cs">
+      <Link>ComponentModel\CategoryAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\DescriptionAttribute.cs">
+      <Link>ComponentModel\DescriptionAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\DisplayNameAttribute.cs">
+      <Link>ComponentModel\DisplayNameAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\ISynchronizeInvoke.cs">
+      <Link>ComponentModel\ISynchronizeInvoke.cs</Link>
+    </Compile>
+    <Compile Include="..\Console.cs">
+      <Link>Console.cs</Link>
+    </Compile>
+    <Compile Include="..\Converter.cs">
+      <Link>Converter.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\Common\SchemaTableColumn.cs">
+      <Link>Data\Common\SchemaTableColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\Common\SchemaTableOptionalColumn.cs">
+      <Link>Data\Common\SchemaTableOptionalColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DataColumn.cs">
+      <Link>Data\DataColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DataColumnCollection.cs">
+      <Link>Data\DataColumnCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DataRow.cs">
+      <Link>Data\DataRow.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DataRowCollection.cs">
+      <Link>Data\DataRowCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DataTable.cs">
+      <Link>Data\DataTable.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DataView.cs">
+      <Link>Data\DataView.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\DbType.cs">
+      <Link>Data\DbType.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\IDataReader.cs">
+      <Link>Data\IDataReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Data\IDataRecord.cs">
+      <Link>Data\IDataRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\DBNull.cs">
+      <Link>DBNull.cs</Link>
+    </Compile>
+    <Compile Include="..\Diagnostics\Process.cs">
+      <Link>Diagnostics\Process.cs</Link>
+    </Compile>
+    <Compile Include="..\Diagnostics\StackTrace.cs">
+      <Link>Diagnostics\StackTrace.cs</Link>
+    </Compile>
+    <Compile Include="..\Diagnostics\Trace.cs">
+      <Link>Diagnostics\Trace.cs</Link>
+    </Compile>
+    <Compile Include="..\ICloneable.cs">
+      <Link>ICloneable.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\DirectoryInfo.cs">
+      <Link>IO\DirectoryInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\FileAccess.cs">
+      <Link>IO\FileAccess.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\FileAttributes.cs">
+      <Link>IO\FileAttributes.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\FileMode.cs">
+      <Link>IO\FileMode.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\FileShare.cs">
+      <Link>IO\FileShare.cs</Link>
+    </Compile>
+    <Compile Include="..\IO\SearchOption.cs">
+      <Link>IO\SearchOption.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\EndPoint.cs">
+      <Link>Net\EndPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\Sockets\Socket.cs">
+      <Link>Net\Sockets\Socket.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\IPAddress.cs">
+      <Link>Net\IPAddress.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\Security\SslPolicyErrors.cs">
+      <Link>Net\Security\SslPolicyErrors.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\Sockets\SocketError.cs">
+      <Link>Net\Sockets\SocketError.cs</Link>
+    </Compile>
+    <Compile Include="..\Net\Sockets\SocketException.cs">
+      <Link>Net\Sockets\SocketException.cs</Link>
+    </Compile>
+    <Compile Include="..\NonSerializedAttribute.cs">
+      <Link>NonSerializedAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\NotFiniteNumberException.cs">
+      <Link>NotFiniteNumberException.cs</Link>
+    </Compile>
+    <Compile Include="..\Reflection\Binder.cs">
+      <Link>Reflection\Binder.cs</Link>
+    </Compile>
+    <Compile Include="..\Reflection\BindingFlags.cs">
+      <Link>Reflection\BindingFlags.cs</Link>
+    </Compile>
+    <Compile Include="..\ResolveEventArgs.cs">
+      <Link>ResolveEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs">
+      <Link>Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\Runtime\Serialization\ISerializable.cs">
+      <Link>Runtime\Serialization\ISerializable.cs</Link>
+    </Compile>
+    <Compile Include="..\Runtime\Serialization\OptionalFieldAttribute.cs">
+      <Link>Runtime\Serialization\OptionalFieldAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Runtime\Serialization\SerializationInfo.cs">
+      <Link>Runtime\Serialization\SerializationInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Authentication\SslProtocols.cs">
+      <Link>Security\Authentication\SslProtocols.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\RNGCryptoServiceProvider.cs">
+      <Link>Security\Cryptography\RNGCryptoServiceProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\OpenFlags.cs">
+      <Link>Security\Cryptography\X509Certificates\OpenFlags.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\StoreLocation.cs">
+      <Link>Security\Cryptography\X509Certificates\StoreLocation.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\StoreName.cs">
+      <Link>Security\Cryptography\X509Certificates\StoreName.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\X509Certificate.cs">
+      <Link>Security\Cryptography\X509Certificates\X509Certificate.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\X509Certificate2Collection.cs">
+      <Link>Security\Cryptography\X509Certificates\X509Certificate2Collection.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\X509Chain.cs">
+      <Link>Security\Cryptography\X509Certificates\X509Chain.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\X509FindType.cs">
+      <Link>Security\Cryptography\X509Certificates\X509FindType.cs</Link>
+    </Compile>
+    <Compile Include="..\Security\Cryptography\X509Certificates\X509Store.cs">
+      <Link>Security\Cryptography\X509Certificates\X509Store.cs</Link>
+    </Compile>
+    <Compile Include="..\SerializableAttribute.cs">
+      <Link>SerializableAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Threading\Thread.cs">
+      <Link>Threading\Thread.cs</Link>
+    </Compile>
+    <Compile Include="..\Threading\ThreadAbortException.cs">
+      <Link>Threading\ThreadAbortException.cs</Link>
+    </Compile>
+    <Compile Include="..\Timers\ElapsedEventArgs.cs">
+      <Link>Timers\ElapsedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\IO\Directory.Store.cs">
+      <Link>IO\Directory.Store.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\IO\File.Store.cs">
+      <Link>IO\File.Store.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\IO\FileHelper.cs">
+      <Link>IO\FileHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\IO\FileInfo.Store.cs">
+      <Link>IO\FileInfo.Store.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\IO\FileStream.Store.cs">
+      <Link>IO\FileStream.Store.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\Net\Security\SslStream.Store.cs">
+      <Link>Net\Security\SslStream.Store.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\Net\Sockets\NetworkStream.Store.cs">
+      <Link>Net\Sockets\NetworkStream.Store.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\Net\Sockets\TcpClient.Store.cs">
+      <Link>Net\Sockets\TcpClient.Store.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\Net\Sockets\TcpListener.Store.cs">
+      <Link>Net\Sockets\TcpListener.Store.cs</Link>
+    </Compile>
+    <Compile Include="..\_Store\Threading\ThreadPool.Store.cs">
+      <Link>Threading\ThreadPool.Store.cs</Link>
+    </Compile>
+    <Compile Include="TypeForwarding.Win81.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Shim.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="..\Shim.Shared.projitems" Label="Shared" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
