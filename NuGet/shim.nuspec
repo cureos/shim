@@ -15,6 +15,7 @@
         <releaseNotes>* Added PCL profile 328
 * Minimum supported API for Xamarin Android is now Level 10 (v 2.3)
 * Fixed issues:
+#30 RangeAttribute is already available in Windows 8.1
 #28 Implement IDisposable interface in System.Threading.Timer
 #27 Add DataColumnCollection.Remove, public DataColumn constructor and DefaultValue property
 #25 ThreadPool and Timer already available in PCL profile 328
@@ -67,9 +68,9 @@
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pdb" target="lib\portable-win81+wpa81" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.xml" target="lib\portable-win81+wpa81" />
         <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pri" target="lib\portable-win81+wpa81" />
-        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.dll" target="lib\netcore451" />
-        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pdb" target="lib\netcore451" />
-        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.xml" target="lib\netcore451" />
-        <file src="..\Sources\Shim\_Universal\bin\Release\Shim.pri" target="lib\netcore451" />
+        <file src="..\Sources\Shim\_Win81\bin\Release\Shim.dll" target="lib\netcore451" />
+        <file src="..\Sources\Shim\_Win81\bin\Release\Shim.pdb" target="lib\netcore451" />
+        <file src="..\Sources\Shim\_Win81\bin\Release\Shim.xml" target="lib\netcore451" />
+        <file src="..\Sources\Shim\_Win81\bin\Release\Shim.pri" target="lib\netcore451" />
     </files>
 </package>

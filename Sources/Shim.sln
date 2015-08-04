@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Shim", "Shim\_Net\Net.Shim.csproj", "{816E086D-DA84-4997-8BD9-448C92A1514F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phone.Shim", "Shim\_Phone\Phone.Shim.csproj", "{8A8A3EC5-94B0-4579-9C09-C4DD6431F958}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Shim", "Shim\_Store\Store.Shim.csproj", "{AB25D53A-A1C1-4815-9CC8-15012FB7E416}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win80.Shim", "Shim\_Store\Win80.Shim.csproj", "{AB25D53A-A1C1-4815-9CC8-15012FB7E416}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Touch.Shim", "Shim\_Touch\Touch.Shim.csproj", "{28B1CAEE-315F-4981-8476-C14B5EDD2BC9}"
 EndProject
@@ -50,6 +50,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable111.Shim", "Shim\_P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable259.Shim", "Shim\_Profile259\Portable259.Shim.csproj", "{31382903-E9DB-4426-A85A-CF88F71B45F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win81.Shim", "Shim\_Win81\Win81.Shim.csproj", "{B0773BAF-50E1-4C87-B863-CAAD804F8843}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shim\Shim.Shared.projitems*{97e26603-22f0-4f43-8140-20b7d44a2893}*SharedItemsImports = 4
@@ -66,6 +68,7 @@ Global
 		Shim\Shim.Shared.projitems*{45c3cf7e-ed11-4baf-866a-b191f17d77c3}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{ab25d53a-a1c1-4815-9cc8-15012fb7e416}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{816e086d-da84-4997-8bd9-448c92a1514f}*SharedItemsImports = 4
+		Shim\Shim.Shared.projitems*{b0773baf-50e1-4c87-b863-caad804f8843}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{cb573e57-fef7-4fb0-8922-560a85d80f20}*SharedItemsImports = 13
 		Shim\Shim.Shared.projitems*{56a94cf2-5b95-459a-b623-716eedaa18fc}*SharedItemsImports = 4
 	EndGlobalSection
@@ -134,6 +137,10 @@ Global
 		{31382903-E9DB-4426-A85A-CF88F71B45F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31382903-E9DB-4426-A85A-CF88F71B45F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31382903-E9DB-4426-A85A-CF88F71B45F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0773BAF-50E1-4C87-B863-CAAD804F8843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0773BAF-50E1-4C87-B863-CAAD804F8843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0773BAF-50E1-4C87-B863-CAAD804F8843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0773BAF-50E1-4C87-B863-CAAD804F8843}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
