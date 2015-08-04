@@ -231,7 +231,7 @@
     <Compile Include="Net\Sockets\TcpListener.Store.cs" />
     <Compile Include="Threading\ThreadPool.Store.cs" />
     <Compile Include="Threading\Timer.Store.cs" />
-    <Compile Include="TypeForwarding.Store.cs" />
+    <Compile Include="TypeForwarding.Win80.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
