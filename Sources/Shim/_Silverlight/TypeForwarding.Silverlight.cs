@@ -37,6 +37,7 @@ using System.Threading;
 [assembly: TypeForwardedTo(typeof(Converter<,>))]
 [assembly: TypeForwardedTo(typeof(DBNull))]
 [assembly: TypeForwardedTo(typeof(ResolveEventArgs))]
+[assembly: TypeForwardedTo(typeof(ResolveEventHandler))]
 
 // System.Diagnostics
 [assembly: TypeForwardedTo(typeof(StackTrace))]
