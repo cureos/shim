@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>shim</id>
-        <version>1.0.1.50804</version>
+        <version>1.0.1.50909</version>
         <title>Shim</title>
         <authors>Anders Gustafsson, Cureos AB</authors>
         <licenseUrl>https://raw.githubusercontent.com/cureos/shim/master/NuGet/LICENSE.txt</licenseUrl>
@@ -12,7 +12,12 @@
         <description>Shim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
         <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
-        <releaseNotes>v 1.0.1.50804
+        <releaseNotes>v 1.0.1.50909
+-------------
+* Fixed issues:
+#31 TypeForwardedTo missing for ResolveEventHandler
+
+v 1.0.1.50804
 -------------
 * Fixed issues:
 #30 RangeAttribute is already available in Windows 8.1
@@ -21,12 +26,7 @@ v 1.0.1.50512
 -------------
 * Minimum supported API for Xamarin Android is now Level 10 (v 2.3)
 * Fixed issues:
-#28 Implement IDisposable interface in System.Threading.Timer
-
-v 1.0.1.50427
--------------
-* Fixed issues:
-#27 Add DataColumnCollection.Remove, public DataColumn constructor and DefaultValue property</releaseNotes>
+#28 Implement IDisposable interface in System.Threading.Timer</releaseNotes>
         <language>en-US</language>
         <tags>PCL Shim .NET Windows WP8 WPA81 Xamarin iOS Android</tags>
     </metadata>

@@ -55,6 +55,7 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(NonSerializedAttribute))]
 [assembly: TypeForwardedTo(typeof(NotFiniteNumberException))]
 [assembly: TypeForwardedTo(typeof(ResolveEventArgs))]
+[assembly: TypeForwardedTo(typeof(ResolveEventHandler))]
 [assembly: TypeForwardedTo(typeof(SerializableAttribute))]
 
 // System.Collections.Concurrent
