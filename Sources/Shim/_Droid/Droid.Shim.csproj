@@ -49,11 +49,12 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\_Net\TypeForwarding.Net.cs">
-      <Link>TypeForwarding.Net.cs</Link>
+    <Compile Include="..\_Net\TypeForwarding.Xamarin.cs">
+      <Link>TypeForwarding.Xamarin.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="..\Shim.Shared.projitems" Label="Shared" />
+  <Import Project="..\_Xamarin\Shim.Xamarin.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

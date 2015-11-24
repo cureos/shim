@@ -47,11 +47,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\_Net\TypeForwarding.Net.cs">
-      <Link>TypeForwarding.Net.cs</Link>
+    <Compile Include="..\_Net\TypeForwarding.Xamarin.cs">
+      <Link>TypeForwarding.Xamarin.cs</Link>
     </Compile>
   </ItemGroup>
   <Import Project="..\Shim.Shared.projitems" Label="Shared" />
+  <Import Project="..\_Xamarin\Shim.Xamarin.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>

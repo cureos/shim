@@ -60,8 +60,23 @@
     <Compile Include="..\ComponentModel\DisplayNameAttribute.cs">
       <Link>ComponentModel\DisplayNameAttribute.cs</Link>
     </Compile>
+    <Compile Include="..\ComponentModel\IContainer.cs">
+      <Link>ComponentModel\IContainer.cs</Link>
+    </Compile>
     <Compile Include="..\ComponentModel\ISynchronizeInvoke.cs">
       <Link>ComponentModel\ISynchronizeInvoke.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\ITypeDescriptorContext.cs">
+      <Link>ComponentModel\ITypeDescriptorContext.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\MemberDescriptor.cs">
+      <Link>ComponentModel\MemberDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\PropertyDescriptor.cs">
+      <Link>ComponentModel\PropertyDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\TypeConverter.cs">
+      <Link>ComponentModel\TypeConverter.cs</Link>
     </Compile>
     <Compile Include="..\Console.cs">
       <Link>Console.cs</Link>
@@ -87,6 +102,9 @@
     <Compile Include="..\Data\DataRowCollection.cs">
       <Link>Data\DataRowCollection.cs</Link>
     </Compile>
+    <Compile Include="..\Data\DataSet.cs">
+      <Link>Data\DataSet.cs</Link>
+    </Compile>
     <Compile Include="..\Data\DataTable.cs">
       <Link>Data\DataTable.cs</Link>
     </Compile>
@@ -104,6 +122,9 @@
     </Compile>
     <Compile Include="..\DBNull.cs">
       <Link>DBNull.cs</Link>
+    </Compile>
+    <Compile Include="..\Diagnostics\ExcludeFromCodeCoverageAttribute.cs">
+      <Link>Diagnostics\ExcludeFromCodeCoverageAttribute.cs</Link>
     </Compile>
     <Compile Include="..\Diagnostics\Process.cs">
       <Link>Diagnostics\Process.cs</Link>
@@ -240,6 +261,12 @@
     <Compile Include="..\SerializableAttribute.cs">
       <Link>SerializableAttribute.cs</Link>
     </Compile>
+    <Compile Include="..\ServiceModel\CallbackBehaviorAttribute.cs">
+      <Link>ServiceModel\CallbackBehaviorAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\ServiceModel\ConcurrencyMode.cs">
+      <Link>ServiceModel\ConcurrencyMode.cs</Link>
+    </Compile>
     <Compile Include="..\Threading\Thread.cs">
       <Link>Threading\Thread.cs</Link>
     </Compile>
@@ -258,8 +285,14 @@
     <Compile Include="..\Timers\Timer.cs">
       <Link>Timers\Timer.cs</Link>
     </Compile>
+    <Compile Include="..\Transactions\IsolationLevel.cs">
+      <Link>Transactions\IsolationLevel.cs</Link>
+    </Compile>
     <Compile Include="..\UriFormatException.cs">
       <Link>UriFormatException.cs</Link>
+    </Compile>
+    <Compile Include="..\Windows\Point.cs">
+      <Link>Windows\Point.cs</Link>
     </Compile>
     <Compile Include="TypeForwarding.Profile111.cs" />
   </ItemGroup>
