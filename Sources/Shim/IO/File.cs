@@ -21,6 +21,8 @@
 
 namespace System.IO
 {
+    using System.Collections.Generic;
+
     /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.IO.File"]/*' />
     public static class File
     {
@@ -50,6 +52,18 @@ namespace System.IO
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.AppendText(System.String)"]/*' />
+        public static StreamWriter AppendText(string path)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.OpenText(System.String)"]/*' />
+        public static StreamReader OpenText(string path)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.Move(System.String,System.String)"]/*' />
         public static void Move(string sourceFileName, string destFileName)
         {
@@ -68,14 +82,50 @@ namespace System.IO
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.ReadAllText(System.String)"]/*' />
+        public static string ReadAllText(string path)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.ReadLines(System.String)"]/*' />
+        public static IEnumerable<string> ReadLines(string path)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.WriteAllBytes(System.String,System.Byte[])"]/*' />
         public static void WriteAllBytes(string path, byte[] bytes)
         {
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.WriteAllLines(System.String,System.String[])"]/*' />
+        public static void WriteAllLines(string path, string[] contents)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.WriteAllLines(System.String,System.Collections.Generic.IEnumerable{System.String})"]/*' />
+        public static void WriteAllLines(string path, IEnumerable<string> contents)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.WriteAllText(System.String,System.String)"]/*' />
         public static void WriteAllText(string path, string contents)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.AppendAllLines(System.String,System.Collections.Generic.IEnumerable{System.String})"]/*' />
+        public static void AppendAllLines(string path, IEnumerable<string> contents)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.AppendAllText(System.String,System.String)"]/*' />
+        public static void AppendAllText(string path, string contents)
         {
             throw new PlatformNotSupportedException("PCL");
         }
@@ -92,8 +142,20 @@ namespace System.IO
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.Open(System.String,System.IO.FileMode)"]/*' />
+        public static FileStream Open(string path, FileMode mode)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.Open(System.String,System.IO.FileMode,System.IO.FileAccess)"]/*' />
         public static FileStream Open(string path, FileMode mode, FileAccess access)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
+        /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.Open(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)"]/*' />
+        public static FileStream Open(string path, FileMode mode, FileAccess access, FileShare share)
         {
             throw new PlatformNotSupportedException("PCL");
         }
