@@ -45,5 +45,6 @@ using System.Reflection;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.0")]
-[assembly: AssemblyFileVersion("2.0.0.50417")]
+// For build number convention is "YEAR" + "NUMBER_OF_DAYS_SINCE_BEGINNING_OF_THE_YEAR" + "BUILD_COUNT_THIS_DAY"
+[assembly: AssemblyVersion("2.0.0.16039")]
+[assembly: AssemblyFileVersion("2.0.0.16039")]

@@ -21,37 +21,23 @@
 
 namespace System.Collections.Generic
 {
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
     /// <summary>
     /// Shim complement for the <see cref="List{T}"/> class. <see cref="List{T}"/> instance methods that are not available in the 
     /// PCL profile are here provided as equivalent extension methods.
     /// </summary>
     public static partial class ListExtensions
     {
-        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Generic.List`1.AsReadOnly"]/*' />
-        /// <param name="list">List to be returned as a read-only list.</param>
-        public static ReadOnlyCollection<T> AsReadOnly<T>(this List<T> list)
+        /// <summary>
+        /// For each extension for generic lists.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        /// <param name="action">The action.</param>
+        public static void ForEach<T>(this List<T> source, Action<T> action)
         {
-#if PCL
-            throw new PlatformNotSupportedException("PCL");
-#else
-            return list.AsReadOnly();
-#endif
-        }
-
-        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Generic.List`1.ConvertAll``1(System.Converter{`0,``0})"]/*' />
-        /// <param name="list">List subject to conversion.</param>
-        public static List<TOutput> ConvertAll<T, TOutput>(this List<T> list, Converter<T, TOutput> converter)
-        {
-#if PCL
-            throw new PlatformNotSupportedException("PCL");
-#elif DOTNET
-            return list.ConvertAll(converter);
-#else
-            return list.Select(item => converter(item)).ToList();
-#endif
-        }
+            foreach (var current in source)
+            {
+                action.Invoke(current);
+            }
+        }        
     }
 }

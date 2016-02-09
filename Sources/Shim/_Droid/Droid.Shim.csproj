@@ -52,6 +52,7 @@
     <Compile Include="..\_Net\TypeForwarding.Xamarin.cs">
       <Link>TypeForwarding.Xamarin.cs</Link>
     </Compile>
+    <Compile Include="TestNamespaces.cs" />
   </ItemGroup>
   <Import Project="..\Shim.Shared.projitems" Label="Shared" />
   <Import Project="..\_Xamarin\Shim.Xamarin.projitems" Label="Shared" />

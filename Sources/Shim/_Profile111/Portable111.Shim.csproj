@@ -219,6 +219,9 @@
     <Compile Include="..\Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs">
       <Link>Runtime\Serialization\Formatters\Binary\BinaryFormatter.cs</Link>
     </Compile>
+    <Compile Include="..\Runtime\Serialization\IObjectReference.cs">
+      <Link>Runtime\Serialization\IObjectReference.cs</Link>
+    </Compile>
     <Compile Include="..\Runtime\Serialization\ISerializable.cs">
       <Link>Runtime\Serialization\ISerializable.cs</Link>
     </Compile>
@@ -303,6 +306,7 @@
     <AssemblyOriginatorKeyFile>..\Shim.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="..\Shim.Shared.projitems" Label="Shared" />
+  <Import Project="..\_Shim.Shared.Portable\Shim.Shared.Portable.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

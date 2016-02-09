@@ -57,6 +57,7 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(ResolveEventArgs))]
 [assembly: TypeForwardedTo(typeof(ResolveEventHandler))]
 [assembly: TypeForwardedTo(typeof(SerializableAttribute))]
+[assembly: TypeForwardedTo(typeof(UriFormatException))]
 
 // System.Collections.Concurrent
 [assembly: TypeForwardedTo(typeof(ConcurrentBag<>))]
@@ -69,9 +70,9 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(CategoryAttribute))]
 [assembly: TypeForwardedTo(typeof(DescriptionAttribute))]
 [assembly: TypeForwardedTo(typeof(DisplayNameAttribute))]
+[assembly: TypeForwardedTo(typeof(IContainer))]
 [assembly: TypeForwardedTo(typeof(ISynchronizeInvoke))]
 [assembly: TypeForwardedTo(typeof(ITypeDescriptorContext))]
-[assembly: TypeForwardedTo(typeof(IContainer))]
 [assembly: TypeForwardedTo(typeof(MemberDescriptor))]
 [assembly: TypeForwardedTo(typeof(PropertyDescriptor))]
 [assembly: TypeForwardedTo(typeof(TypeConverter))]
@@ -84,8 +85,8 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(DataColumnCollection))]
 [assembly: TypeForwardedTo(typeof(DataRow))]
 [assembly: TypeForwardedTo(typeof(DataRowCollection))]
-[assembly: TypeForwardedTo(typeof(DataTable))]
 [assembly: TypeForwardedTo(typeof(DataSet))]
+[assembly: TypeForwardedTo(typeof(DataTable))]
 [assembly: TypeForwardedTo(typeof(DataView))]
 [assembly: TypeForwardedTo(typeof(DbType))]
 [assembly: TypeForwardedTo(typeof(IDataReader))]
@@ -145,6 +146,7 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(UnmanagedType))]
 
 // System.Runtime.Serialization
+[assembly: TypeForwardedTo(typeof(IObjectReference))]
 [assembly: TypeForwardedTo(typeof(ISerializable))]
 [assembly: TypeForwardedTo(typeof(OptionalFieldAttribute))]
 [assembly: TypeForwardedTo(typeof(SerializationInfo))]
@@ -187,6 +189,9 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(ElapsedEventArgs))]
 [assembly: TypeForwardedTo(typeof(ElapsedEventHandler))]
 [assembly: TypeForwardedTo(typeof(System.Timers.Timer))]
+
+// System.Transactions
+[assembly: TypeForwardedTo(typeof(IsolationLevel))]
 
 // System.Xml.Linq
 [assembly: TypeForwardedTo(typeof(XDocument))]
