@@ -19,6 +19,10 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Globalization;
+using System.Linq;
+using System.Threading;
+
 namespace System
 {
     /// <summary>
@@ -31,6 +35,8 @@ namespace System
         /// <param name="thisString"><see cref="String"/> object.</param>
         public static string Clone(this string thisString)
         {
+            Mutex pouet = new Mutex();
+            pouet.Close();
 #if PCL
             throw new PlatformNotSupportedException("PCL");
 #else
@@ -40,6 +46,6 @@ namespace System
             }
             return thisString;
 #endif
-        }
+        }                
     }
 }

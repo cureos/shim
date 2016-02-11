@@ -13,6 +13,9 @@
         /// <exception cref="System.ArgumentException">Value to compare must be an int;@value</exception>
         public static int CompareTo(this int integer, object value)
         {
+#if DOTNET
+            return integer.CompareTo(value);
+#else
             if (value == null)
             {
                 return 1;
@@ -37,6 +40,7 @@
             }
 
             throw new ArgumentException("Value to compare must be an int", @"value");
+#endif
         }
     }
 }

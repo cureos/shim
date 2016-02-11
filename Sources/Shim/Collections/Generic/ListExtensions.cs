@@ -53,5 +53,24 @@ namespace System.Collections.Generic
             return list.Select(item => converter(item)).ToList();
 #endif
         }
+
+        /// <summary>
+        /// For each extension for generic lists.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        /// <param name="action">The action.</param>
+        public static void ForEach<T>(this List<T> source, Action<T> action)
+        {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#elif DOTNET
+            source.ForEach(action);
+#else
+            foreach (var current in source)
+            {
+                action.Invoke(current);
+            }
+#endif
+        }
     }
 }

@@ -73,6 +73,7 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(IContainer))]
 [assembly: TypeForwardedTo(typeof(ISynchronizeInvoke))]
 [assembly: TypeForwardedTo(typeof(ITypeDescriptorContext))]
+[assembly: TypeForwardedTo(typeof(LocalizableAttribute))]
 [assembly: TypeForwardedTo(typeof(MemberDescriptor))]
 [assembly: TypeForwardedTo(typeof(PropertyDescriptor))]
 [assembly: TypeForwardedTo(typeof(TypeConverter))]

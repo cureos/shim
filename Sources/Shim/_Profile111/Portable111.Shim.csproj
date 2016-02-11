@@ -36,7 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AppDomain.cs">
@@ -68,6 +67,9 @@
     </Compile>
     <Compile Include="..\ComponentModel\ITypeDescriptorContext.cs">
       <Link>ComponentModel\ITypeDescriptorContext.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\LocalizableAttribute.cs">
+      <Link>ComponentModel\LocalizableAttribute.cs</Link>
     </Compile>
     <Compile Include="..\ComponentModel\MemberDescriptor.cs">
       <Link>ComponentModel\MemberDescriptor.cs</Link>
@@ -297,6 +299,7 @@
     <Compile Include="..\Windows\Point.cs">
       <Link>Windows\Point.cs</Link>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeForwarding.Profile111.cs" />
   </ItemGroup>
   <PropertyGroup>
@@ -306,7 +309,6 @@
     <AssemblyOriginatorKeyFile>..\Shim.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="..\Shim.Shared.projitems" Label="Shared" />
-  <Import Project="..\_Shim.Shared.Portable\Shim.Shared.Portable.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
