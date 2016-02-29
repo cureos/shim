@@ -49,17 +49,25 @@ namespace System.Threading
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.#ctor(System.Threading.ThreadStart)"]/*' />
         public Thread(ThreadStart start)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             this.start = start;
             this.parameterizedStart = null;
             this.task = null;
+#endif
         }
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.#ctor(System.Threading.ParameterizedThreadStart)"]/*' />
         public Thread(ParameterizedThreadStart start)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             this.start = null;
             this.parameterizedStart = start;
             this.task = null;
+#endif
         }
 
         #endregion
@@ -88,15 +96,23 @@ namespace System.Threading
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.Start"]/*' />
         public void Start()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             if (this.start == null) throw new InvalidOperationException("Parameter-less action not defined for this thread instance.");
             this.task = Task.Run(new Action(this.start));
+#endif
         }
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.Start(System.Object)"]/*' />
         public void Start(object parameter)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             if (this.parameterizedStart == null) throw new InvalidOperationException("Parameterized action not defined for this thread instance.");
             this.task = Task.Run(() => this.parameterizedStart(parameter));
+#endif
         }
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.Join"]/*' />
@@ -120,7 +136,11 @@ namespace System.Threading
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Threading.Thread.Sleep(System.Int32)"]/*' />
         public static void Sleep(int millisecondsTimeout)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             new ManualResetEvent(false).WaitOne(millisecondsTimeout);
+#endif
         }
 
         #endregion

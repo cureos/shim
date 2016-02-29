@@ -31,10 +31,14 @@ namespace System.Data
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.#ctor"]/*' />
         public DataTable()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             Columns = new DataColumnCollection(this);
             Rows = new DataRowCollection(this);
             Locale = CultureInfo.CurrentCulture;
             DefaultView = new DataView(this);
+#endif
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.#ctor(System.String)"]/*' />
@@ -73,22 +77,33 @@ namespace System.Data
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.Clone"]/*' />
         public DataTable Clone()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             var table = new DataTable { Locale = this.Locale };
             foreach (DataColumn column in this.Columns) table.Columns.Add(column.ColumnName, column.DataType);
             return table;
+#endif
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.Copy"]/*' />
         public DataTable Copy()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             var table = Clone();
             foreach (DataRow row in this.Rows) table.Rows.Add(row.ItemArray);
             return table;
+#endif
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.ImportRow(System.Data.DataRow)"]/*' />
         public void ImportRow(DataRow row)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             var newRow = new DataRow(this);
             foreach (DataColumn column in this.Columns)
             {
@@ -96,24 +111,37 @@ namespace System.Data
                 newRow[columnName] = row[columnName];
             }
             Rows.Add(newRow);
+#endif
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.NewRow"]/*' />
         public DataRow NewRow()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             return new DataRow(this);
+#endif
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.Select(System.String,System.String)"]/*' />
         public DataRow[] Select(string filterExpression, string sort)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             throw new NotImplementedException();
+#endif
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataTable.Load(System.Data.IDataReader)"]/*' />
         public void Load(IDataReader reader)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             throw new NotImplementedException();
+#endif
         }
 
         #endregion

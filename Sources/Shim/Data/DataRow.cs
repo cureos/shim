@@ -44,10 +44,14 @@ namespace System.Data
         /// <param name="cells">Cells to be included in the data row.</param>
         internal DataRow(DataTable table, IEnumerable cells)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             Table = table;
             _objects = table.Columns.Cast<DataColumn>()
                 .Zip(cells.Cast<object>(), Tuple.Create)
                 .ToDictionary(tuple => tuple.Item1, tuple => tuple.Item2);
+#endif
         }
 
         /// <summary>
@@ -56,8 +60,12 @@ namespace System.Data
         /// <param name="table">Data table that is the owner of this data row.</param>
         internal DataRow(DataTable table)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             Table = table;
             _objects = new Dictionary<DataColumn, object>();
+#endif
         }
 
         #endregion
@@ -67,7 +75,14 @@ namespace System.Data
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataRow.Item(System.Int32)"]/*' />
         public object this[int columnIndex]
         {
-            get { return _objects.ElementAt(columnIndex); }
+            get
+            {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
+                return _objects.ElementAt(columnIndex);
+#endif
+            }
         }
 
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataRow.Item(System.Data.DataColumn)"]/*' />
@@ -75,14 +90,21 @@ namespace System.Data
         {
             get
             {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
                 return _objects.ContainsKey(column)
                            ? (_objects[column]
                               ?? (column.DefaultValue != null ? (_objects[column] = column.DefaultValue) : null))
                            : DBNull.Value;
+#endif
             }
             set
             {
-#if SILVERLIGHT || PCL
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
+#if SILVERLIGHT
                 if (!column.DataType.IsInstanceOfType(value))
 #else
                 if (!column.DataType.GetTypeInfo().IsAssignableFrom(value.GetType().GetTypeInfo()))
@@ -90,6 +112,7 @@ namespace System.Data
                     throw new InvalidCastException(String.Format("Value {0} of type {1} is not assignable to column data type {2}.",
                         value, value.GetType().Name, column.DataType.Name));
                 _objects[column] = value;
+#endif
             }
         }
 
@@ -98,13 +121,21 @@ namespace System.Data
         {
             get
             {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
                 var column = GetDataColumn(columnName);
                 return this[column];
+#endif
             }
             set
             {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
                 var column = GetDataColumn(columnName);
                 this[column] = value;
+#endif
             }
         }
 
@@ -121,7 +152,14 @@ namespace System.Data
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataRow.ItemArray"]/*' />
         public object[] ItemArray
         {
-            get { return _objects.Values.ToArray(); }
+            get
+            {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
+                return _objects.Values.ToArray();
+#endif
+            }
         }
 
         #endregion
@@ -130,6 +168,9 @@ namespace System.Data
 
         private DataColumn GetDataColumn(string columnName)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             try
             {
                 return Table.Columns.Cast<DataColumn>().Single(col => col.ColumnName.Equals(columnName));
@@ -138,6 +179,7 @@ namespace System.Data
             {
                 throw new ArgumentException("Specified column name does not exist in data table", e);
             }
+#endif
         }
 
         #endregion

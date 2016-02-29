@@ -29,7 +29,11 @@ namespace System.Security.Cryptography.X509Certificates
         /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Security.Cryptography.X509Certificates.X509Store.#ctor(System.Security.Cryptography.X509Certificates.StoreName,System.Security.Cryptography.X509Certificates.StoreLocation)"]/*' />
         public X509Store(StoreName storeName, StoreLocation storeLocation)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             Certificates = new X509Certificate2Collection();
+#endif
         }
 
         #endregion
@@ -45,12 +49,18 @@ namespace System.Security.Cryptography.X509Certificates
 
         /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Security.Cryptography.X509Certificates.X509Store.Open(System.Security.Cryptography.X509Certificates.OpenFlags)"]/*' />
         public void Open(OpenFlags flags)
-        {			
+        {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         /// <include file='../../../_Doc/System.xml' path='doc/members/member[@name="M:System.Security.Cryptography.X509Certificates.X509Store.Close"]/*' />
         public void Close()
-        {			
+        {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion

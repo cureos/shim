@@ -29,12 +29,18 @@ namespace System
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.ApplicationException.#ctor"]/*' />
         public ApplicationException()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.ApplicationException.#ctor(System.String)"]/*' />
         public ApplicationException(string message)
             : base(message)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion

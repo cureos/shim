@@ -35,7 +35,11 @@ namespace System
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.ResolveEventArgs.#ctor(System.String)"]/*' />
         public ResolveEventArgs(string name)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             this.name = name;
+#endif
         }
 
         #endregion
@@ -48,7 +52,11 @@ namespace System
         {
             get
             {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
                 return this.name;
+#endif
             }
         }
 

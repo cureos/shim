@@ -29,31 +29,51 @@ namespace System.Diagnostics
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Diagnostics.Trace.Write(System.String)"]/*' />
         public static void Write(string message)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             Console.Write(message);
+#endif
         }
 
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Diagnostics.Trace.WriteLine(System.String)"]/*' />
         public static void WriteLine(string message)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             Console.WriteLine(message);
+#endif
         }
 
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Diagnostics.Trace.TraceWarning(System.String)"]/*' />
         public static void TraceWarning(string message)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             Console.WriteLine(message);
+#endif
         }
 
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Diagnostics.Trace.TraceInformation(System.String,System.Object[])"]/*' />
         public static void TraceInformation(string format, params object[] args)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             Console.WriteLine(format, args);
+#endif
         }
 
         /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.Diagnostics.Trace.Assert(System.Boolean)"]/*' />
         public static void Assert(bool condition)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             if (!condition) throw new InvalidOperationException("Assertion condition false");
+#endif
         }
         
         #endregion

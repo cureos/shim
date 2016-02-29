@@ -30,6 +30,9 @@ namespace System
         public NotFiniteNumberException(string message, double offendingNumber)
             : base(message)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion

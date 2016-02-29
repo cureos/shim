@@ -32,6 +32,9 @@ namespace System.Runtime.InteropServices
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Runtime.InteropServices.GuidAttribute.#ctor(System.String)"]/*' />
         public GuidAttribute(string guid)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion

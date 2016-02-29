@@ -35,11 +35,15 @@ namespace System.Data
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataColumn.#ctor(System.String,System.Type)"]/*' />
         public DataColumn(string columnName, Type dataType)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             ColumnName = columnName;
             DataType = dataType;
             Table = null;
             ReadOnly = false;
             DefaultValue = null;
+#endif
         }
 
         #endregion
@@ -67,8 +71,22 @@ namespace System.Data
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="P:System.Data.DataColumn.Caption"]/*' />
         public string Caption
         {
-            get { return _caption ?? ColumnName; }
-            set { _caption = value; }
+            get
+            {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
+                return _caption ?? ColumnName;
+#endif
+            }
+            set
+            {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
+                _caption = value;
+#endif
+            }
         }
 
         #endregion

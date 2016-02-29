@@ -49,6 +49,9 @@ namespace System
 
         private AppDomain()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion
@@ -67,7 +70,11 @@ namespace System
         {
             get
             {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
                 return _currentDomain;
+#endif
             }
         }
 

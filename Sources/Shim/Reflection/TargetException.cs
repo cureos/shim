@@ -29,12 +29,18 @@ namespace System.Reflection
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.TargetException.#ctor"]/*' />
         public TargetException()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         /// <include file='../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Reflection.TargetException.#ctor(System.String)"]/*' />
         public TargetException(string message)
             : base(message)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion

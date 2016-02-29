@@ -38,7 +38,11 @@ namespace System.Data
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataView.#ctor(System.Data.DataTable)"]/*' />
         public DataView(DataTable table)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _table = table;
+#endif
         }
 
         #endregion
@@ -48,6 +52,9 @@ namespace System.Data
         /// <include file='../_Doc/System.Data.xml' path='doc/members/member[@name="M:System.Data.DataView.ToTable(System.Boolean,System.String[])"]/*' />
         public DataTable ToTable(bool distinct, params string[] columnNames)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             var table = new DataTable { Locale = _table.Locale };
             foreach (var name in columnNames)
                 table.Columns.Add(name, _table.Columns.Contains(name) ? _table.Columns[name].DataType : typeof (object));
@@ -67,6 +74,7 @@ namespace System.Data
                 table.Rows.Add(row);
 
             return table;
+#endif
         }
 
         #endregion

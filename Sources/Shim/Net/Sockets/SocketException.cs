@@ -29,14 +29,20 @@ namespace System.Net.Sockets
         /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.SocketException.#ctor(System.Int32)"]/*' />
         public SocketException(int errorCode)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             ErrorCode = errorCode;
+#endif
         }
 
-        // TODO Check in fo-dicom where this constructor originates from?
         /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Net.Sockets.SocketException.#ctor(System.String,System.Object[])"]/*' />
         public SocketException(string format, params object[] args)
             : base(String.Format(format, args))
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion
@@ -49,7 +55,14 @@ namespace System.Net.Sockets
         /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="P:System.Net.Sockets.SocketException.SocketErrorCode"]/*' />
         public SocketError SocketErrorCode
         {
-            get { return (SocketError)ErrorCode; }
+            get
+            {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
+                return (SocketError)ErrorCode;
+#endif
+            }
         }
 
         #endregion

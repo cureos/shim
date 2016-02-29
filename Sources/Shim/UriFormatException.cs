@@ -29,12 +29,18 @@ namespace System
         /// <include file='_Doc/System.xml' path='doc/members/member[@name="M:System.UriFormatException.#ctor"]/*' />
         public UriFormatException()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         /// <include file='_Doc/System.xml' path='doc/members/member[@name="M:System.UriFormatException.#ctor(System.String)"]/*' />
         public UriFormatException(string textString)
             : base(textString)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion

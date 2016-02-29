@@ -40,6 +40,9 @@ namespace System
 
         private DBNull()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
         }
 
         #endregion

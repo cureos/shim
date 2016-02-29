@@ -37,8 +37,12 @@ namespace System
 
         static Console()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _error = new StringWriter();
             _out = new StringWriter();
+#endif
         }
 
         #endregion
@@ -50,7 +54,11 @@ namespace System
         {
             get
             {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
                 return _error;
+#endif
             }
         }
 
@@ -59,7 +67,11 @@ namespace System
         {
             get
             {
+#if PCL
+                throw new PlatformNotSupportedException("PCL");
+#else
                 return _out;
+#endif
             }
         }
 
@@ -70,43 +82,71 @@ namespace System
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.SetOut(System.IO.TextWriter)"]/*' />
         public static void SetOut(TextWriter newOut)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _out = newOut;
+#endif
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.Write(System.Char)"]/*' />
         public static void Write(char value)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _out.Write(value);
+#endif
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.Write(System.String)"]/*' />
         public static void Write(string value)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _out.Write(value);
+#endif
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.Write(System.Int32)"]/*' />
         public static void Write(int value)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _out.Write(value);
+#endif
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.WriteLine"]/*' />
         public static void WriteLine()
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _out.WriteLine();
+#endif
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.WriteLine(System.Char)"]/*' />
         public static void WriteLine(char value)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _out.WriteLine(value);
+#endif
         }
 
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Console.WriteLine(System.String,System.Object[])"]/*' />
         public static void WriteLine(string format, params object[] arg)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             _out.WriteLine(format, arg);
+#endif
         }
 
         #endregion

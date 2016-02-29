@@ -42,7 +42,11 @@ namespace System.Collections.Concurrent
         /// </remarks>
         public new bool Remove(T item)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             throw new NotSupportedException();
+#endif
         }
 
         /// <remarks>
@@ -51,6 +55,9 @@ namespace System.Collections.Concurrent
         /// </remarks>
         public new bool RemoveAt(int index)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#endif
             throw new NotSupportedException();
         }
 
@@ -60,7 +67,11 @@ namespace System.Collections.Concurrent
         /// </remarks>
         public new int RemoveAll(Predicate<T> match)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             throw new NotSupportedException();
+#endif
         }
 
         /// <remarks>
@@ -69,7 +80,11 @@ namespace System.Collections.Concurrent
         /// </remarks>
         public new void RemoveRange(int index, int count)
         {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#else
             throw new NotSupportedException();
+#endif
         }
 
         /// <include file='../../_Doc/System.xml' path='doc/members/member[@name="M:System.Collections.Concurrent.ConcurrentBag`1.TryPeek(`0@)"]/*' />
