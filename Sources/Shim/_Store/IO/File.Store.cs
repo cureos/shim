@@ -22,6 +22,7 @@
 namespace System.IO
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.IO.File"]/*' />
@@ -70,6 +71,18 @@ namespace System.IO
             return new StreamWriter(Create(path));
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.AppendText(System.String)"]/*' />
+        public static StreamWriter AppendText(string path)
+        {
+            return new StreamWriter(new FileStream(path, FileMode.Append));
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.OpenText(System.String)"]/*' />
+        public static StreamReader OpenText(string path)
+        {
+            return new StreamReader(new FileStream(path, FileMode.Open));
+        }
+
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.Move(System.String,System.String)"]/*' />
         public static void Move(string sourceFileName, string destFileName)
         {
@@ -102,16 +115,29 @@ namespace System.IO
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.ReadAllLines(System.String)"]/*' />
         public static string[] ReadAllLines(string path)
         {
+            return ReadLines(path).ToArray();
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.ReadAllText(System.String)"]/*' />
+        public static string ReadAllText(string path)
+        {
             using (var stream = new FileStream(path, FileMode.Open))
             using (var reader = new StreamReader(stream))
             {
-                var lines = new List<string>();
+                return reader.ReadToEnd();
+            }
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.ReadLines(System.String)"]/*' />
+        public static IEnumerable<string> ReadLines(string path)
+        {
+            using (var stream = new FileStream(path, FileMode.Open))
+            using (var reader = new StreamReader(stream))
+            {
                 while (reader.Peek() > -1)
                 {
-                    lines.Add(reader.ReadLine());
+                    yield return reader.ReadLine();
                 }
-
-                return lines.ToArray();
             }
         }
 
@@ -124,10 +150,47 @@ namespace System.IO
             }
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.WriteAllLines(System.String,System.String[])"]/*' />
+        public static void WriteAllLines(string path, string[] contents)
+        {
+            IEnumerable<string> e = contents;
+            WriteAllLines(path, e);
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.WriteAllLines(System.String,System.Collections.Generic.IEnumerable{System.String})"]/*' />
+        public static void WriteAllLines(string path, IEnumerable<string> contents)
+        {
+            using (var stream = new FileStream(path, FileMode.Create))
+            using (var writer = new StreamWriter(stream))
+            {
+                foreach (var line in contents) writer.WriteLine(line);
+            }
+        }
+
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.WriteAllText(System.String,System.String)"]/*' />
         public static void WriteAllText(string path, string contents)
         {
             using (var stream = new FileStream(path, FileMode.Create))
+            using (var writer = new StreamWriter(stream))
+            {
+                writer.Write(contents);
+            }
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.AppendAllLines(System.String,System.Collections.Generic.IEnumerable{System.String})"]/*' />
+        public static void AppendAllLines(string path, IEnumerable<string> contents)
+        {
+            using (var stream = new FileStream(path, FileMode.Append))
+            using (var writer = new StreamWriter(stream))
+            {
+                foreach (var line in contents) writer.WriteLine(line);
+            }
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.AppendAllText(System.String,System.String)"]/*' />
+        public static void AppendAllText(string path, string contents)
+        {
+            using (var stream = new FileStream(path, FileMode.Append))
             using (var writer = new StreamWriter(stream))
             {
                 writer.Write(contents);
@@ -145,10 +208,22 @@ namespace System.IO
         {
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.Open(System.String,System.IO.FileMode)"]/*' />
+        public static FileStream Open(string path, FileMode mode)
+        {
+            return new FileStream(path, mode);
+        }
+
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.Open(System.String,System.IO.FileMode,System.IO.FileAccess)"]/*' />
         public static FileStream Open(string path, FileMode mode, FileAccess access)
         {
             return new FileStream(path, mode, access);
+        }
+
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.Open(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)"]/*' />
+        public static FileStream Open(string path, FileMode mode, FileAccess access, FileShare share)
+        {
+            return new FileStream(path, mode, access, share);
         }
 
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.IO.File.OpenRead(System.String)"]/*' />
