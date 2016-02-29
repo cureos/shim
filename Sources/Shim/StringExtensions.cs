@@ -19,18 +19,24 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Globalization;
+using System.Linq;
+using System.Threading;
+
 namespace System
 {
     /// <summary>
     /// Shim complement for the <see cref="String"/> class. <see cref="String"/> instance methods that are not available in the 
     /// PCL profile are here provided as equivalent extension methods.
     /// </summary>
-    public static class StringExtensions
+    public static partial class StringExtensions
     {
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.String.Clone"]/*' />
         /// <param name="thisString"><see cref="String"/> object.</param>
         public static string Clone(this string thisString)
         {
+            Mutex pouet = new Mutex();
+            pouet.Close();
 #if PCL
             throw new PlatformNotSupportedException("PCL");
 #else
@@ -40,6 +46,6 @@ namespace System
             }
             return thisString;
 #endif
-        }
+        }                
     }
 }

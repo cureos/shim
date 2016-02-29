@@ -28,7 +28,7 @@ namespace System.Collections.Generic
     /// Shim complement for the <see cref="List{T}"/> class. <see cref="List{T}"/> instance methods that are not available in the 
     /// PCL profile are here provided as equivalent extension methods.
     /// </summary>
-    public static class ListExtensions
+    public static partial class ListExtensions
     {
         /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Collections.Generic.List`1.AsReadOnly"]/*' />
         /// <param name="list">List to be returned as a read-only list.</param>
@@ -53,6 +53,25 @@ namespace System.Collections.Generic
             return list.ConvertAll(converter);
 #else
             return list.Select(item => converter(item)).ToList();
+#endif
+        }
+
+        /// <summary>
+        /// For each extension for generic lists.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        /// <param name="action">The action.</param>
+        public static void ForEach<T>(this List<T> source, Action<T> action)
+        {
+#if PCL
+            throw new PlatformNotSupportedException("PCL");
+#elif DOTNET
+            source.ForEach(action);
+#else
+            foreach (var current in source)
+            {
+                action.Invoke(current);
+            }
 #endif
         }
     }
