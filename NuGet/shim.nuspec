@@ -11,14 +11,17 @@
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <description>Shim expands the ability to create Portable Class Libraries from .NET legacy code by providing reduced or dummy implementations of .NET Framework classes that are not represented in PCL.</description>
         <summary>Shim provides .NET Framework types otherwise missing in PCL.</summary>
-        <copyright>(c) 2013-2015 Anders Gustafsson, Cureos AB</copyright>
+        <copyright>(c) 2013-2016 Anders Gustafsson, Cureos AB</copyright>
         <releaseNotes>* Added PCL profile 328
 * Minimum supported API for Xamarin Android is now Level 10 (v 2.3)
 * Fixed issues:
+#39 List.AsReadOnly&lt;T&gt;() causes StackOverflow
+#37 Added Missing System.IO.File methods
 #31 TypeForwardedTo missing for ResolveEventHandler
 #30 RangeAttribute is already available in Windows 8.1
 #28 Implement IDisposable interface in System.Threading.Timer
 #27 Add DataColumnCollection.Remove, public DataColumn constructor and DefaultValue property
+#26 PCL projects should only include pure declarations
 #25 ThreadPool and Timer already available in PCL profile 328
 #24 Converter delegate already available in Phone and Silverlight targets
 #22 Remove ShimPath (PathSeparator and DirectorSeparatorChar remain)

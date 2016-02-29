@@ -30,7 +30,7 @@ using System.Reflection;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Cureos AB")]
 [assembly: AssemblyProduct("Shim")]
-[assembly: AssemblyCopyright("Copyright Cureos AB © 2013-2015")]
+[assembly: AssemblyCopyright("Copyright Cureos AB © 2013-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]
@@ -46,4 +46,4 @@ using System.Reflection;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("2.0.0")]
-[assembly: AssemblyFileVersion("2.0.0.50417")]
+[assembly: AssemblyFileVersion("2.0.0.60229")]
