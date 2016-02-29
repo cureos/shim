@@ -36,6 +36,8 @@ namespace System.Collections.Generic
         {
 #if PCL
             throw new PlatformNotSupportedException("PCL");
+#elif NETFX_CORE
+            return new ReadOnlyCollection<T>(list);
 #else
             return list.AsReadOnly();
 #endif
