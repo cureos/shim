@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\README.md = ..\README.md
 		..\NuGet\shim.nuspec = ..\NuGet\shim.nuspec
+		..\NuGet\version.cmd = ..\NuGet\version.cmd
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit tests", "Unit tests", "{614D1BF4-2C5B-4269-A37F-35081D4E535D}"
