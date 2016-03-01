@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Collections\Generic\ListExtensionsTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Reflection\AssemblyExtensionsTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Attribute (Shim) Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICloneableExtensionsTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StringExtensionsTests.cs" />
   </ItemGroup>
 </Project>
