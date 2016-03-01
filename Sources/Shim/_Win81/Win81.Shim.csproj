@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AppDomain.cs">
@@ -177,6 +178,9 @@
     <Compile Include="..\Runtime\Serialization\OptionalFieldAttribute.cs">
       <Link>Runtime\Serialization\OptionalFieldAttribute.cs</Link>
     </Compile>
+    <Compile Include="..\Runtime\Serialization\SerializationBinder.cs">
+      <Link>Runtime\Serialization\SerializationBinder.cs</Link>
+    </Compile>
     <Compile Include="..\Runtime\Serialization\SerializationInfo.cs">
       <Link>Runtime\Serialization\SerializationInfo.cs</Link>
     </Compile>
@@ -254,9 +258,7 @@
     </Compile>
     <Compile Include="TypeForwarding.Win81.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

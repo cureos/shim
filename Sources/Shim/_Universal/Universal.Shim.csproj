@@ -179,6 +179,9 @@
     <Compile Include="..\Runtime\Serialization\OptionalFieldAttribute.cs">
       <Link>Runtime\Serialization\OptionalFieldAttribute.cs</Link>
     </Compile>
+    <Compile Include="..\Runtime\Serialization\SerializationBinder.cs">
+      <Link>Runtime\Serialization\SerializationBinder.cs</Link>
+    </Compile>
     <Compile Include="..\Runtime\Serialization\SerializationInfo.cs">
       <Link>Runtime\Serialization\SerializationInfo.cs</Link>
     </Compile>

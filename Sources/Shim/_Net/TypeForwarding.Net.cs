@@ -141,6 +141,7 @@ using Timer = System.Threading.Timer;
 // System.Runtime.Serialization
 [assembly: TypeForwardedTo(typeof(ISerializable))]
 [assembly: TypeForwardedTo(typeof(OptionalFieldAttribute))]
+[assembly: TypeForwardedTo(typeof(SerializationBinder))]
 [assembly: TypeForwardedTo(typeof(SerializationInfo))]
 
 // System.Runtime.Serialization.Formatters.Binary
