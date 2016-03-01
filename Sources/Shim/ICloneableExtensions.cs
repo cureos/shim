@@ -37,7 +37,7 @@ namespace System
 #if PCL
             throw new PlatformNotSupportedException("PCL");
 #else
-#if DOTNET
+#if DOTNET || SILVERLIGHT
             if (typeof(T).GetInterfaces().Contains(typeof(ICloneable)))
 #else
             if (typeof(T).GetTypeInfo().ImplementedInterfaces.Contains(typeof(ICloneable)))
