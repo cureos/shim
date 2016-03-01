@@ -140,6 +140,19 @@ namespace System
 #endif
         }
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.GetField(System.String)"]/*' />
+        /// <param name="type"><see cref="Type"/> object.</param>
+        public static PropertyInfo GetProperty(this Type type, string name)
+        {
+#if DOTNET || SILVERLIGHT
+            return type.GetProperty(name);
+#elif NETFX_CORE
+            return type.GetRuntimeProperty(name);
+#else
+            throw new PlatformNotSupportedException("PCL");
+#endif
+        }
+
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.GetMethod(System.String,System.Reflection.BindingFlags)"]/*' />
         /// <param name="type"><see cref="Type"/> object.</param>
         public static MethodInfo GetMethod(this Type type, string name, BindingFlags bindingAttr)
