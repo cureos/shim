@@ -36,6 +36,7 @@ using System.Threading;
 [assembly: TypeForwardedTo(typeof(Console))]
 [assembly: TypeForwardedTo(typeof(Converter<,>))]
 [assembly: TypeForwardedTo(typeof(DBNull))]
+[assembly: TypeForwardedTo(typeof(IConvertible))]
 [assembly: TypeForwardedTo(typeof(ResolveEventArgs))]
 [assembly: TypeForwardedTo(typeof(ResolveEventHandler))]
 

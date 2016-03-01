@@ -38,6 +38,7 @@ using System.Xml.Linq;
 [assembly: TypeForwardedTo(typeof(Console))]
 [assembly: TypeForwardedTo(typeof(Converter<,>))]
 [assembly: TypeForwardedTo(typeof(DBNull))]
+[assembly: TypeForwardedTo(typeof(IConvertible))]
 [assembly: TypeForwardedTo(typeof(ResolveEventArgs))]
 
 // System.ComponentModel

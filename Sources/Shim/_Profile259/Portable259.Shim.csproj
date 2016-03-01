@@ -129,6 +129,9 @@
     <Compile Include="..\ICloneable.cs">
       <Link>ICloneable.cs</Link>
     </Compile>
+    <Compile Include="..\IConvertible.cs">
+      <Link>IConvertible.cs</Link>
+    </Compile>
     <Compile Include="..\IO\Directory.cs">
       <Link>IO\Directory.cs</Link>
     </Compile>

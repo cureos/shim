@@ -19,21 +19,10 @@
  *  License along with Shim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Threading;
-
-// System
-[assembly: TypeForwardedTo(typeof(IConvertible))]
-
-// System.Reflection
-[assembly: TypeForwardedTo(typeof(BindingFlags))]
-
-// System.Threading
-[assembly: TypeForwardedTo(typeof(Thread))]
-[assembly: TypeForwardedTo(typeof(ThreadPool))]
-[assembly: TypeForwardedTo(typeof(Timer))]
-[assembly: TypeForwardedTo(typeof(TimerCallback))]
-[assembly: TypeForwardedTo(typeof(WaitCallback))]
-
+namespace System
+{
+    /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.IConvertible"]/*' />
+    public interface IConvertible
+    {
+    }
+}

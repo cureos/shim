@@ -52,6 +52,7 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(Converter<,>))]
 [assembly: TypeForwardedTo(typeof(DBNull))]
 [assembly: TypeForwardedTo(typeof(ICloneable))]
+[assembly: TypeForwardedTo(typeof(IConvertible))]
 [assembly: TypeForwardedTo(typeof(NonSerializedAttribute))]
 [assembly: TypeForwardedTo(typeof(NotFiniteNumberException))]
 [assembly: TypeForwardedTo(typeof(ResolveEventArgs))]
