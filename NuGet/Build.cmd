@@ -29,3 +29,4 @@ echo Creating packages...
 forfiles /m shim*.nuspec /c "cmd /c nuget.exe pack @File -Version %version% -OutputDirectory %output%"
 
 :eof
+pause
