@@ -24,5 +24,7 @@ namespace System.Runtime.Serialization
     /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="T:System.Runtime.Serialization.SerializationBinder"]/*' />
     public abstract class SerializationBinder
     {
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Runtime.Serialization.SerializationBinder.BindToType(System.String,System.String)"]/*' />
+        public abstract Type BindToType(string assemblyName, string typeName);
     }
 }
