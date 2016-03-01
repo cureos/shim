@@ -172,6 +172,22 @@ namespace System
 #endif
         }
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.GetMethods(System.Reflection.BindingFlags)"]/*' />
+        /// <param name="type"><see cref="Type"/> object.</param>
+        public static MethodInfo[] GetMethods(this Type type, BindingFlags bindingAttr)
+        {
+#if DOTNET || SILVERLIGHT
+            return type.GetMethods(bindingAttr);
+#elif NETFX_CORE
+            return
+                type.GetRuntimeMethods()
+                    .Where(methodInfo => AreBindingFlagsMatching(methodInfo, bindingAttr))
+                    .ToArray();
+#else
+            throw new PlatformNotSupportedException("PCL");
+#endif
+        }
+
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Globalization.CultureInfo)"]/*' />
         /// <param name="type"><see cref="Type"/> object.</param>
         public static object InvokeMember(this Type type, string name, BindingFlags invokeAttr, 
