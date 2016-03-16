@@ -56,14 +56,15 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shim.Xamarin", "Shim\_Xamar
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Shim\_Xamarin\Shim.Xamarin.projitems*{97e26603-22f0-4f43-8140-20b7d44a2893}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{97e26603-22f0-4f43-8140-20b7d44a2893}*SharedItemsImports = 4
+		Shim\_Xamarin\Shim.Xamarin.projitems*{97e26603-22f0-4f43-8140-20b7d44a2893}*SharedItemsImports = 4
 		..\UnitTests\Shim.Tests.Shared\Shim.Tests.Shared.projitems*{9acb59b3-90d7-4150-bc9e-918aef7e68ab}*SharedItemsImports = 4
-		Shim\_Xamarin\Shim.Xamarin.projitems*{62d2c8bc-8690-4719-b213-4b68b1abdac9}*SharedItemsImports = 4
+		Shim\Shim.Shared.projitems*{8464069a-34ad-49ee-ae4d-1213df8ba2b2}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{62d2c8bc-8690-4719-b213-4b68b1abdac9}*SharedItemsImports = 4
+		Shim\_Xamarin\Shim.Xamarin.projitems*{62d2c8bc-8690-4719-b213-4b68b1abdac9}*SharedItemsImports = 4
 		..\UnitTests\Shim.Tests.Shared\Shim.Tests.Shared.projitems*{e3a98d89-504b-4387-85d4-7f0c8fc1790c}*SharedItemsImports = 13
-		Shim\_Xamarin\Shim.Xamarin.projitems*{28b1caee-315f-4981-8476-c14b5edd2bc9}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{28b1caee-315f-4981-8476-c14b5edd2bc9}*SharedItemsImports = 4
+		Shim\_Xamarin\Shim.Xamarin.projitems*{28b1caee-315f-4981-8476-c14b5edd2bc9}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{8a8a3ec5-94b0-4579-9c09-c4dd6431f958}*SharedItemsImports = 4
 		Shim\Shim.Shared.projitems*{1f718fa3-88f0-47d8-b695-7ba01a3643f8}*SharedItemsImports = 4
 		..\UnitTests\Shim.Tests.Shared\Shim.Tests.Shared.projitems*{6ff17c17-1ff8-43c9-a975-780c70500fce}*SharedItemsImports = 4

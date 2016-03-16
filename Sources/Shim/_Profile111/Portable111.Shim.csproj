@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AppDomain.cs">
@@ -55,6 +56,9 @@
     </Compile>
     <Compile Include="..\ComponentModel\DescriptionAttribute.cs">
       <Link>ComponentModel\DescriptionAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\ComponentModel\DesignerCategoryAttribute.cs">
+      <Link>ComponentModel\DesignerCategoryAttribute.cs</Link>
     </Compile>
     <Compile Include="..\ComponentModel\DisplayNameAttribute.cs">
       <Link>ComponentModel\DisplayNameAttribute.cs</Link>
@@ -299,7 +303,6 @@
     <Compile Include="..\Windows\Point.cs">
       <Link>Windows\Point.cs</Link>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeForwarding.Profile111.cs" />
   </ItemGroup>
   <PropertyGroup>

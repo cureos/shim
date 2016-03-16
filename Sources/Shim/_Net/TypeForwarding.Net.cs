@@ -5,8 +5,6 @@ using System.Runtime.CompilerServices;
 using System.ServiceModel;
 using System.Windows;
 
-using System.ComponentModel;
-
 // System.Diagnostics.CodeAnalysis
 [assembly: TypeForwardedTo(typeof(ExcludeFromCodeCoverageAttribute))]
 

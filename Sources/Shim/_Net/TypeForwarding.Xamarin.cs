@@ -69,6 +69,7 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(BrowsableAttribute))]
 [assembly: TypeForwardedTo(typeof(CategoryAttribute))]
 [assembly: TypeForwardedTo(typeof(DescriptionAttribute))]
+[assembly: TypeForwardedTo(typeof(DesignerCategoryAttribute))]
 [assembly: TypeForwardedTo(typeof(DisplayNameAttribute))]
 [assembly: TypeForwardedTo(typeof(IContainer))]
 [assembly: TypeForwardedTo(typeof(ISynchronizeInvoke))]
@@ -77,6 +78,7 @@ using Timer = System.Threading.Timer;
 [assembly: TypeForwardedTo(typeof(MemberDescriptor))]
 [assembly: TypeForwardedTo(typeof(PropertyDescriptor))]
 [assembly: TypeForwardedTo(typeof(TypeConverter))]
+[assembly: TypeForwardedTo(typeof(TypeConverterAttribute))]
 
 // System.ComponentModel.DataAnnotations
 [assembly: TypeForwardedTo(typeof(RangeAttribute))]
