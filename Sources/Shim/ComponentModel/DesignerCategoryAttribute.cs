@@ -27,8 +27,8 @@ namespace System.ComponentModel
     {
         #region CONSTRUCTORS
 
-        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.ComponentModel.DesignerCategoryAttribute.#ctor(System.Boolean)"]/*' />
-        public DesignerCategoryAttribute(bool browsable)
+        /// <include file='../_Doc/System.xml' path='doc/members/member[@name="M:System.ComponentModel.DesignerCategoryAttribute.#ctor(System.String)"]/*' />
+        public DesignerCategoryAttribute(string category)
         {
 #if PCL
             throw new PlatformNotSupportedException("PCL");
