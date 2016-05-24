@@ -170,6 +170,9 @@
     <Compile Include="..\Reflection\BindingFlags.cs">
       <Link>Reflection\BindingFlags.cs</Link>
     </Compile>
+    <Compile Include="..\Reflection\TargetException.cs">
+      <Link>Reflection\TargetException.cs</Link>
+    </Compile>
     <Compile Include="..\ResolveEventArgs.cs">
       <Link>ResolveEventArgs.cs</Link>
     </Compile>
