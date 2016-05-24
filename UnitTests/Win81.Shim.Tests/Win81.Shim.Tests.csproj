@@ -20,6 +20,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Sources\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <NuGetPackageImportStamp>b83eff22</NuGetPackageImportStamp>
+    <PackageCertificateThumbprint>1D30AA852B108EBE7582A1BD8903FBF3BD1A7447</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>

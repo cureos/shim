@@ -15,6 +15,7 @@
         <releaseNotes>* Added PCL profile 328
 * Minimum supported API for Xamarin Android is now Level 10 (v 2.3)
 * Fixed issues:
+#50 Add methods required by Portable Accord 3.1
 #44 Implement Type.GetProperty as extension method
 #43 Include Type.GetMethods as extension method
 #42 Include IConvertible interface
