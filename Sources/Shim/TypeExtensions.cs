@@ -169,6 +169,38 @@ namespace System
 #endif
         }
 
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.GetMethod(System.String,System.Type[])"]/*' />
+        /// <param name="type"><see cref="Type"/> object.</param>
+        public static MethodInfo GetMethod(this Type type, string name, Type[] types)
+        {
+#if DOTNET || SILVERLIGHT
+            return type.GetMethod(name, types);
+#elif NETFX_CORE
+            var typeInfo = type.GetTypeInfo();
+            foreach (var methodInfo in typeInfo.DeclaredMethods)
+            {
+                var methodTypes = methodInfo.GetParameters().Select(param => param.ParameterType).ToArray();
+                if (methodTypes.Length != types.Length)
+                {
+                    continue;
+                }
+                var use = true;
+                for (var i = 0; i < methodTypes.Length; ++i)
+                {
+                    if (methodTypes[i] != types[i])
+                    {
+                        use = false;
+                        break;
+                    }
+                }
+                if (use) return methodInfo;
+            }
+            return null;
+#else
+            throw new PlatformNotSupportedException("PCL");
+#endif
+        }
+
         /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.GetMethod(System.String,System.Reflection.BindingFlags)"]/*' />
         /// <param name="type"><see cref="Type"/> object.</param>
         public static MethodInfo GetMethod(this Type type, string name, BindingFlags bindingAttr)
