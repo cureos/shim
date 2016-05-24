@@ -22,7 +22,7 @@
 namespace System
 {
     using System.Linq;
-        using System.Reflection;
+    using System.Reflection;
     using System.Globalization;
 
     /// <summary>
@@ -135,6 +135,22 @@ namespace System
             return type.GetField(name);
 #elif NETFX_CORE
             return type.GetRuntimeField(name);
+#else
+            throw new PlatformNotSupportedException("PCL");
+#endif
+        }
+
+        /// <include file='_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Type.GetField(System.String,System.Reflection.BindingFlags)"]/*' />
+        /// <param name="type"><see cref="Type"/> object.</param>
+        public static FieldInfo GetField(this Type type, string name, BindingFlags bindingAttr)
+        {
+#if DOTNET || SILVERLIGHT
+            return type.GetField(name, bindingAttr);
+#elif NETFX_CORE
+            return
+                type.GetRuntimeFields()
+                    .Where(fi => AreBindingFlagsMatching(fi, bindingAttr))
+                    .SingleOrDefault(fi => fi.Name.Equals(name));
 #else
             throw new PlatformNotSupportedException("PCL");
 #endif

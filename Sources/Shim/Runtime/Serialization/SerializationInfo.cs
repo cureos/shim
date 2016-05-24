@@ -32,6 +32,12 @@ namespace System.Runtime.Serialization
             throw new PlatformNotSupportedException("PCL");
         }
 
+        /// <include file='../../_Doc/mscorlib.xml' path='doc/members/member[@name="M:System.Runtime.Serialization.SerializationInfo.GetValue(System.String,System.Type)"]/*' />
+        public object GetValue(string name, Type type)
+        {
+            throw new PlatformNotSupportedException("PCL");
+        }
+
         #endregion
     }
 }

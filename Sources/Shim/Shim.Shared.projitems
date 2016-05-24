@@ -26,6 +26,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Reflection\Assembly (Shim).cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ICloneableExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Threading\WaitHandleExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Type %28Shim%29.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Xml\Linq\XDocumentExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Environment (Shim).cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StringExtensions.cs" />
