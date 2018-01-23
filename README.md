@@ -23,22 +23,3 @@ Usage
 * Xamarin.Android (API Level 7, version 2.1)
 
 Use *NuGet* to include [Shim](https://www.nuget.org/packages/shim) assemblies in your application.
-
-
-Contributing
-------------
-
-If you like *Shim* and want to contribute to its continued development, you could either fork the repository and provide pull requests with new or improved functionality, or you could make a small monetary contribution:
-
-<table>
-<tr>
-<th>€10</th>
-<th>€25</th>
-<th>€50</th>
-</tr>
-<tr>
-<td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8BY5WJSTJYHS6"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif"/></a></td>
-<td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EXB948DWYJA2C"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif"/></a></td>
-<td><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4QTUZ8YPEN4ZG"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif"/></a></td>
-</tr>
-</table>
